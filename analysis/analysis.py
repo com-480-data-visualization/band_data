@@ -30,9 +30,10 @@ w_all_matches = pd.concat(w_matches_dss, ignore_index=True)
 def plot_basic_stats(matches=all_matches, players=player_ds, title="ATP"):
     stats = {
         'Number of games': len(matches),
+        'Number of games containing advanced stats': len(matches[['w_ace', 'w_df', 'w_svpt', 'w_1stIn', 'w_1stWon', 'w_2ndWon', 'w_SvGms', 'w_bpSaved', 'w_bpFaced']].dropna()) ,
         'Mean age of winner': round(matches['winner_age'].mean(), 1),
         'Mean age of loser': round(matches['loser_age'].mean(), 1),
-        'Number of players': len(players),
+        'Number of players': len(players)
     }
     stats_list = [(key, value) for key, value in stats.items()]
 
