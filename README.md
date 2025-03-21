@@ -4,7 +4,7 @@
 |-------------------|--------|
 | Charlotte Meyer   | 315568 |
 | Charlotte Sacré   | 357798 |
-| Jérémie De Faveri |  |
+| Jérémie De Faveri | 287454 |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
