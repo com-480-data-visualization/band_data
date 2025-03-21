@@ -39,8 +39,22 @@ Finally, we want to show that beyond strategy and impressive physical performanc
 
 ### Exploratory Data Analysis
 
-> Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data
+We explored the ATP and WTA datasets using the [following](./analysis/analysis.py) python script, restricting overselves to tour-level matches past 1991 (see [the dataset section](#dataset) for more information).
+
+#### Basic statistics
+![Basic stats ATP](./analysis/basic_stats_ATP.svg)
+![Basic stats WTA](./analysis/basic_stats_WTA.svg)
+
+It's interesting to note here that while most matches past 1991 have advanced stats for the ATP dataset, this is not the case for the WTA dataset. This is because for the WTA dataset, advanced statistics are actually only available from 2015 onwards.
+
+#### Nationalities
+![Nationalities ATP](./analysis/nationalities_men.svg)
+![Nationalities WTA](./analysis/nationalities_women.svg)
+
+#### Players with the highest percentage of winning games
+![Percentage win ATP](./analysis/percentage_win_men.svg)
+![Percentage win WTA](./analysis/percentage_win_women.svg)
+
 
 ### Related work
 

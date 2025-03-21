@@ -2,16 +2,19 @@ import pandas as pd
 import numpy as np
 import tqdm
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import seaborn as sns
 
-ATP_DATASET_PATH="../../tennis_atp/"
-WTA_DATASET_PATH="../../tennis_wta/"
+# mpl.rcParams['svg.fonttype'] = 'none' # Save text as text directly instead of paths
+
+ATP_DATASET_PATH="../../tennis_atp"
+WTA_DATASET_PATH="../../tennis_wta"
 
 player_ds = pd.read_csv(f"{ATP_DATASET_PATH}/atp_players.csv")
 player_names = player_ds["name_first"] + ' ' + player_ds["name_last"]
 
 matches_dss = []
-for year in tqdm.tqdm(range(1991, 2024)):
+for year in tqdm.tqdm(range(1991, 2025)):
     df = pd.read_csv(f"{ATP_DATASET_PATH}/atp_matches_{year}.csv")
     matches_dss.append(df)
 all_matches = pd.concat(matches_dss, ignore_index=True)
@@ -21,7 +24,7 @@ all_matches = pd.concat(matches_dss, ignore_index=True)
 w_player_ds = pd.read_csv(f"{WTA_DATASET_PATH}/wta_players.csv")
 
 w_matches_dss = []
-for year in tqdm.tqdm(range(1991, 2024)):
+for year in tqdm.tqdm(range(1991, 2025)):
     df = pd.read_csv(f"{WTA_DATASET_PATH}/wta_matches_{year}.csv")
     w_matches_dss.append(df)
 w_all_matches = pd.concat(w_matches_dss, ignore_index=True)
@@ -40,7 +43,9 @@ def plot_basic_stats(matches=all_matches, players=player_ds, title="ATP"):
     fig, ax = plt.subplots(figsize=(4, 2))
     ax.axis('off')
     plt.title(f"Basic statistics for the {title} matches\nfrom 1991 to 2024")
-    table = ax.table(cellText=stats_list, loc='center', colColours=['#f1f1f1']*len(stats_list))
+    table = ax.table(cellText=stats_list, loc='center' , colColours=['#f1f1f1']*len(stats_list), fontsize=20)
+    table.set_fontsize(10)
+    table.auto_set_column_width([0,1])
 
     table.scale(1.2, 1.2)  # Adjust table size
     plt.savefig(f'basic_stats_{title}.svg', format='svg', bbox_inches='tight')
@@ -115,3 +120,16 @@ plot_nationalities(w_player_ds, "women")
 # plt.title('Number of Players per Nationality')
 # plt.xticks(rotation=45)  # Rotate x labels for better visibility
 # plt.show()
+
+def print_advaned_stats_stas():
+    print("Women")
+    for i in range(0,34):
+        nb_advanced = len(w_matches_dss[i][['w_ace', 'w_df', 'w_svpt', 'w_1stIn', 'w_1stWon', 'w_2ndWon', 'w_SvGms', 'w_bpSaved', 'w_bpFaced']].dropna())
+        if nb_advanced>0:
+            print(f"{str(w_matches_dss[i].iloc[0]['tourney_date'])[:4]}: {nb_advanced} of {len(w_matches_dss[i])}")
+    
+    print("Men")
+    for i in range(0,34):
+        nb_advanced = len(matches_dss[i][['w_ace', 'w_df', 'w_svpt', 'w_1stIn', 'w_1stWon', 'w_2ndWon', 'w_SvGms', 'w_bpSaved', 'w_bpFaced']].dropna())
+        if nb_advanced>0:
+            print(f"{str(matches_dss[i].iloc[0]['tourney_date'])[:4]}: {nb_advanced} of {len(matches_dss[i])}")
