@@ -58,10 +58,6 @@ It's interesting to note here that while most matches past 1991 have advanced st
 
 ### Related work
 
-- What others have already done with the data?
-- Why is your approach original?
-- What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
-
 There exists many websites to check ATP or WTA match and player statistics, but many of them are focused on the recent or future matches, display information in a tabular format or make it difficult for new tennis fans to learn anything meaningful (e.g. [TennisRatio](https://www.tennisratio.com/#data-analysis)).
 
 Our goal is to these statistics understandable at a glance and interesting for all - from amateurs to aficionados! 
