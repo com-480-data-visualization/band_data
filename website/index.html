@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis for Dummies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Source+Sans+Pro:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #0a1721;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            cursor: url('assets/cursor/ball.png'), auto;
+        }
+        
+        .container {
+            text-align: center;
+            position: relative;
+            cursor: url('assets/cursor/ball.png'), auto;
+        }
+        
+        .text {
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+            cursor: inherit;
+        }
+        
+        #tennis {
+            font-family: 'Source Sans Pro', sans-serif; /* Similar to Myriad Pro */
+            font-size: 7rem;
+            font-weight: bold;
+            font-style: italic;
+            color: white;
+            margin-bottom: -10px;
+            transform: rotate(-3deg);
+        }
+        
+        #for {
+            font-family: 'Bangers', cursive; /* Similar to Dummies font */
+            font-size: 2.5rem;
+            color: #e3e02c;
+            margin-left: 20px;
+            letter-spacing: 1px;
+            transform: rotate(-5deg);
+        }
+        
+        #dummies {
+            font-family: 'Bangers', cursive; /* Similar to Dummies font */
+            font-size: 6rem;
+            color: #e3e02c;
+            text-transform: uppercase;
+            margin-top: -15px;
+            letter-spacing: 2px;
+            transform: rotate(-8deg);
+        }
+        
+        .show {
+            opacity: 1 !important;
+            cursor: inherit;
+        }
+        #tennis.show {
+            transform: translateY(0) rotate(-3deg) !important;
+        }
+        
+        #for.show {
+            transform: translateY(0) rotate(-5deg) !important; /* For "for" */
+        }
+        
+        #dummies.show {
+            transform: translateY(0) rotate(-8deg) !important; /* For dummies */
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="tennis" class="text">Tennis</div>
+        <div id="for" class="text">FOR</div>
+        <div id="dummies" class="text">DUMMIES</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                document.getElementById('tennis').classList.add('show');
+            }, 500);
+            
+            setTimeout(() => {
+                document.getElementById('for').classList.add('show');
+            }, 1500);
+            
+            setTimeout(() => {
+                document.getElementById('dummies').classList.add('show');
+            }, 2500);
+        });
+    </script>
+</body>
+</html>
