@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tennis for Dummies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+</head>
+<body class="text-gray-800 text-lg bg-[#AEEA00]">
+
+  <!-- Page Title -->
+  <header class="text-center py-10 bg-[#00BFFF]">
+    <h1 class="text-8xl font-bold">Find your player</h1>
+  </header>
+
+
+  <!-- Main Layout -->
+  <div class="max-w-10xl mx-auto px-20 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+
+    <!-- Left Column -->
+    <div class="md:col-span-1 flex flex-col items-center space-y-6">
+        <!-- Container for the Input Box -->
+        <div class="flex flex-col items-center space-y-6 w-full px-4 py-4">
+          <!-- Player Name Input -->
+          <div class="relative inline-block w-full text-left">
+            <input
+              type="text"
+              placeholder="Enter Player Name"
+              class="w-full px-6 py-6 font-bold text-black text-5xl bg-white border-4 border-black rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+        <div class="md:col-span-1 flex flex-col items-center space-y-6 w-full px-4 py-4 relative inline-block text-center text-5xl font-bold">
+          <p>Or choose your characteristics: </p>
+        </div>
+        <!-- Dropdown Container -->
+        <div id="dropdownsContainer" class="md:col-span-1 flex flex-col items-center space-y-6 w-full px-4 py-4 relative inline-block text-center text-3xl">
+          <!-- Dynamic dropdowns -->
+        </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="md:col-span-2 space-y-10 text-3xl">
+
+      <div class="flex justify-center mt-64 text-6xl">
+        <button class="px-10 py-10 w-3/5 font-bold text-white text-10xl bg-black rounded-full shadow-lg hover:bg-gray-800 transition duration-300 ">
+          Find my player
+        </button>
+      </div>
+
+      <div class="max-w-10xl mx-auto px-20 py-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="md:col-span-1 flex flex-col items-center space-y-6">
+          <img src="../assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+        </div>
+        <div class="md:col-span-1 flex flex-col items-center space-y-6">
+          <img src="../assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+        </div>
+        <div class="md:col-span-1 flex flex-col items-center space-y-6">
+          <img src="../assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+        </div>
+      </div>
+
+
+    </div>
+
+  <script>
+    // Function to create a dropdown dynamically
+    function createDropdown(dropdownName, options) {
+      // Create the dropdown container
+      const dropdownContainer = document.createElement('div');
+      dropdownContainer.classList.add('relative', 'inline-block', 'w-full', 'text-left');
+
+      // Create the dropdown button
+      const button = document.createElement('button');
+      button.classList.add('w-full', 'px-6', 'py-6', 'font-bold', 'text-black', 'bg-white', 'border-4', 'border-black', 'rounded-full', 'shadow-md', 'focus:outline-none', 'flex', 'items-center', 'justify-between');
+      button.innerHTML = `
+        <span>${dropdownName}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      `;
+
+      // Create the dropdown menu
+      const dropdownMenu = document.createElement('div');
+      dropdownMenu.classList.add('hidden', 'absolute', 'right-0', 'w-full', 'mt-2', 'origin-top-right', 'bg-white', 'shadow-lg', 'rounded-3xl', 'border', 'border-black', 'z-10');
+      dropdownMenu.innerHTML = options.map(option => `
+        <a href="#" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">${option}</a>
+      `).join('');
+
+      // Append the button and menu to the container
+      dropdownContainer.appendChild(button);
+      dropdownContainer.appendChild(dropdownMenu);
+
+      // Add event listener to toggle the menu visibility
+      button.addEventListener('click', () => {
+        dropdownMenu.classList.toggle('hidden');
+      });
+
+      // Close dropdowns if clicked outside
+      window.addEventListener('click', (event) => {
+        if (!dropdownContainer.contains(event.target)) {
+          dropdownMenu.classList.add('hidden');
+        }
+      });
+
+      // Append the dropdown to the container
+      document.getElementById('dropdownsContainer').appendChild(dropdownContainer);
+    }
+
+    createDropdown('Tournament', ['All', 'G - Grand Slam', 'M - Masters', 'F - Tour-level finals', 'A - Other Tour-level events', 'D - Davis Cup']);
+    createDropdown('Court Surface', ['All', 'Clay', 'Grass', 'Hard', 'Carpet']);
+    createDropdown('Decade', ['90s', '00s', '10s', '20s']);
+    createDropdown('Gender', ['Male', 'Female']);
+    createDropdown('Nationality', ['All', 'Switzerland', 'Canada', 'UK']);
+    createDropdown('Handedness', ['All', 'Left', 'Right']);
+  </script>
+
+</body>
+</html>
