@@ -8,6 +8,28 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+      /* Animation delays */
+      .animation-delay-200 { animation-delay: 0.2s; }
+      .animation-delay-400 { animation-delay: 0.4s; }
+      .animation-delay-600 { animation-delay: 0.6s; }
+      .animation-delay-800 { animation-delay: 0.8s; }
+      
+      /* Box styling */
+      .tennis-info-box {
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
 </head>
 <body>
     <!-- Component containers -->

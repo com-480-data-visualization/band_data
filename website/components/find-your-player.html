@@ -1,46 +1,49 @@
-<div class="player-finder bg-[#AEEA00]" id="player-finder">
-  <!-- Page Title -->
-  <header class="text-center py-5 bg-[#00BFFF] w-full">
-    <h1 class="text-6xl md:text-8xl font-bold">Find your player</h1>
+<div class="bg-gray-100" id="player-finder">
+  <!-- Header  -->
+  <header class="w-full py-4 bg-[#0a1721] text-white text-center">
+    <h1 class="text-4xl md:text-6xl font-bold">Find your player</h1>
   </header>
 
-  <!-- Main Layout -->
-  <div class="max-w-10xl mx-auto px-4 md:px-20 py-5 grid grid-cols-1 md:grid-cols-3 gap-10">
+  <!-- Main Content  -->
+  <div class="container mx-auto px-4 md:px-10 py-4 grid grid-cols-1 md:grid-cols-3 gap-6">
     <!-- Left Column -->
-    <div class="md:col-span-1 flex flex-col items-center space-y-6">
-      <!-- Player Name Input -->
-      <div class="relative inline-block w-full text-left px-4 py-4">
+    <div class="md:col-span-1 flex flex-col space-y-4 overflow-y-auto">
+      <!-- Input Box -->
+      <div class="w-full">
         <input
           type="text"
           placeholder="Enter Player Name"
-          class="w-full px-6 py-6 font-bold text-black text-3xl md:text-5xl bg-white border-4 border-black rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          class="w-full p-3 text-xl md:text-2xl font-bold text-black bg-white border-4 border-black rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
       </div>
       
-      <div class="w-full px-4 py-2 text-center text-3xl md:text-5xl font-bold">
-        <p>Or choose your characteristics: </p>
+      <!-- OR Separator -->
+      <div class="w-full text-center">
+        <p class="text-xl md:text-2xl font-bold">Or choose your characteristics:</p>
       </div>
       
-      <!-- Dropdown Container -->
-      <div id="dropdownsContainer" class="w-full px-4 flex flex-col items-center space-y-6 text-xl md:text-3xl"></div>
+      <!-- Dropdowns Container  -->
+      <div id="dropdownsContainer" class="w-full flex flex-col space-y-3"></div>
     </div>
 
     <!-- Right Column -->
-    <div class="md:col-span-2 space-y-10 text-3xl">
-      <div class="flex justify-center mt-10 md:mt-64 text-6xl">
-        <button class="px-8 py-8 md:px-10 md:py-10 w-4/5 md:w-3/5 font-bold text-white text-6xl md:text-7xl bg-black rounded-full shadow-lg hover:bg-gray-800 transition duration-300">
+    <div class="md:col-span-2 flex flex-col space-y-6">
+      <!-- Find Button  -->
+      <div class="flex justify-center items-center mt-2 md:mt-10">
+        <button class="px-5 py-4 w-4/5 text-3xl md:text-4xl font-bold text-white bg-black rounded-full shadow-lg hover:bg-gray-800 transition duration-300">
           Find my player
         </button>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 px-4 md:px-20 py-5">
-        <div class="md:col-span-1 flex flex-col items-center">
+      <!-- Results -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-2 md:px-8">
+        <div class="flex justify-center">
           <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
         </div>
-        <div class="md:col-span-1 flex flex-col items-center">
+        <div class="flex justify-center">
           <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
         </div>
-        <div class="md:col-span-1 flex flex-col items-center">
+        <div class="flex justify-center">
           <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
         </div>
       </div>
