@@ -76,6 +76,8 @@ To convey more detailed information about the technical aspects of the sport suc
 
 **10% of the final grade**
 
+The deployed website can be accessed [here](https://com-480-data-visualization.github.io/band_data/).
+
 
 ## Milestone 3 (30th May, 5pm)
 
