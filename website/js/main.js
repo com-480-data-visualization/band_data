@@ -22,6 +22,7 @@ tailwind.config = {
 document.addEventListener('DOMContentLoaded', function() {
     loadComponent('components/landing.html', 'landing-section');
     loadComponent('components/about.html', 'about-section');
+    loadComponent('components/players-overview.html', 'players-overview');
     loadComponent('components/find-your-player.html', 'player-finder-section');
     loadComponent('components/player-profile.html', 'player-profile-section');
     
@@ -45,6 +46,26 @@ function loadComponent(url, targetId) {
             if (url.includes('find-your-player.html')) {
                 createPlayerDropdowns();
                 setupPlayerProfileNavigation();
+            }
+
+            if (url.includes('players-overview.html')) {
+                new gridjs.Grid({
+                    columns: ["Rank", "Name"],
+                    data: [
+                      ["1", "Roger Federer"],
+                      ["2", "Novak Djokovic"],
+                      ["3", "Raphael Nadal"],
+                      ["4", "Roger Federer"],
+                      ["5", "Novak Djokovic"]
+                    ],
+                    fixedHeader: true,
+                    search: true,
+                    style: { 
+                        table: { 
+                          'white-space': 'nowrap'
+                        }
+                      },
+                  }).render(document.getElementById("topplayers_table"));
             }
         })
         .catch(error => {

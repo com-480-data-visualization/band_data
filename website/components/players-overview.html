@@ -1,0 +1,72 @@
+<div class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen overflow-y-auto" id="player-profile">
+    <!-- Header -->
+    <header class="w-full py-8 bg-[var(--color-dark)] shadow-sm text-center relative">
+      <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 text-white">Overview</h1>
+      <p class="text-lg text-center max-w-4xl mx-auto mb-8 text-white">Here you can compare global statistics about tennis players. In the dropdown below, select the players used for the statistics below.</p>
+      <div class="mb-4 flex items-center gap-2 w-full justify-center">
+        <label for="playersDropdown" class="text-gray-300 font-medium whitespace-nowrap">Statistics on:</label>
+        <select id="playersDropdown" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <option value="top100">Top 100 players</option>
+            <option value="top100_wta">Top 100 WTA players</option>
+            <option value="top100_atp">Top 100 ATP players</option>
+            <option value="all">All players</option>
+        </select>
+    </div>
+    </header>
+  
+    <!-- Main Content  -->
+    <div class="container mx-auto px-4 py-3 flex flex-col">
+      
+      <!-- Top section-->
+      <div class="flex flex-col lg:flex-row gap-4 mb-4">
+
+        <!-- List of players used for the rest of the statistics -->
+        <div class="lg:w-1/3 min-w-96 bg-white rounded-xl shadow-sm p-4 overflow-hidden">
+            <h2 class="text-xl font-semibold text-gray-800">Top 100 players</h2>
+            <div id="topplayers_table"></div>
+        </div>
+  
+        <!-- Performance overview  -->
+        <div class="flex-grow bg-white rounded-xl shadow-sm p-4 relative overflow-hidden">
+          <h2 class="text-xl font-semibold text-gray-800">Trends over time</h2>
+          <p class="mt-2 mb-4 text-gray-600 text-sm">See how key player statistics change with time. Select an attribute to see its evolution over time.</p>
+
+          <div class="mb-4 flex items-center gap-2">
+              <label for="overviewStatsDropdown" class="text-gray-700 font-medium whitespace-nowrap">Attribute:</label>
+              <select id="overviewStatsDropdown" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                  <option value="player_age_lastmatch">Retirement age</option>
+                  <option value="player_height">Player height</option>
+                  <option value="player_age_firstwin">Age when they win their first tournament</option>
+              </select>
+          </div>
+
+          <div class="w-full h-full bg-white">
+            <img src="assets/graphs/ageyear_pseudo.svg" alt="Performance Timeline" />
+          </div>
+        </div>
+      </div>
+  
+      <!-- Middle section  -->
+      <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden mb-4">
+        <h2 class="text-xl font-semibold text-gray-800">Players by Country</h2>
+        <p class="mt-2 mb-4 text-gray-600 text-sm">See how the players are distributed among countries. The size of the bubble indicates how many players come from that country.</p>
+        <img src="assets/graphs/worldview_pseudo.jpeg" alt="Performance Metrics" class="w-full h-full object-contain" />
+      </div>
+
+      <!-- Bottom section  -->
+      <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden mb-4">
+        <h2 class="text-xl font-semibold text-gray-800">Player style by surface</h2>
+        <p class="mt-2 mb-4 text-gray-600 text-sm">See how player statistics are influcenced by the surface.</p>
+        <div class="mb-4 flex items-center gap-2">
+          <label for="overviewSurfaceDropdown" class="text-gray-700 font-medium whitespace-nowrap">Surface:</label>
+          <select id="overviewSurfaceDropdown" 
+                  class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+            <option value="hard">Hard</option>
+            <option value="clay">Clay</option>
+            <option value="grass">Grass</option>
+          </select>
+        </div>
+        <img src="assets/graphs/stats_across_surfaces.jpeg" alt="Performance Metrics" class="w-full h-full object-contain" />
+      </div>
+    </div>
+  </div>
