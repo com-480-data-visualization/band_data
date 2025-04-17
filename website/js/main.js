@@ -1,9 +1,29 @@
+// Configure Tailwind animations
+tailwind.config = {
+  theme: {
+    extend: {
+      animation: {
+        'bounce-slow': 'bounce 3s infinite',
+      },
+      keyframes: {
+        bounce: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
+        }
+      },
+    }
+  },
+  variants: {
+    animation: ['responsive', 'motion-safe', 'motion-reduce']
+  }
+}
+
 // Wait for page to load
 document.addEventListener('DOMContentLoaded', function() {
-
     loadComponent('components/landing.html', 'landing-section');
     loadComponent('components/about.html', 'about-section');
     loadComponent('components/find-your-player.html', 'player-finder-section');
+    loadComponent('components/player-profile.html', 'player-profile-section');
     
     // Setup cursor selection
     setupCursorSelector();
@@ -24,12 +44,24 @@ function loadComponent(url, targetId) {
             // Initialize player finder dropdowns if that component is loaded
             if (url.includes('find-your-player.html')) {
                 createPlayerDropdowns();
+                setupPlayerProfileNavigation();
             }
         })
         .catch(error => {
             console.error('Error loading component:', error);
             document.getElementById(targetId).innerHTML = '<p>Error loading content</p>';
         });
+}
+
+// Setup navigation between player finder and profile
+function setupPlayerProfileNavigation() {
+    // Add event listener to the Find my player button
+    const findPlayerButton = document.querySelector('#player-finder button');
+    if (findPlayerButton) {
+        findPlayerButton.addEventListener('click', function() {
+            document.getElementById('player-profile-section').scrollIntoView({behavior: 'smooth'});
+        });
+    }
 }
 
 // 1. Initialize landing page animations

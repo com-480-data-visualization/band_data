@@ -1,5 +1,5 @@
-<div class="bg-white py-10" id="about">
-    <div class="container mx-auto px-4">
+<div class="bg-white h-screen flex flex-col" id="about">
+    <div class="container mx-auto px-4 py-8 flex-grow overflow-y-auto">
         <!-- Main about content -->
         <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">Learn Tennis Basics</h2>
         <p class="text-lg text-center max-w-4xl mx-auto mb-4">Welcome to Tennis for Dummies, your guide to understanding and enjoying the game of tennis. Whether you're a complete beginner or looking to brush up on the fundamentals, we've got you covered.</p>
@@ -65,30 +65,9 @@
     </div>
     
     <!-- Arrow to scroll down to player finder -->
-    <div class="flex justify-center mt-12 mb-6" onclick="document.getElementById('player-finder-section').scrollIntoView({behavior: 'smooth'})">
+    <div class="flex justify-center py-4" onclick="document.getElementById('player-finder-section').scrollIntoView({behavior: 'smooth'})">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 animate-bounce">
             <path d="M12 17.414l-6.707-6.707 1.414-1.414L12 14.586l5.293-5.293 1.414 1.414z"/>
         </svg>
     </div>
 </div>
-
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        animation: {
-          'bounce-slow': 'bounce 3s infinite',
-        },
-        keyframes: {
-          bounce: {
-            '0%, 100%': { transform: 'translateY(0)' },
-            '50%': { transform: 'translateY(-10px)' },
-          }
-        },
-      }
-    },
-    variants: {
-      animation: ['responsive', 'motion-safe', 'motion-reduce']
-    }
-  }
-</script>

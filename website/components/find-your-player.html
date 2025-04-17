@@ -1,11 +1,11 @@
-<div class="bg-gray-100" id="player-finder">
+<div class="bg-gray-100 h-screen flex flex-col" id="player-finder">
   <!-- Header  -->
   <header class="w-full py-4 bg-[#0a1721] text-white text-center">
     <h1 class="text-4xl md:text-6xl font-bold">Find your player</h1>
   </header>
 
   <!-- Main Content  -->
-  <div class="container mx-auto px-4 md:px-10 py-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div class="container mx-auto px-4 md:px-10 py-4 grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow">
     <!-- Left Column -->
     <div class="md:col-span-1 flex flex-col space-y-4 overflow-y-auto">
       <!-- Input Box -->
@@ -38,13 +38,22 @@
       <!-- Results -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-2 md:px-8">
         <div class="flex justify-center">
-          <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+          <a href="#player-profile-section" onclick="document.getElementById('player-profile-section').scrollIntoView({behavior: 'smooth'})"
+             class="transform hover:scale-105 transition-all">
+            <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+          </a>
         </div>
         <div class="flex justify-center">
-          <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+          <a href="#player-profile-section" onclick="document.getElementById('player-profile-section').scrollIntoView({behavior: 'smooth'})"
+             class="transform hover:scale-105 transition-all">
+            <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+          </a>
         </div>
         <div class="flex justify-center">
-          <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+          <a href="#player-profile-section" onclick="document.getElementById('player-profile-section').scrollIntoView({behavior: 'smooth'})"
+             class="transform hover:scale-105 transition-all">
+            <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+          </a>
         </div>
       </div>
     </div>
