@@ -12,10 +12,8 @@
 
 **10% of the final grade**
 
-This is a preliminary milestone to let you set up goals for your final project and assess the feasibility of your ideas.
-Please, fill the following sections about your project.
+The full Milestone 1 can be found [here](./milestones/milestone1.md).
 
-*(max. 2000 characters per section)*
 
 ### Dataset
 
@@ -37,44 +35,14 @@ Indeed, we first want to introduce newcomers to key features match winners—suc
 
 Finally, we want to show that beyond strategy and impressive physical performances, some of the sport’s biggest names, like Billie Jean King, have not only shaped the game but also left a lasting impact on society and global sports culture. Ultimately, our project aims to highlight these historical shifts and player milestones while uncovering the tactical and statistical nuances that define tennis greatness.
 
-### Exploratory Data Analysis
-
-We explored the ATP and WTA datasets using the [following](./analysis/analysis.py) python script, restricting overselves to tour-level matches past 1991 (see [the dataset section](#dataset) for more information).
-
-#### Basic statistics
-![Basic stats ATP](./analysis/basic_stats_ATP.svg)
-![Basic stats WTA](./analysis/basic_stats_WTA.svg)
-
-It's interesting to note here that while most matches past 1991 have advanced stats for the ATP dataset, this is not the case for the WTA dataset. This is because for the WTA dataset, advanced statistics are actually only available from 2015 onwards.
-
-#### Nationalities
-![Nationalities ATP](./analysis/nationalities_men.svg)
-![Nationalities WTA](./analysis/nationalities_women.svg)
-
-#### Players with the highest percentage of winning games
-![Percentage win ATP](./analysis/percentage_win_men.svg)
-![Percentage win WTA](./analysis/percentage_win_women.svg)
-
-
-### Related work
-
-There exists many websites to check ATP or WTA match and player statistics, but many of them are focused on the recent or future matches, display information in a tabular format or make it difficult for new tennis fans to learn anything meaningful (e.g. [TennisRatio](https://www.tennisratio.com/#data-analysis)).
-
-Our goal is to these statistics understandable at a glance and interesting for all - from amateurs to aficionados! 
-
-There are many types of visualizations that would allow us to provide a global overview of different player characteristics such as parallel coordinates plots, sankey diagrams, or chord diagrams as shown in the following inspirations: 
-
-- [Tennis Visuals](https://tennisvisuals.com/)
-- [Visualizing Tennis Grand Slam Winners Performances](https://datascienceplus.com/visualizing-tennis-grand-slam-winners-performances/)
-- [Tennis data visualization](https://ingilevichv.github.io/tennis/index.html)
-
-To convey more detailed information about the technical aspects of the sport such as particular player statistics, instead of having simple tables, we aim to build player profiles similar to:
-- [Rafael Nadal Profile](https://public.tableau.com/app/profile/paul1904/viz/TheReignoftheKingofClay/TheReignoftheKingofClay3)
-- [Roger Federer Profile](https://www.rocketsource.com/blog/the-gift-of-roger-federer-to-corporate-america/)
 
 ## Milestone 2 (18th April, 5pm)
 
 **10% of the final grade**
+
+The Milestone 2 pdf/sketchbook can be found [here](./milestones/milestone2.pdf).
+
+The deployed website can be accessed [here](https://com-480-data-visualization.github.io/band_data/).
 
 
 ## Milestone 3 (30th May, 5pm)

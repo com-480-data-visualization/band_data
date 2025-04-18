@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis for Dummies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Source+Sans+Pro:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+
+    <style>
+      /* Animation delays */
+      .animation-delay-200 { animation-delay: 0.2s; }
+      .animation-delay-400 { animation-delay: 0.4s; }
+      .animation-delay-600 { animation-delay: 0.6s; }
+      .animation-delay-800 { animation-delay: 0.8s; }
+      
+      /* Box styling */
+      .tennis-info-box {
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+</head>
+<body>
+    <!-- Component containers -->
+    <div id="landing-section"></div>
+    <div id="about-section"></div>
+    <div id="players-overview"></div>
+    <div id="player-finder-section"></div>
+    <div id="player-profile-section"></div>
+    
+    <!-- Cursor selector (stays in main file) -->
+    <div class="cursor-menu">
+        <div class="cursor-option active" data-cursor="assets/cursor/ball.png">
+            <img src="assets/cursor/ball.png" alt="Tennis Ball">
+        </div>
+        <div class="cursor-option" data-cursor="assets/cursor/racket.png">
+            <img src="assets/cursor/racket.png" alt="Tennis Racket">
+        </div>
+        <div class="cursor-option" data-cursor="auto">
+            <img src="assets/cursor/default.png" alt="Default">
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
