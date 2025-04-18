@@ -108,7 +108,7 @@ function createPlayerDropdowns() {
 
         // Create the dropdown button
         const button = document.createElement('button');
-        button.classList.add('w-full', 'px-6', 'py-6', 'font-bold', 'text-black', 'bg-white', 'border-4', 'border-black', 'rounded-full', 'shadow-md', 'focus:outline-none', 'flex', 'items-center', 'justify-between');
+        button.classList.add('w-full', 'px-6', 'py-3', 'font-bold', 'text-black', 'bg-white', 'border-4', 'border-black', 'rounded-full', 'shadow-md', 'focus:outline-none', 'flex', 'items-center', 'justify-between');
         button.innerHTML = `
             <span>${dropdownName}</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
