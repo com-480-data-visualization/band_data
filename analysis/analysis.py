@@ -7,8 +7,8 @@ import seaborn as sns
 
 # mpl.rcParams['svg.fonttype'] = 'none' # Save text as text directly instead of paths
 
-ATP_DATASET_PATH="../../tennis_atp"
-WTA_DATASET_PATH="../../tennis_wta"
+ATP_DATASET_PATH="../data/tennis_atp"
+WTA_DATASET_PATH="../data/tennis_wta"
 
 player_ds = pd.read_csv(f"{ATP_DATASET_PATH}/atp_players.csv")
 player_names = player_ds["name_first"] + ' ' + player_ds["name_last"]
@@ -28,6 +28,7 @@ for year in tqdm.tqdm(range(1991, 2025)):
     df = pd.read_csv(f"{WTA_DATASET_PATH}/wta_matches_{year}.csv")
     w_matches_dss.append(df)
 w_all_matches = pd.concat(w_matches_dss, ignore_index=True)
+w_all_matches.to_csv(f"../data/all_matches_wta.csv", index=False)
 
 
 def plot_basic_stats(matches=all_matches, players=player_ds, title="ATP"):
@@ -105,14 +106,14 @@ def plot_nationalities(players=player_ds, title = 'men'):
 
     plt.savefig(f'nationalities_{title}.svg', format='svg', bbox_inches='tight')
     #plt.show()
-
+'''
 plot_basic_stats()
 plot_percentage_wins()
 plot_nationalities()
 plot_basic_stats(w_all_matches, w_player_ds, "WTA")
 plot_percentage_wins(w_all_matches, w_player_ds, "women")
 plot_nationalities(w_player_ds, "women")
-
+'''
 # plt.figure(figsize=(10, 6))
 # sns.barplot(x=top_nationalities.index, y=top_nationalities.values, palette='viridis')
 # plt.xlabel('Nationality')

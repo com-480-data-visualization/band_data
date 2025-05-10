@@ -7,6 +7,8 @@ from pandas.api.types import CategoricalDtype
 DATA_DIR = '../data'
 ALL_MATCHES_ATP = DATA_DIR + '/all_matches_atp.csv'
 ALL_MATCHES_WTA = DATA_DIR + '/all_matches_wta.csv'
+ATP_PLAYERS = DATA_DIR + '/atp_players.csv'
+WTA_PLAYERS = DATA_DIR + '/wta_players.csv'
 
 def match_breakdown_surface_tourney(df, threshold=3):
     """
@@ -38,6 +40,7 @@ def compute_all_stats(df, groupSurface=True):
     return df.groupby(['winner_name'])[
         ["ace_pct", '1stIn_pct', '1stWon_pct', '2ndWon_pct', 'df_pct', 'bpSaved_pct']].mean().reset_index()
 
+#TODO: update to consider only winners & only losers
 def player_profile(df, tourney_levels):
     total_matches = pd.merge(df.groupby('winner_name').size().reset_index(name='matches_won'),
                              df.groupby('loser_name').size().reset_index(name='matches_lost'),
@@ -52,8 +55,6 @@ def player_profile(df, tourney_levels):
         hand=('winner_hand', 'min'),
         height=('winner_ht', 'max')
     ), on='winner_name')
-    #player_data['career_start'] = pd.to_datetime(player_data.career_start, format='%Y%m%d').dt.year
-    #player_data['career_end'] = pd.to_datetime(player_data.career_end, format='%Y%m%d').dt.year
     player_data = pd.merge(
         player_data,
         (df[df['round'] == 'F'].groupby(['winner_name', 'tourney_level']).size().reset_index(name='count').
@@ -81,7 +82,7 @@ def player_performance(df):
     player_perf['titles'] = player_perf.apply(lambda x: 0 if x['round'] != 'F' else x['match_count'], axis=1)
     return player_perf
 
-def load_df(path):
+def load_match_df(path):
     df = pd.read_csv(path)
     df = pd.DataFrame(df)
     df.drop(df.columns[0], axis=1, inplace=True)
@@ -90,9 +91,8 @@ def load_df(path):
     return df, df['tourney_level'].unique().tolist()
 
 def main():
-    df_atp, atp_tourney_levels = load_df(ALL_MATCHES_ATP)
-
-    df_wta, wta_tourney_levels = load_df(ALL_MATCHES_WTA)
+    df_atp, atp_tourney_levels = load_match_df(ALL_MATCHES_ATP)
+    df_wta, wta_tourney_levels = load_match_df(ALL_MATCHES_WTA)
 
     compute_all_stats(df_atp).to_csv(DATA_DIR + '/atp_player_stats.csv', index=False)
     player_profile(df_atp, atp_tourney_levels).to_csv(DATA_DIR + '/atp_player_profile.csv', index=False)
