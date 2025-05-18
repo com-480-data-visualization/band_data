@@ -39,7 +39,6 @@ function loadCSV(url) {
         } else if(url.includes('win_rates.csv')) {
           csvWinRates = data;
         }
-
         resolve();
       },
       error: function (err) {
@@ -726,46 +725,50 @@ function classifyImprovements(playerName, data) {
     bpSaved_pct: "Break Points Saved %"
   };
 
-  const thresholds = {
-    ace_pct: val => val >= 10,
-    "1stIn_pct": val => val >= 70,
-    "1stWon_pct": val => val >= 70,
-    "2ndWon_pct": val => val >= 70,
-    df_pct: val => val <= 5,
-    bpSaved_pct: val => val >= 70
+  const strengthThresholds = {
+    ace_pct: 12,
+    '1stIn_pct': 70,
+    '1stWon_pct': 70,
+    '2ndWon_pct': 70,
+    df_pct: 3, // interpreted as low double fault = strength
+    bpSaved_pct: 70
+  };
+
+  const improvementThresholds = {
+    ace_pct: 7,
+    '1stIn_pct': 55,
+    '1stWon_pct': 55,
+    '2ndWon_pct': 55,
+    df_pct: 10,
+    bpSaved_pct: 55
   };
 
   const playerData = data.filter(d => d.winner_name === playerName);
-
-  const results = playerData.map(surfaceData => {
+  return playerData.map(row => {
+    const surface = row.surface;
     const strengths = [];
     const improvements = [];
 
-    Object.keys(statLabels).forEach(stat => {
-      const value = parseFloat(surfaceData[stat]);
-      const label = statLabels[stat];
-      const isStrength = thresholds[stat](value);
+    for (const stat in statLabels) {
+      const value = parseFloat(row[stat]);
 
-      const entry = {
-        label,
-        value: value.toFixed(1)
-      };
-
-      if (isStrength) {
-        strengths.push(entry);
+      if (stat === 'df_pct') {
+        // For DF, lower is better
+        if (value <= strengthThresholds[stat]) {
+          strengths.push({ label: statLabels[stat], value: value.toFixed(1) });
+        } else if (value >= improvementThresholds[stat]) {
+          improvements.push({ label: statLabels[stat], value: value.toFixed(1) });
+        }
       } else {
-        improvements.push(entry);
+        if (value >= strengthThresholds[stat]) {
+          strengths.push({ label: statLabels[stat], value: value.toFixed(1) });
+        } else if (value <= improvementThresholds[stat]) {
+          improvements.push({ label: statLabels[stat], value: value.toFixed(1) });
+        }
       }
-    });
-
-    return {
-      surface: surfaceData.surface,
-      strengths,
-      improvements
-    };
+    }
+    return { surface, strengths, improvements };
   });
-
-  return results;
 }
 
 function loadImprovements(playerName, data) {
@@ -783,7 +786,6 @@ function loadImprovements(playerName, data) {
     heading.innerHTML = `<span class="inline-block w-2 h-2 rounded-full bg-${color}-500 mr-2"></span>${title}`;
 
     box.appendChild(heading);
-
     // Each surface group
     groupedItems.forEach(({ surface, items }) => {
       if (items.length === 0) return;
@@ -801,7 +803,6 @@ function loadImprovements(playerName, data) {
         li.innerHTML = `<span class="text-${color}-500 mr-2">${icon}</span> ${item.label} (${item.value}%)`;
         list.appendChild(li);
       });
-
       box.appendChild(surfaceTitle);
       box.appendChild(list);
     });
@@ -824,15 +825,14 @@ function loadImprovements(playerName, data) {
   container.appendChild(improvementsBox);
 }
 
-
 function loadGraphs(playerName, association) {
     if (association === 'atp') {
         loadImprovements(playerName, csvATPPlayerStats);
         playerDescription(playerName, csvATPPlayerProfile);
         drawTimelineChart(playerName, csvATPPlayerPerf);
-        //drawRadarChart(playerName, csvATPPlayerStats);
         drawRadarChartjs(playerName, csvATPPlayerStats);
     } else if (association === 'wta') {
+        loadImprovements(playerName, csvWTAPlayerStats);
         playerDescription(playerName, csvWTAPlayerProfile);
         drawTimelineChart(playerName, csvWTAPlayerPerf);
         drawRadarChart(playerName, csvWTAPlayerStats);
