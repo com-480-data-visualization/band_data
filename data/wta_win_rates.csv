@@ -1,0 +1,3209 @@
+,player_id,player_name,surface,matches_won,matches_lost,win_rate
+0,200001,Martina Hingis,Carpet,31.0,5,86.11111111111111
+1,200001,Martina Hingis,Clay,67.0,17,79.76190476190477
+2,200001,Martina Hingis,Grass,23.0,8,74.19354838709677
+3,200001,Martina Hingis,Hard,196.0,49,80.0
+4,200002,Mirjana Lucic,Clay,18.0,28,39.130434782608695
+5,200002,Mirjana Lucic,Grass,12.0,15,44.44444444444444
+6,200002,Mirjana Lucic,Hard,35.0,63,35.714285714285715
+7,200003,Justine Henin,Carpet,15.0,9,62.5
+8,200003,Justine Henin,Clay,111.0,17,86.71875
+9,200003,Justine Henin,Grass,38.0,8,82.6086956521739
+10,200003,Justine Henin,Hard,221.0,52,80.95238095238095
+11,200004,Kerry Anne Guse,Clay,0.0,1,0.0
+12,200004,Kerry Anne Guse,Grass,2.0,4,33.33333333333333
+13,200004,Kerry Anne Guse,Hard,0.0,8,0.0
+14,200005,Jolene Watanabe,Clay,2.0,4,33.33333333333333
+15,200005,Jolene Watanabe,Grass,2.0,5,28.57142857142857
+16,200005,Jolene Watanabe,Hard,3.0,11,21.428571428571427
+17,200006,Karina Habsudova,Carpet,1.0,4,20.0
+18,200006,Karina Habsudova,Clay,12.0,12,50.0
+19,200006,Karina Habsudova,Grass,3.0,10,23.076923076923077
+20,200006,Karina Habsudova,Hard,34.0,27,55.73770491803278
+21,200007,Silvija Talaja,Carpet,0.0,4,0.0
+22,200007,Silvija Talaja,Clay,10.0,12,45.45454545454545
+23,200007,Silvija Talaja,Grass,4.0,8,33.33333333333333
+24,200007,Silvija Talaja,Hard,17.0,41,29.310344827586203
+25,200008,Alicia Molik,Carpet,0.0,2,0.0
+26,200008,Alicia Molik,Clay,7.0,18,28.000000000000004
+27,200008,Alicia Molik,Grass,10.0,12,45.45454545454545
+28,200008,Alicia Molik,Hard,66.0,69,48.888888888888886
+29,200009,Tamarine Tanasugarn,Carpet,4.0,4,50.0
+30,200009,Tamarine Tanasugarn,Clay,7.0,24,22.58064516129032
+31,200009,Tamarine Tanasugarn,Grass,31.0,19,62.0
+32,200009,Tamarine Tanasugarn,Hard,64.0,83,43.53741496598639
+33,200010,Rita Grande,Carpet,3.0,7,30.0
+34,200010,Rita Grande,Clay,15.0,19,44.11764705882353
+35,200010,Rita Grande,Grass,9.0,10,47.368421052631575
+36,200010,Rita Grande,Hard,36.0,50,41.86046511627907
+37,200011,Katarina Srebotnik,Carpet,7.0,10,41.17647058823529
+38,200011,Katarina Srebotnik,Clay,36.0,35,50.70422535211267
+39,200011,Katarina Srebotnik,Grass,8.0,11,42.10526315789473
+40,200011,Katarina Srebotnik,Hard,72.0,74,49.31506849315068
+41,200012,Jana Nejedly,Clay,5.0,10,33.33333333333333
+42,200012,Jana Nejedly,Grass,1.0,7,12.5
+43,200012,Jana Nejedly,Hard,12.0,22,35.294117647058826
+44,200013,Angelica Gavaldon,Clay,1.0,3,25.0
+45,200013,Angelica Gavaldon,Grass,3.0,4,42.857142857142854
+46,200013,Angelica Gavaldon,Hard,8.0,13,38.095238095238095
+47,200014,Tzipi Obziler,Clay,1.0,6,14.285714285714285
+48,200014,Tzipi Obziler,Grass,0.0,2,0.0
+49,200014,Tzipi Obziler,Hard,4.0,12,25.0
+50,200015,Petra Mandula,Carpet,0.0,1,0.0
+51,200015,Petra Mandula,Clay,15.0,9,62.5
+52,200015,Petra Mandula,Grass,2.0,5,28.57142857142857
+53,200015,Petra Mandula,Hard,13.0,27,32.5
+54,200016,Sandrine Testud,Carpet,6.0,7,46.15384615384615
+55,200016,Sandrine Testud,Clay,28.0,24,53.84615384615385
+56,200016,Sandrine Testud,Grass,14.0,13,51.85185185185185
+57,200016,Sandrine Testud,Hard,80.0,44,64.51612903225806
+58,200017,Arantxa Sanchez Vicario,Carpet,0.0,3,0.0
+59,200017,Arantxa Sanchez Vicario,Clay,81.0,24,77.14285714285715
+60,200017,Arantxa Sanchez Vicario,Grass,37.0,11,77.08333333333334
+61,200017,Arantxa Sanchez Vicario,Hard,111.0,46,70.70063694267516
+62,200018,Julia Abe,Clay,1.0,1,50.0
+63,200018,Julia Abe,Hard,0.0,1,0.0
+64,200019,Alexandra Fusai,Clay,10.0,14,41.66666666666667
+65,200019,Alexandra Fusai,Grass,2.0,8,20.0
+66,200019,Alexandra Fusai,Hard,9.0,14,39.130434782608695
+67,200020,Lisa Raymond,Carpet,9.0,10,47.368421052631575
+68,200020,Lisa Raymond,Clay,18.0,26,40.909090909090914
+69,200020,Lisa Raymond,Grass,27.0,20,57.446808510638306
+70,200020,Lisa Raymond,Hard,86.0,84,50.588235294117645
+71,200021,Alexia Dechaume Balleret,Clay,5.0,8,38.46153846153847
+72,200021,Alexia Dechaume Balleret,Grass,4.0,8,33.33333333333333
+73,200021,Alexia Dechaume Balleret,Hard,11.0,16,40.74074074074074
+74,200022,Emmanuelle Gagliardi,Carpet,0.0,3,0.0
+75,200022,Emmanuelle Gagliardi,Clay,16.0,22,42.10526315789473
+76,200022,Emmanuelle Gagliardi,Grass,7.0,11,38.88888888888889
+77,200022,Emmanuelle Gagliardi,Hard,23.0,46,33.33333333333333
+78,200023,Bryanne Stewart,Hard,3.0,5,37.5
+79,200024,Maria Vento Kabchi,Carpet,5.0,4,55.55555555555556
+80,200024,Maria Vento Kabchi,Clay,6.0,15,28.57142857142857
+81,200024,Maria Vento Kabchi,Grass,10.0,12,45.45454545454545
+82,200024,Maria Vento Kabchi,Hard,26.0,41,38.80597014925373
+83,200025,Ludmila Cervanova,Clay,7.0,8,46.666666666666664
+84,200025,Ludmila Cervanova,Grass,3.0,6,33.33333333333333
+85,200025,Ludmila Cervanova,Hard,4.0,18,18.181818181818183
+86,200026,Florencia Labat,Clay,9.0,10,47.368421052631575
+87,200026,Florencia Labat,Grass,11.0,8,57.89473684210527
+88,200026,Florencia Labat,Hard,20.0,19,51.28205128205128
+89,200027,Magui Serna,Carpet,7.0,16,30.434782608695656
+90,200027,Magui Serna,Clay,25.0,23,52.083333333333336
+91,200027,Magui Serna,Grass,17.0,11,60.71428571428571
+92,200027,Magui Serna,Hard,39.0,53,42.391304347826086
+93,200028,Maureen Drake,Clay,2.0,7,22.22222222222222
+94,200028,Maureen Drake,Grass,5.0,6,45.45454545454545
+95,200028,Maureen Drake,Hard,5.0,16,23.809523809523807
+96,200029,Lisa Mcshea,Hard,0.0,3,0.0
+97,200030,Miroslava Vavrinec,Clay,0.0,3,0.0
+98,200030,Miroslava Vavrinec,Grass,0.0,2,0.0
+99,200030,Miroslava Vavrinec,Hard,7.0,7,50.0
+100,200031,Meilen Tu,Carpet,4.0,5,44.44444444444444
+101,200031,Meilen Tu,Clay,15.0,26,36.58536585365854
+102,200031,Meilen Tu,Grass,4.0,6,40.0
+103,200031,Meilen Tu,Hard,22.0,50,30.555555555555557
+104,200032,Barbara Schett,Carpet,9.0,9,50.0
+105,200032,Barbara Schett,Clay,21.0,26,44.680851063829785
+106,200032,Barbara Schett,Grass,10.0,10,50.0
+107,200032,Barbara Schett,Hard,66.0,64,50.76923076923077
+108,200033,Serena Williams,Carpet,15.0,3,83.33333333333334
+109,200033,Serena Williams,Clay,160.0,41,79.60199004975125
+110,200033,Serena Williams,Grass,99.0,15,86.8421052631579
+111,200033,Serena Williams,Hard,484.0,89,84.46771378708551
+112,200034,Amanda Grahame,Hard,0.0,3,0.0
+113,200035,Maria Sanchez Lorenzo,Carpet,1.0,3,25.0
+114,200035,Maria Sanchez Lorenzo,Clay,10.0,17,37.03703703703704
+115,200035,Maria Sanchez Lorenzo,Grass,7.0,11,38.88888888888889
+116,200035,Maria Sanchez Lorenzo,Hard,20.0,36,35.714285714285715
+117,200036,Nicole Pratt,Carpet,3.0,6,33.33333333333333
+118,200036,Nicole Pratt,Clay,16.0,27,37.2093023255814
+119,200036,Nicole Pratt,Grass,5.0,12,29.411764705882355
+120,200036,Nicole Pratt,Hard,59.0,76,43.7037037037037
+121,200037,Sabine Appelmans,Carpet,1.0,4,20.0
+122,200037,Sabine Appelmans,Clay,12.0,12,50.0
+123,200037,Sabine Appelmans,Grass,15.0,10,60.0
+124,200037,Sabine Appelmans,Hard,35.0,28,55.55555555555556
+125,200038,Annabel Ellwood,Clay,0.0,2,0.0
+126,200038,Annabel Ellwood,Grass,0.0,2,0.0
+127,200038,Annabel Ellwood,Hard,4.0,9,30.76923076923077
+128,200039,Chanda Rubin,Carpet,11.0,7,61.111111111111114
+129,200039,Chanda Rubin,Clay,26.0,18,59.09090909090909
+130,200039,Chanda Rubin,Grass,25.0,14,64.1025641025641
+131,200039,Chanda Rubin,Hard,99.0,67,59.63855421686747
+132,200040,Anna Smashnova,Carpet,5.0,14,26.31578947368421
+133,200040,Anna Smashnova,Clay,46.0,37,55.42168674698795
+134,200040,Anna Smashnova,Grass,6.0,17,26.08695652173913
+135,200040,Anna Smashnova,Hard,47.0,61,43.51851851851852
+136,200041,Amy Frazier,Carpet,2.0,4,33.33333333333333
+137,200041,Amy Frazier,Clay,18.0,26,40.909090909090914
+138,200041,Amy Frazier,Grass,25.0,21,54.347826086956516
+139,200041,Amy Frazier,Hard,84.0,72,53.84615384615385
+140,200042,Els Callens,Carpet,6.0,6,50.0
+141,200042,Els Callens,Clay,5.0,13,27.77777777777778
+142,200042,Els Callens,Grass,7.0,10,41.17647058823529
+143,200042,Els Callens,Hard,13.0,27,32.5
+144,200043,Virginie Razzano,Carpet,5.0,10,33.33333333333333
+145,200043,Virginie Razzano,Clay,35.0,38,47.94520547945205
+146,200043,Virginie Razzano,Grass,16.0,17,48.484848484848484
+147,200043,Virginie Razzano,Hard,74.0,86,46.25
+148,200044,Denisa Chladkova,Carpet,5.0,11,31.25
+149,200044,Denisa Chladkova,Clay,25.0,28,47.16981132075472
+150,200044,Denisa Chladkova,Grass,8.0,9,47.05882352941176
+151,200044,Denisa Chladkova,Hard,26.0,40,39.39393939393939
+152,200045,Tara Snyder,Clay,3.0,6,33.33333333333333
+153,200045,Tara Snyder,Grass,2.0,4,33.33333333333333
+154,200045,Tara Snyder,Hard,9.0,15,37.5
+155,200046,Meghann Shaughnessy,Carpet,6.0,9,40.0
+156,200046,Meghann Shaughnessy,Clay,33.0,38,46.478873239436616
+157,200046,Meghann Shaughnessy,Grass,14.0,12,53.84615384615385
+158,200046,Meghann Shaughnessy,Hard,82.0,97,45.81005586592179
+159,200047,Pavlina Nola,Clay,3.0,10,23.076923076923077
+160,200047,Pavlina Nola,Grass,0.0,3,0.0
+161,200047,Pavlina Nola,Hard,3.0,16,15.789473684210526
+162,200048,Elena Likhovtseva,Carpet,17.0,21,44.73684210526316
+163,200048,Elena Likhovtseva,Clay,49.0,44,52.68817204301075
+164,200048,Elena Likhovtseva,Grass,31.0,22,58.490566037735846
+165,200048,Elena Likhovtseva,Hard,92.0,96,48.93617021276596
+166,200049,Conchita Martinez,Carpet,3.0,3,50.0
+167,200049,Conchita Martinez,Clay,98.0,39,71.53284671532847
+168,200049,Conchita Martinez,Grass,45.0,17,72.58064516129032
+169,200049,Conchita Martinez,Hard,121.0,71,63.020833333333336
+170,200050,Sandra Kleinova,Carpet,4.0,3,57.14285714285714
+171,200050,Sandra Kleinova,Clay,2.0,9,18.181818181818183
+172,200050,Sandra Kleinova,Grass,1.0,7,12.5
+173,200050,Sandra Kleinova,Hard,5.0,18,21.73913043478261
+174,200051,Irina Spirlea,Carpet,2.0,1,66.66666666666666
+175,200051,Irina Spirlea,Clay,14.0,12,53.84615384615385
+176,200051,Irina Spirlea,Grass,10.0,7,58.82352941176471
+177,200051,Irina Spirlea,Hard,21.0,16,56.75675675675676
+178,200052,Olga Barabanschikova,Clay,1.0,4,20.0
+179,200052,Olga Barabanschikova,Grass,5.0,4,55.55555555555556
+180,200052,Olga Barabanschikova,Hard,10.0,14,41.66666666666667
+181,200053,Lubomira Bacheva,Clay,2.0,6,25.0
+182,200053,Lubomira Bacheva,Grass,1.0,3,25.0
+183,200053,Lubomira Bacheva,Hard,1.0,6,14.285714285714285
+184,200054,Sylvia Plischke,Carpet,0.0,1,0.0
+185,200054,Sylvia Plischke,Clay,10.0,6,62.5
+186,200054,Sylvia Plischke,Grass,4.0,5,44.44444444444444
+187,200054,Sylvia Plischke,Hard,10.0,13,43.47826086956522
+188,200055,Mariana Diaz Oliva,Clay,5.0,16,23.809523809523807
+189,200055,Mariana Diaz Oliva,Grass,3.0,7,30.0
+190,200055,Mariana Diaz Oliva,Hard,19.0,32,37.254901960784316
+191,200056,Jelena Kostanic Tosic,Carpet,1.0,3,25.0
+192,200056,Jelena Kostanic Tosic,Clay,14.0,16,46.666666666666664
+193,200056,Jelena Kostanic Tosic,Grass,0.0,7,0.0
+194,200056,Jelena Kostanic Tosic,Hard,29.0,46,38.666666666666664
+195,200057,Erika De Lone,Carpet,0.0,1,0.0
+196,200057,Erika De Lone,Clay,2.0,8,20.0
+197,200057,Erika De Lone,Grass,0.0,3,0.0
+198,200057,Erika De Lone,Hard,4.0,15,21.052631578947366
+199,200058,Anna Foldenyi Dicker,Clay,2.0,3,40.0
+200,200058,Anna Foldenyi Dicker,Grass,0.0,1,0.0
+201,200058,Anna Foldenyi Dicker,Hard,1.0,3,25.0
+202,200059,Ruxandra Dragomir Ilie,Carpet,1.0,5,16.666666666666664
+203,200059,Ruxandra Dragomir Ilie,Clay,29.0,19,60.416666666666664
+204,200059,Ruxandra Dragomir Ilie,Grass,5.0,9,35.714285714285715
+205,200059,Ruxandra Dragomir Ilie,Hard,22.0,28,44.0
+206,200060,Tathiana Garbin,Carpet,3.0,6,33.33333333333333
+207,200060,Tathiana Garbin,Clay,25.0,36,40.98360655737705
+208,200060,Tathiana Garbin,Grass,3.0,13,18.75
+209,200060,Tathiana Garbin,Hard,42.0,63,40.0
+210,200061,Gala Leon Garcia,Carpet,0.0,1,0.0
+211,200061,Gala Leon Garcia,Clay,22.0,22,50.0
+212,200061,Gala Leon Garcia,Grass,3.0,9,25.0
+213,200061,Gala Leon Garcia,Hard,16.0,34,32.0
+214,200062,Kristina Brandi,Carpet,0.0,2,0.0
+215,200062,Kristina Brandi,Clay,8.0,24,25.0
+216,200062,Kristina Brandi,Grass,7.0,10,41.17647058823529
+217,200062,Kristina Brandi,Hard,27.0,44,38.028169014084504
+218,200063,Tatiana Panova,Carpet,8.0,14,36.36363636363637
+219,200063,Tatiana Panova,Clay,12.0,30,28.57142857142857
+220,200063,Tatiana Panova,Grass,11.0,10,52.38095238095239
+221,200063,Tatiana Panova,Hard,44.0,61,41.904761904761905
+222,200064,Amanda Coetzer,Carpet,8.0,8,50.0
+223,200064,Amanda Coetzer,Clay,49.0,27,64.47368421052632
+224,200064,Amanda Coetzer,Grass,18.0,16,52.94117647058824
+225,200064,Amanda Coetzer,Hard,98.0,60,62.0253164556962
+226,200065,Amelie Mauresmo,Carpet,44.0,14,75.86206896551724
+227,200065,Amelie Mauresmo,Clay,95.0,34,73.64341085271317
+228,200065,Amelie Mauresmo,Grass,40.0,15,72.72727272727273
+229,200065,Amelie Mauresmo,Hard,218.0,81,72.90969899665552
+230,200066,Cristina Torrens Valero,Carpet,1.0,6,14.285714285714285
+231,200066,Cristina Torrens Valero,Clay,8.0,10,44.44444444444444
+232,200066,Cristina Torrens Valero,Grass,4.0,7,36.36363636363637
+233,200066,Cristina Torrens Valero,Hard,11.0,29,27.500000000000004
+234,200067,Patty Schnyder,Carpet,16.0,19,45.714285714285715
+235,200067,Patty Schnyder,Clay,105.0,68,60.69364161849711
+236,200067,Patty Schnyder,Grass,10.0,16,38.46153846153847
+237,200067,Patty Schnyder,Hard,179.0,126,58.68852459016394
+238,200068,Lilia Osterloh,Carpet,2.0,6,25.0
+239,200068,Lilia Osterloh,Clay,4.0,18,18.181818181818183
+240,200068,Lilia Osterloh,Grass,5.0,9,35.714285714285715
+241,200068,Lilia Osterloh,Hard,25.0,38,39.682539682539684
+242,200069,Nadia Petrova,Carpet,18.0,14,56.25
+243,200069,Nadia Petrova,Clay,95.0,51,65.06849315068493
+244,200069,Nadia Petrova,Grass,39.0,19,67.24137931034483
+245,200069,Nadia Petrova,Hard,220.0,154,58.82352941176471
+246,200070,Anne Gaelle Sidot,Carpet,6.0,8,42.857142857142854
+247,200070,Anne Gaelle Sidot,Clay,7.0,13,35.0
+248,200070,Anne Gaelle Sidot,Grass,4.0,8,33.33333333333333
+249,200070,Anne Gaelle Sidot,Hard,15.0,26,36.58536585365854
+250,200071,Lenka Nemeckova,Clay,2.0,4,33.33333333333333
+251,200071,Lenka Nemeckova,Grass,0.0,2,0.0
+252,200071,Lenka Nemeckova,Hard,0.0,6,0.0
+253,200072,Cara Black,Carpet,3.0,4,42.857142857142854
+254,200072,Cara Black,Clay,9.0,21,30.0
+255,200072,Cara Black,Grass,7.0,11,38.88888888888889
+256,200072,Cara Black,Hard,32.0,50,39.02439024390244
+257,200073,Julie Pullin,Grass,0.0,10,0.0
+258,200073,Julie Pullin,Hard,1.0,1,50.0
+259,200074,Jane Chi,Clay,0.0,1,0.0
+260,200074,Jane Chi,Grass,0.0,1,0.0
+261,200074,Jane Chi,Hard,3.0,4,42.857142857142854
+262,200075,Jing Qian Yi,Clay,1.0,3,25.0
+263,200075,Jing Qian Yi,Grass,1.0,1,50.0
+264,200075,Jing Qian Yi,Hard,3.0,6,33.33333333333333
+265,200076,Laurence Courtois,Clay,2.0,6,25.0
+266,200076,Laurence Courtois,Grass,2.0,6,25.0
+267,200076,Laurence Courtois,Hard,5.0,11,31.25
+268,200077,Jennifer Capriati,Carpet,1.0,3,25.0
+269,200077,Jennifer Capriati,Clay,68.0,21,76.40449438202246
+270,200077,Jennifer Capriati,Grass,37.0,11,77.08333333333334
+271,200077,Jennifer Capriati,Hard,136.0,60,69.38775510204081
+272,200078,Barbara Schwartz,Carpet,0.0,1,0.0
+273,200078,Barbara Schwartz,Clay,6.0,5,54.54545454545454
+274,200078,Barbara Schwartz,Grass,2.0,5,28.57142857142857
+275,200078,Barbara Schwartz,Hard,7.0,9,43.75
+276,200079,Kim Clijsters,Carpet,24.0,5,82.75862068965517
+277,200079,Kim Clijsters,Clay,50.0,17,74.6268656716418
+278,200079,Kim Clijsters,Grass,38.0,11,77.55102040816327
+279,200079,Kim Clijsters,Hard,283.0,76,78.8300835654596
+280,200080,Dominique Monami,Carpet,0.0,1,0.0
+281,200080,Dominique Monami,Clay,7.0,10,41.17647058823529
+282,200080,Dominique Monami,Grass,15.0,10,60.0
+283,200080,Dominique Monami,Hard,36.0,28,56.25
+284,200081,Anke Huber,Carpet,9.0,5,64.28571428571429
+285,200081,Anke Huber,Clay,27.0,13,67.5
+286,200081,Anke Huber,Grass,22.0,10,68.75
+287,200081,Anke Huber,Hard,65.0,36,64.35643564356435
+288,200082,Kristie Boogert,Clay,5.0,10,33.33333333333333
+289,200082,Kristie Boogert,Grass,10.0,9,52.63157894736842
+290,200082,Kristie Boogert,Hard,16.0,19,45.714285714285715
+291,200083,Alexandra Stevenson,Carpet,7.0,11,38.88888888888889
+292,200083,Alexandra Stevenson,Clay,6.0,17,26.08695652173913
+293,200083,Alexandra Stevenson,Grass,8.0,8,50.0
+294,200083,Alexandra Stevenson,Hard,36.0,54,40.0
+295,200084,Asa Carlsson,Carpet,0.0,1,0.0
+296,200084,Asa Carlsson,Clay,11.0,17,39.285714285714285
+297,200084,Asa Carlsson,Grass,1.0,9,10.0
+298,200084,Asa Carlsson,Hard,18.0,32,36.0
+299,200085,Ai Sugiyama,Carpet,11.0,15,42.30769230769231
+300,200085,Ai Sugiyama,Clay,39.0,42,48.148148148148145
+301,200085,Ai Sugiyama,Grass,29.0,26,52.72727272727272
+302,200085,Ai Sugiyama,Hard,163.0,136,54.515050167224075
+303,200086,Magdalena Maleeva,Carpet,34.0,20,62.96296296296296
+304,200086,Magdalena Maleeva,Clay,30.0,34,46.875
+305,200086,Magdalena Maleeva,Grass,24.0,16,60.0
+306,200086,Magdalena Maleeva,Hard,73.0,74,49.65986394557823
+307,200087,Seda Noorlander,Clay,0.0,5,0.0
+308,200087,Seda Noorlander,Grass,3.0,5,37.5
+309,200087,Seda Noorlander,Hard,3.0,5,37.5
+310,200088,Adriana Gersi,Clay,3.0,6,33.33333333333333
+311,200088,Adriana Gersi,Grass,0.0,5,0.0
+312,200088,Adriana Gersi,Hard,11.0,19,36.666666666666664
+313,200089,Miriam Oremans,Clay,8.0,11,42.10526315789473
+314,200089,Miriam Oremans,Grass,13.0,12,52.0
+315,200089,Miriam Oremans,Hard,17.0,28,37.77777777777778
+316,200090,Anca Barna,Carpet,1.0,3,25.0
+317,200090,Anca Barna,Clay,5.0,16,23.809523809523807
+318,200090,Anca Barna,Grass,1.0,4,20.0
+319,200090,Anca Barna,Hard,12.0,27,30.76923076923077
+320,200091,Janet Lee,Clay,0.0,4,0.0
+321,200091,Janet Lee,Grass,3.0,5,37.5
+322,200091,Janet Lee,Hard,8.0,18,30.76923076923077
+323,200092,Sandra Nacuk,Carpet,0.0,1,0.0
+324,200092,Sandra Nacuk,Clay,0.0,2,0.0
+325,200092,Sandra Nacuk,Grass,2.0,2,50.0
+326,200092,Sandra Nacuk,Hard,4.0,8,33.33333333333333
+327,200093,Amelie Cocheteux,Carpet,0.0,1,0.0
+328,200093,Amelie Cocheteux,Clay,1.0,7,12.5
+329,200093,Amelie Cocheteux,Grass,1.0,4,20.0
+330,200093,Amelie Cocheteux,Hard,5.0,9,35.714285714285715
+331,200094,Barbara Rittner,Carpet,3.0,3,50.0
+332,200094,Barbara Rittner,Clay,16.0,18,47.05882352941176
+333,200094,Barbara Rittner,Grass,10.0,12,45.45454545454545
+334,200094,Barbara Rittner,Hard,30.0,35,46.15384615384615
+335,200095,Linda Wild,Clay,7.0,8,46.666666666666664
+336,200095,Linda Wild,Grass,7.0,8,46.666666666666664
+337,200095,Linda Wild,Hard,10.0,14,41.66666666666667
+338,200096,Mary Pierce,Carpet,12.0,7,63.1578947368421
+339,200096,Mary Pierce,Clay,70.0,31,69.3069306930693
+340,200096,Mary Pierce,Grass,21.0,11,65.625
+341,200096,Mary Pierce,Hard,111.0,51,68.51851851851852
+342,200097,Nathalie Tauziat,Carpet,17.0,10,62.96296296296296
+343,200097,Nathalie Tauziat,Clay,20.0,15,57.14285714285714
+344,200097,Nathalie Tauziat,Grass,35.0,13,72.91666666666666
+345,200097,Nathalie Tauziat,Hard,49.0,33,59.756097560975604
+346,200098,Henrieta Nagyova,Carpet,2.0,3,40.0
+347,200098,Henrieta Nagyova,Clay,13.0,20,39.39393939393939
+348,200098,Henrieta Nagyova,Grass,2.0,9,18.181818181818183
+349,200098,Henrieta Nagyova,Hard,28.0,38,42.42424242424242
+350,200099,Sonya Jeyaseelan,Carpet,0.0,3,0.0
+351,200099,Sonya Jeyaseelan,Clay,4.0,8,33.33333333333333
+352,200099,Sonya Jeyaseelan,Grass,2.0,4,33.33333333333333
+353,200099,Sonya Jeyaseelan,Hard,6.0,14,30.0
+354,200100,Amanda Hopmans,Carpet,1.0,1,50.0
+355,200100,Amanda Hopmans,Clay,0.0,4,0.0
+356,200100,Amanda Hopmans,Grass,1.0,2,33.33333333333333
+357,200100,Amanda Hopmans,Hard,1.0,6,14.285714285714285
+358,200101,Jana Kandarr,Carpet,0.0,2,0.0
+359,200101,Jana Kandarr,Clay,4.0,8,33.33333333333333
+360,200101,Jana Kandarr,Grass,5.0,8,38.46153846153847
+361,200101,Jana Kandarr,Hard,15.0,24,38.46153846153847
+362,200102,Melissa Dowse,Hard,1.0,2,33.33333333333333
+363,200103,Evie Dominikovic,Clay,3.0,6,33.33333333333333
+364,200103,Evie Dominikovic,Grass,1.0,5,16.666666666666664
+365,200103,Evie Dominikovic,Hard,14.0,21,40.0
+366,200104,Emilie Loit,Carpet,6.0,10,37.5
+367,200104,Emilie Loit,Clay,15.0,20,42.857142857142854
+368,200104,Emilie Loit,Grass,6.0,9,40.0
+369,200104,Emilie Loit,Hard,23.0,45,33.82352941176471
+370,200105,Rachel Mcquillan,Clay,6.0,10,37.5
+371,200105,Rachel Mcquillan,Grass,3.0,8,27.27272727272727
+372,200105,Rachel Mcquillan,Hard,21.0,28,42.857142857142854
+373,200106,Angeles Montolio,Carpet,1.0,3,25.0
+374,200106,Angeles Montolio,Clay,5.0,11,31.25
+375,200106,Angeles Montolio,Grass,2.0,4,33.33333333333333
+376,200106,Angeles Montolio,Hard,12.0,23,34.285714285714285
+377,200107,Paola Suarez,Carpet,2.0,6,25.0
+378,200107,Paola Suarez,Clay,50.0,33,60.24096385542169
+379,200107,Paola Suarez,Grass,9.0,10,47.368421052631575
+380,200107,Paola Suarez,Hard,47.0,54,46.53465346534654
+381,200108,Elena Dementieva,Carpet,52.0,24,68.42105263157895
+382,200108,Elena Dementieva,Clay,84.0,43,66.14173228346458
+383,200108,Elena Dementieva,Grass,29.0,13,69.04761904761905
+384,200108,Elena Dementieva,Hard,249.0,134,65.0130548302872
+385,200109,Nathalie Dechy,Carpet,15.0,17,46.875
+386,200109,Nathalie Dechy,Clay,44.0,43,50.57471264367817
+387,200109,Nathalie Dechy,Grass,26.0,21,55.319148936170215
+388,200109,Nathalie Dechy,Hard,103.0,94,52.28426395939086
+389,200110,Fabiola Zuluaga,Carpet,0.0,2,0.0
+390,200110,Fabiola Zuluaga,Clay,24.0,22,52.17391304347826
+391,200110,Fabiola Zuluaga,Grass,1.0,4,20.0
+392,200110,Fabiola Zuluaga,Hard,37.0,39,48.68421052631579
+393,200111,Lina Krasnoroutskaya,Carpet,3.0,6,33.33333333333333
+394,200111,Lina Krasnoroutskaya,Clay,10.0,10,50.0
+395,200111,Lina Krasnoroutskaya,Grass,4.0,4,50.0
+396,200111,Lina Krasnoroutskaya,Hard,23.0,28,45.09803921568628
+397,200112,Julie Halard Decugis,Carpet,4.0,4,50.0
+398,200112,Julie Halard Decugis,Clay,18.0,11,62.06896551724138
+399,200112,Julie Halard Decugis,Grass,13.0,8,61.904761904761905
+400,200112,Julie Halard Decugis,Hard,28.0,24,53.84615384615385
+401,200113,Anna Kournikova,Carpet,22.0,14,61.111111111111114
+402,200113,Anna Kournikova,Clay,16.0,13,55.172413793103445
+403,200113,Anna Kournikova,Grass,10.0,6,62.5
+404,200113,Anna Kournikova,Hard,50.0,34,59.523809523809526
+405,200114,Patricia Wartusch,Carpet,0.0,1,0.0
+406,200114,Patricia Wartusch,Clay,0.0,2,0.0
+407,200114,Patricia Wartusch,Grass,2.0,2,50.0
+408,200114,Patricia Wartusch,Hard,2.0,11,15.384615384615385
+409,200115,Brie Rippner,Clay,1.0,2,33.33333333333333
+410,200115,Brie Rippner,Grass,3.0,3,50.0
+411,200115,Brie Rippner,Hard,6.0,16,27.27272727272727
+412,200116,Natalia Zvereva,Carpet,1.0,1,50.0
+413,200116,Natalia Zvereva,Clay,21.0,13,61.76470588235294
+414,200116,Natalia Zvereva,Grass,20.0,12,62.5
+415,200116,Natalia Zvereva,Hard,37.0,21,63.793103448275865
+416,200117,Kveta Peschke,Carpet,9.0,10,47.368421052631575
+417,200117,Kveta Peschke,Clay,17.0,20,45.94594594594595
+418,200117,Kveta Peschke,Grass,6.0,7,46.15384615384615
+419,200117,Kveta Peschke,Hard,26.0,38,40.625
+420,200118,Virginia Ruano Pascual,Clay,33.0,39,45.83333333333333
+421,200118,Virginia Ruano Pascual,Grass,12.0,13,48.0
+422,200118,Virginia Ruano Pascual,Hard,43.0,62,40.95238095238095
+423,200119,Rita Kuti Kis,Clay,5.0,6,45.45454545454545
+424,200119,Rita Kuti Kis,Grass,0.0,3,0.0
+425,200119,Rita Kuti Kis,Hard,4.0,14,22.22222222222222
+426,200120,Jelena Dokic,Carpet,18.0,16,52.94117647058824
+427,200120,Jelena Dokic,Clay,43.0,33,56.57894736842105
+428,200120,Jelena Dokic,Grass,17.0,11,60.71428571428571
+429,200120,Jelena Dokic,Hard,86.0,72,54.43037974683544
+430,200121,Alina Jidkova,Carpet,0.0,3,0.0
+431,200121,Alina Jidkova,Clay,5.0,16,23.809523809523807
+432,200121,Alina Jidkova,Grass,0.0,5,0.0
+433,200121,Alina Jidkova,Hard,18.0,40,31.03448275862069
+434,200122,Tina Pisnik,Carpet,5.0,4,55.55555555555556
+435,200122,Tina Pisnik,Clay,9.0,16,36.0
+436,200122,Tina Pisnik,Grass,5.0,7,41.66666666666667
+437,200122,Tina Pisnik,Hard,26.0,45,36.61971830985916
+438,200123,Marlene Weingartner,Carpet,1.0,4,20.0
+439,200123,Marlene Weingartner,Clay,12.0,21,36.36363636363637
+440,200123,Marlene Weingartner,Grass,5.0,7,41.66666666666667
+441,200123,Marlene Weingartner,Hard,20.0,35,36.36363636363637
+442,200124,Anne Kremer,Carpet,11.0,10,52.38095238095239
+443,200124,Anne Kremer,Clay,16.0,21,43.24324324324324
+444,200124,Anne Kremer,Grass,12.0,12,50.0
+445,200124,Anne Kremer,Hard,33.0,58,36.26373626373626
+446,200125,Corina Morariu,Carpet,1.0,2,33.33333333333333
+447,200125,Corina Morariu,Clay,11.0,11,50.0
+448,200125,Corina Morariu,Grass,5.0,7,41.66666666666667
+449,200125,Corina Morariu,Hard,6.0,17,26.08695652173913
+450,200126,Marissa Irvin,Clay,8.0,13,38.095238095238095
+451,200126,Marissa Irvin,Grass,1.0,6,14.285714285714285
+452,200126,Marissa Irvin,Hard,20.0,39,33.89830508474576
+453,200127,Sarah Pitkowski Malcor,Carpet,2.0,2,50.0
+454,200127,Sarah Pitkowski Malcor,Clay,5.0,11,31.25
+455,200127,Sarah Pitkowski Malcor,Grass,5.0,7,41.66666666666667
+456,200127,Sarah Pitkowski Malcor,Hard,10.0,19,34.48275862068966
+457,200128,Lindsay Davenport,Carpet,28.0,4,87.5
+458,200128,Lindsay Davenport,Clay,57.0,17,77.02702702702703
+459,200128,Lindsay Davenport,Grass,54.0,14,79.41176470588235
+460,200128,Lindsay Davenport,Hard,294.0,74,79.8913043478261
+461,200293,Martina Navratilova,Clay,0.0,4,0.0
+462,200293,Martina Navratilova,Grass,22.0,6,78.57142857142857
+463,200293,Martina Navratilova,Hard,10.0,3,76.92307692307693
+464,200333,Betsy Nagelsen,Grass,0.0,1,0.0
+465,200346,Anne Minter,Clay,0.0,1,0.0
+466,200346,Anne Minter,Grass,3.0,1,75.0
+467,200346,Anne Minter,Hard,0.0,3,0.0
+468,200354,Claudia Kohde Kilsch,Clay,1.0,2,33.33333333333333
+469,200354,Claudia Kohde Kilsch,Grass,3.0,2,60.0
+470,200354,Claudia Kohde Kilsch,Hard,1.0,3,25.0
+471,200357,Rosalyn Fairbank,Clay,3.0,2,60.0
+472,200357,Rosalyn Fairbank,Grass,4.0,4,50.0
+473,200357,Rosalyn Fairbank,Hard,5.0,6,45.45454545454545
+474,200360,Pam Shriver,Clay,0.0,1,0.0
+475,200360,Pam Shriver,Grass,6.0,5,54.54545454545454
+476,200360,Pam Shriver,Hard,10.0,12,45.45454545454545
+477,200362,Liz Smylie,Clay,0.0,2,0.0
+478,200362,Liz Smylie,Grass,3.0,3,50.0
+479,200362,Liz Smylie,Hard,2.0,5,28.57142857142857
+480,200377,Helena Sukova,Clay,4.0,5,44.44444444444444
+481,200377,Helena Sukova,Grass,14.0,8,63.63636363636363
+482,200377,Helena Sukova,Hard,23.0,13,63.888888888888886
+483,200378,Anne Smith,Hard,2.0,2,50.0
+484,200384,Eva Pfaff,Hard,1.0,2,33.33333333333333
+485,200390,Mary Lou Piatek,Grass,0.0,1,0.0
+486,200390,Mary Lou Piatek,Hard,0.0,2,0.0
+487,200392,Jo Durie,Clay,2.0,2,50.0
+488,200392,Jo Durie,Grass,2.0,5,28.57142857142857
+489,200392,Jo Durie,Hard,5.0,5,50.0
+490,200395,Catherine Tanvier,Clay,0.0,1,0.0
+491,200395,Catherine Tanvier,Grass,0.0,1,0.0
+492,200395,Catherine Tanvier,Hard,3.0,2,60.0
+493,200397,Tracy Austin,Clay,0.0,1,0.0
+494,200397,Tracy Austin,Hard,1.0,1,50.0
+495,200401,Manuela Maleeva Fragniere,Clay,5.0,3,62.5
+496,200401,Manuela Maleeva Fragniere,Grass,3.0,2,60.0
+497,200401,Manuela Maleeva Fragniere,Hard,25.0,7,78.125
+498,200403,Andrea Leand,Grass,0.0,1,0.0
+499,200403,Andrea Leand,Hard,1.0,2,33.33333333333333
+500,200404,Zina Garrison,Clay,0.0,4,0.0
+501,200404,Zina Garrison,Grass,16.0,5,76.19047619047619
+502,200404,Zina Garrison,Hard,24.0,11,68.57142857142857
+503,200407,Camille Benjamin,Hard,0.0,2,0.0
+504,200413,Heather Ludloff,Hard,0.0,1,0.0
+505,200414,Steffi Graf,Clay,48.0,4,92.3076923076923
+506,200414,Steffi Graf,Grass,43.0,3,93.47826086956522
+507,200414,Steffi Graf,Hard,63.0,8,88.73239436619718
+508,200415,Catherine Suire,Clay,1.0,2,33.33333333333333
+509,200415,Catherine Suire,Grass,1.0,2,33.33333333333333
+510,200415,Catherine Suire,Hard,0.0,1,0.0
+511,200416,Robin White,Grass,2.0,3,40.0
+512,200416,Robin White,Hard,6.0,7,46.15384615384615
+513,200417,Gigi Fernandez,Clay,1.0,4,20.0
+514,200417,Gigi Fernandez,Grass,15.0,7,68.18181818181817
+515,200417,Gigi Fernandez,Hard,21.0,14,60.0
+516,200419,Kathy Rinaldi Stunkel,Clay,3.0,3,50.0
+517,200419,Kathy Rinaldi Stunkel,Grass,2.0,4,33.33333333333333
+518,200419,Kathy Rinaldi Stunkel,Hard,2.0,8,20.0
+519,200421,Pascale Paradis Mangon,Clay,2.0,3,40.0
+520,200421,Pascale Paradis Mangon,Grass,3.0,3,50.0
+521,200421,Pascale Paradis Mangon,Hard,1.0,3,25.0
+522,200422,Raffaella Reggi Concato,Clay,0.0,1,0.0
+523,200422,Raffaella Reggi Concato,Hard,0.0,1,0.0
+524,200425,Sophie Amiach,Clay,0.0,2,0.0
+525,200428,Lori Mcneil,Clay,5.0,7,41.66666666666667
+526,200428,Lori Mcneil,Grass,14.0,8,63.63636363636363
+527,200428,Lori Mcneil,Hard,12.0,14,46.15384615384615
+528,200439,Jenny Byrne,Clay,1.0,2,33.33333333333333
+529,200439,Jenny Byrne,Grass,1.0,3,25.0
+530,200439,Jenny Byrne,Hard,4.0,5,44.44444444444444
+531,200441,Louise Field,Grass,2.0,3,40.0
+532,200441,Louise Field,Hard,1.0,3,25.0
+533,200442,Andrea Temesvari,Clay,2.0,4,33.33333333333333
+534,200442,Andrea Temesvari,Grass,1.0,3,25.0
+535,200442,Andrea Temesvari,Hard,1.0,6,14.285714285714285
+536,200443,Sara Gomer,Clay,1.0,2,33.33333333333333
+537,200443,Sara Gomer,Grass,0.0,2,0.0
+538,200443,Sara Gomer,Hard,2.0,4,33.33333333333333
+539,200444,Elise Burgin,Hard,0.0,2,0.0
+540,200448,Sandy Collins,Hard,0.0,1,0.0
+541,200450,Larisa Savchenko,Clay,3.0,9,25.0
+542,200450,Larisa Savchenko,Grass,12.0,9,57.14285714285714
+543,200450,Larisa Savchenko,Hard,9.0,17,34.61538461538461
+544,200453,Catarina Lindqvist Ryan,Clay,0.0,1,0.0
+545,200453,Catarina Lindqvist Ryan,Grass,4.0,2,66.66666666666666
+546,200453,Catarina Lindqvist Ryan,Hard,3.0,4,42.857142857142854
+547,200455,Katerina Maleeva,Clay,7.0,5,58.333333333333336
+548,200455,Katerina Maleeva,Grass,7.0,5,58.333333333333336
+549,200455,Katerina Maleeva,Hard,19.0,9,67.85714285714286
+550,200462,Belinda Cordwell,Hard,0.0,1,0.0
+551,200464,Ann Henricksson,Grass,0.0,1,0.0
+552,200464,Ann Henricksson,Hard,0.0,1,0.0
+553,200465,Lisa Bonder Kreiss,Grass,0.0,1,0.0
+554,200465,Lisa Bonder Kreiss,Hard,0.0,1,0.0
+555,200469,Nicole Bradtke,Clay,2.0,6,25.0
+556,200469,Nicole Bradtke,Grass,7.0,5,58.333333333333336
+557,200469,Nicole Bradtke,Hard,10.0,13,43.47826086956522
+558,200472,Helen Kelesi,Clay,2.0,3,40.0
+559,200472,Helen Kelesi,Grass,2.0,3,40.0
+560,200472,Helen Kelesi,Hard,2.0,6,25.0
+561,200473,Beverly Bowes,Clay,1.0,2,33.33333333333333
+562,200473,Beverly Bowes,Grass,0.0,2,0.0
+563,200473,Beverly Bowes,Hard,0.0,2,0.0
+564,200474,Louise Allen,Clay,2.0,2,50.0
+565,200474,Louise Allen,Grass,1.0,2,33.33333333333333
+566,200474,Louise Allen,Hard,1.0,1,50.0
+567,200476,Cammy Macgregor,Grass,0.0,1,0.0
+568,200476,Cammy Macgregor,Hard,0.0,1,0.0
+569,200480,Claudia Porwik,Clay,0.0,4,0.0
+570,200480,Claudia Porwik,Grass,4.0,5,44.44444444444444
+571,200480,Claudia Porwik,Hard,5.0,6,45.45454545454545
+572,200481,Elna Reinach,Clay,4.0,5,44.44444444444444
+573,200481,Elna Reinach,Grass,2.0,5,28.57142857142857
+574,200481,Elna Reinach,Hard,4.0,9,30.76923076923077
+575,200482,Judith Wiesner,Clay,6.0,7,46.15384615384615
+576,200482,Judith Wiesner,Grass,14.0,7,66.66666666666666
+577,200482,Judith Wiesner,Hard,15.0,11,57.692307692307686
+578,200484,Ann Devries,Grass,0.0,1,0.0
+579,200484,Ann Devries,Hard,1.0,1,50.0
+580,200485,Manon Bollegraf,Clay,4.0,4,50.0
+581,200485,Manon Bollegraf,Grass,3.0,4,42.857142857142854
+582,200485,Manon Bollegraf,Hard,2.0,9,18.181818181818183
+583,200486,Csilla Cserepy,Clay,0.0,1,0.0
+584,200486,Csilla Cserepy,Grass,0.0,1,0.0
+585,200486,Csilla Cserepy,Hard,1.0,2,33.33333333333333
+586,200491,Christina Singer,Clay,1.0,4,20.0
+587,200491,Christina Singer,Grass,2.0,4,33.33333333333333
+588,200491,Christina Singer,Hard,5.0,7,41.66666666666667
+589,200494,Dianne Van Rensburg,Grass,0.0,1,0.0
+590,200494,Dianne Van Rensburg,Hard,0.0,1,0.0
+591,200495,Akiko Kijimuta,Clay,4.0,2,66.66666666666666
+592,200495,Akiko Kijimuta,Grass,1.0,1,50.0
+593,200495,Akiko Kijimuta,Hard,0.0,3,0.0
+594,200497,Patricia Hy Boulais,Clay,8.0,8,50.0
+595,200497,Patricia Hy Boulais,Grass,14.0,8,63.63636363636363
+596,200497,Patricia Hy Boulais,Hard,16.0,15,51.61290322580645
+597,200498,Michelle Jaggard Lai,Clay,0.0,3,0.0
+598,200498,Michelle Jaggard Lai,Grass,0.0,1,0.0
+599,200498,Michelle Jaggard Lai,Hard,1.0,5,16.666666666666664
+600,200500,Pilar Vasquez,Hard,0.0,1,0.0
+601,200501,Marianne Werdel Witmeyer,Clay,1.0,6,14.285714285714285
+602,200501,Marianne Werdel Witmeyer,Grass,6.0,6,50.0
+603,200501,Marianne Werdel Witmeyer,Hard,7.0,9,43.75
+604,200503,Gretchen Magers,Grass,0.0,1,0.0
+605,200503,Gretchen Magers,Hard,3.0,2,60.0
+606,200504,Julie Salmon,Grass,0.0,1,0.0
+607,200506,Wiltrud Probst,Clay,3.0,7,30.0
+608,200506,Wiltrud Probst,Grass,3.0,6,33.33333333333333
+609,200506,Wiltrud Probst,Hard,6.0,9,40.0
+610,200510,Julie Richardson,Hard,0.0,1,0.0
+611,200514,Monique Javer,Clay,0.0,2,0.0
+612,200514,Monique Javer,Grass,1.0,4,20.0
+613,200514,Monique Javer,Hard,2.0,5,28.57142857142857
+614,200519,Sybille Niox Chateau,Clay,1.0,2,33.33333333333333
+615,200519,Sybille Niox Chateau,Grass,0.0,1,0.0
+616,200519,Sybille Niox Chateau,Hard,0.0,2,0.0
+617,200520,Sarah Loosemore,Clay,0.0,1,0.0
+618,200520,Sarah Loosemore,Grass,0.0,2,0.0
+619,200520,Sarah Loosemore,Hard,0.0,1,0.0
+620,200522,Nicole Jagerman,Clay,3.0,4,42.857142857142854
+621,200522,Nicole Jagerman,Grass,1.0,3,25.0
+622,200522,Nicole Jagerman,Hard,4.0,7,36.36363636363637
+623,200530,Radomira Zrubakova,Clay,2.0,7,22.22222222222222
+624,200530,Radomira Zrubakova,Grass,6.0,6,50.0
+625,200530,Radomira Zrubakova,Hard,8.0,13,38.095238095238095
+626,200532,Maider Laval,Clay,0.0,1,0.0
+627,200535,Jo Anne Faull,Grass,1.0,2,33.33333333333333
+628,200535,Jo Anne Faull,Hard,0.0,2,0.0
+629,200539,Jana Novotna,Clay,27.0,9,75.0
+630,200539,Jana Novotna,Grass,39.0,8,82.97872340425532
+631,200539,Jana Novotna,Hard,49.0,15,76.5625
+632,200542,Clare Wood,Clay,1.0,3,25.0
+633,200542,Clare Wood,Grass,1.0,7,12.5
+634,200542,Clare Wood,Hard,4.0,9,30.76923076923077
+635,200543,Jill Hetherington,Grass,0.0,1,0.0
+636,200547,Sandra Wasserman,Clay,3.0,2,60.0
+637,200547,Sandra Wasserman,Grass,1.0,1,50.0
+638,200547,Sandra Wasserman,Hard,1.0,4,20.0
+639,200548,Patty Fendick,Clay,2.0,5,28.57142857142857
+640,200548,Patty Fendick,Grass,6.0,5,54.54545454545454
+641,200548,Patty Fendick,Hard,10.0,9,52.63157894736842
+642,200554,Brenda Schultz Mccarthy,Clay,12.0,9,57.14285714285714
+643,200554,Brenda Schultz Mccarthy,Grass,14.0,7,66.66666666666666
+644,200554,Brenda Schultz Mccarthy,Hard,19.0,16,54.285714285714285
+645,200555,Valda Lake,Grass,0.0,1,0.0
+646,200557,Katrina Adams,Clay,0.0,2,0.0
+647,200557,Katrina Adams,Grass,2.0,4,33.33333333333333
+648,200557,Katrina Adams,Hard,4.0,6,40.0
+649,200559,Kristine Kunce,Clay,0.0,2,0.0
+650,200559,Kristine Kunce,Grass,3.0,3,50.0
+651,200559,Kristine Kunce,Hard,3.0,7,30.0
+652,200560,Rene Simpson,Clay,0.0,3,0.0
+653,200560,Rene Simpson,Grass,0.0,3,0.0
+654,200560,Rene Simpson,Hard,4.0,8,33.33333333333333
+655,200561,Cathy Caverzasio,Clay,1.0,1,50.0
+656,200561,Cathy Caverzasio,Grass,0.0,1,0.0
+657,200561,Cathy Caverzasio,Hard,1.0,2,33.33333333333333
+658,200563,Jane Taylor,Hard,3.0,5,37.5
+659,200565,Nathalie Guerree Spitzer,Clay,1.0,2,33.33333333333333
+660,200565,Nathalie Guerree Spitzer,Hard,0.0,1,0.0
+661,200566,Donna Faber,Clay,1.0,3,25.0
+662,200566,Donna Faber,Grass,1.0,2,33.33333333333333
+663,200566,Donna Faber,Hard,4.0,5,44.44444444444444
+664,200567,Jennifer Santrock,Clay,1.0,1,50.0
+665,200567,Jennifer Santrock,Grass,0.0,1,0.0
+666,200567,Jennifer Santrock,Hard,1.0,2,33.33333333333333
+667,200569,Petra Langrova,Clay,4.0,6,40.0
+668,200569,Petra Langrova,Grass,1.0,4,20.0
+669,200569,Petra Langrova,Hard,3.0,9,25.0
+670,200570,Veronika Martinek,Clay,5.0,5,50.0
+671,200570,Veronika Martinek,Grass,0.0,6,0.0
+672,200570,Veronika Martinek,Hard,3.0,9,25.0
+673,200572,Gabriela Sabatini,Clay,18.0,5,78.26086956521739
+674,200572,Gabriela Sabatini,Grass,22.0,5,81.48148148148148
+675,200572,Gabriela Sabatini,Hard,46.0,12,79.3103448275862
+676,200573,Cecilia Dahlman,Clay,0.0,2,0.0
+677,200573,Cecilia Dahlman,Grass,0.0,2,0.0
+678,200573,Cecilia Dahlman,Hard,0.0,1,0.0
+679,200574,Eva Sviglerova,Clay,0.0,2,0.0
+680,200574,Eva Sviglerova,Grass,0.0,2,0.0
+681,200574,Eva Sviglerova,Hard,2.0,4,33.33333333333333
+682,200576,Nathalie Herreman,Clay,0.0,5,0.0
+683,200576,Nathalie Herreman,Grass,1.0,2,33.33333333333333
+684,200576,Nathalie Herreman,Hard,2.0,4,33.33333333333333
+685,200577,Louise Stacey,Hard,0.0,2,0.0
+686,200578,Rennae Stubbs,Clay,0.0,2,0.0
+687,200578,Rennae Stubbs,Grass,2.0,6,25.0
+688,200578,Rennae Stubbs,Hard,2.0,8,20.0
+689,200579,Karin Kschwendt,Clay,3.0,5,37.5
+690,200579,Karin Kschwendt,Grass,1.0,5,16.666666666666664
+691,200579,Karin Kschwendt,Hard,7.0,11,38.88888888888889
+692,200581,Tamaka Takagi,Clay,0.0,1,0.0
+693,200581,Tamaka Takagi,Hard,1.0,1,50.0
+694,200582,Maria Strandlund Tomsvik,Clay,0.0,2,0.0
+695,200582,Maria Strandlund Tomsvik,Grass,3.0,2,60.0
+696,200582,Maria Strandlund Tomsvik,Hard,1.0,5,16.666666666666664
+697,200583,Laxmi Poruri,Hard,1.0,3,25.0
+698,200584,Laura Golarsa,Clay,1.0,6,14.285714285714285
+699,200584,Laura Golarsa,Grass,6.0,9,40.0
+700,200584,Laura Golarsa,Hard,4.0,12,25.0
+701,200586,Federica Bonsignori,Clay,2.0,3,40.0
+702,200586,Federica Bonsignori,Grass,0.0,2,0.0
+703,200586,Federica Bonsignori,Hard,0.0,3,0.0
+704,200587,Silke Meier,Clay,3.0,5,37.5
+705,200587,Silke Meier,Grass,0.0,3,0.0
+706,200587,Silke Meier,Hard,5.0,9,35.714285714285715
+707,200588,Renata Baranski,Clay,1.0,1,50.0
+708,200588,Renata Baranski,Hard,0.0,2,0.0
+709,200589,Halle Cioffi,Clay,1.0,2,33.33333333333333
+710,200589,Halle Cioffi,Grass,0.0,1,0.0
+711,200589,Halle Cioffi,Hard,1.0,4,20.0
+712,200593,Karine Quentrec,Clay,4.0,3,57.14285714285714
+713,200593,Karine Quentrec,Grass,1.0,3,25.0
+714,200593,Karine Quentrec,Hard,2.0,3,40.0
+715,200595,Ann Grossman,Clay,13.0,8,61.904761904761905
+716,200595,Ann Grossman,Grass,5.0,6,45.45454545454545
+717,200595,Ann Grossman,Hard,11.0,14,44.0
+718,200597,Mary Joe Fernandez,Clay,24.0,8,75.0
+719,200597,Mary Joe Fernandez,Grass,22.0,8,73.33333333333333
+720,200597,Mary Joe Fernandez,Hard,52.0,15,77.61194029850746
+721,200598,Jeri Ingram,Hard,0.0,1,0.0
+722,200599,Carrie Cunningham,Clay,2.0,3,40.0
+723,200599,Carrie Cunningham,Grass,1.0,3,25.0
+724,200599,Carrie Cunningham,Hard,5.0,6,45.45454545454545
+725,200601,Leila Meskhi,Clay,10.0,4,71.42857142857143
+726,200601,Leila Meskhi,Grass,0.0,3,0.0
+727,200601,Leila Meskhi,Hard,10.0,8,55.55555555555556
+728,200602,Shaun Stafford,Clay,7.0,6,53.84615384615385
+729,200602,Shaun Stafford,Grass,4.0,4,50.0
+730,200602,Shaun Stafford,Hard,8.0,11,42.10526315789473
+731,200604,Barbara Paulus,Clay,5.0,4,55.55555555555556
+732,200604,Barbara Paulus,Grass,2.0,3,40.0
+733,200604,Barbara Paulus,Hard,9.0,11,45.0
+734,200605,Regina Rajchrtova,Clay,2.0,2,50.0
+735,200605,Regina Rajchrtova,Grass,0.0,2,0.0
+736,200605,Regina Rajchrtova,Hard,5.0,3,62.5
+737,200606,Nana Smith,Clay,0.0,5,0.0
+738,200606,Nana Smith,Grass,2.0,6,25.0
+739,200606,Nana Smith,Hard,4.0,13,23.52941176470588
+740,200607,Beate Reinstadler,Clay,2.0,5,28.57142857142857
+741,200607,Beate Reinstadler,Grass,1.0,3,25.0
+742,200607,Beate Reinstadler,Hard,3.0,7,30.0
+743,200608,Audra Keller,Clay,0.0,3,0.0
+744,200608,Audra Keller,Grass,2.0,3,40.0
+745,200608,Audra Keller,Hard,3.0,8,27.27272727272727
+746,200610,Stacey Martin,Clay,0.0,1,0.0
+747,200610,Stacey Martin,Hard,1.0,1,50.0
+748,200611,Tracey Morton Rodgers,Hard,0.0,1,0.0
+749,200612,Natalia Medvedeva,Clay,1.0,4,20.0
+750,200612,Natalia Medvedeva,Grass,5.0,5,50.0
+751,200612,Natalia Medvedeva,Hard,7.0,10,41.17647058823529
+752,200614,Elena Pampoulova,Clay,2.0,6,25.0
+753,200614,Elena Pampoulova,Grass,3.0,5,37.5
+754,200614,Elena Pampoulova,Hard,5.0,9,35.714285714285715
+755,200615,Kristin Godridge,Clay,1.0,2,33.33333333333333
+756,200615,Kristin Godridge,Grass,3.0,3,50.0
+757,200615,Kristin Godridge,Hard,2.0,8,20.0
+758,200616,Pascale Etchemendy,Clay,0.0,1,0.0
+759,200617,Kimiko Date Krumm,Clay,13.0,13,50.0
+760,200617,Kimiko Date Krumm,Grass,18.0,12,60.0
+761,200617,Kimiko Date Krumm,Hard,46.0,57,44.66019417475729
+762,200619,Kate Mcdonald,Hard,0.0,1,0.0
+763,200620,Kirrily Sharpe,Grass,0.0,1,0.0
+764,200620,Kirrily Sharpe,Hard,2.0,3,40.0
+765,200621,Isabelle Demongeot,Clay,0.0,6,0.0
+766,200621,Isabelle Demongeot,Grass,2.0,5,28.57142857142857
+767,200621,Isabelle Demongeot,Hard,4.0,6,40.0
+768,200622,Maya Kidowaki,Clay,3.0,2,60.0
+769,200622,Maya Kidowaki,Grass,1.0,2,33.33333333333333
+770,200622,Maya Kidowaki,Hard,2.0,4,33.33333333333333
+771,200623,Petra Thoren,Clay,3.0,3,50.0
+772,200623,Petra Thoren,Grass,1.0,1,50.0
+773,200623,Petra Thoren,Hard,1.0,5,16.666666666666664
+774,200624,Tami Whitlinger Jones,Clay,6.0,7,46.15384615384615
+775,200624,Tami Whitlinger Jones,Grass,3.0,7,30.0
+776,200624,Tami Whitlinger Jones,Hard,10.0,14,41.66666666666667
+777,200625,Jana Pospisilova,Hard,0.0,1,0.0
+778,200626,Emanuela Zardo,Clay,2.0,4,33.33333333333333
+779,200626,Emanuela Zardo,Grass,1.0,3,25.0
+780,200626,Emanuela Zardo,Hard,7.0,9,43.75
+781,200627,Petra Schwarz,Clay,6.0,3,66.66666666666666
+782,200627,Petra Schwarz,Grass,0.0,2,0.0
+783,200627,Petra Schwarz,Hard,2.0,9,18.181818181818183
+784,200629,Cristina Tessi,Clay,2.0,2,50.0
+785,200629,Cristina Tessi,Grass,1.0,2,33.33333333333333
+786,200629,Cristina Tessi,Hard,0.0,3,0.0
+787,200630,Laura Arraya,Clay,3.0,3,50.0
+788,200630,Laura Arraya,Grass,6.0,3,66.66666666666666
+789,200630,Laura Arraya,Hard,5.0,6,45.45454545454545
+790,200631,Maria Ekstrand,Hard,1.0,1,50.0
+791,200632,Andrea Strnadova,Clay,3.0,3,50.0
+792,200632,Andrea Strnadova,Grass,4.0,4,50.0
+793,200632,Andrea Strnadova,Hard,7.0,6,53.84615384615385
+794,200633,Stacey Schefflin,Hard,2.0,1,66.66666666666666
+795,200634,Elena Brioukhovets,Clay,5.0,3,62.5
+796,200634,Elena Brioukhovets,Grass,5.0,4,55.55555555555556
+797,200634,Elena Brioukhovets,Hard,1.0,5,16.666666666666664
+798,200635,Ingelise Driehuis,Hard,0.0,1,0.0
+799,200636,Danielle Jones,Hard,0.0,1,0.0
+800,200637,Catherine Barclay,Hard,0.0,3,0.0
+801,200638,Stephanie Rottier,Clay,1.0,5,16.666666666666664
+802,200638,Stephanie Rottier,Grass,0.0,2,0.0
+803,200638,Stephanie Rottier,Hard,0.0,9,0.0
+804,200639,Claudine Toleafoa,Grass,0.0,1,0.0
+805,200639,Claudine Toleafoa,Hard,1.0,1,50.0
+806,200640,Mercedes Paz,Clay,0.0,4,0.0
+807,200640,Mercedes Paz,Grass,2.0,3,40.0
+808,200640,Mercedes Paz,Hard,0.0,5,0.0
+809,200641,Patricia Tarabini,Clay,1.0,4,20.0
+810,200641,Patricia Tarabini,Grass,1.0,3,25.0
+811,200641,Patricia Tarabini,Hard,3.0,8,27.27272727272727
+812,200642,Denisa Szabova,Clay,0.0,1,0.0
+813,200642,Denisa Szabova,Hard,0.0,2,0.0
+814,200643,Petra Kamstra,Clay,1.0,2,33.33333333333333
+815,200643,Petra Kamstra,Grass,3.0,3,50.0
+816,200643,Petra Kamstra,Hard,2.0,4,33.33333333333333
+817,200644,Naoko Sawamatsu,Clay,9.0,8,52.94117647058824
+818,200644,Naoko Sawamatsu,Grass,16.0,8,66.66666666666666
+819,200644,Naoko Sawamatsu,Hard,20.0,15,57.14285714285714
+820,200645,Maja Zivec Skulj,Grass,0.0,1,0.0
+821,200645,Maja Zivec Skulj,Hard,0.0,3,0.0
+822,200646,Francesca Romano,Clay,0.0,2,0.0
+823,200646,Francesca Romano,Grass,0.0,2,0.0
+824,200646,Francesca Romano,Hard,1.0,2,33.33333333333333
+825,200647,Noelle Van Lottum,Clay,3.0,7,30.0
+826,200647,Noelle Van Lottum,Grass,0.0,4,0.0
+827,200647,Noelle Van Lottum,Hard,4.0,11,26.666666666666668
+828,200648,Marketa Kochta,Clay,2.0,3,40.0
+829,200648,Marketa Kochta,Grass,0.0,3,0.0
+830,200648,Marketa Kochta,Hard,5.0,7,41.66666666666667
+831,200649,Ginger Helgeson,Clay,3.0,5,37.5
+832,200649,Ginger Helgeson,Grass,4.0,6,40.0
+833,200649,Ginger Helgeson,Hard,12.0,11,52.17391304347826
+834,200650,Isabel Cueto,Clay,0.0,1,0.0
+835,200650,Isabel Cueto,Hard,1.0,2,33.33333333333333
+836,200651,Sabine Hack,Clay,10.0,6,62.5
+837,200651,Sabine Hack,Grass,1.0,3,25.0
+838,200651,Sabine Hack,Hard,12.0,13,48.0
+839,200652,Monica Seles,Carpet,12.0,4,75.0
+840,200652,Monica Seles,Clay,59.0,11,84.28571428571429
+841,200652,Monica Seles,Grass,23.0,7,76.66666666666667
+842,200652,Monica Seles,Hard,148.0,33,81.76795580110497
+843,200653,Yayuk Basuki,Clay,4.0,6,40.0
+844,200653,Yayuk Basuki,Grass,22.0,9,70.96774193548387
+845,200653,Yayuk Basuki,Hard,11.0,16,40.74074074074074
+846,200654,Patty Oreilly,Hard,0.0,2,0.0
+847,200655,Nicole Arendt,Clay,4.0,4,50.0
+848,200655,Nicole Arendt,Grass,7.0,6,53.84615384615385
+849,200655,Nicole Arendt,Hard,10.0,13,43.47826086956522
+850,200656,Jessica Emmons,Hard,1.0,4,20.0
+851,200657,Radka Bobkova,Clay,2.0,5,28.57142857142857
+852,200657,Radka Bobkova,Grass,1.0,5,16.666666666666664
+853,200657,Radka Bobkova,Hard,5.0,10,33.33333333333333
+854,200658,Fang Li,Clay,1.0,4,20.0
+855,200658,Fang Li,Grass,1.0,5,16.666666666666664
+856,200658,Fang Li,Hard,5.0,16,23.809523809523807
+857,200659,Rika Hiraki,Clay,0.0,6,0.0
+858,200659,Rika Hiraki,Grass,3.0,5,37.5
+859,200659,Rika Hiraki,Hard,7.0,10,41.17647058823529
+860,200660,Kimberly Po Messerli,Clay,6.0,7,46.15384615384615
+861,200660,Kimberly Po Messerli,Grass,4.0,8,33.33333333333333
+862,200660,Kimberly Po Messerli,Hard,22.0,14,61.111111111111114
+863,200661,Samantha Smith,Clay,0.0,2,0.0
+864,200661,Samantha Smith,Grass,3.0,6,33.33333333333333
+865,200661,Samantha Smith,Hard,2.0,4,33.33333333333333
+866,200662,Joanne Limmer,Hard,1.0,3,25.0
+867,200663,Nanne Dahlman,Clay,0.0,3,0.0
+868,200663,Nanne Dahlman,Grass,2.0,2,50.0
+869,200663,Nanne Dahlman,Hard,9.0,7,56.25
+870,200664,Stephanie Rehe,Clay,1.0,1,50.0
+871,200664,Stephanie Rehe,Grass,0.0,1,0.0
+872,200664,Stephanie Rehe,Hard,3.0,3,50.0
+873,200665,Yone Kamio,Clay,0.0,3,0.0
+874,200665,Yone Kamio,Grass,4.0,3,57.14285714285714
+875,200665,Yone Kamio,Hard,7.0,9,43.75
+876,200666,Marion Maruska,Clay,1.0,4,20.0
+877,200666,Marion Maruska,Grass,1.0,2,33.33333333333333
+878,200666,Marion Maruska,Hard,0.0,4,0.0
+879,200667,Ines Gorrochategui,Clay,7.0,7,50.0
+880,200667,Ines Gorrochategui,Grass,11.0,7,61.111111111111114
+881,200667,Ines Gorrochategui,Hard,9.0,10,47.368421052631575
+882,200668,Silke Frankl,Clay,4.0,4,50.0
+883,200668,Silke Frankl,Grass,4.0,4,50.0
+884,200668,Silke Frankl,Hard,0.0,5,0.0
+885,200669,Debbie Graham,Clay,3.0,4,42.857142857142854
+886,200669,Debbie Graham,Grass,1.0,5,16.666666666666664
+887,200669,Debbie Graham,Hard,4.0,9,30.76923076923077
+888,200670,Nathalie Housset,Clay,1.0,2,33.33333333333333
+889,200670,Nathalie Housset,Hard,1.0,1,50.0
+890,200671,Meike Babel,Clay,6.0,7,46.15384615384615
+891,200671,Meike Babel,Grass,2.0,4,33.33333333333333
+892,200671,Meike Babel,Hard,6.0,8,42.857142857142854
+893,200672,Barbara Mulej,Hard,0.0,2,0.0
+894,200673,Susan Sloane Lundy,Grass,0.0,1,0.0
+895,200673,Susan Sloane Lundy,Hard,0.0,3,0.0
+896,200674,Bettina Fulco,Clay,2.0,4,33.33333333333333
+897,200674,Bettina Fulco,Grass,1.0,3,25.0
+898,200674,Bettina Fulco,Hard,2.0,7,22.22222222222222
+899,200675,Eugenia Maniokova,Clay,0.0,2,0.0
+900,200675,Eugenia Maniokova,Grass,0.0,2,0.0
+901,200675,Eugenia Maniokova,Hard,2.0,6,25.0
+902,200676,Mana Endo,Clay,2.0,6,25.0
+903,200676,Mana Endo,Grass,6.0,6,50.0
+904,200676,Mana Endo,Hard,9.0,10,47.368421052631575
+905,200677,Katja Oeljeklaus,Clay,0.0,1,0.0
+906,200677,Katja Oeljeklaus,Grass,0.0,1,0.0
+907,200677,Katja Oeljeklaus,Hard,0.0,1,0.0
+908,200678,Gloria Pizzichini,Clay,3.0,4,42.857142857142854
+909,200678,Gloria Pizzichini,Grass,3.0,4,42.857142857142854
+910,200678,Gloria Pizzichini,Hard,1.0,10,9.090909090909092
+911,200679,Caroline Kuhlman,Clay,0.0,3,0.0
+912,200679,Caroline Kuhlman,Grass,1.0,3,25.0
+913,200679,Caroline Kuhlman,Hard,5.0,5,50.0
+914,200680,Nadin Ercegovic,Clay,0.0,1,0.0
+915,200680,Nadin Ercegovic,Grass,0.0,1,0.0
+916,200680,Nadin Ercegovic,Hard,1.0,4,20.0
+917,200681,Natalia Baudone,Clay,4.0,4,50.0
+918,200681,Natalia Baudone,Grass,1.0,4,20.0
+919,200681,Natalia Baudone,Hard,5.0,8,38.46153846153847
+920,200682,Joannette Kruger,Carpet,0.0,1,0.0
+921,200682,Joannette Kruger,Clay,12.0,17,41.37931034482759
+922,200682,Joannette Kruger,Grass,1.0,9,10.0
+923,200682,Joannette Kruger,Hard,13.0,23,36.11111111111111
+924,200683,Monique Kiene,Clay,0.0,1,0.0
+925,200683,Monique Kiene,Hard,1.0,1,50.0
+926,200684,Shi Ting Wang,Clay,6.0,7,46.15384615384615
+927,200684,Shi Ting Wang,Grass,2.0,3,40.0
+928,200684,Shi Ting Wang,Hard,10.0,13,43.47826086956522
+929,200685,Christelle Fauche,Grass,0.0,1,0.0
+930,200685,Christelle Fauche,Hard,0.0,2,0.0
+931,200686,Sandra Dopfer,Clay,2.0,6,25.0
+932,200686,Sandra Dopfer,Grass,0.0,4,0.0
+933,200686,Sandra Dopfer,Hard,2.0,9,18.181818181818183
+934,200687,Katarzyna Nowak,Clay,3.0,4,42.857142857142854
+935,200687,Katarzyna Nowak,Grass,1.0,2,33.33333333333333
+936,200687,Katarzyna Nowak,Hard,0.0,5,0.0
+937,200688,Noelia Perez Penate,Hard,0.0,2,0.0
+938,200689,Tessa Price,Grass,1.0,2,33.33333333333333
+939,200689,Tessa Price,Hard,1.0,2,33.33333333333333
+940,200690,Kyoko Nagatsuka,Clay,5.0,4,55.55555555555556
+941,200690,Kyoko Nagatsuka,Grass,1.0,4,20.0
+942,200690,Kyoko Nagatsuka,Hard,5.0,9,35.714285714285715
+943,200691,Flora Perfetti,Clay,3.0,4,42.857142857142854
+944,200691,Flora Perfetti,Grass,2.0,4,33.33333333333333
+945,200691,Flora Perfetti,Hard,5.0,9,35.714285714285715
+946,200692,Marzia Grossi,Clay,2.0,2,50.0
+947,200692,Marzia Grossi,Grass,0.0,1,0.0
+948,200692,Marzia Grossi,Hard,0.0,2,0.0
+949,200693,Elena Makarova,Clay,3.0,5,37.5
+950,200693,Elena Makarova,Grass,3.0,4,42.857142857142854
+951,200693,Elena Makarova,Hard,7.0,10,41.17647058823529
+952,200694,Elly Hakami,Hard,0.0,2,0.0
+953,200695,Tina Krizan,Clay,0.0,1,0.0
+954,200695,Tina Krizan,Grass,0.0,1,0.0
+955,200695,Tina Krizan,Hard,3.0,7,30.0
+956,200696,Christina Papadaki,Clay,1.0,2,33.33333333333333
+957,200696,Christina Papadaki,Grass,0.0,1,0.0
+958,200696,Christina Papadaki,Hard,0.0,4,0.0
+959,200697,Janette Husarova,Carpet,6.0,6,50.0
+960,200697,Janette Husarova,Clay,8.0,11,42.10526315789473
+961,200697,Janette Husarova,Grass,0.0,5,0.0
+962,200697,Janette Husarova,Hard,19.0,32,37.254901960784316
+963,200698,Petra Begerow,Clay,4.0,4,50.0
+964,200698,Petra Begerow,Grass,0.0,4,0.0
+965,200698,Petra Begerow,Hard,0.0,6,0.0
+966,200699,Meredith Mcgrath,Clay,1.0,4,20.0
+967,200699,Meredith Mcgrath,Grass,10.0,4,71.42857142857143
+968,200699,Meredith Mcgrath,Hard,3.0,7,30.0
+969,200700,Silvia Farina Elia,Carpet,24.0,20,54.54545454545454
+970,200700,Silvia Farina Elia,Clay,52.0,33,61.1764705882353
+971,200700,Silvia Farina Elia,Grass,22.0,19,53.65853658536586
+972,200700,Silvia Farina Elia,Hard,55.0,66,45.45454545454545
+973,200701,Caroline Vis,Clay,0.0,1,0.0
+974,200701,Caroline Vis,Grass,0.0,1,0.0
+975,200701,Caroline Vis,Hard,0.0,2,0.0
+976,200702,Naoko Kijimuta,Clay,1.0,3,25.0
+977,200702,Naoko Kijimuta,Grass,3.0,3,50.0
+978,200702,Naoko Kijimuta,Hard,3.0,8,27.27272727272727
+979,200703,Katarina Studenikova,Clay,2.0,7,22.22222222222222
+980,200703,Katarina Studenikova,Grass,4.0,7,36.36363636363637
+981,200703,Katarina Studenikova,Hard,5.0,11,31.25
+982,200704,Maria Jose Gaidano,Clay,2.0,4,33.33333333333333
+983,200704,Maria Jose Gaidano,Grass,1.0,1,50.0
+984,200704,Maria Jose Gaidano,Hard,7.0,6,53.84615384615385
+985,200705,Linda Ferrando,Clay,3.0,4,42.857142857142854
+986,200705,Linda Ferrando,Grass,2.0,3,40.0
+987,200705,Linda Ferrando,Hard,3.0,6,33.33333333333333
+988,200706,Catalina Cristea,Clay,5.0,9,35.714285714285715
+989,200706,Catalina Cristea,Grass,1.0,5,16.666666666666664
+990,200706,Catalina Cristea,Hard,2.0,11,15.384615384615385
+991,200707,Romana Tedjakusuma,Clay,0.0,1,0.0
+992,200707,Romana Tedjakusuma,Hard,2.0,2,50.0
+993,200708,Sandra Cacic,Clay,2.0,7,22.22222222222222
+994,200708,Sandra Cacic,Grass,3.0,6,33.33333333333333
+995,200708,Sandra Cacic,Hard,10.0,20,33.33333333333333
+996,200709,Rossana De Los Rios,Carpet,0.0,1,0.0
+997,200709,Rossana De Los Rios,Clay,12.0,18,40.0
+998,200709,Rossana De Los Rios,Grass,2.0,7,22.22222222222222
+999,200709,Rossana De Los Rios,Hard,11.0,25,30.555555555555557
+1000,200710,Magdalena Feistel,Hard,0.0,1,0.0
+1001,200711,Tatiana Ignatieva,Clay,0.0,2,0.0
+1002,200711,Tatiana Ignatieva,Grass,0.0,2,0.0
+1003,200711,Tatiana Ignatieva,Hard,1.0,3,25.0
+1004,200712,Katerina Kroupova,Clay,2.0,2,50.0
+1005,200712,Katerina Kroupova,Grass,1.0,2,33.33333333333333
+1006,200712,Katerina Kroupova,Hard,0.0,3,0.0
+1007,200713,Yuka Yoshida,Carpet,0.0,2,0.0
+1008,200713,Yuka Yoshida,Clay,1.0,3,25.0
+1009,200713,Yuka Yoshida,Grass,1.0,3,25.0
+1010,200713,Yuka Yoshida,Hard,3.0,7,30.0
+1011,200714,Yvette Basting,Grass,1.0,2,33.33333333333333
+1012,200714,Yvette Basting,Hard,0.0,2,0.0
+1013,200715,Mariaan De Swardt,Clay,5.0,7,41.66666666666667
+1014,200715,Mariaan De Swardt,Grass,9.0,7,56.25
+1015,200715,Mariaan De Swardt,Hard,6.0,12,33.33333333333333
+1016,200716,Sung Hee Park,Clay,1.0,3,25.0
+1017,200716,Sung Hee Park,Grass,2.0,3,40.0
+1018,200716,Sung Hee Park,Hard,3.0,8,27.27272727272727
+1019,200717,Anne Miller,Clay,0.0,2,0.0
+1020,200717,Anne Miller,Grass,2.0,2,50.0
+1021,200717,Anne Miller,Hard,5.0,10,33.33333333333333
+1022,200718,Ludmila Richterova,Clay,2.0,4,33.33333333333333
+1023,200718,Ludmila Richterova,Grass,0.0,4,0.0
+1024,200718,Ludmila Richterova,Hard,3.0,8,27.27272727272727
+1025,200719,Siobhan Drake Brockman,Hard,2.0,4,33.33333333333333
+1026,200720,Dally Randriantefy,Carpet,0.0,1,0.0
+1027,200720,Dally Randriantefy,Clay,12.0,14,46.15384615384615
+1028,200720,Dally Randriantefy,Grass,0.0,4,0.0
+1029,200720,Dally Randriantefy,Hard,13.0,20,39.39393939393939
+1030,200721,Hiromi Nagano,Hard,0.0,1,0.0
+1031,200722,Francesca Lubiani,Clay,1.0,3,25.0
+1032,200722,Francesca Lubiani,Grass,0.0,3,0.0
+1033,200722,Francesca Lubiani,Hard,3.0,5,37.5
+1034,200723,Iva Majoli,Carpet,4.0,8,33.33333333333333
+1035,200723,Iva Majoli,Clay,40.0,19,67.79661016949152
+1036,200723,Iva Majoli,Grass,7.0,7,50.0
+1037,200723,Iva Majoli,Hard,32.0,39,45.07042253521127
+1038,200724,Lea Ghirardi,Clay,3.0,7,30.0
+1039,200724,Lea Ghirardi,Grass,0.0,1,0.0
+1040,200724,Lea Ghirardi,Hard,2.0,6,25.0
+1041,200725,Sandra Cecchini,Clay,8.0,8,50.0
+1042,200725,Sandra Cecchini,Grass,1.0,3,25.0
+1043,200725,Sandra Cecchini,Hard,4.0,7,36.36363636363637
+1044,200726,Nancy Feber,Clay,2.0,3,40.0
+1045,200726,Nancy Feber,Grass,6.0,5,54.54545454545454
+1046,200726,Nancy Feber,Hard,1.0,4,20.0
+1047,200727,Adriana Serra Zanetti,Carpet,1.0,1,50.0
+1048,200727,Adriana Serra Zanetti,Clay,8.0,13,38.095238095238095
+1049,200727,Adriana Serra Zanetti,Grass,1.0,4,20.0
+1050,200727,Adriana Serra Zanetti,Hard,7.0,21,25.0
+1051,200728,Melanie Schnell,Clay,0.0,1,0.0
+1052,200728,Melanie Schnell,Grass,1.0,3,25.0
+1053,200728,Melanie Schnell,Hard,1.0,3,25.0
+1054,200729,Lindsay Lee Waters,Clay,0.0,5,0.0
+1055,200729,Lindsay Lee Waters,Grass,1.0,3,25.0
+1056,200729,Lindsay Lee Waters,Hard,8.0,18,30.76923076923077
+1057,200730,Min Tang,Clay,0.0,1,0.0
+1058,200730,Min Tang,Hard,0.0,2,0.0
+1059,200731,Gail Biggs,Hard,0.0,1,0.0
+1060,200732,Magdalena Grzybowska,Clay,4.0,6,40.0
+1061,200732,Magdalena Grzybowska,Grass,4.0,5,44.44444444444444
+1062,200732,Magdalena Grzybowska,Hard,9.0,12,42.857142857142854
+1063,200733,Trudi Musgrave,Hard,0.0,3,0.0
+1064,200734,Tatjana Jecmenica,Clay,1.0,1,50.0
+1065,200734,Tatjana Jecmenica,Grass,0.0,1,0.0
+1066,200734,Tatjana Jecmenica,Hard,1.0,4,20.0
+1067,200735,Miho Saeki,Carpet,0.0,1,0.0
+1068,200735,Miho Saeki,Clay,2.0,3,40.0
+1069,200735,Miho Saeki,Grass,1.0,3,25.0
+1070,200735,Miho Saeki,Hard,3.0,6,33.33333333333333
+1071,200736,Li Ling Chen,Hard,0.0,1,0.0
+1072,200737,Aleksandra Olsza,Clay,0.0,1,0.0
+1073,200737,Aleksandra Olsza,Grass,2.0,2,50.0
+1074,200737,Aleksandra Olsza,Hard,1.0,4,20.0
+1075,200738,Lenka Cenkova,Clay,0.0,1,0.0
+1076,200738,Lenka Cenkova,Hard,0.0,1,0.0
+1077,200739,Stephanie De Ville,Clay,0.0,1,0.0
+1078,200739,Stephanie De Ville,Grass,0.0,1,0.0
+1079,200739,Stephanie De Ville,Hard,1.0,2,33.33333333333333
+1080,200740,Elena Tatarkova,Clay,2.0,4,33.33333333333333
+1081,200740,Elena Tatarkova,Grass,2.0,3,40.0
+1082,200740,Elena Tatarkova,Hard,0.0,5,0.0
+1083,200741,Renee Reid,Hard,0.0,1,0.0
+1084,200742,Olga Lugina,Clay,0.0,1,0.0
+1085,200742,Olga Lugina,Grass,0.0,1,0.0
+1086,200742,Olga Lugina,Hard,0.0,2,0.0
+1087,200743,Nirupama Vaidyanathan,Hard,1.0,1,50.0
+1088,200744,Svetlana Krivencheva,Hard,0.0,1,0.0
+1089,200745,Andrea Glass,Carpet,0.0,2,0.0
+1090,200745,Andrea Glass,Clay,7.0,13,35.0
+1091,200745,Andrea Glass,Grass,1.0,5,16.666666666666664
+1092,200745,Andrea Glass,Hard,4.0,14,22.22222222222222
+1093,200746,Sandra Kloesel,Clay,1.0,7,12.5
+1094,200746,Sandra Kloesel,Grass,0.0,2,0.0
+1095,200746,Sandra Kloesel,Hard,3.0,14,17.647058823529413
+1096,200747,Haruka Inoue,Carpet,0.0,1,0.0
+1097,200747,Haruka Inoue,Clay,0.0,1,0.0
+1098,200747,Haruka Inoue,Grass,0.0,2,0.0
+1099,200747,Haruka Inoue,Hard,0.0,1,0.0
+1100,200748,Venus Williams,Carpet,20.0,5,80.0
+1101,200748,Venus Williams,Clay,133.0,61,68.55670103092784
+1102,200748,Venus Williams,Grass,94.0,21,81.73913043478261
+1103,200748,Venus Williams,Hard,354.0,131,72.98969072164948
+1104,200749,Samantha Reeves,Clay,4.0,10,28.57142857142857
+1105,200749,Samantha Reeves,Grass,2.0,4,33.33333333333333
+1106,200749,Samantha Reeves,Hard,10.0,17,37.03703703703704
+1107,200750,Karin Miller,Grass,0.0,1,0.0
+1108,200750,Karin Miller,Hard,0.0,2,0.0
+1109,200751,Conchita Martinez Granados,Clay,3.0,7,30.0
+1110,200751,Conchita Martinez Granados,Grass,1.0,2,33.33333333333333
+1111,200751,Conchita Martinez Granados,Hard,1.0,7,12.5
+1112,200752,Raluca Sandu,Clay,1.0,1,50.0
+1113,200752,Raluca Sandu,Hard,1.0,3,25.0
+1114,200753,Cindy Watson,Hard,2.0,4,33.33333333333333
+1115,200754,Jill Craybas,Carpet,1.0,3,25.0
+1116,200754,Jill Craybas,Clay,26.0,43,37.68115942028986
+1117,200754,Jill Craybas,Grass,7.0,13,35.0
+1118,200754,Jill Craybas,Hard,42.0,83,33.6
+1119,200764,Elena Bovina,Carpet,11.0,11,50.0
+1120,200764,Elena Bovina,Clay,18.0,13,58.06451612903226
+1121,200764,Elena Bovina,Grass,5.0,6,45.45454545454545
+1122,200764,Elena Bovina,Hard,54.0,49,52.42718446601942
+1123,200765,Katalin Marosi,Clay,0.0,2,0.0
+1124,200765,Katalin Marosi,Grass,1.0,1,50.0
+1125,200765,Katalin Marosi,Hard,0.0,2,0.0
+1126,200766,Jennifer Hopkins,Carpet,1.0,2,33.33333333333333
+1127,200766,Jennifer Hopkins,Clay,3.0,13,18.75
+1128,200766,Jennifer Hopkins,Grass,2.0,4,33.33333333333333
+1129,200766,Jennifer Hopkins,Hard,11.0,21,34.375
+1130,200767,Holly Parkinson,Carpet,2.0,1,66.66666666666666
+1131,200767,Holly Parkinson,Clay,1.0,3,25.0
+1132,200767,Holly Parkinson,Grass,0.0,1,0.0
+1133,200767,Holly Parkinson,Hard,2.0,6,25.0
+1134,200768,Laurence Andretto,Carpet,1.0,1,50.0
+1135,200768,Laurence Andretto,Clay,2.0,6,25.0
+1136,200768,Laurence Andretto,Hard,0.0,1,0.0
+1137,200769,Giulia Casoni,Clay,5.0,5,50.0
+1138,200769,Giulia Casoni,Grass,0.0,2,0.0
+1139,200769,Giulia Casoni,Hard,2.0,3,40.0
+1140,200770,Stephanie Cohen Aloro,Carpet,4.0,6,40.0
+1141,200770,Stephanie Cohen Aloro,Clay,7.0,12,36.84210526315789
+1142,200770,Stephanie Cohen Aloro,Grass,0.0,3,0.0
+1143,200770,Stephanie Cohen Aloro,Hard,10.0,20,33.33333333333333
+1144,200771,Sophie Erre,Clay,0.0,1,0.0
+1145,200772,Anastasia Myskina,Carpet,25.0,6,80.64516129032258
+1146,200772,Anastasia Myskina,Clay,30.0,27,52.63157894736842
+1147,200772,Anastasia Myskina,Grass,28.0,12,70.0
+1148,200772,Anastasia Myskina,Hard,97.0,67,59.14634146341463
+1149,200773,Stephanie Foretz Gacon,Carpet,2.0,2,50.0
+1150,200773,Stephanie Foretz Gacon,Clay,7.0,19,26.923076923076923
+1151,200773,Stephanie Foretz Gacon,Grass,3.0,10,23.076923076923077
+1152,200773,Stephanie Foretz Gacon,Hard,13.0,31,29.545454545454547
+1153,200774,Vanessa Webb,Clay,0.0,1,0.0
+1154,200774,Vanessa Webb,Grass,0.0,1,0.0
+1155,200774,Vanessa Webb,Hard,2.0,7,22.22222222222222
+1156,200775,Tatiana Kovaltchouk,Clay,0.0,1,0.0
+1157,200776,Angelika Bachmann,Clay,1.0,4,20.0
+1158,200776,Angelika Bachmann,Hard,1.0,6,14.285714285714285
+1159,200777,Marta Marrero,Carpet,0.0,1,0.0
+1160,200777,Marta Marrero,Clay,12.0,17,41.37931034482759
+1161,200777,Marta Marrero,Grass,2.0,5,28.57142857142857
+1162,200777,Marta Marrero,Hard,15.0,27,35.714285714285715
+1163,200959,Mareen Louie Harper,Grass,1.0,1,50.0
+1164,200959,Mareen Louie Harper,Hard,1.0,1,50.0
+1165,201017,Angelika Kanellopoulou,Clay,0.0,1,0.0
+1166,201021,Laura Garrone,Clay,0.0,4,0.0
+1167,201021,Laura Garrone,Grass,2.0,2,50.0
+1168,201021,Laura Garrone,Hard,0.0,1,0.0
+1169,201044,Catherine Mothes Jobkel,Clay,1.0,6,14.285714285714285
+1170,201044,Catherine Mothes Jobkel,Hard,1.0,2,33.33333333333333
+1171,201047,Andrea Vieira,Hard,0.0,1,0.0
+1172,201048,Leona Laskova,Clay,0.0,1,0.0
+1173,201053,Sylvie Sabas,Clay,0.0,1,0.0
+1174,201054,Katia Piccolini,Clay,1.0,3,25.0
+1175,201054,Katia Piccolini,Hard,0.0,1,0.0
+1176,201055,Barbara Collet,Clay,0.0,1,0.0
+1177,201056,Maria Luciana Reynares,Clay,0.0,1,0.0
+1178,201057,Angelique Olivier,Clay,0.0,3,0.0
+1179,201058,Agnes Zugasti,Clay,0.0,1,0.0
+1180,201059,Misumi Miyauchi,Clay,0.0,1,0.0
+1181,201060,Carole Lucarelli,Clay,0.0,2,0.0
+1182,201061,Eva Martincova,Clay,1.0,2,33.33333333333333
+1183,201061,Eva Martincova,Grass,0.0,1,0.0
+1184,201061,Eva Martincova,Hard,0.0,2,0.0
+1185,201062,Amelie Castera,Clay,0.0,1,0.0
+1186,201063,Maria Francesca Bentivoglio,Clay,1.0,1,50.0
+1187,201063,Maria Francesca Bentivoglio,Hard,0.0,1,0.0
+1188,201064,Audrey Sidot,Clay,0.0,1,0.0
+1189,201065,Virginie Buisson,Clay,1.0,1,50.0
+1190,201066,Neus Avila Bonastre,Clay,0.0,1,0.0
+1191,201066,Neus Avila Bonastre,Grass,0.0,1,0.0
+1192,201067,Caroline Dhenin,Clay,2.0,4,33.33333333333333
+1193,201068,Magali Lamarre,Clay,1.0,2,33.33333333333333
+1194,201069,Karolina Jagieniak,Clay,0.0,2,0.0
+1195,201070,Emmanuelle Curutchet,Clay,1.0,3,25.0
+1196,201071,Segolene Berger,Clay,0.0,1,0.0
+1197,201072,Eva Bes Ostariz,Clay,3.0,3,50.0
+1198,201072,Eva Bes Ostariz,Grass,0.0,1,0.0
+1199,201072,Eva Bes Ostariz,Hard,1.0,2,33.33333333333333
+1200,201073,Seon Young Park,Clay,1.0,1,50.0
+1201,201074,Ana Alcazar,Clay,0.0,1,0.0
+1202,201075,Liezel Huber,Clay,1.0,3,25.0
+1203,201075,Liezel Huber,Hard,1.0,2,33.33333333333333
+1204,201076,Sophie Georges,Clay,0.0,1,0.0
+1205,201077,Sophie Lefevre,Clay,0.0,2,0.0
+1206,201078,Eugenia Kulikovskaya,Clay,1.0,2,33.33333333333333
+1207,201078,Eugenia Kulikovskaya,Grass,0.0,2,0.0
+1208,201078,Eugenia Kulikovskaya,Hard,3.0,5,37.5
+1209,201079,Hannah Collin,Grass,0.0,3,0.0
+1210,201080,Louise Latimer,Carpet,0.0,1,0.0
+1211,201080,Louise Latimer,Grass,3.0,6,33.33333333333333
+1212,201080,Louise Latimer,Hard,0.0,1,0.0
+1213,201081,Joanne Ward,Grass,0.0,5,0.0
+1214,201082,Lorna Woodroffe,Grass,1.0,6,14.285714285714285
+1215,201083,Daja Bedanova,Carpet,4.0,9,30.76923076923077
+1216,201083,Daja Bedanova,Clay,5.0,8,38.46153846153847
+1217,201083,Daja Bedanova,Grass,6.0,6,50.0
+1218,201083,Daja Bedanova,Hard,35.0,35,50.0
+1219,201084,Nadejda Ostrovskaya,Clay,0.0,1,0.0
+1220,201084,Nadejda Ostrovskaya,Grass,0.0,1,0.0
+1221,201084,Nadejda Ostrovskaya,Hard,0.0,1,0.0
+1222,201085,Shinobu Asagoe,Carpet,5.0,5,50.0
+1223,201085,Shinobu Asagoe,Clay,11.0,15,42.30769230769231
+1224,201085,Shinobu Asagoe,Grass,5.0,7,41.66666666666667
+1225,201085,Shinobu Asagoe,Hard,30.0,47,38.961038961038966
+1226,201086,Greta Arn,Carpet,1.0,4,20.0
+1227,201086,Greta Arn,Clay,7.0,14,33.33333333333333
+1228,201086,Greta Arn,Grass,3.0,6,33.33333333333333
+1229,201086,Greta Arn,Hard,12.0,27,30.76923076923077
+1230,201087,Mashona Washington,Carpet,0.0,1,0.0
+1231,201087,Mashona Washington,Clay,0.0,8,0.0
+1232,201087,Mashona Washington,Grass,5.0,5,50.0
+1233,201087,Mashona Washington,Hard,16.0,30,34.78260869565217
+1234,201088,Karen Cross,Grass,5.0,8,38.46153846153847
+1235,201089,Lucie Ahl,Grass,1.0,8,11.11111111111111
+1236,201177,Amanda Grunfeld,Grass,2.0,3,40.0
+1237,201180,Belinda Borneo,Grass,0.0,1,0.0
+1238,201186,Virginia Humphreys Davies,Grass,0.0,2,0.0
+1239,201187,Shawna Martin,Grass,0.0,1,0.0
+1240,201188,Barbara Griffiths,Grass,0.0,1,0.0
+1241,201189,Sarah Bentley,Grass,0.0,2,0.0
+1242,201190,Kaye Marfini Hand,Grass,0.0,1,0.0
+1243,201191,Shirli Ann Siddall,Grass,2.0,5,28.57142857142857
+1244,201192,Colette Caple,Grass,0.0,2,0.0
+1245,201193,Claire Wegink,Grass,1.0,3,25.0
+1246,201193,Claire Wegink,Hard,1.0,1,50.0
+1247,201194,Tammy Whittington,Grass,1.0,1,50.0
+1248,201194,Tammy Whittington,Hard,0.0,1,0.0
+1249,201195,Amanda Wainwright,Grass,1.0,3,25.0
+1250,201196,Claire Taylor,Grass,1.0,3,25.0
+1251,201197,Megan Miller,Grass,0.0,2,0.0
+1252,201198,Lizzy Jelfs,Grass,0.0,1,0.0
+1253,201199,Rachel Viollet,Grass,1.0,2,33.33333333333333
+1254,201200,Miriam Schnitzer,Clay,3.0,1,75.0
+1255,201200,Miriam Schnitzer,Grass,0.0,3,0.0
+1256,201200,Miriam Schnitzer,Hard,1.0,2,33.33333333333333
+1257,201201,Surina De Beer,Grass,2.0,1,66.66666666666666
+1258,201202,Abigail Tordoff,Grass,0.0,1,0.0
+1259,201203,Alena Vaskova,Hard,0.0,2,0.0
+1260,201204,Iroda Tulyaganova,Carpet,1.0,3,25.0
+1261,201204,Iroda Tulyaganova,Clay,9.0,10,47.368421052631575
+1262,201204,Iroda Tulyaganova,Grass,6.0,4,60.0
+1263,201204,Iroda Tulyaganova,Hard,23.0,30,43.39622641509434
+1264,201205,Tracy Almeda Singian,Clay,1.0,1,50.0
+1265,201205,Tracy Almeda Singian,Hard,0.0,2,0.0
+1266,201206,Allison Bradshaw,Clay,0.0,1,0.0
+1267,201206,Allison Bradshaw,Grass,0.0,1,0.0
+1268,201206,Allison Bradshaw,Hard,4.0,4,50.0
+1269,201207,Ansley Cargill,Clay,0.0,1,0.0
+1270,201207,Ansley Cargill,Grass,0.0,1,0.0
+1271,201207,Ansley Cargill,Hard,1.0,8,11.11111111111111
+1272,201208,Dawn Buth,Clay,0.0,1,0.0
+1273,201208,Dawn Buth,Grass,0.0,1,0.0
+1274,201208,Dawn Buth,Hard,1.0,2,33.33333333333333
+1275,201209,Selima Sfar,Carpet,1.0,1,50.0
+1276,201209,Selima Sfar,Clay,2.0,4,33.33333333333333
+1277,201209,Selima Sfar,Grass,3.0,5,37.5
+1278,201209,Selima Sfar,Hard,5.0,22,18.51851851851852
+1279,201210,Kristen Schlukebir,Clay,0.0,1,0.0
+1280,201210,Kristen Schlukebir,Hard,0.0,1,0.0
+1281,201211,Kyra Nagy,Hard,0.0,3,0.0
+1282,201212,Francesca Schiavone,Carpet,18.0,15,54.54545454545454
+1283,201212,Francesca Schiavone,Clay,85.0,63,57.432432432432435
+1284,201212,Francesca Schiavone,Grass,24.0,27,47.05882352941176
+1285,201212,Francesca Schiavone,Hard,174.0,168,50.877192982456144
+1286,201272,Sandra Birch,Hard,0.0,1,0.0
+1287,201273,Shannan Mccarthy,Hard,0.0,1,0.0
+1288,201274,Viktoria Milvidskaia,Hard,1.0,1,50.0
+1289,201275,Julie Steven,Hard,0.0,3,0.0
+1290,201276,Nicole London,Hard,1.0,1,50.0
+1291,201277,Anne Mall,Hard,0.0,1,0.0
+1292,201278,Angela Lettiere,Hard,0.0,1,0.0
+1293,201279,Keri Phebus,Hard,1.0,1,50.0
+1294,201280,Jacqueline Trail,Hard,2.0,2,50.0
+1295,201281,Laura Granville,Carpet,1.0,1,50.0
+1296,201281,Laura Granville,Clay,4.0,16,20.0
+1297,201281,Laura Granville,Grass,10.0,6,62.5
+1298,201281,Laura Granville,Hard,28.0,46,37.83783783783784
+1299,201282,Jean Okada,Hard,0.0,1,0.0
+1300,201283,Zuzana Lesenarova,Hard,0.0,1,0.0
+1301,201284,Tatiana Poutchek,Carpet,0.0,1,0.0
+1302,201284,Tatiana Poutchek,Clay,2.0,7,22.22222222222222
+1303,201284,Tatiana Poutchek,Grass,2.0,5,28.57142857142857
+1304,201284,Tatiana Poutchek,Hard,10.0,29,25.64102564102564
+1305,201285,Melissa Middleton,Hard,0.0,3,0.0
+1306,201286,Anabel Medina Garrigues,Carpet,2.0,9,18.181818181818183
+1307,201286,Anabel Medina Garrigues,Clay,51.0,47,52.04081632653062
+1308,201286,Anabel Medina Garrigues,Grass,9.0,12,42.857142857142854
+1309,201286,Anabel Medina Garrigues,Hard,64.0,95,40.25157232704403
+1310,201287,Maria Jose Martinez Sanchez,Clay,14.0,13,51.85185185185185
+1311,201287,Maria Jose Martinez Sanchez,Grass,7.0,9,43.75
+1312,201287,Maria Jose Martinez Sanchez,Hard,29.0,43,40.27777777777778
+1313,201288,Maja Palaversic,Carpet,0.0,1,0.0
+1314,201288,Maja Palaversic,Hard,0.0,2,0.0
+1315,201289,Christina Wheeler,Clay,1.0,3,25.0
+1316,201289,Christina Wheeler,Grass,0.0,1,0.0
+1317,201289,Christina Wheeler,Hard,0.0,3,0.0
+1318,201290,Daniela Hantuchova,Carpet,20.0,17,54.054054054054056
+1319,201290,Daniela Hantuchova,Clay,66.0,56,54.09836065573771
+1320,201290,Daniela Hantuchova,Grass,41.0,27,60.29411764705882
+1321,201290,Daniela Hantuchova,Hard,227.0,199,53.286384976525824
+1322,201291,Nuria Llagostera Vives,Clay,12.0,16,42.857142857142854
+1323,201291,Nuria Llagostera Vives,Grass,1.0,6,14.285714285714285
+1324,201291,Nuria Llagostera Vives,Hard,13.0,30,30.23255813953488
+1325,201292,Martina Sucha,Carpet,0.0,2,0.0
+1326,201292,Martina Sucha,Clay,3.0,15,16.666666666666664
+1327,201292,Martina Sucha,Grass,2.0,7,22.22222222222222
+1328,201292,Martina Sucha,Hard,20.0,33,37.735849056603776
+1329,201293,Catalina Castano,Clay,18.0,19,48.64864864864865
+1330,201293,Catalina Castano,Grass,0.0,7,0.0
+1331,201293,Catalina Castano,Hard,7.0,21,25.0
+1332,201294,Marion Bartoli,Carpet,9.0,8,52.94117647058824
+1333,201294,Marion Bartoli,Clay,36.0,41,46.75324675324675
+1334,201294,Marion Bartoli,Grass,51.0,18,73.91304347826086
+1335,201294,Marion Bartoli,Hard,194.0,135,58.96656534954408
+1336,201295,Wynne Prakusya,Clay,1.0,5,16.666666666666664
+1337,201295,Wynne Prakusya,Grass,1.0,3,25.0
+1338,201295,Wynne Prakusya,Hard,6.0,9,40.0
+1339,201296,Bianka Lamade,Clay,5.0,8,38.46153846153847
+1340,201296,Bianka Lamade,Grass,1.0,2,33.33333333333333
+1341,201296,Bianka Lamade,Hard,2.0,5,28.57142857142857
+1342,201297,Maja Matevzic,Carpet,4.0,3,57.14285714285714
+1343,201297,Maja Matevzic,Clay,6.0,8,42.857142857142854
+1344,201297,Maja Matevzic,Grass,4.0,3,57.14285714285714
+1345,201297,Maja Matevzic,Hard,8.0,14,36.36363636363637
+1346,201298,Zsofia Gubacsi,Carpet,1.0,1,50.0
+1347,201298,Zsofia Gubacsi,Clay,2.0,2,50.0
+1348,201298,Zsofia Gubacsi,Grass,0.0,1,0.0
+1349,201298,Zsofia Gubacsi,Hard,0.0,5,0.0
+1350,201299,Celine Beigbeder,Clay,0.0,3,0.0
+1351,201299,Celine Beigbeder,Grass,0.0,1,0.0
+1352,201299,Celine Beigbeder,Hard,0.0,2,0.0
+1353,201300,Maria Emilia Salerni,Carpet,0.0,1,0.0
+1354,201300,Maria Emilia Salerni,Clay,3.0,7,30.0
+1355,201300,Maria Emilia Salerni,Grass,0.0,1,0.0
+1356,201300,Maria Emilia Salerni,Hard,2.0,14,12.5
+1357,201301,Camille Pin,Carpet,2.0,3,40.0
+1358,201301,Camille Pin,Clay,0.0,9,0.0
+1359,201301,Camille Pin,Grass,0.0,3,0.0
+1360,201301,Camille Pin,Hard,10.0,28,26.31578947368421
+1361,201302,Clarisa Fernandez,Carpet,0.0,1,0.0
+1362,201302,Clarisa Fernandez,Clay,13.0,11,54.166666666666664
+1363,201302,Clarisa Fernandez,Grass,2.0,5,28.57142857142857
+1364,201302,Clarisa Fernandez,Hard,6.0,13,31.57894736842105
+1365,201303,Anne Keothavong,Clay,4.0,7,36.36363636363637
+1366,201303,Anne Keothavong,Grass,4.0,20,16.666666666666664
+1367,201303,Anne Keothavong,Hard,5.0,19,20.833333333333336
+1368,201304,Elena Baltacha,Clay,2.0,5,28.57142857142857
+1369,201304,Elena Baltacha,Grass,12.0,19,38.70967741935484
+1370,201304,Elena Baltacha,Hard,15.0,17,46.875
+1371,201305,Eleni Daniilidou,Carpet,6.0,9,40.0
+1372,201305,Eleni Daniilidou,Clay,14.0,25,35.8974358974359
+1373,201305,Eleni Daniilidou,Grass,9.0,12,42.857142857142854
+1374,201305,Eleni Daniilidou,Hard,69.0,84,45.09803921568628
+1375,201306,Marie Gaiane Mikaelian,Carpet,2.0,5,28.57142857142857
+1376,201306,Marie Gaiane Mikaelian,Clay,12.0,14,46.15384615384615
+1377,201306,Marie Gaiane Mikaelian,Grass,1.0,3,25.0
+1378,201306,Marie Gaiane Mikaelian,Hard,12.0,20,37.5
+1379,201307,Amber Liu,Hard,1.0,9,10.0
+1380,201308,Maria Elena Camerin,Carpet,0.0,2,0.0
+1381,201308,Maria Elena Camerin,Clay,10.0,21,32.25806451612903
+1382,201308,Maria Elena Camerin,Grass,2.0,10,16.666666666666664
+1383,201308,Maria Elena Camerin,Hard,19.0,33,36.53846153846153
+1384,201309,Tatiana Perebiynis,Carpet,0.0,1,0.0
+1385,201309,Tatiana Perebiynis,Clay,6.0,13,31.57894736842105
+1386,201309,Tatiana Perebiynis,Grass,5.0,7,41.66666666666667
+1387,201309,Tatiana Perebiynis,Hard,12.0,20,37.5
+1388,201310,Martina Muller,Carpet,1.0,2,33.33333333333333
+1389,201310,Martina Muller,Clay,10.0,18,35.714285714285715
+1390,201310,Martina Muller,Grass,2.0,4,33.33333333333333
+1391,201310,Martina Muller,Hard,10.0,30,25.0
+1392,201311,Roberta Vinci,Carpet,6.0,6,50.0
+1393,201311,Roberta Vinci,Clay,26.0,46,36.11111111111111
+1394,201311,Roberta Vinci,Grass,19.0,17,52.77777777777778
+1395,201311,Roberta Vinci,Hard,123.0,124,49.797570850202426
+1396,201312,Sarah Taylor,Clay,0.0,3,0.0
+1397,201312,Sarah Taylor,Hard,5.0,12,29.411764705882355
+1398,201313,Yoon Jeong Cho,Carpet,0.0,1,0.0
+1399,201313,Yoon Jeong Cho,Clay,0.0,4,0.0
+1400,201313,Yoon Jeong Cho,Grass,2.0,2,50.0
+1401,201313,Yoon Jeong Cho,Hard,9.0,18,33.33333333333333
+1402,201314,Nina Duebbers,Hard,0.0,1,0.0
+1403,201315,Ashley Harkleroad,Clay,10.0,11,47.61904761904761
+1404,201315,Ashley Harkleroad,Grass,1.0,6,14.285714285714285
+1405,201315,Ashley Harkleroad,Hard,20.0,34,37.03703703703704
+1406,201316,Lenka Dlhopolcova,Hard,0.0,1,0.0
+1407,201317,Aniko Kapros,Clay,2.0,2,50.0
+1408,201317,Aniko Kapros,Grass,3.0,2,60.0
+1409,201317,Aniko Kapros,Hard,7.0,15,31.818181818181817
+1410,201318,Bethanie Mattek Sands,Carpet,4.0,3,57.14285714285714
+1411,201318,Bethanie Mattek Sands,Clay,28.0,33,45.90163934426229
+1412,201318,Bethanie Mattek Sands,Grass,7.0,10,41.17647058823529
+1413,201318,Bethanie Mattek Sands,Hard,38.0,71,34.862385321100916
+1414,201319,Evelyn Fauth,Carpet,0.0,1,0.0
+1415,201319,Evelyn Fauth,Hard,1.0,2,33.33333333333333
+1416,201320,Svetlana Kuznetsova,Carpet,7.0,7,50.0
+1417,201320,Svetlana Kuznetsova,Clay,128.0,60,68.08510638297872
+1418,201320,Svetlana Kuznetsova,Grass,47.0,27,63.51351351351351
+1419,201320,Svetlana Kuznetsova,Hard,325.0,183,63.976377952755904
+1420,201321,Antonella Serra Zanetti,Clay,3.0,10,23.076923076923077
+1421,201321,Antonella Serra Zanetti,Grass,2.0,4,33.33333333333333
+1422,201321,Antonella Serra Zanetti,Hard,10.0,17,37.03703703703704
+1423,201322,Eva Dyrberg,Carpet,2.0,1,66.66666666666666
+1424,201322,Eva Dyrberg,Clay,1.0,2,33.33333333333333
+1425,201322,Eva Dyrberg,Grass,0.0,1,0.0
+1426,201322,Eva Dyrberg,Hard,3.0,5,37.5
+1427,201323,Saori Obata,Carpet,4.0,6,40.0
+1428,201323,Saori Obata,Clay,0.0,3,0.0
+1429,201323,Saori Obata,Grass,3.0,5,37.5
+1430,201323,Saori Obata,Hard,8.0,23,25.806451612903224
+1431,201324,Irina Selyutina,Carpet,1.0,1,50.0
+1432,201324,Irina Selyutina,Clay,0.0,1,0.0
+1433,201324,Irina Selyutina,Grass,0.0,1,0.0
+1434,201324,Irina Selyutina,Hard,0.0,3,0.0
+1435,201325,Samantha Stosur,Carpet,6.0,4,60.0
+1436,201325,Samantha Stosur,Clay,104.0,59,63.80368098159509
+1437,201325,Samantha Stosur,Grass,25.0,29,46.2962962962963
+1438,201325,Samantha Stosur,Hard,201.0,177,53.17460317460318
+1439,201326,Bahia Mouhtassine,Clay,0.0,1,0.0
+1440,201326,Bahia Mouhtassine,Hard,0.0,2,0.0
+1441,201327,Angelique Widjaja,Carpet,1.0,1,50.0
+1442,201327,Angelique Widjaja,Clay,1.0,2,33.33333333333333
+1443,201327,Angelique Widjaja,Grass,2.0,3,40.0
+1444,201327,Angelique Widjaja,Hard,4.0,15,21.052631578947366
+1445,201328,Milagros Sequera,Clay,3.0,11,21.428571428571427
+1446,201328,Milagros Sequera,Grass,3.0,5,37.5
+1447,201328,Milagros Sequera,Hard,3.0,8,27.27272727272727
+1448,201329,Vera Zvonareva,Carpet,8.0,7,53.333333333333336
+1449,201329,Vera Zvonareva,Clay,71.0,43,62.28070175438597
+1450,201329,Vera Zvonareva,Grass,30.0,21,58.82352941176471
+1451,201329,Vera Zvonareva,Hard,216.0,142,60.33519553072626
+1452,201330,Maria Goloviznina,Clay,1.0,1,50.0
+1453,201331,Iveta Benesova,Carpet,4.0,9,30.76923076923077
+1454,201331,Iveta Benesova,Clay,14.0,31,31.11111111111111
+1455,201331,Iveta Benesova,Grass,3.0,11,21.428571428571427
+1456,201331,Iveta Benesova,Hard,53.0,72,42.4
+1457,201332,Jane Odonoghue,Grass,2.0,4,33.33333333333333
+1458,201333,Angelika Roesch,Carpet,1.0,1,50.0
+1459,201333,Angelika Roesch,Clay,1.0,3,25.0
+1460,201333,Angelika Roesch,Grass,0.0,2,0.0
+1461,201333,Angelika Roesch,Hard,2.0,8,20.0
+1462,201334,Zuzana Ondraskova,Carpet,1.0,1,50.0
+1463,201334,Zuzana Ondraskova,Clay,5.0,11,31.25
+1464,201334,Zuzana Ondraskova,Grass,0.0,6,0.0
+1465,201334,Zuzana Ondraskova,Hard,5.0,20,20.0
+1466,201335,Myriam Casanova,Carpet,2.0,2,50.0
+1467,201335,Myriam Casanova,Clay,3.0,5,37.5
+1468,201335,Myriam Casanova,Grass,2.0,3,40.0
+1469,201335,Myriam Casanova,Hard,9.0,15,37.5
+1470,201336,Dinara Safina,Carpet,18.0,8,69.23076923076923
+1471,201336,Dinara Safina,Clay,71.0,29,71.0
+1472,201336,Dinara Safina,Grass,12.0,8,60.0
+1473,201336,Dinara Safina,Hard,124.0,85,59.33014354066985
+1474,201337,Allison Baker,Hard,0.0,2,0.0
+1475,201338,Bea Bielik,Clay,0.0,1,0.0
+1476,201338,Bea Bielik,Grass,0.0,1,0.0
+1477,201338,Bea Bielik,Hard,2.0,2,50.0
+1478,201339,Renata Voracova,Clay,1.0,3,25.0
+1479,201339,Renata Voracova,Grass,0.0,2,0.0
+1480,201339,Renata Voracova,Hard,1.0,10,9.090909090909092
+1481,201340,Maria Geznenge,Hard,0.0,1,0.0
+1482,201341,Mi Ra Jeon,Carpet,0.0,1,0.0
+1483,201341,Mi Ra Jeon,Hard,0.0,1,0.0
+1484,201342,Alexandra Podkolzina,Hard,0.0,1,0.0
+1485,201343,Maret Ani,Clay,1.0,4,20.0
+1486,201343,Maret Ani,Grass,0.0,2,0.0
+1487,201343,Maret Ani,Hard,3.0,8,27.27272727272727
+1488,201344,Klara Koukalova,Carpet,7.0,7,50.0
+1489,201344,Klara Koukalova,Clay,19.0,31,38.0
+1490,201344,Klara Koukalova,Grass,18.0,16,52.94117647058824
+1491,201344,Klara Koukalova,Hard,52.0,96,35.13513513513514
+1492,201345,Maria Sharapova,Carpet,14.0,7,66.66666666666666
+1493,201345,Maria Sharapova,Clay,141.0,34,80.57142857142857
+1494,201345,Maria Sharapova,Grass,46.0,14,76.66666666666667
+1495,201345,Maria Sharapova,Hard,311.0,103,75.1207729468599
+1496,201346,Lubomira Kurhajcova,Clay,0.0,2,0.0
+1497,201346,Lubomira Kurhajcova,Grass,0.0,1,0.0
+1498,201346,Lubomira Kurhajcova,Hard,2.0,9,18.181818181818183
+1499,201347,Jelena Jankovic,Carpet,5.0,7,41.66666666666667
+1500,201347,Jelena Jankovic,Clay,115.0,64,64.24581005586593
+1501,201347,Jelena Jankovic,Grass,23.0,18,56.09756097560976
+1502,201347,Jelena Jankovic,Hard,281.0,191,59.53389830508474
+1503,201348,Casey Dellacqua,Clay,7.0,13,35.0
+1504,201348,Casey Dellacqua,Grass,11.0,10,52.38095238095239
+1505,201348,Casey Dellacqua,Hard,33.0,48,40.74074074074074
+1506,201349,Melinda Czink,Clay,8.0,16,33.33333333333333
+1507,201349,Melinda Czink,Grass,4.0,8,33.33333333333333
+1508,201349,Melinda Czink,Hard,15.0,35,30.0
+1509,201350,Adriana Szili,Hard,0.0,1,0.0
+1510,201351,Eva Fislova,Grass,1.0,1,50.0
+1511,201351,Eva Fislova,Hard,0.0,2,0.0
+1512,201352,Akiko Morigami,Carpet,2.0,2,50.0
+1513,201352,Akiko Morigami,Clay,8.0,14,36.36363636363637
+1514,201352,Akiko Morigami,Grass,6.0,8,42.857142857142854
+1515,201352,Akiko Morigami,Hard,22.0,38,36.666666666666664
+1516,201353,Stanislava Hrozenska,Grass,0.0,1,0.0
+1517,201353,Stanislava Hrozenska,Hard,0.0,1,0.0
+1518,201354,Libuse Prusova,Carpet,0.0,1,0.0
+1519,201354,Libuse Prusova,Clay,0.0,3,0.0
+1520,201354,Libuse Prusova,Hard,0.0,2,0.0
+1521,201355,Flavia Pennetta,Carpet,3.0,4,42.857142857142854
+1522,201355,Flavia Pennetta,Clay,40.0,41,49.382716049382715
+1523,201355,Flavia Pennetta,Grass,19.0,17,52.77777777777778
+1524,201355,Flavia Pennetta,Hard,169.0,119,58.68055555555556
+1525,201356,Eva Birnerova,Clay,2.0,9,18.181818181818183
+1526,201356,Eva Birnerova,Grass,3.0,5,37.5
+1527,201356,Eva Birnerova,Hard,4.0,10,28.57142857142857
+1528,201357,Virginie Pichet,Clay,0.0,3,0.0
+1529,201358,Natalia Gussoni,Clay,0.0,1,0.0
+1530,201359,Amandine Dulon,Clay,0.0,1,0.0
+1531,201360,Julia Vakulenko,Carpet,0.0,1,0.0
+1532,201360,Julia Vakulenko,Clay,18.0,19,48.64864864864865
+1533,201360,Julia Vakulenko,Grass,1.0,6,14.285714285714285
+1534,201360,Julia Vakulenko,Hard,13.0,20,39.39393939393939
+1535,201361,Julia Schruff,Clay,8.0,14,36.36363636363637
+1536,201361,Julia Schruff,Grass,0.0,3,0.0
+1537,201361,Julia Schruff,Hard,13.0,21,38.23529411764706
+1538,201362,Anais Laurendon,Clay,0.0,1,0.0
+1539,201363,Gisela Dulko,Carpet,0.0,1,0.0
+1540,201363,Gisela Dulko,Clay,27.0,33,45.0
+1541,201363,Gisela Dulko,Grass,11.0,9,55.00000000000001
+1542,201363,Gisela Dulko,Hard,57.0,80,41.605839416058394
+1543,201364,Tatiana Golovin,Carpet,11.0,5,68.75
+1544,201364,Tatiana Golovin,Clay,15.0,10,60.0
+1545,201364,Tatiana Golovin,Grass,5.0,4,55.55555555555556
+1546,201364,Tatiana Golovin,Hard,73.0,49,59.83606557377049
+1547,201365,Edina Gallovits Hall,Clay,5.0,12,29.411764705882355
+1548,201365,Edina Gallovits Hall,Grass,2.0,7,22.22222222222222
+1549,201365,Edina Gallovits Hall,Hard,6.0,19,24.0
+1550,201366,Barbora Strycova,Carpet,1.0,3,25.0
+1551,201366,Barbora Strycova,Clay,30.0,45,40.0
+1552,201366,Barbora Strycova,Grass,45.0,28,61.64383561643836
+1553,201366,Barbora Strycova,Hard,103.0,123,45.57522123893805
+1554,201367,Arantxa Parra Santonja,Carpet,0.0,2,0.0
+1555,201367,Arantxa Parra Santonja,Clay,10.0,12,45.45454545454545
+1556,201367,Arantxa Parra Santonja,Grass,4.0,6,40.0
+1557,201367,Arantxa Parra Santonja,Hard,10.0,25,28.57142857142857
+1558,201368,Karolina Sprem,Carpet,4.0,5,44.44444444444444
+1559,201368,Karolina Sprem,Clay,19.0,20,48.717948717948715
+1560,201368,Karolina Sprem,Grass,9.0,9,50.0
+1561,201368,Karolina Sprem,Hard,21.0,37,36.206896551724135
+1562,201369,Carly Gullickson,Clay,0.0,4,0.0
+1563,201369,Carly Gullickson,Grass,0.0,1,0.0
+1564,201369,Carly Gullickson,Hard,1.0,5,16.666666666666664
+1565,201370,Anastasia Rodionova,Carpet,0.0,1,0.0
+1566,201370,Anastasia Rodionova,Clay,15.0,20,42.857142857142854
+1567,201370,Anastasia Rodionova,Grass,3.0,7,30.0
+1568,201370,Anastasia Rodionova,Hard,23.0,48,32.3943661971831
+1569,201371,Vera Dushevina,Carpet,4.0,7,36.36363636363637
+1570,201371,Vera Dushevina,Clay,21.0,30,41.17647058823529
+1571,201371,Vera Dushevina,Grass,11.0,14,44.0
+1572,201371,Vera Dushevina,Hard,52.0,77,40.310077519379846
+1573,201372,Theresa Logar,Hard,0.0,1,0.0
+1574,201373,Maria Kirilenko,Carpet,4.0,5,44.44444444444444
+1575,201373,Maria Kirilenko,Clay,34.0,34,50.0
+1576,201373,Maria Kirilenko,Grass,13.0,14,48.148148148148145
+1577,201373,Maria Kirilenko,Hard,136.0,115,54.18326693227091
+1578,201374,Gabriela Lastra,Hard,0.0,1,0.0
+1579,201375,Shenay Perry,Carpet,0.0,1,0.0
+1580,201375,Shenay Perry,Clay,5.0,11,31.25
+1581,201375,Shenay Perry,Grass,7.0,6,53.84615384615385
+1582,201375,Shenay Perry,Hard,11.0,25,30.555555555555557
+1583,201376,Angela Haynes,Clay,0.0,4,0.0
+1584,201376,Angela Haynes,Grass,0.0,1,0.0
+1585,201376,Angela Haynes,Hard,9.0,22,29.03225806451613
+1586,201377,Yuliya Beygelzimer,Clay,0.0,5,0.0
+1587,201377,Yuliya Beygelzimer,Grass,0.0,2,0.0
+1588,201377,Yuliya Beygelzimer,Hard,0.0,4,0.0
+1589,201378,Stephanie Gehrlein,Clay,0.0,2,0.0
+1590,201378,Stephanie Gehrlein,Hard,0.0,4,0.0
+1591,201379,Mara Santangelo,Carpet,1.0,3,25.0
+1592,201379,Mara Santangelo,Clay,15.0,19,44.11764705882353
+1593,201379,Mara Santangelo,Grass,5.0,7,41.66666666666667
+1594,201379,Mara Santangelo,Hard,20.0,30,40.0
+1595,201380,Claudine Schaul,Carpet,0.0,4,0.0
+1596,201380,Claudine Schaul,Clay,0.0,4,0.0
+1597,201380,Claudine Schaul,Grass,0.0,2,0.0
+1598,201380,Claudine Schaul,Hard,10.0,15,40.0
+1599,201381,Tian Tian Sun,Clay,3.0,7,30.0
+1600,201381,Tian Tian Sun,Grass,2.0,3,40.0
+1601,201381,Tian Tian Sun,Hard,9.0,21,30.0
+1602,201382,Olivia Lukaszewicz,Hard,0.0,1,0.0
+1603,201383,Marie Eve Pelletier,Clay,1.0,2,33.33333333333333
+1604,201383,Marie Eve Pelletier,Hard,2.0,10,16.666666666666664
+1605,201384,Chia Jung Chuang,Clay,0.0,1,0.0
+1606,201384,Chia Jung Chuang,Hard,0.0,1,0.0
+1607,201385,Yuliana Fedak,Carpet,1.0,1,50.0
+1608,201385,Yuliana Fedak,Clay,5.0,14,26.31578947368421
+1609,201385,Yuliana Fedak,Grass,0.0,2,0.0
+1610,201385,Yuliana Fedak,Hard,7.0,19,26.923076923076923
+1611,201386,Jie Zheng,Carpet,1.0,3,25.0
+1612,201386,Jie Zheng,Clay,31.0,36,46.26865671641791
+1613,201386,Jie Zheng,Grass,15.0,15,50.0
+1614,201386,Jie Zheng,Hard,84.0,88,48.837209302325576
+1615,201387,Sofia Arvidsson,Carpet,1.0,3,25.0
+1616,201387,Sofia Arvidsson,Clay,13.0,22,37.142857142857146
+1617,201387,Sofia Arvidsson,Grass,1.0,8,11.11111111111111
+1618,201387,Sofia Arvidsson,Hard,36.0,49,42.35294117647059
+1619,201388,Sophie Ferguson,Clay,2.0,3,40.0
+1620,201388,Sophie Ferguson,Hard,1.0,8,11.11111111111111
+1621,201389,Zuzana Kucova,Clay,2.0,3,40.0
+1622,201389,Zuzana Kucova,Grass,0.0,1,0.0
+1623,201389,Zuzana Kucova,Hard,0.0,3,0.0
+1624,201390,Mervana Jugic Salkic,Clay,0.0,2,0.0
+1625,201390,Mervana Jugic Salkic,Grass,0.0,1,0.0
+1626,201390,Mervana Jugic Salkic,Hard,0.0,2,0.0
+1627,201391,Sanda Mamic,Carpet,1.0,2,33.33333333333333
+1628,201391,Sanda Mamic,Clay,3.0,4,42.857142857142854
+1629,201391,Sanda Mamic,Grass,0.0,1,0.0
+1630,201391,Sanda Mamic,Hard,2.0,4,33.33333333333333
+1631,201392,Severine Beltrame,Carpet,1.0,4,20.0
+1632,201392,Severine Beltrame,Clay,3.0,13,18.75
+1633,201392,Severine Beltrame,Grass,6.0,6,50.0
+1634,201392,Severine Beltrame,Hard,10.0,19,34.48275862068966
+1635,201393,Kelly Mccain,Clay,1.0,2,33.33333333333333
+1636,201393,Kelly Mccain,Hard,0.0,2,0.0
+1637,201394,Anna Lena Groenefeld,Carpet,2.0,4,33.33333333333333
+1638,201394,Anna Lena Groenefeld,Clay,20.0,20,50.0
+1639,201394,Anna Lena Groenefeld,Grass,2.0,8,20.0
+1640,201394,Anna Lena Groenefeld,Hard,38.0,48,44.18604651162791
+1641,201395,Teryn Ashley,Clay,1.0,2,33.33333333333333
+1642,201395,Teryn Ashley,Grass,1.0,1,50.0
+1643,201395,Teryn Ashley,Hard,0.0,6,0.0
+1644,201396,Katie Obrien,Clay,0.0,3,0.0
+1645,201396,Katie Obrien,Grass,2.0,11,15.384615384615385
+1646,201396,Katie Obrien,Hard,1.0,3,25.0
+1647,201397,Shuai Peng,Carpet,0.0,2,0.0
+1648,201397,Shuai Peng,Clay,43.0,50,46.236559139784944
+1649,201397,Shuai Peng,Grass,19.0,17,52.77777777777778
+1650,201397,Shuai Peng,Hard,120.0,120,50.0
+1651,201398,Amanda Keen,Grass,1.0,5,16.666666666666664
+1652,201399,Emily Webley Smith,Grass,1.0,2,33.33333333333333
+1653,201400,Nicole Vaidisova,Carpet,6.0,4,60.0
+1654,201400,Nicole Vaidisova,Clay,15.0,12,55.55555555555556
+1655,201400,Nicole Vaidisova,Grass,15.0,8,65.21739130434783
+1656,201400,Nicole Vaidisova,Hard,69.0,42,62.16216216216216
+1657,201401,Abigail Spears,Clay,1.0,3,25.0
+1658,201401,Abigail Spears,Grass,0.0,1,0.0
+1659,201401,Abigail Spears,Hard,5.0,10,33.33333333333333
+1660,201402,Sesil Karatantcheva,Carpet,1.0,1,50.0
+1661,201402,Sesil Karatantcheva,Clay,6.0,7,46.15384615384615
+1662,201402,Sesil Karatantcheva,Grass,1.0,3,25.0
+1663,201402,Sesil Karatantcheva,Hard,16.0,24,40.0
+1664,201403,Anna Chakvetadze,Carpet,11.0,4,73.33333333333333
+1665,201403,Anna Chakvetadze,Clay,26.0,26,50.0
+1666,201403,Anna Chakvetadze,Grass,10.0,10,50.0
+1667,201403,Anna Chakvetadze,Hard,91.0,71,56.17283950617284
+1668,201404,Jessica Kirkland,Hard,5.0,9,35.714285714285715
+1669,201405,Nan Nan Liu,Hard,0.0,2,0.0
+1670,201406,Shikha Uberoi,Hard,2.0,5,28.57142857142857
+1671,201407,Evgenia Linetskaya,Carpet,0.0,1,0.0
+1672,201407,Evgenia Linetskaya,Clay,3.0,4,42.857142857142854
+1673,201407,Evgenia Linetskaya,Grass,0.0,1,0.0
+1674,201407,Evgenia Linetskaya,Hard,8.0,10,44.44444444444444
+1675,201408,Jamea Jackson,Clay,2.0,3,40.0
+1676,201408,Jamea Jackson,Grass,2.0,3,40.0
+1677,201408,Jamea Jackson,Hard,11.0,22,33.33333333333333
+1678,201409,Michaela Pastikova,Carpet,1.0,1,50.0
+1679,201409,Michaela Pastikova,Clay,0.0,3,0.0
+1680,201409,Michaela Pastikova,Grass,1.0,1,50.0
+1681,201409,Michaela Pastikova,Hard,2.0,3,40.0
+1682,201410,Monique Adamczak,Clay,1.0,1,50.0
+1683,201410,Monique Adamczak,Hard,1.0,5,16.666666666666664
+1684,201411,Aiko Nakamura,Carpet,1.0,3,25.0
+1685,201411,Aiko Nakamura,Clay,1.0,6,14.285714285714285
+1686,201411,Aiko Nakamura,Grass,3.0,6,33.33333333333333
+1687,201411,Aiko Nakamura,Hard,16.0,25,39.02439024390244
+1688,201412,Anastasia Yakimova,Clay,2.0,8,20.0
+1689,201412,Anastasia Yakimova,Grass,2.0,6,25.0
+1690,201412,Anastasia Yakimova,Hard,10.0,24,29.411764705882355
+1691,201413,Capucine Rousseau,Hard,0.0,1,0.0
+1692,201414,Michaella Krajicek,Carpet,0.0,1,0.0
+1693,201414,Michaella Krajicek,Clay,8.0,17,32.0
+1694,201414,Michaella Krajicek,Grass,4.0,4,50.0
+1695,201414,Michaella Krajicek,Hard,21.0,35,37.5
+1696,201415,Tiffany Welford,Hard,0.0,1,0.0
+1697,201416,Alona Bondarenko,Carpet,0.0,2,0.0
+1698,201416,Alona Bondarenko,Clay,36.0,23,61.016949152542374
+1699,201416,Alona Bondarenko,Grass,7.0,7,50.0
+1700,201416,Alona Bondarenko,Hard,60.0,67,47.24409448818898
+1701,201417,Marta Domachowska,Carpet,0.0,1,0.0
+1702,201417,Marta Domachowska,Clay,8.0,17,32.0
+1703,201417,Marta Domachowska,Grass,1.0,4,20.0
+1704,201417,Marta Domachowska,Hard,18.0,28,39.130434782608695
+1705,201418,Ting Li,Hard,1.0,4,20.0
+1706,201419,Na Li,Carpet,2.0,4,33.33333333333333
+1707,201419,Na Li,Clay,62.0,28,68.88888888888889
+1708,201419,Na Li,Grass,24.0,13,64.86486486486487
+1709,201419,Na Li,Hard,171.0,84,67.05882352941175
+1710,201420,Sania Mirza,Carpet,1.0,1,50.0
+1711,201420,Sania Mirza,Clay,6.0,10,37.5
+1712,201420,Sania Mirza,Grass,4.0,7,36.36363636363637
+1713,201420,Sania Mirza,Hard,45.0,50,47.368421052631575
+1714,201421,Ana Ivanovic,Carpet,5.0,2,71.42857142857143
+1715,201421,Ana Ivanovic,Clay,89.0,41,68.46153846153847
+1716,201421,Ana Ivanovic,Grass,30.0,16,65.21739130434783
+1717,201421,Ana Ivanovic,Hard,240.0,130,64.86486486486487
+1718,201422,Mailyne Andrieux,Clay,0.0,1,0.0
+1719,201423,Yvonne Meusburger,Carpet,1.0,1,50.0
+1720,201423,Yvonne Meusburger,Clay,2.0,8,20.0
+1721,201423,Yvonne Meusburger,Grass,2.0,5,28.57142857142857
+1722,201423,Yvonne Meusburger,Hard,11.0,21,34.375
+1723,201424,Shahar Peer,Carpet,3.0,4,42.857142857142854
+1724,201424,Shahar Peer,Clay,31.0,27,53.44827586206896
+1725,201424,Shahar Peer,Grass,12.0,15,44.44444444444444
+1726,201424,Shahar Peer,Hard,107.0,85,55.729166666666664
+1727,201425,Lucie Safarova,Carpet,10.0,6,62.5
+1728,201425,Lucie Safarova,Clay,70.0,48,59.32203389830508
+1729,201425,Lucie Safarova,Grass,27.0,24,52.94117647058824
+1730,201425,Lucie Safarova,Hard,134.0,128,51.14503816793893
+1731,201426,Pauline Parmentier,Carpet,1.0,2,33.33333333333333
+1732,201426,Pauline Parmentier,Clay,11.0,22,33.33333333333333
+1733,201426,Pauline Parmentier,Grass,5.0,12,29.411764705882355
+1734,201426,Pauline Parmentier,Hard,19.0,44,30.158730158730158
+1735,201427,Alize Cornet,Carpet,7.0,8,46.666666666666664
+1736,201427,Alize Cornet,Clay,53.0,54,49.532710280373834
+1737,201427,Alize Cornet,Grass,23.0,31,42.592592592592595
+1738,201427,Alize Cornet,Hard,126.0,142,47.01492537313433
+1739,201428,Mathilde Johansson,Clay,7.0,14,33.33333333333333
+1740,201428,Mathilde Johansson,Grass,4.0,5,44.44444444444444
+1741,201428,Mathilde Johansson,Hard,2.0,13,13.333333333333334
+1742,201429,Rika Fujiwara,Carpet,0.0,2,0.0
+1743,201429,Rika Fujiwara,Clay,0.0,2,0.0
+1744,201429,Rika Fujiwara,Grass,0.0,2,0.0
+1745,201429,Rika Fujiwara,Hard,5.0,9,35.714285714285715
+1746,201430,Yulia Fedossova,Clay,0.0,4,0.0
+1747,201430,Yulia Fedossova,Hard,2.0,2,50.0
+1748,201431,Aravane Rezai,Carpet,1.0,3,25.0
+1749,201431,Aravane Rezai,Clay,19.0,20,48.717948717948715
+1750,201431,Aravane Rezai,Grass,6.0,9,40.0
+1751,201431,Aravane Rezai,Hard,27.0,44,38.028169014084504
+1752,201432,Rebecca Llewellyn,Grass,0.0,1,0.0
+1753,201433,Sarah Borwell,Grass,1.0,2,33.33333333333333
+1754,201434,Sabine Klaschka,Grass,1.0,1,50.0
+1755,201435,Kateryna Bondarenko,Carpet,2.0,1,66.66666666666666
+1756,201435,Kateryna Bondarenko,Clay,18.0,30,37.5
+1757,201435,Kateryna Bondarenko,Grass,9.0,14,39.130434782608695
+1758,201435,Kateryna Bondarenko,Hard,56.0,79,41.48148148148148
+1759,201436,Mary Gambale,Hard,0.0,1,0.0
+1760,201437,Ivana Lisjak,Carpet,0.0,1,0.0
+1761,201437,Ivana Lisjak,Clay,2.0,2,50.0
+1762,201437,Ivana Lisjak,Grass,0.0,1,0.0
+1763,201437,Ivana Lisjak,Hard,3.0,3,50.0
+1764,201438,Ekaterina Bychkova,Carpet,2.0,2,50.0
+1765,201438,Ekaterina Bychkova,Clay,0.0,8,0.0
+1766,201438,Ekaterina Bychkova,Grass,1.0,3,25.0
+1767,201438,Ekaterina Bychkova,Hard,11.0,16,40.74074074074074
+1768,201439,Tiffany Dabek,Hard,0.0,1,0.0
+1769,201440,Laura Pous Tio,Clay,2.0,8,20.0
+1770,201440,Laura Pous Tio,Grass,0.0,3,0.0
+1771,201440,Laura Pous Tio,Hard,2.0,10,16.666666666666664
+1772,201441,Emma Laine,Clay,1.0,5,16.666666666666664
+1773,201441,Emma Laine,Grass,0.0,1,0.0
+1774,201441,Emma Laine,Hard,8.0,10,44.44444444444444
+1775,201442,Yung Jan Chan,Clay,6.0,10,37.5
+1776,201442,Yung Jan Chan,Grass,1.0,5,16.666666666666664
+1777,201442,Yung Jan Chan,Hard,15.0,31,32.608695652173914
+1778,201443,Alexa Glatch,Clay,2.0,5,28.57142857142857
+1779,201443,Alexa Glatch,Grass,0.0,3,0.0
+1780,201443,Alexa Glatch,Hard,6.0,18,25.0
+1781,201444,Su Wei Hsieh,Clay,7.0,20,25.925925925925924
+1782,201444,Su Wei Hsieh,Grass,15.0,20,42.857142857142854
+1783,201444,Su Wei Hsieh,Hard,44.0,57,43.56435643564357
+1784,201445,Viktoria Kutuzova,Clay,6.0,6,50.0
+1785,201445,Viktoria Kutuzova,Grass,1.0,4,20.0
+1786,201445,Viktoria Kutuzova,Hard,9.0,16,36.0
+1787,201446,Sybille Bammer,Clay,21.0,19,52.5
+1788,201446,Sybille Bammer,Grass,8.0,9,47.05882352941176
+1789,201446,Sybille Bammer,Hard,62.0,70,46.96969696969697
+1790,201447,Vania King,Clay,12.0,23,34.285714285714285
+1791,201447,Vania King,Grass,2.0,9,18.181818181818183
+1792,201447,Vania King,Hard,43.0,61,41.34615384615385
+1793,201448,Galina Voskoboeva,Carpet,1.0,1,50.0
+1794,201448,Galina Voskoboeva,Clay,9.0,18,33.33333333333333
+1795,201448,Galina Voskoboeva,Grass,1.0,5,16.666666666666664
+1796,201448,Galina Voskoboeva,Hard,21.0,42,33.33333333333333
+1797,201449,Lauren Breadmore,Hard,0.0,1,0.0
+1798,201450,Tsvetana Pironkova,Carpet,2.0,6,25.0
+1799,201450,Tsvetana Pironkova,Clay,25.0,37,40.32258064516129
+1800,201450,Tsvetana Pironkova,Grass,24.0,21,53.333333333333336
+1801,201450,Tsvetana Pironkova,Hard,67.0,103,39.411764705882355
+1802,201451,Kathrin Woerle,Hard,0.0,5,0.0
+1803,201452,Lourdes Dominguez Lino,Carpet,0.0,1,0.0
+1804,201452,Lourdes Dominguez Lino,Clay,18.0,26,40.909090909090914
+1805,201452,Lourdes Dominguez Lino,Grass,3.0,7,30.0
+1806,201452,Lourdes Dominguez Lino,Hard,18.0,37,32.72727272727273
+1807,201453,Hana Sromova,Clay,1.0,1,50.0
+1808,201453,Hana Sromova,Grass,1.0,2,33.33333333333333
+1809,201453,Hana Sromova,Hard,3.0,10,23.076923076923077
+1810,201454,Akgul Amanmuradova,Clay,8.0,15,34.78260869565217
+1811,201454,Akgul Amanmuradova,Grass,0.0,5,0.0
+1812,201454,Akgul Amanmuradova,Hard,13.0,21,38.23529411764706
+1813,201455,Elena Vesnina,Carpet,2.0,4,33.33333333333333
+1814,201455,Elena Vesnina,Clay,44.0,54,44.89795918367347
+1815,201455,Elena Vesnina,Grass,28.0,17,62.22222222222222
+1816,201455,Elena Vesnina,Hard,105.0,115,47.72727272727273
+1817,201456,Olga Savchuk,Clay,2.0,8,20.0
+1818,201456,Olga Savchuk,Grass,0.0,2,0.0
+1819,201456,Olga Savchuk,Hard,10.0,26,27.77777777777778
+1820,201457,Jarmila Gajdosova,Carpet,0.0,1,0.0
+1821,201457,Jarmila Gajdosova,Clay,14.0,16,46.666666666666664
+1822,201457,Jarmila Gajdosova,Grass,9.0,13,40.909090909090914
+1823,201457,Jarmila Gajdosova,Hard,19.0,48,28.35820895522388
+1824,201458,Victoria Azarenka,Carpet,0.0,1,0.0
+1825,201458,Victoria Azarenka,Clay,96.0,57,62.745098039215684
+1826,201458,Victoria Azarenka,Grass,49.0,23,68.05555555555556
+1827,201458,Victoria Azarenka,Hard,353.0,144,71.0261569416499
+1828,201459,Zi Yan,Clay,3.0,8,27.27272727272727
+1829,201459,Zi Yan,Grass,0.0,3,0.0
+1830,201459,Zi Yan,Hard,11.0,18,37.93103448275862
+1831,201460,Meng Yuan,Clay,0.0,3,0.0
+1832,201460,Meng Yuan,Grass,0.0,2,0.0
+1833,201460,Meng Yuan,Hard,8.0,13,38.095238095238095
+1834,201461,Aurelie Vedy,Clay,0.0,1,0.0
+1835,201462,Alberta Brianti,Carpet,0.0,1,0.0
+1836,201462,Alberta Brianti,Clay,2.0,12,14.285714285714285
+1837,201462,Alberta Brianti,Grass,1.0,5,16.666666666666664
+1838,201462,Alberta Brianti,Hard,9.0,20,31.03448275862069
+1839,201463,Anda Perianu,Clay,1.0,1,50.0
+1840,201464,Nathalie Vierin,Clay,2.0,5,28.57142857142857
+1841,201464,Nathalie Vierin,Grass,0.0,1,0.0
+1842,201465,Kirsten Flipkens,Carpet,2.0,2,50.0
+1843,201465,Kirsten Flipkens,Clay,9.0,21,30.0
+1844,201465,Kirsten Flipkens,Grass,20.0,15,57.14285714285714
+1845,201465,Kirsten Flipkens,Hard,48.0,77,38.4
+1846,201466,Kaia Kanepi,Carpet,4.0,2,66.66666666666666
+1847,201466,Kaia Kanepi,Clay,44.0,40,52.38095238095239
+1848,201466,Kaia Kanepi,Grass,13.0,19,40.625
+1849,201466,Kaia Kanepi,Hard,111.0,98,53.110047846889955
+1850,201467,Ivana Abramovic,Grass,0.0,1,0.0
+1851,201468,Yaroslava Shvedova,Clay,25.0,28,47.16981132075472
+1852,201468,Yaroslava Shvedova,Grass,13.0,10,56.52173913043478
+1853,201468,Yaroslava Shvedova,Hard,44.0,72,37.93103448275862
+1854,201469,Melanie South,Clay,0.0,1,0.0
+1855,201469,Melanie South,Grass,2.0,7,22.22222222222222
+1856,201469,Melanie South,Hard,2.0,4,33.33333333333333
+1857,201470,Kristina Barrois,Carpet,1.0,2,33.33333333333333
+1858,201470,Kristina Barrois,Clay,3.0,6,33.33333333333333
+1859,201470,Kristina Barrois,Grass,1.0,4,20.0
+1860,201470,Kristina Barrois,Hard,5.0,15,25.0
+1861,201471,Naomi Cavaday,Grass,0.0,3,0.0
+1862,201472,Romina Oprandi,Clay,9.0,15,37.5
+1863,201472,Romina Oprandi,Grass,2.0,6,25.0
+1864,201472,Romina Oprandi,Hard,14.0,24,36.84210526315789
+1865,201473,Vasilisa Bardina,Clay,1.0,5,16.666666666666664
+1866,201473,Vasilisa Bardina,Grass,0.0,3,0.0
+1867,201473,Vasilisa Bardina,Hard,4.0,7,36.36363636363637
+1868,201474,Agnieszka Radwanska,Carpet,2.0,2,50.0
+1869,201474,Agnieszka Radwanska,Clay,67.0,40,62.616822429906534
+1870,201474,Agnieszka Radwanska,Grass,62.0,25,71.26436781609196
+1871,201474,Agnieszka Radwanska,Hard,306.0,146,67.69911504424779
+1872,201475,Ahsha Rolle,Clay,0.0,1,0.0
+1873,201475,Ahsha Rolle,Hard,5.0,10,33.33333333333333
+1874,201476,Lauren Albanese,Hard,1.0,3,25.0
+1875,201477,Stephanie Dubois,Clay,1.0,5,16.666666666666664
+1876,201477,Stephanie Dubois,Grass,2.0,6,25.0
+1877,201477,Stephanie Dubois,Hard,9.0,20,31.03448275862069
+1878,201478,Varvara Lepchenko,Carpet,0.0,1,0.0
+1879,201478,Varvara Lepchenko,Clay,30.0,39,43.47826086956522
+1880,201478,Varvara Lepchenko,Grass,8.0,17,32.0
+1881,201478,Varvara Lepchenko,Hard,64.0,90,41.55844155844156
+1882,201479,Olga Puchkova,Carpet,0.0,1,0.0
+1883,201479,Olga Puchkova,Clay,1.0,4,20.0
+1884,201479,Olga Puchkova,Grass,1.0,3,25.0
+1885,201479,Olga Puchkova,Hard,6.0,19,24.0
+1886,201480,Lioudmila Skavronskaia,Hard,1.0,2,33.33333333333333
+1887,201481,Tamira Paszek,Carpet,0.0,2,0.0
+1888,201481,Tamira Paszek,Clay,5.0,18,21.73913043478261
+1889,201481,Tamira Paszek,Grass,17.0,13,56.666666666666664
+1890,201481,Tamira Paszek,Hard,32.0,53,37.64705882352941
+1891,201482,Andreja Klepac,Clay,0.0,1,0.0
+1892,201482,Andreja Klepac,Hard,1.0,6,14.285714285714285
+1893,201483,Madison Brengle,Clay,10.0,22,31.25
+1894,201483,Madison Brengle,Grass,9.0,12,42.857142857142854
+1895,201483,Madison Brengle,Hard,37.0,61,37.755102040816325
+1896,201484,Sandra Zahlavova,Clay,0.0,4,0.0
+1897,201484,Sandra Zahlavova,Grass,0.0,2,0.0
+1898,201484,Sandra Zahlavova,Hard,2.0,7,22.22222222222222
+1899,201485,Alla Kudryavtseva,Clay,5.0,11,31.25
+1900,201485,Alla Kudryavtseva,Grass,4.0,7,36.36363636363637
+1901,201485,Alla Kudryavtseva,Hard,21.0,44,32.30769230769231
+1902,201486,Aleksandra Wozniak,Clay,17.0,19,47.22222222222222
+1903,201486,Aleksandra Wozniak,Grass,9.0,11,45.0
+1904,201486,Aleksandra Wozniak,Hard,32.0,51,38.55421686746988
+1905,201487,Jessica Moore,Hard,3.0,5,37.5
+1906,201488,Jorgelina Cravero,Grass,0.0,1,0.0
+1907,201488,Jorgelina Cravero,Hard,0.0,2,0.0
+1908,201489,Mariya Koryttseva,Clay,1.0,8,11.11111111111111
+1909,201489,Mariya Koryttseva,Grass,0.0,3,0.0
+1910,201489,Mariya Koryttseva,Hard,5.0,11,31.25
+1911,201490,Timea Bacsinszky,Carpet,0.0,3,0.0
+1912,201490,Timea Bacsinszky,Clay,31.0,19,62.0
+1913,201490,Timea Bacsinszky,Grass,11.0,11,50.0
+1914,201490,Timea Bacsinszky,Hard,57.0,64,47.107438016528924
+1915,201491,Olivia Sanchez,Clay,2.0,5,28.57142857142857
+1916,201491,Olivia Sanchez,Hard,0.0,3,0.0
+1917,201492,Andrea Petkovic,Carpet,6.0,3,66.66666666666666
+1918,201492,Andrea Petkovic,Clay,45.0,40,52.94117647058824
+1919,201492,Andrea Petkovic,Grass,17.0,19,47.22222222222222
+1920,201492,Andrea Petkovic,Hard,115.0,102,52.995391705069125
+1921,201493,Angelique Kerber,Carpet,6.0,2,75.0
+1922,201493,Angelique Kerber,Clay,67.0,48,58.26086956521739
+1923,201493,Angelique Kerber,Grass,64.0,24,72.72727272727273
+1924,201493,Angelique Kerber,Hard,233.0,143,61.96808510638297
+1925,201494,Raluca Olaru,Carpet,0.0,1,0.0
+1926,201494,Raluca Olaru,Clay,4.0,6,40.0
+1927,201494,Raluca Olaru,Grass,2.0,3,40.0
+1928,201494,Raluca Olaru,Hard,4.0,12,25.0
+1929,201495,Dominika Cibulkova,Carpet,3.0,3,50.0
+1930,201495,Dominika Cibulkova,Clay,53.0,41,56.38297872340425
+1931,201495,Dominika Cibulkova,Grass,30.0,16,65.21739130434783
+1932,201495,Dominika Cibulkova,Hard,189.0,154,55.10204081632652
+1933,201496,Caroline Wozniacki,Clay,84.0,48,63.63636363636363
+1934,201496,Caroline Wozniacki,Grass,58.0,25,69.87951807228916
+1935,201496,Caroline Wozniacki,Hard,334.0,149,69.15113871635612
+1936,201497,Agnes Szavay,Carpet,6.0,4,60.0
+1937,201497,Agnes Szavay,Clay,22.0,16,57.89473684210527
+1938,201497,Agnes Szavay,Grass,5.0,5,50.0
+1939,201497,Agnes Szavay,Hard,33.0,41,44.5945945945946
+1940,201498,Karin Knapp,Carpet,1.0,2,33.33333333333333
+1941,201498,Karin Knapp,Clay,9.0,17,34.61538461538461
+1942,201498,Karin Knapp,Grass,3.0,7,30.0
+1943,201498,Karin Knapp,Hard,22.0,40,35.483870967741936
+1944,201499,Anastasia Pavlyuchenkova,Carpet,7.0,4,63.63636363636363
+1945,201499,Anastasia Pavlyuchenkova,Clay,61.0,55,52.58620689655172
+1946,201499,Anastasia Pavlyuchenkova,Grass,20.0,25,44.44444444444444
+1947,201499,Anastasia Pavlyuchenkova,Hard,191.0,163,53.954802259887
+1948,201500,Nika Ozegovic,Grass,1.0,1,50.0
+1949,201501,Olga Govortsova,Carpet,0.0,2,0.0
+1950,201501,Olga Govortsova,Clay,14.0,27,34.146341463414636
+1951,201501,Olga Govortsova,Grass,7.0,13,35.0
+1952,201501,Olga Govortsova,Hard,37.0,65,36.27450980392157
+1953,201503,Ayumi Morita,Clay,10.0,18,35.714285714285715
+1954,201503,Ayumi Morita,Grass,2.0,6,25.0
+1955,201503,Ayumi Morita,Hard,23.0,48,32.3943661971831
+1956,201504,Julia Goerges,Carpet,2.0,2,50.0
+1957,201504,Julia Goerges,Clay,47.0,43,52.22222222222223
+1958,201504,Julia Goerges,Grass,18.0,16,52.94117647058824
+1959,201504,Julia Goerges,Hard,98.0,104,48.51485148514851
+1960,201505,Kate Makarova,Carpet,0.0,2,0.0
+1961,201505,Kate Makarova,Clay,32.0,35,47.76119402985074
+1962,201505,Kate Makarova,Grass,36.0,22,62.06896551724138
+1963,201505,Kate Makarova,Hard,132.0,124,51.5625
+1964,201506,Sara Errani,Carpet,6.0,3,66.66666666666666
+1965,201506,Sara Errani,Clay,67.0,57,54.03225806451613
+1966,201506,Sara Errani,Grass,9.0,15,37.5
+1967,201506,Sara Errani,Hard,115.0,114,50.21834061135371
+1968,201507,Audra Cohen,Hard,0.0,1,0.0
+1969,201508,Petra Cetkovska,Carpet,1.0,1,50.0
+1970,201508,Petra Cetkovska,Clay,14.0,11,56.00000000000001
+1971,201508,Petra Cetkovska,Grass,10.0,10,50.0
+1972,201508,Petra Cetkovska,Hard,20.0,25,44.44444444444444
+1973,201509,Ashley Weinhold,Hard,0.0,2,0.0
+1974,201510,Julie Ditty,Carpet,0.0,1,0.0
+1975,201510,Julie Ditty,Clay,1.0,4,20.0
+1976,201510,Julie Ditty,Grass,0.0,1,0.0
+1977,201510,Julie Ditty,Hard,1.0,7,12.5
+1978,201511,Ekaterina Ivanova,Clay,0.0,2,0.0
+1979,201511,Ekaterina Ivanova,Hard,1.0,2,33.33333333333333
+1980,201512,Monica Niculescu,Carpet,2.0,3,40.0
+1981,201512,Monica Niculescu,Clay,4.0,25,13.793103448275861
+1982,201512,Monica Niculescu,Grass,9.0,17,34.61538461538461
+1983,201512,Monica Niculescu,Hard,62.0,86,41.891891891891895
+1984,201513,Sabine Lisicki,Clay,33.0,33,50.0
+1985,201513,Sabine Lisicki,Grass,30.0,12,71.42857142857143
+1986,201513,Sabine Lisicki,Hard,71.0,77,47.97297297297297
+1987,201514,Sorana Cirstea,Carpet,0.0,2,0.0
+1988,201514,Sorana Cirstea,Clay,39.0,42,48.148148148148145
+1989,201514,Sorana Cirstea,Grass,16.0,24,40.0
+1990,201514,Sorana Cirstea,Hard,114.0,119,48.927038626609445
+1991,201515,Alisa Kleybanova,Carpet,2.0,2,50.0
+1992,201515,Alisa Kleybanova,Clay,11.0,14,44.0
+1993,201515,Alisa Kleybanova,Grass,8.0,7,53.333333333333336
+1994,201515,Alisa Kleybanova,Hard,64.0,55,53.78151260504202
+1995,201516,Evgeniya Rodina,Carpet,0.0,1,0.0
+1996,201516,Evgeniya Rodina,Clay,4.0,14,22.22222222222222
+1997,201516,Evgeniya Rodina,Grass,9.0,8,52.94117647058824
+1998,201516,Evgeniya Rodina,Hard,12.0,28,30.0
+1999,201517,Magdalena Rybarikova,Carpet,1.0,2,33.33333333333333
+2000,201517,Magdalena Rybarikova,Clay,14.0,28,33.33333333333333
+2001,201517,Magdalena Rybarikova,Grass,14.0,17,45.16129032258064
+2002,201517,Magdalena Rybarikova,Hard,52.0,77,40.310077519379846
+2003,201518,Yanina Wickmayer,Carpet,6.0,4,60.0
+2004,201518,Yanina Wickmayer,Clay,21.0,27,43.75
+2005,201518,Yanina Wickmayer,Grass,19.0,19,50.0
+2006,201518,Yanina Wickmayer,Hard,71.0,86,45.22292993630573
+2007,201519,Violette Huck,Clay,0.0,1,0.0
+2008,201520,Petra Kvitova,Carpet,7.0,3,70.0
+2009,201520,Petra Kvitova,Clay,85.0,43,66.40625
+2010,201520,Petra Kvitova,Grass,69.0,20,77.52808988764045
+2011,201520,Petra Kvitova,Hard,285.0,152,65.21739130434783
+2012,201521,Carla Suarez Navarro,Carpet,3.0,3,50.0
+2013,201521,Carla Suarez Navarro,Clay,65.0,37,63.725490196078425
+2014,201521,Carla Suarez Navarro,Grass,22.0,20,52.38095238095239
+2015,201521,Carla Suarez Navarro,Hard,146.0,121,54.68164794007491
+2016,201522,Jelena Pandzic,Clay,1.0,1,50.0
+2017,201523,Marina Erakovic,Carpet,0.0,1,0.0
+2018,201523,Marina Erakovic,Clay,9.0,15,37.5
+2019,201523,Marina Erakovic,Grass,9.0,12,42.857142857142854
+2020,201523,Marina Erakovic,Hard,15.0,37,28.846153846153843
+2021,201524,Urszula Radwanska,Carpet,0.0,1,0.0
+2022,201524,Urszula Radwanska,Clay,6.0,12,33.33333333333333
+2023,201524,Urszula Radwanska,Grass,4.0,8,33.33333333333333
+2024,201524,Urszula Radwanska,Hard,36.0,50,41.86046511627907
+2025,201525,Eva Hrdinova,Grass,0.0,1,0.0
+2026,201525,Eva Hrdinova,Hard,0.0,2,0.0
+2027,201526,Julie Coin,Carpet,0.0,1,0.0
+2028,201526,Julie Coin,Clay,1.0,2,33.33333333333333
+2029,201526,Julie Coin,Grass,0.0,2,0.0
+2030,201526,Julie Coin,Hard,6.0,10,37.5
+2031,201527,Stefanie Voegele,Carpet,1.0,2,33.33333333333333
+2032,201527,Stefanie Voegele,Clay,9.0,16,36.0
+2033,201527,Stefanie Voegele,Grass,0.0,9,0.0
+2034,201527,Stefanie Voegele,Hard,16.0,43,27.11864406779661
+2035,201528,Melanie Oudin,Carpet,4.0,2,66.66666666666666
+2036,201528,Melanie Oudin,Clay,8.0,15,34.78260869565217
+2037,201528,Melanie Oudin,Grass,4.0,6,40.0
+2038,201528,Melanie Oudin,Hard,13.0,30,30.23255813953488
+2039,201529,Kristie Ahn,Clay,1.0,2,33.33333333333333
+2040,201529,Kristie Ahn,Grass,1.0,2,33.33333333333333
+2041,201529,Kristie Ahn,Hard,5.0,10,33.33333333333333
+2042,201530,Gail Brodsky,Hard,0.0,2,0.0
+2043,201531,Mariana Duque Marino,Clay,9.0,15,37.5
+2044,201531,Mariana Duque Marino,Grass,2.0,5,28.57142857142857
+2045,201531,Mariana Duque Marino,Hard,5.0,17,22.727272727272727
+2046,201532,Anastasia Pivovarova,Clay,2.0,3,40.0
+2047,201532,Anastasia Pivovarova,Grass,0.0,2,0.0
+2048,201532,Anastasia Pivovarova,Hard,1.0,5,16.666666666666664
+2049,201533,Shuai Zhang,Clay,20.0,39,33.89830508474576
+2050,201533,Shuai Zhang,Grass,14.0,17,45.16129032258064
+2051,201533,Shuai Zhang,Hard,72.0,109,39.77900552486188
+2052,201534,Asia Muhammad,Clay,0.0,2,0.0
+2053,201534,Asia Muhammad,Grass,0.0,1,0.0
+2054,201534,Asia Muhammad,Hard,1.0,8,11.11111111111111
+2055,201535,Coco Vandeweghe,Clay,15.0,18,45.45454545454545
+2056,201535,Coco Vandeweghe,Grass,22.0,16,57.89473684210527
+2057,201535,Coco Vandeweghe,Hard,69.0,85,44.8051948051948
+2058,201536,Monika Wejnert,Hard,0.0,1,0.0
+2059,201537,Patricia Mayr Achleitner,Clay,2.0,8,20.0
+2060,201537,Patricia Mayr Achleitner,Grass,1.0,4,20.0
+2061,201537,Patricia Mayr Achleitner,Hard,3.0,11,21.428571428571427
+2062,201538,Isabella Holland,Hard,0.0,3,0.0
+2063,201539,Christina Mchale,Carpet,2.0,2,50.0
+2064,201539,Christina Mchale,Clay,25.0,35,41.66666666666667
+2065,201539,Christina Mchale,Grass,12.0,19,38.70967741935484
+2066,201539,Christina Mchale,Hard,64.0,79,44.75524475524475
+2067,201540,Kristina Mladenovic,Carpet,4.0,2,66.66666666666666
+2068,201540,Kristina Mladenovic,Clay,32.0,36,47.05882352941176
+2069,201540,Kristina Mladenovic,Grass,18.0,18,50.0
+2070,201540,Kristina Mladenovic,Hard,61.0,103,37.19512195121951
+2071,201541,Chanelle Scheepers,Carpet,1.0,1,50.0
+2072,201541,Chanelle Scheepers,Clay,14.0,21,40.0
+2073,201541,Chanelle Scheepers,Grass,2.0,6,25.0
+2074,201541,Chanelle Scheepers,Hard,22.0,39,36.0655737704918
+2075,201542,Olivia Rogowska,Clay,1.0,2,33.33333333333333
+2076,201542,Olivia Rogowska,Hard,3.0,18,14.285714285714285
+2077,201543,Emelyn Starr,Hard,0.0,1,0.0
+2078,201544,Oxana Lyubtsova,Carpet,0.0,1,0.0
+2079,201545,Anastasija Sevastova,Carpet,0.0,2,0.0
+2080,201545,Anastasija Sevastova,Clay,30.0,27,52.63157894736842
+2081,201545,Anastasija Sevastova,Grass,5.0,10,33.33333333333333
+2082,201545,Anastasija Sevastova,Hard,82.0,73,52.903225806451616
+2083,201546,Anna Lapushchenkova,Clay,3.0,1,75.0
+2084,201546,Anna Lapushchenkova,Grass,0.0,1,0.0
+2085,201546,Anna Lapushchenkova,Hard,0.0,2,0.0
+2086,201547,Michelle Larcher De Brito,Clay,3.0,4,42.857142857142854
+2087,201547,Michelle Larcher De Brito,Grass,7.0,5,58.333333333333336
+2088,201547,Michelle Larcher De Brito,Hard,9.0,18,33.33333333333333
+2089,201548,Ajla Tomljanovic,Clay,18.0,24,42.857142857142854
+2090,201548,Ajla Tomljanovic,Grass,11.0,12,47.82608695652174
+2091,201548,Ajla Tomljanovic,Hard,64.0,87,42.384105960264904
+2092,201549,Petra Martic,Carpet,2.0,2,50.0
+2093,201549,Petra Martic,Clay,35.0,32,52.23880597014925
+2094,201549,Petra Martic,Grass,24.0,18,57.14285714285714
+2095,201549,Petra Martic,Hard,67.0,85,44.07894736842105
+2096,201550,Tamaryn Hendler,Clay,0.0,1,0.0
+2097,201550,Tamaryn Hendler,Hard,0.0,1,0.0
+2098,201551,Arantxa Rus,Clay,11.0,21,34.375
+2099,201551,Arantxa Rus,Grass,3.0,9,25.0
+2100,201551,Arantxa Rus,Hard,10.0,41,19.607843137254903
+2101,201552,Mallory Cecil,Clay,0.0,2,0.0
+2102,201552,Mallory Cecil,Hard,0.0,2,0.0
+2103,201553,Lenka Wienerova,Clay,1.0,1,50.0
+2104,201554,Vitalia Diatchenko,Clay,2.0,5,28.57142857142857
+2105,201554,Vitalia Diatchenko,Grass,2.0,5,28.57142857142857
+2106,201554,Vitalia Diatchenko,Hard,2.0,10,16.666666666666664
+2107,201555,Polona Hercog,Carpet,0.0,1,0.0
+2108,201555,Polona Hercog,Clay,23.0,26,46.93877551020408
+2109,201555,Polona Hercog,Grass,9.0,13,40.909090909090914
+2110,201555,Polona Hercog,Hard,30.0,68,30.612244897959183
+2111,201556,Lucie Hradecka,Clay,12.0,12,50.0
+2112,201556,Lucie Hradecka,Grass,1.0,7,12.5
+2113,201556,Lucie Hradecka,Hard,12.0,38,24.0
+2114,201557,Corinna Dentoni,Clay,0.0,4,0.0
+2115,201558,Lauren Embree,Clay,0.0,1,0.0
+2116,201559,Irena Pavlovic,Clay,1.0,3,25.0
+2117,201559,Irena Pavlovic,Hard,0.0,1,0.0
+2118,201560,Kinnie Laisne,Clay,0.0,1,0.0
+2119,201561,Claire Feuerstein,Clay,2.0,5,28.57142857142857
+2120,201562,Silvia Soler Espinosa,Clay,8.0,16,33.33333333333333
+2121,201562,Silvia Soler Espinosa,Grass,4.0,4,50.0
+2122,201562,Silvia Soler Espinosa,Hard,11.0,22,33.33333333333333
+2123,201563,Darya Kustova,Clay,1.0,1,50.0
+2124,201563,Darya Kustova,Hard,0.0,1,0.0
+2125,201564,Lenka Tvaroskova,Clay,0.0,1,0.0
+2126,201565,Katarzyna Piter,Clay,1.0,4,20.0
+2127,201565,Katarzyna Piter,Grass,0.0,1,0.0
+2128,201565,Katarzyna Piter,Hard,0.0,3,0.0
+2129,201566,Agnes Szatmari,Clay,0.0,1,0.0
+2130,201566,Agnes Szatmari,Hard,1.0,1,50.0
+2131,201567,Alexandra Dulgheru,Carpet,0.0,1,0.0
+2132,201567,Alexandra Dulgheru,Clay,25.0,17,59.523809523809526
+2133,201567,Alexandra Dulgheru,Grass,4.0,5,44.44444444444444
+2134,201567,Alexandra Dulgheru,Hard,18.0,40,31.03448275862069
+2135,201568,Kristina Kucova,Carpet,1.0,1,50.0
+2136,201568,Kristina Kucova,Clay,5.0,8,38.46153846153847
+2137,201568,Kristina Kucova,Grass,3.0,4,42.857142857142854
+2138,201568,Kristina Kucova,Hard,9.0,14,39.130434782608695
+2139,201569,Georgie Gent,Grass,0.0,1,0.0
+2140,201570,Vesna Dolonc,Carpet,0.0,2,0.0
+2141,201570,Vesna Dolonc,Clay,1.0,3,25.0
+2142,201570,Vesna Dolonc,Grass,2.0,4,33.33333333333333
+2143,201570,Vesna Dolonc,Hard,7.0,10,41.17647058823529
+2144,201571,Masa Zec Peskiric,Grass,0.0,1,0.0
+2145,201571,Masa Zec Peskiric,Hard,0.0,1,0.0
+2146,201572,Regina Kulikova,Clay,0.0,1,0.0
+2147,201572,Regina Kulikova,Grass,4.0,2,66.66666666666666
+2148,201572,Regina Kulikova,Hard,5.0,6,45.45454545454545
+2149,201573,Laura Robson,Clay,4.0,7,36.36363636363637
+2150,201573,Laura Robson,Grass,6.0,10,37.5
+2151,201573,Laura Robson,Hard,13.0,22,37.142857142857146
+2152,201574,Neuza Silva,Grass,0.0,1,0.0
+2153,201575,Hilary Barte,Hard,0.0,3,0.0
+2154,201576,Valerie Tetreault,Hard,0.0,4,0.0
+2155,201577,Heidi El Tabakh,Clay,0.0,2,0.0
+2156,201577,Heidi El Tabakh,Hard,0.0,3,0.0
+2157,201578,Kai Chen Chang,Clay,1.0,3,25.0
+2158,201578,Kai Chen Chang,Grass,1.0,4,20.0
+2159,201578,Kai Chen Chang,Hard,7.0,14,33.33333333333333
+2160,201579,Yurika Sema,Hard,0.0,1,0.0
+2161,201580,Xinyun Han,Grass,0.0,1,0.0
+2162,201580,Xinyun Han,Hard,1.0,7,12.5
+2163,201581,Chun Mei Ji,Hard,0.0,1,0.0
+2164,201582,Jing Jing Lu,Hard,0.0,2,0.0
+2165,201583,Yana Buchina,Hard,0.0,1,0.0
+2166,201584,Ksenia Pervak,Clay,0.0,8,0.0
+2167,201584,Ksenia Pervak,Grass,3.0,2,60.0
+2168,201584,Ksenia Pervak,Hard,12.0,22,35.294117647058826
+2169,201585,Sloane Stephens,Clay,71.0,46,60.68376068376068
+2170,201585,Sloane Stephens,Grass,23.0,17,57.49999999999999
+2171,201585,Sloane Stephens,Hard,134.0,114,54.03225806451613
+2172,201586,Heather Watson,Clay,8.0,19,29.629629629629626
+2173,201586,Heather Watson,Grass,24.0,32,42.857142857142854
+2174,201586,Heather Watson,Hard,31.0,64,32.631578947368425
+2175,201587,Bojana Jovanovski,Carpet,0.0,1,0.0
+2176,201587,Bojana Jovanovski,Clay,9.0,17,34.61538461538461
+2177,201587,Bojana Jovanovski,Grass,6.0,11,35.294117647058826
+2178,201587,Bojana Jovanovski,Hard,21.0,44,32.30769230769231
+2179,201588,Anna Tatishvili,Clay,4.0,10,28.57142857142857
+2180,201588,Anna Tatishvili,Grass,2.0,5,28.57142857142857
+2181,201588,Anna Tatishvili,Hard,10.0,26,27.77777777777778
+2182,201589,Sharon Fichman,Clay,0.0,2,0.0
+2183,201589,Sharon Fichman,Grass,0.0,2,0.0
+2184,201589,Sharon Fichman,Hard,2.0,6,25.0
+2185,201590,Alison Riske Amritraj,Clay,8.0,30,21.052631578947366
+2186,201590,Alison Riske Amritraj,Grass,18.0,19,48.64864864864865
+2187,201590,Alison Riske Amritraj,Hard,65.0,87,42.76315789473684
+2188,201591,Margalita Chakhnashvili,Clay,0.0,1,0.0
+2189,201592,Beatriz Garcia Vidagany,Clay,0.0,2,0.0
+2190,201593,Irina Camelia Begu,Clay,59.0,39,60.204081632653065
+2191,201593,Irina Camelia Begu,Grass,10.0,17,37.03703703703704
+2192,201593,Irina Camelia Begu,Hard,47.0,78,37.6
+2193,201594,Simona Halep,Carpet,0.0,3,0.0
+2194,201594,Simona Halep,Clay,95.0,37,71.96969696969697
+2195,201594,Simona Halep,Grass,35.0,12,74.46808510638297
+2196,201594,Simona Halep,Hard,224.0,106,67.87878787878789
+2197,201595,Misaki Doi,Clay,7.0,20,25.925925925925924
+2198,201595,Misaki Doi,Grass,9.0,13,40.909090909090914
+2199,201595,Misaki Doi,Hard,24.0,56,30.0
+2200,201596,Johanna Larsson,Carpet,0.0,1,0.0
+2201,201596,Johanna Larsson,Clay,9.0,17,34.61538461538461
+2202,201596,Johanna Larsson,Grass,0.0,9,0.0
+2203,201596,Johanna Larsson,Hard,27.0,40,40.298507462686565
+2204,201597,Kurumi Nara,Clay,7.0,12,36.84210526315789
+2205,201597,Kurumi Nara,Grass,4.0,9,30.76923076923077
+2206,201597,Kurumi Nara,Hard,21.0,34,38.18181818181819
+2207,201598,Noppawan Lertcheewakarn,Grass,0.0,1,0.0
+2208,201598,Noppawan Lertcheewakarn,Hard,0.0,2,0.0
+2209,201599,Andrea Hlavackova,Clay,2.0,9,18.181818181818183
+2210,201599,Andrea Hlavackova,Grass,3.0,7,30.0
+2211,201599,Andrea Hlavackova,Hard,6.0,9,40.0
+2212,201600,Jamie Hampton,Clay,7.0,7,50.0
+2213,201600,Jamie Hampton,Grass,5.0,3,62.5
+2214,201600,Jamie Hampton,Hard,17.0,19,47.22222222222222
+2215,201601,Chelsey Gullickson,Hard,0.0,1,0.0
+2216,201602,Beatrice Capra,Hard,2.0,1,66.66666666666666
+2217,201603,Shelby Rogers,Clay,23.0,29,44.230769230769226
+2218,201603,Shelby Rogers,Grass,5.0,10,33.33333333333333
+2219,201603,Shelby Rogers,Hard,61.0,56,52.13675213675214
+2220,201604,Irina Falconi,Clay,6.0,10,37.5
+2221,201604,Irina Falconi,Grass,1.0,6,14.285714285714285
+2222,201604,Irina Falconi,Hard,12.0,21,36.36363636363637
+2223,201605,Mandy Minella,Clay,2.0,10,16.666666666666664
+2224,201605,Mandy Minella,Grass,1.0,6,14.285714285714285
+2225,201605,Mandy Minella,Hard,8.0,14,36.36363636363637
+2226,201606,Rebecca Marino,Clay,3.0,5,37.5
+2227,201606,Rebecca Marino,Grass,2.0,5,28.57142857142857
+2228,201606,Rebecca Marino,Hard,10.0,30,25.0
+2229,201607,Sally Peers,Hard,1.0,2,33.33333333333333
+2230,201608,Sheng Nan Sun,Hard,0.0,1,0.0
+2231,201609,Yi Miao Zhou,Hard,0.0,1,0.0
+2232,201610,Zarina Diyas,Clay,9.0,17,34.61538461538461
+2233,201610,Zarina Diyas,Grass,10.0,10,50.0
+2234,201610,Zarina Diyas,Hard,30.0,44,40.54054054054054
+2235,201611,Daria Saville,Clay,26.0,22,54.166666666666664
+2236,201611,Daria Saville,Grass,13.0,17,43.333333333333336
+2237,201611,Daria Saville,Hard,73.0,75,49.32432432432432
+2238,201612,Junri Namigata,Clay,0.0,1,0.0
+2239,201612,Junri Namigata,Hard,0.0,1,0.0
+2240,201613,Arina Rodionova,Clay,0.0,2,0.0
+2241,201613,Arina Rodionova,Grass,1.0,2,33.33333333333333
+2242,201613,Arina Rodionova,Hard,5.0,14,26.31578947368421
+2243,201614,Caroline Garcia,Carpet,0.0,1,0.0
+2244,201614,Caroline Garcia,Clay,47.0,41,53.40909090909091
+2245,201614,Caroline Garcia,Grass,19.0,17,52.77777777777778
+2246,201614,Caroline Garcia,Hard,144.0,133,51.985559566786996
+2247,201615,Lesia Tsurenko,Clay,19.0,31,38.0
+2248,201615,Lesia Tsurenko,Grass,18.0,21,46.15384615384615
+2249,201615,Lesia Tsurenko,Hard,68.0,84,44.73684210526316
+2250,201616,Lauren Davis,Clay,14.0,27,34.146341463414636
+2251,201616,Lauren Davis,Grass,14.0,18,43.75
+2252,201616,Lauren Davis,Hard,44.0,67,39.63963963963964
+2253,201617,Ana Vrljic,Carpet,0.0,1,0.0
+2254,201618,Fatma Al Nabhani,Hard,0.0,10,0.0
+2255,201619,Madison Keys,Clay,67.0,44,60.36036036036037
+2256,201619,Madison Keys,Grass,46.0,15,75.40983606557377
+2257,201619,Madison Keys,Hard,157.0,107,59.46969696969697
+2258,201620,Monica Puig,Clay,18.0,21,46.15384615384615
+2259,201620,Monica Puig,Grass,9.0,11,45.0
+2260,201620,Monica Puig,Hard,45.0,55,45.0
+2261,201621,Mona Barthel,Carpet,7.0,2,77.77777777777779
+2262,201621,Mona Barthel,Clay,11.0,24,31.428571428571427
+2263,201621,Mona Barthel,Grass,5.0,14,26.31578947368421
+2264,201621,Mona Barthel,Hard,44.0,55,44.44444444444444
+2265,201622,Iryna Bremond,Clay,1.0,1,50.0
+2266,201622,Iryna Bremond,Hard,0.0,1,0.0
+2267,201632,Ryoko Fuda,Carpet,0.0,1,0.0
+2268,201636,Anna Orlik,Clay,0.0,1,0.0
+2269,201638,Estrella Cabeza Candela,Clay,0.0,2,0.0
+2270,201638,Estrella Cabeza Candela,Grass,0.0,1,0.0
+2271,201638,Estrella Cabeza Candela,Hard,0.0,2,0.0
+2272,201640,Maria Teresa Torro Flor,Clay,4.0,6,40.0
+2273,201640,Maria Teresa Torro Flor,Grass,1.0,2,33.33333333333333
+2274,201640,Maria Teresa Torro Flor,Hard,4.0,9,30.76923076923077
+2275,201641,Nadia Lalami,Hard,0.0,1,0.0
+2276,201646,Maria Joao Koehler,Clay,0.0,1,0.0
+2277,201646,Maria Joao Koehler,Grass,0.0,1,0.0
+2278,201646,Maria Joao Koehler,Hard,1.0,3,25.0
+2279,201648,Naomi Broady,Clay,0.0,1,0.0
+2280,201648,Naomi Broady,Grass,3.0,14,17.647058823529413
+2281,201648,Naomi Broady,Hard,2.0,3,40.0
+2282,201656,Tadeja Majeric,Hard,0.0,3,0.0
+2283,201659,Melanie Klaffner,Hard,0.0,2,0.0
+2284,201662,Karolina Pliskova,Clay,52.0,37,58.42696629213483
+2285,201662,Karolina Pliskova,Grass,43.0,25,63.23529411764706
+2286,201662,Karolina Pliskova,Hard,229.0,137,62.568306010928964
+2287,201663,Ekaterina Dzehalevich,Clay,0.0,1,0.0
+2288,201666,Cagla Buyukakcay,Clay,2.0,5,28.57142857142857
+2289,201666,Cagla Buyukakcay,Grass,0.0,1,0.0
+2290,201666,Cagla Buyukakcay,Hard,4.0,11,26.666666666666668
+2291,201668,Alexandra Panova,Clay,0.0,2,0.0
+2292,201668,Alexandra Panova,Grass,0.0,1,0.0
+2293,201668,Alexandra Panova,Hard,1.0,9,10.0
+2294,201670,Amra Sadikovic,Grass,0.0,1,0.0
+2295,201678,Sacha Jones,Hard,0.0,1,0.0
+2296,201679,Varatchaya Wongteanchai,Hard,0.0,1,0.0
+2297,201690,Nina Bratchikova,Clay,2.0,2,50.0
+2298,201690,Nina Bratchikova,Grass,0.0,2,0.0
+2299,201690,Nina Bratchikova,Hard,3.0,4,42.857142857142854
+2300,201693,Timea Babos,Clay,5.0,16,23.809523809523807
+2301,201693,Timea Babos,Grass,7.0,16,30.434782608695656
+2302,201693,Timea Babos,Hard,31.0,61,33.69565217391305
+2303,201696,Laura Siegemund,Clay,35.0,26,57.377049180327866
+2304,201696,Laura Siegemund,Grass,2.0,6,25.0
+2305,201696,Laura Siegemund,Hard,26.0,42,38.23529411764706
+2306,201697,Kristyna Pliskova,Clay,7.0,12,36.84210526315789
+2307,201697,Kristyna Pliskova,Grass,8.0,15,34.78260869565217
+2308,201697,Kristyna Pliskova,Hard,15.0,33,31.25
+2309,201703,Yi Fan Xu,Grass,0.0,1,0.0
+2310,201703,Yi Fan Xu,Hard,0.0,3,0.0
+2311,201707,Sachie Ishizu,Hard,0.0,1,0.0
+2312,201708,Natalie Grandin,Hard,0.0,1,0.0
+2313,201709,Yulia Putintseva,Clay,44.0,33,57.14285714285714
+2314,201709,Yulia Putintseva,Grass,12.0,17,41.37931034482759
+2315,201709,Yulia Putintseva,Hard,84.0,97,46.408839779005525
+2316,201728,Jessica Steck,Hard,0.0,1,0.0
+2317,201839,Syna Schreiber,Clay,0.0,1,0.0
+2318,201920,Renata Kolbovic,Carpet,1.0,1,50.0
+2319,202085,Galina Fokina,Carpet,1.0,2,33.33333333333333
+2320,202134,Katie Schlukebir,Carpet,0.0,1,0.0
+2321,202135,Vanessa Henke,Carpet,0.0,2,0.0
+2322,202135,Vanessa Henke,Clay,0.0,2,0.0
+2323,202135,Vanessa Henke,Hard,0.0,2,0.0
+2324,202153,Melanie Marois,Hard,0.0,1,0.0
+2325,202173,Joana Cortez,Hard,1.0,1,50.0
+2326,202231,Shiho Hisamatsu,Hard,0.0,1,0.0
+2327,202258,Jaslyn Hewitt,Hard,0.0,1,0.0
+2328,202261,Joanna Sakowicz Kostecka,Clay,0.0,1,0.0
+2329,202262,Katrina Nimmers,Hard,0.0,1,0.0
+2330,202263,Anne Nguyen,Hard,0.0,1,0.0
+2331,202264,Cory Ann Avants,Hard,0.0,2,0.0
+2332,202287,Daniela Kix,Hard,0.0,1,0.0
+2333,202288,Elke Clijsters,Carpet,0.0,4,0.0
+2334,202288,Elke Clijsters,Hard,0.0,1,0.0
+2335,202301,Sunitha Rao,Hard,1.0,1,50.0
+2336,202302,Maria Fernanda Alves,Hard,0.0,2,0.0
+2337,202303,Carla Tiene,Hard,0.0,1,0.0
+2338,202310,Shadisha Robinson,Clay,0.0,1,0.0
+2339,202314,Leslie Koffi,Hard,0.0,1,0.0
+2340,202315,Beier Ko,Hard,0.0,1,0.0
+2341,202324,Neha Uberoi,Clay,1.0,1,50.0
+2342,202324,Neha Uberoi,Hard,0.0,3,0.0
+2343,202325,Isha Lakhani,Hard,0.0,1,0.0
+2344,202331,Vilmarie Castellvi,Hard,0.0,1,0.0
+2345,202335,Antonia Matic,Hard,0.0,1,0.0
+2346,202340,Caroline Maes,Hard,0.0,2,0.0
+2347,202346,Jewel Peterson,Hard,0.0,1,0.0
+2348,202347,Karolina Kosinska,Clay,0.0,1,0.0
+2349,202355,Sanja Ancic,Hard,0.0,2,0.0
+2350,202361,Erika Takao,Carpet,0.0,1,0.0
+2351,202371,Lindsey Nelson,Hard,0.0,1,0.0
+2352,202377,Brittany Augustine,Hard,0.0,1,0.0
+2353,202382,Ekaterina Shulaeva,Hard,0.0,1,0.0
+2354,202389,Sandra Martinovic,Hard,0.0,1,0.0
+2355,202410,Sofia Shapatava,Clay,0.0,1,0.0
+2356,202414,Catherine Harrison,Grass,1.0,1,50.0
+2357,202414,Catherine Harrison,Hard,0.0,1,0.0
+2358,202418,Lara Arruabarrena,Carpet,0.0,1,0.0
+2359,202418,Lara Arruabarrena,Clay,9.0,17,34.61538461538461
+2360,202418,Lara Arruabarrena,Grass,5.0,6,45.45454545454545
+2361,202418,Lara Arruabarrena,Hard,16.0,30,34.78260869565217
+2362,202420,An Sophie Mestach,Clay,0.0,1,0.0
+2363,202420,An Sophie Mestach,Hard,0.0,1,0.0
+2364,202421,Alison Van Uytvanck,Clay,12.0,15,44.44444444444444
+2365,202421,Alison Van Uytvanck,Grass,6.0,12,33.33333333333333
+2366,202421,Alison Van Uytvanck,Hard,17.0,42,28.8135593220339
+2367,202424,Conny Perrin,Clay,0.0,1,0.0
+2368,202425,Samantha Murray,Grass,0.0,3,0.0
+2369,202426,Julia Boserup,Clay,0.0,1,0.0
+2370,202426,Julia Boserup,Grass,2.0,2,50.0
+2371,202426,Julia Boserup,Hard,2.0,3,40.0
+2372,202427,Johanna Konta,Clay,20.0,22,47.61904761904761
+2373,202427,Johanna Konta,Grass,29.0,21,57.99999999999999
+2374,202427,Johanna Konta,Hard,82.0,54,60.29411764705882
+2375,202428,Kiki Bertens,Carpet,3.0,1,75.0
+2376,202428,Kiki Bertens,Clay,50.0,26,65.78947368421053
+2377,202428,Kiki Bertens,Grass,12.0,10,54.54545454545454
+2378,202428,Kiki Bertens,Hard,70.0,71,49.645390070921984
+2379,202429,Camila Giorgi,Clay,17.0,26,39.53488372093023
+2380,202429,Camila Giorgi,Grass,28.0,22,56.00000000000001
+2381,202429,Camila Giorgi,Hard,66.0,82,44.5945945945946
+2382,202430,Alize Lim,Clay,0.0,4,0.0
+2383,202434,Aleksandra Krunic,Clay,4.0,11,26.666666666666668
+2384,202434,Aleksandra Krunic,Grass,4.0,8,33.33333333333333
+2385,202434,Aleksandra Krunic,Hard,16.0,33,32.6530612244898
+2386,202436,Reka Luca Jani,Clay,0.0,1,0.0
+2387,202436,Reka Luca Jani,Hard,0.0,1,0.0
+2388,202440,Paula Ormaechea,Clay,6.0,7,46.15384615384615
+2389,202440,Paula Ormaechea,Grass,0.0,2,0.0
+2390,202440,Paula Ormaechea,Hard,3.0,9,25.0
+2391,202443,Valeria Savinykh,Hard,3.0,5,37.5
+2392,202445,Valeria Solovieva,Hard,1.0,1,50.0
+2393,202446,Eugenie Bouchard,Clay,24.0,20,54.54545454545454
+2394,202446,Eugenie Bouchard,Grass,14.0,11,56.00000000000001
+2395,202446,Eugenie Bouchard,Hard,51.0,59,46.36363636363636
+2396,202448,Zoe Gwen Scandalis,Hard,0.0,1,0.0
+2397,202449,Victoria Larriere,Clay,0.0,1,0.0
+2398,202450,Jana Cepelova,Clay,9.0,8,52.94117647058824
+2399,202450,Jana Cepelova,Grass,6.0,6,50.0
+2400,202450,Jana Cepelova,Hard,7.0,24,22.58064516129032
+2401,202453,Saisai Zheng,Clay,5.0,13,27.77777777777778
+2402,202453,Saisai Zheng,Grass,1.0,8,11.11111111111111
+2403,202453,Saisai Zheng,Hard,30.0,49,37.9746835443038
+2404,202454,Erika Sema,Hard,1.0,2,33.33333333333333
+2405,202455,Yue Yue Hu,Hard,0.0,1,0.0
+2406,202456,Alexandra Cadantu Ignatik,Clay,0.0,4,0.0
+2407,202456,Alexandra Cadantu Ignatik,Grass,1.0,4,20.0
+2408,202456,Alexandra Cadantu Ignatik,Hard,0.0,8,0.0
+2409,202457,Bibiane Schoofs,Hard,0.0,1,0.0
+2410,202458,Ashleigh Barty,Clay,30.0,14,68.18181818181817
+2411,202458,Ashleigh Barty,Grass,24.0,7,77.41935483870968
+2412,202458,Ashleigh Barty,Hard,121.0,40,75.15527950310559
+2413,202459,Bojana Bobusic,Hard,0.0,3,0.0
+2414,202460,Ons Jabeur,Clay,52.0,21,71.23287671232876
+2415,202460,Ons Jabeur,Grass,31.0,11,73.80952380952381
+2416,202460,Ons Jabeur,Hard,85.0,70,54.83870967741935
+2417,202461,Julia Cohen,Hard,0.0,1,0.0
+2418,202467,Elitsa Kostova,Hard,0.0,1,0.0
+2419,202468,Jessica Pegula,Clay,34.0,17,66.66666666666666
+2420,202468,Jessica Pegula,Grass,16.0,9,64.0
+2421,202468,Jessica Pegula,Hard,122.0,58,67.77777777777779
+2422,202469,Garbine Muguruza,Clay,54.0,32,62.7906976744186
+2423,202469,Garbine Muguruza,Grass,26.0,16,61.904761904761905
+2424,202469,Garbine Muguruza,Hard,172.0,103,62.54545454545455
+2425,202470,Annika Beck,Clay,7.0,13,35.0
+2426,202470,Annika Beck,Grass,3.0,6,33.33333333333333
+2427,202470,Annika Beck,Hard,19.0,37,33.92857142857143
+2428,202477,Dinah Pfizenmaier,Clay,4.0,6,40.0
+2429,202477,Dinah Pfizenmaier,Grass,0.0,1,0.0
+2430,202477,Dinah Pfizenmaier,Hard,0.0,2,0.0
+2431,202478,Tara Moore,Grass,1.0,5,16.666666666666664
+2432,202479,Grace Min,Clay,2.0,8,20.0
+2433,202479,Grace Min,Hard,0.0,7,0.0
+2434,202480,Richel Hogenkamp,Clay,1.0,2,33.33333333333333
+2435,202480,Richel Hogenkamp,Grass,1.0,2,33.33333333333333
+2436,202480,Richel Hogenkamp,Hard,1.0,5,16.666666666666664
+2437,202482,Barbara Haas,Clay,0.0,1,0.0
+2438,202482,Barbara Haas,Hard,0.0,2,0.0
+2439,202483,Sandra Zaniewska,Grass,0.0,1,0.0
+2440,202484,Nicole Gibbs,Clay,0.0,3,0.0
+2441,202484,Nicole Gibbs,Grass,0.0,2,0.0
+2442,202484,Nicole Gibbs,Hard,21.0,29,42.0
+2443,202485,Jana Juricova,Hard,0.0,1,0.0
+2444,202486,Mallory Burdette,Clay,3.0,4,42.857142857142854
+2445,202486,Mallory Burdette,Grass,0.0,1,0.0
+2446,202486,Mallory Burdette,Hard,5.0,7,41.66666666666667
+2447,202487,Nastassja Burnett,Clay,1.0,5,16.666666666666664
+2448,202487,Nastassja Burnett,Hard,0.0,1,0.0
+2449,202489,Carina Witthoeft,Clay,4.0,7,36.36363636363637
+2450,202489,Carina Witthoeft,Grass,4.0,5,44.44444444444444
+2451,202489,Carina Witthoeft,Hard,15.0,22,40.54054054054054
+2452,202490,Rebecca Peterson,Clay,4.0,7,36.36363636363637
+2453,202490,Rebecca Peterson,Grass,3.0,6,33.33333333333333
+2454,202490,Rebecca Peterson,Hard,16.0,27,37.2093023255814
+2455,202491,Varvara Flink,Grass,1.0,1,50.0
+2456,202491,Varvara Flink,Hard,0.0,1,0.0
+2457,202492,Qiang Wang,Clay,8.0,15,34.78260869565217
+2458,202492,Qiang Wang,Grass,5.0,8,38.46153846153847
+2459,202492,Qiang Wang,Hard,49.0,54,47.57281553398058
+2460,202493,Ekaterine Gorgodze,Clay,0.0,2,0.0
+2461,202493,Ekaterine Gorgodze,Grass,0.0,1,0.0
+2462,202493,Ekaterine Gorgodze,Hard,0.0,1,0.0
+2463,202494,Elina Svitolina,Carpet,2.0,1,66.66666666666666
+2464,202494,Elina Svitolina,Clay,56.0,33,62.92134831460674
+2465,202494,Elina Svitolina,Grass,23.0,18,56.09756097560976
+2466,202494,Elina Svitolina,Hard,196.0,116,62.82051282051282
+2467,202496,Samantha Crawford,Clay,0.0,1,0.0
+2468,202496,Samantha Crawford,Grass,1.0,1,50.0
+2469,202496,Samantha Crawford,Hard,4.0,8,33.33333333333333
+2470,202497,Victoria Duval,Grass,2.0,3,40.0
+2471,202497,Victoria Duval,Hard,2.0,7,22.22222222222222
+2472,202498,Julia Glushko,Clay,2.0,3,40.0
+2473,202498,Julia Glushko,Grass,0.0,1,0.0
+2474,202498,Julia Glushko,Hard,3.0,6,33.33333333333333
+2475,202499,Donna Vekic,Clay,22.0,26,45.83333333333333
+2476,202499,Donna Vekic,Grass,24.0,19,55.81395348837209
+2477,202499,Donna Vekic,Hard,79.0,89,47.023809523809526
+2478,202500,Maria Sanchez,Hard,1.0,2,33.33333333333333
+2479,202503,Luksika Kumkhum,Clay,0.0,3,0.0
+2480,202503,Luksika Kumkhum,Grass,1.0,3,25.0
+2481,202503,Luksika Kumkhum,Hard,4.0,6,40.0
+2482,202504,Ying Ying Duan,Clay,0.0,3,0.0
+2483,202504,Ying Ying Duan,Grass,3.0,5,37.5
+2484,202504,Ying Ying Duan,Hard,8.0,16,33.33333333333333
+2485,202505,Belinda Bencic,Clay,40.0,27,59.70149253731343
+2486,202505,Belinda Bencic,Grass,31.0,16,65.95744680851064
+2487,202505,Belinda Bencic,Hard,134.0,90,59.82142857142857
+2488,202506,Margarita Gasparyan,Clay,0.0,8,0.0
+2489,202506,Margarita Gasparyan,Grass,3.0,6,33.33333333333333
+2490,202506,Margarita Gasparyan,Hard,16.0,19,45.714285714285715
+2491,202508,Yuxuan Zhang,Hard,0.0,1,0.0
+2492,202536,Ana Bogdan,Clay,9.0,14,39.130434782608695
+2493,202536,Ana Bogdan,Grass,5.0,8,38.46153846153847
+2494,202536,Ana Bogdan,Hard,12.0,29,29.268292682926827
+2495,202579,Giulia Gatto Monticone,Clay,0.0,2,0.0
+2496,202579,Giulia Gatto Monticone,Grass,0.0,1,0.0
+2497,202580,Federica Di Sarra,Clay,0.0,1,0.0
+2498,202581,Chanel Simmonds,Hard,0.0,1,0.0
+2499,202596,Mihaela Buzarnescu,Clay,10.0,10,50.0
+2500,202596,Mihaela Buzarnescu,Grass,9.0,8,52.94117647058824
+2501,202596,Mihaela Buzarnescu,Hard,8.0,20,28.57142857142857
+2502,202600,Viktoriya Tomova,Clay,2.0,7,22.22222222222222
+2503,202600,Viktoriya Tomova,Grass,8.0,7,53.333333333333336
+2504,202600,Viktoriya Tomova,Hard,10.0,25,28.57142857142857
+2505,202604,Despina Papamichail,Hard,2.0,4,33.33333333333333
+2506,202606,Claudia Giovine,Clay,0.0,1,0.0
+2507,202611,Oksana Kalashnikova,Hard,0.0,1,0.0
+2508,202622,Lyudmyla Kichenok,Grass,0.0,1,0.0
+2509,202628,Maryna Zanevska,Clay,1.0,7,12.5
+2510,202628,Maryna Zanevska,Grass,0.0,5,0.0
+2511,202628,Maryna Zanevska,Hard,2.0,13,13.333333333333334
+2512,202642,Gioia Barbieri,Clay,0.0,1,0.0
+2513,202653,Denisa Allertova,Clay,1.0,3,25.0
+2514,202653,Denisa Allertova,Grass,3.0,5,37.5
+2515,202653,Denisa Allertova,Hard,12.0,11,52.17391304347826
+2516,202659,Tereza Mrdeza,Hard,0.0,1,0.0
+2517,202662,Camilla Rosatello,Clay,0.0,2,0.0
+2518,202663,Magda Linette,Clay,18.0,24,42.857142857142854
+2519,202663,Magda Linette,Grass,10.0,14,41.66666666666667
+2520,202663,Magda Linette,Hard,44.0,70,38.59649122807017
+2521,202671,Cristina Andreea Mitu,Clay,5.0,3,62.5
+2522,202671,Cristina Andreea Mitu,Grass,0.0,2,0.0
+2523,202671,Cristina Andreea Mitu,Hard,0.0,2,0.0
+2524,202681,Gabriela Dabrowski,Hard,0.0,4,0.0
+2525,202684,Lin Zhu,Clay,0.0,8,0.0
+2526,202684,Lin Zhu,Grass,3.0,6,33.33333333333333
+2527,202684,Lin Zhu,Hard,16.0,34,32.0
+2528,202685,Misa Eguchi,Hard,0.0,2,0.0
+2529,202688,Isabella Shinikova,Hard,0.0,1,0.0
+2530,202694,Teliana Pereira,Clay,6.0,8,42.857142857142854
+2531,202694,Teliana Pereira,Grass,0.0,4,0.0
+2532,202694,Teliana Pereira,Hard,2.0,10,16.666666666666664
+2533,202701,Irina Khromacheva,Clay,0.0,2,0.0
+2534,202701,Irina Khromacheva,Grass,0.0,1,0.0
+2535,202701,Irina Khromacheva,Hard,0.0,3,0.0
+2536,202702,Tereza Smitkova,Clay,1.0,1,50.0
+2537,202702,Tereza Smitkova,Grass,3.0,5,37.5
+2538,202702,Tereza Smitkova,Hard,3.0,6,33.33333333333333
+2539,202705,Veronica Cepede Royg,Clay,4.0,6,40.0
+2540,202705,Veronica Cepede Royg,Grass,1.0,3,25.0
+2541,202705,Veronica Cepede Royg,Hard,2.0,10,16.666666666666664
+2542,202706,Manon Arcangioli,Clay,0.0,1,0.0
+2543,202707,Myrtille Georges,Clay,1.0,3,25.0
+2544,202707,Myrtille Georges,Hard,0.0,1,0.0
+2545,202916,Georgina Garcia Perez,Clay,1.0,3,25.0
+2546,202916,Georgina Garcia Perez,Hard,0.0,2,0.0
+2547,203281,Amandine Hesse,Clay,1.0,5,16.666666666666664
+2548,203281,Amandine Hesse,Hard,0.0,3,0.0
+2549,203288,Jia Jing Lu,Hard,0.0,2,0.0
+2550,203297,Nadiya Kichenok,Clay,0.0,3,0.0
+2551,203297,Nadiya Kichenok,Grass,1.0,1,50.0
+2552,203297,Nadiya Kichenok,Hard,0.0,3,0.0
+2553,203354,Martina Trevisan,Clay,13.0,14,48.148148148148145
+2554,203354,Martina Trevisan,Grass,0.0,4,0.0
+2555,203354,Martina Trevisan,Hard,18.0,32,36.0
+2556,203379,Marina Melnikova,Clay,1.0,1,50.0
+2557,203379,Marina Melnikova,Grass,0.0,1,0.0
+2558,203379,Marina Melnikova,Hard,0.0,1,0.0
+2559,203389,Danielle Collins,Clay,29.0,17,63.04347826086957
+2560,203389,Danielle Collins,Grass,9.0,8,52.94117647058824
+2561,203389,Danielle Collins,Hard,88.0,63,58.27814569536424
+2562,203398,Danielle Lao,Grass,0.0,1,0.0
+2563,203398,Danielle Lao,Hard,0.0,4,0.0
+2564,203435,Dalila Jakupovic,Clay,0.0,2,0.0
+2565,203435,Dalila Jakupovic,Grass,2.0,2,50.0
+2566,203435,Dalila Jakupovic,Hard,1.0,4,20.0
+2567,203462,Kateryna Baindl,Clay,5.0,9,35.714285714285715
+2568,203462,Kateryna Baindl,Grass,0.0,6,0.0
+2569,203462,Kateryna Baindl,Hard,11.0,23,32.35294117647059
+2570,203463,Nuria Parrizas Diaz,Clay,4.0,6,40.0
+2571,203463,Nuria Parrizas Diaz,Grass,0.0,3,0.0
+2572,203463,Nuria Parrizas Diaz,Hard,6.0,11,35.294117647058826
+2573,203475,Carol Zhao,Grass,0.0,1,0.0
+2574,203475,Carol Zhao,Hard,2.0,11,15.384615384615385
+2575,203489,Hao Chen Tang,Hard,0.0,1,0.0
+2576,203500,Sachia Vickery,Clay,3.0,8,27.27272727272727
+2577,203500,Sachia Vickery,Grass,1.0,3,25.0
+2578,203500,Sachia Vickery,Hard,12.0,18,40.0
+2579,203501,Taylor Townsend,Clay,12.0,15,44.44444444444444
+2580,203501,Taylor Townsend,Grass,2.0,5,28.57142857142857
+2581,203501,Taylor Townsend,Hard,32.0,37,46.3768115942029
+2582,203504,Miyu Kato,Clay,0.0,1,0.0
+2583,203509,Diana Marcinkevica,Clay,0.0,1,0.0
+2584,203513,Robin Anderson,Clay,0.0,1,0.0
+2585,203513,Robin Anderson,Hard,0.0,1,0.0
+2586,203514,Katarzyna Kawa,Grass,1.0,1,50.0
+2587,203514,Katarzyna Kawa,Hard,0.0,1,0.0
+2588,203518,Paula Kania,Clay,1.0,1,50.0
+2589,203518,Paula Kania,Grass,0.0,2,0.0
+2590,203518,Paula Kania,Hard,0.0,3,0.0
+2591,203526,Tammi Patterson,Hard,0.0,2,0.0
+2592,203530,Viktorija Golubic,Clay,2.0,11,15.384615384615385
+2593,203530,Viktorija Golubic,Grass,9.0,10,47.368421052631575
+2594,203530,Viktorija Golubic,Hard,13.0,33,28.26086956521739
+2595,203533,Anna Karolina Schmiedlova,Clay,11.0,22,33.33333333333333
+2596,203533,Anna Karolina Schmiedlova,Grass,2.0,13,13.333333333333334
+2597,203533,Anna Karolina Schmiedlova,Hard,24.0,46,34.285714285714285
+2598,203542,Daria Mironova,Hard,0.0,1,0.0
+2599,203552,Risa Ozaki,Clay,0.0,1,0.0
+2600,203552,Risa Ozaki,Grass,0.0,2,0.0
+2601,203552,Risa Ozaki,Hard,4.0,7,36.36363636363637
+2602,203564,Chloe Paquet,Clay,3.0,8,27.27272727272727
+2603,203564,Chloe Paquet,Grass,0.0,1,0.0
+2604,203564,Chloe Paquet,Hard,0.0,6,0.0
+2605,203567,Ipek Soylu,Clay,0.0,1,0.0
+2606,203567,Ipek Soylu,Hard,0.0,1,0.0
+2607,203575,Danka Kovinic,Clay,18.0,18,50.0
+2608,203575,Danka Kovinic,Grass,0.0,4,0.0
+2609,203575,Danka Kovinic,Hard,11.0,28,28.205128205128204
+2610,203576,Kai Lin Zhang,Hard,0.0,3,0.0
+2611,203578,Fangzhou Liu,Hard,0.0,1,0.0
+2612,203591,Katy Dunne,Grass,0.0,2,0.0
+2613,204246,Lesley Pattinama Kerkhove,Clay,0.0,1,0.0
+2614,204246,Lesley Pattinama Kerkhove,Grass,2.0,3,40.0
+2615,204246,Lesley Pattinama Kerkhove,Hard,0.0,2,0.0
+2616,204291,Na Lae Han,Hard,0.0,2,0.0
+2617,204294,Su Jeong Jang,Hard,0.0,2,0.0
+2618,204376,Demi Schuurs,Hard,0.0,1,0.0
+2619,204377,Indy De Vroome,Hard,1.0,3,25.0
+2620,204394,Valentini Grammatikopoulou,Clay,0.0,1,0.0
+2621,204394,Valentini Grammatikopoulou,Hard,1.0,3,25.0
+2622,204411,Storm Hunter,Clay,2.0,4,33.33333333333333
+2623,204411,Storm Hunter,Grass,0.0,1,0.0
+2624,204411,Storm Hunter,Hard,7.0,19,26.923076923076923
+2625,204419,Ana Sofia Sanchez,Hard,0.0,2,0.0
+2626,204426,Anett Kontaveit,Clay,32.0,24,57.14285714285714
+2627,204426,Anett Kontaveit,Grass,9.0,12,42.857142857142854
+2628,204426,Anett Kontaveit,Hard,106.0,72,59.55056179775281
+2629,204427,Sara Sorribes Tormo,Clay,18.0,20,47.368421052631575
+2630,204427,Sara Sorribes Tormo,Grass,5.0,9,35.714285714285715
+2631,204427,Sara Sorribes Tormo,Hard,26.0,33,44.06779661016949
+2632,204430,Antonia Lottner,Clay,0.0,2,0.0
+2633,204430,Antonia Lottner,Grass,0.0,1,0.0
+2634,204430,Antonia Lottner,Hard,0.0,2,0.0
+2635,204431,Anna Lena Friedsam,Carpet,0.0,1,0.0
+2636,204431,Anna Lena Friedsam,Clay,5.0,13,27.77777777777778
+2637,204431,Anna Lena Friedsam,Grass,7.0,7,50.0
+2638,204431,Anna Lena Friedsam,Hard,4.0,11,26.666666666666668
+2639,204434,Ysaline Bonaventure,Clay,0.0,4,0.0
+2640,204434,Ysaline Bonaventure,Grass,0.0,2,0.0
+2641,204434,Ysaline Bonaventure,Hard,4.0,10,28.57142857142857
+2642,205723,Anna Zaja,Hard,0.0,1,0.0
+2643,205815,Eri Hozumi,Hard,0.0,1,0.0
+2644,205892,Giuliana Olmos,Hard,0.0,1,0.0
+2645,205918,Ulrikke Eikeri,Clay,1.0,2,33.33333333333333
+2646,205918,Ulrikke Eikeri,Hard,0.0,2,0.0
+2647,205925,Aliaksandra Sasnovich,Clay,15.0,18,45.45454545454545
+2648,205925,Aliaksandra Sasnovich,Grass,11.0,11,50.0
+2649,205925,Aliaksandra Sasnovich,Hard,57.0,71,44.53125
+2650,206007,Laura Pigossi,Clay,0.0,1,0.0
+2651,206007,Laura Pigossi,Grass,0.0,1,0.0
+2652,206007,Laura Pigossi,Hard,0.0,2,0.0
+2653,206045,Quirine Lemoine,Clay,0.0,1,0.0
+2654,206049,Jovana Jaksic,Clay,0.0,1,0.0
+2655,206049,Jovana Jaksic,Grass,0.0,1,0.0
+2656,206102,Ankita Raina,Hard,0.0,1,0.0
+2657,206107,Zhaoxuan Yang,Hard,0.0,2,0.0
+2658,206108,Jennifer Brady,Clay,7.0,11,38.88888888888889
+2659,206108,Jennifer Brady,Grass,3.0,5,37.5
+2660,206108,Jennifer Brady,Hard,44.0,39,53.01204819277109
+2661,206124,Tereza Martincova,Clay,1.0,6,14.285714285714285
+2662,206124,Tereza Martincova,Grass,2.0,6,25.0
+2663,206124,Tereza Martincova,Hard,22.0,29,43.13725490196079
+2664,206183,Cindy Burger,Clay,0.0,1,0.0
+2665,206219,Oceane Dodin,Clay,4.0,12,25.0
+2666,206219,Oceane Dodin,Grass,0.0,4,0.0
+2667,206219,Oceane Dodin,Hard,14.0,26,35.0
+2668,206242,Beatriz Haddad Maia,Clay,16.0,12,57.14285714285714
+2669,206242,Beatriz Haddad Maia,Grass,12.0,9,57.14285714285714
+2670,206242,Beatriz Haddad Maia,Hard,57.0,49,53.77358490566038
+2671,206252,Barbora Krejcikova,Clay,16.0,12,57.14285714285714
+2672,206252,Barbora Krejcikova,Grass,13.0,5,72.22222222222221
+2673,206252,Barbora Krejcikova,Hard,68.0,42,61.81818181818181
+2674,206255,Patricia Maria Tig,Clay,5.0,6,45.45454545454545
+2675,206255,Patricia Maria Tig,Grass,0.0,2,0.0
+2676,206255,Patricia Maria Tig,Hard,4.0,12,25.0
+2677,206289,Maria Sakkari,Clay,40.0,26,60.60606060606061
+2678,206289,Maria Sakkari,Grass,17.0,17,50.0
+2679,206289,Maria Sakkari,Hard,133.0,90,59.64125560538116
+2680,206292,Astra Sharma,Clay,4.0,6,40.0
+2681,206292,Astra Sharma,Grass,0.0,3,0.0
+2682,206292,Astra Sharma,Hard,3.0,13,18.75
+2683,206294,Yue Yuan,Clay,0.0,4,0.0
+2684,206294,Yue Yuan,Grass,1.0,4,20.0
+2685,206294,Yue Yuan,Hard,14.0,15,48.275862068965516
+2686,206329,Montserrat Gonzalez,Hard,1.0,1,50.0
+2687,206349,Mayo Hibi,Hard,2.0,4,33.33333333333333
+2688,206363,Anna Danilina,Hard,0.0,1,0.0
+2689,206368,Veronika Kudermetova,Clay,30.0,21,58.82352941176471
+2690,206368,Veronika Kudermetova,Grass,9.0,10,47.368421052631575
+2691,206368,Veronika Kudermetova,Hard,80.0,70,53.333333333333336
+2692,206374,Yafan Wang,Clay,1.0,5,16.666666666666664
+2693,206374,Yafan Wang,Grass,2.0,4,33.33333333333333
+2694,206374,Yafan Wang,Hard,21.0,29,42.0
+2695,206390,Isabelle Wallace,Clay,0.0,1,0.0
+2696,206391,Ellen Perez,Grass,0.0,1,0.0
+2697,206391,Ellen Perez,Hard,1.0,7,12.5
+2698,206404,Elizaveta Kulichkova,Grass,1.0,2,33.33333333333333
+2699,206404,Elizaveta Kulichkova,Hard,2.0,3,40.0
+2700,206408,Nadia Podoroska,Clay,9.0,9,50.0
+2701,206408,Nadia Podoroska,Grass,3.0,5,37.5
+2702,206408,Nadia Podoroska,Hard,13.0,19,40.625
+2703,206417,Leolia Jeanjean,Clay,3.0,3,50.0
+2704,206417,Leolia Jeanjean,Grass,0.0,1,0.0
+2705,206417,Leolia Jeanjean,Hard,0.0,3,0.0
+2706,206420,Ekaterina Alexandrova,Clay,27.0,25,51.92307692307693
+2707,206420,Ekaterina Alexandrova,Grass,16.0,13,55.172413793103445
+2708,206420,Ekaterina Alexandrova,Hard,75.0,67,52.816901408450704
+2709,210303,Kathinka Von Deichmann,Hard,0.0,2,0.0
+2710,210337,Natalija Stevanovic,Grass,2.0,1,66.66666666666666
+2711,210705,Irina Bara,Clay,2.0,3,40.0
+2712,210705,Irina Bara,Grass,1.0,1,50.0
+2713,210705,Irina Bara,Hard,0.0,2,0.0
+2714,210722,Elise Mertens,Clay,32.0,23,58.18181818181818
+2715,210722,Elise Mertens,Grass,17.0,14,54.83870967741935
+2716,210722,Elise Mertens,Hard,115.0,84,57.78894472361809
+2717,210886,Mayar Sherif,Clay,11.0,10,52.38095238095239
+2718,210886,Mayar Sherif,Grass,0.0,2,0.0
+2719,210886,Mayar Sherif,Hard,3.0,24,11.11111111111111
+2720,211019,Audrey Albie,Clay,0.0,1,0.0
+2721,211095,Bernarda Pera,Clay,17.0,18,48.57142857142857
+2722,211095,Bernarda Pera,Grass,2.0,7,22.22222222222222
+2723,211095,Bernarda Pera,Hard,25.0,51,32.89473684210527
+2724,211107,Katie Boulter,Clay,0.0,3,0.0
+2725,211107,Katie Boulter,Grass,11.0,10,52.38095238095239
+2726,211107,Katie Boulter,Hard,25.0,27,48.07692307692308
+2727,211148,Jasmine Paolini,Clay,16.0,16,50.0
+2728,211148,Jasmine Paolini,Grass,8.0,6,57.14285714285714
+2729,211148,Jasmine Paolini,Hard,38.0,39,49.35064935064935
+2730,211222,Jamie Loeb,Hard,0.0,4,0.0
+2731,211279,Harriet Dart,Clay,0.0,4,0.0
+2732,211279,Harriet Dart,Grass,12.0,13,48.0
+2733,211279,Harriet Dart,Hard,9.0,16,36.0
+2734,211316,Jessika Ponchet,Clay,0.0,4,0.0
+2735,211316,Jessika Ponchet,Hard,2.0,3,40.0
+2736,211321,Klaartje Liebens,Hard,0.0,1,0.0
+2737,211328,Deborah Chiesa,Clay,0.0,2,0.0
+2738,211337,Tamara Korpatsch,Clay,2.0,7,22.22222222222222
+2739,211337,Tamara Korpatsch,Grass,1.0,5,16.666666666666664
+2740,211337,Tamara Korpatsch,Hard,3.0,12,20.0
+2741,211342,Gabriela Lee,Clay,0.0,3,0.0
+2742,211390,Mari Osaka,Hard,0.0,1,0.0
+2743,211411,Nina Stojanovic,Clay,0.0,3,0.0
+2744,211411,Nina Stojanovic,Grass,0.0,1,0.0
+2745,211411,Nina Stojanovic,Hard,4.0,6,40.0
+2746,211533,Jelena Ostapenko,Clay,42.0,32,56.75675675675676
+2747,211533,Jelena Ostapenko,Grass,37.0,18,67.27272727272727
+2748,211533,Jelena Ostapenko,Hard,118.0,98,54.629629629629626
+2749,211539,Fiona Ferro,Clay,5.0,10,33.33333333333333
+2750,211539,Fiona Ferro,Grass,0.0,3,0.0
+2751,211539,Fiona Ferro,Hard,9.0,17,34.61538461538461
+2752,211552,Harmony Tan,Clay,1.0,4,20.0
+2753,211552,Harmony Tan,Grass,3.0,1,75.0
+2754,211552,Harmony Tan,Hard,1.0,6,14.285714285714285
+2755,211635,Louisa Chirico,Clay,7.0,8,46.666666666666664
+2756,211635,Louisa Chirico,Grass,0.0,2,0.0
+2757,211635,Louisa Chirico,Hard,2.0,13,13.333333333333334
+2758,211651,Paula Badosa,Clay,40.0,20,66.66666666666666
+2759,211651,Paula Badosa,Grass,12.0,7,63.1578947368421
+2760,211651,Paula Badosa,Hard,70.0,46,60.3448275862069
+2761,211684,Magdalena Frech,Clay,7.0,12,36.84210526315789
+2762,211684,Magdalena Frech,Grass,3.0,5,37.5
+2763,211684,Magdalena Frech,Hard,26.0,33,44.06779661016949
+2764,211685,Rebecca Sramkova,Clay,3.0,3,50.0
+2765,211685,Rebecca Sramkova,Grass,0.0,1,0.0
+2766,211685,Rebecca Sramkova,Hard,3.0,3,50.0
+2767,211700,Barbora Stefkova,Grass,0.0,1,0.0
+2768,211701,Katerina Siniakova,Clay,17.0,23,42.5
+2769,211701,Katerina Siniakova,Grass,17.0,19,47.22222222222222
+2770,211701,Katerina Siniakova,Hard,51.0,95,34.93150684931507
+2771,211702,Nao Hibino,Clay,2.0,9,18.181818181818183
+2772,211702,Nao Hibino,Grass,1.0,7,12.5
+2773,211702,Nao Hibino,Hard,8.0,31,20.51282051282051
+2774,211713,Jaqueline Cristian,Clay,7.0,5,58.333333333333336
+2775,211713,Jaqueline Cristian,Grass,1.0,3,25.0
+2776,211713,Jaqueline Cristian,Hard,10.0,14,41.66666666666667
+2777,211719,Shilin Xu,Hard,0.0,2,0.0
+2778,211736,Ivana Jorovic,Clay,0.0,2,0.0
+2779,211736,Ivana Jorovic,Grass,1.0,1,50.0
+2780,211736,Ivana Jorovic,Hard,1.0,4,20.0
+2781,211765,Emina Bektas,Clay,0.0,1,0.0
+2782,211765,Emina Bektas,Grass,0.0,2,0.0
+2783,211765,Emina Bektas,Hard,0.0,4,0.0
+2784,211768,Naomi Osaka,Clay,26.0,22,54.166666666666664
+2785,211768,Naomi Osaka,Grass,9.0,9,50.0
+2786,211768,Naomi Osaka,Hard,130.0,59,68.78306878306879
+2787,211796,Francoise Abanda,Clay,1.0,1,50.0
+2788,211796,Francoise Abanda,Grass,1.0,1,50.0
+2789,211796,Francoise Abanda,Hard,3.0,8,27.27272727272727
+2790,211814,Julia Grabher,Clay,6.0,4,60.0
+2791,211814,Julia Grabher,Grass,0.0,1,0.0
+2792,211814,Julia Grabher,Hard,0.0,4,0.0
+2793,211817,Elena Gabriela Ruse,Clay,2.0,5,28.57142857142857
+2794,211817,Elena Gabriela Ruse,Grass,0.0,5,0.0
+2795,211817,Elena Gabriela Ruse,Hard,9.0,14,39.130434782608695
+2796,211843,Anhelina Kalinina,Clay,16.0,13,55.172413793103445
+2797,211843,Anhelina Kalinina,Grass,6.0,7,46.15384615384615
+2798,211843,Anhelina Kalinina,Hard,26.0,39,40.0
+2799,211846,Kyoka Okamura,Hard,1.0,1,50.0
+2800,211874,Victoria Rodriguez,Hard,0.0,1,0.0
+2801,211878,Lizette Cabrera,Hard,0.0,8,0.0
+2802,211880,Priscilla Hon,Clay,1.0,1,50.0
+2803,211880,Priscilla Hon,Hard,3.0,19,13.636363636363635
+2804,211901,Aliona Bolsova,Clay,6.0,5,54.54545454545454
+2805,211901,Aliona Bolsova,Grass,0.0,1,0.0
+2806,211901,Aliona Bolsova,Hard,3.0,5,37.5
+2807,211941,Zoe Hives,Grass,0.0,1,0.0
+2808,211941,Zoe Hives,Hard,1.0,1,50.0
+2809,211951,Ana Konjuh,Clay,4.0,10,28.57142857142857
+2810,211951,Ana Konjuh,Grass,6.0,8,42.857142857142854
+2811,211951,Ana Konjuh,Hard,25.0,32,43.859649122807014
+2812,212001,Natalia Vikhlyantseva,Clay,0.0,7,0.0
+2813,212001,Natalia Vikhlyantseva,Grass,0.0,4,0.0
+2814,212001,Natalia Vikhlyantseva,Hard,11.0,19,36.666666666666664
+2815,213525,Jil Teichmann,Clay,11.0,11,50.0
+2816,213525,Jil Teichmann,Grass,0.0,6,0.0
+2817,213525,Jil Teichmann,Hard,32.0,37,46.3768115942029
+2818,213530,Allie Kiick,Clay,1.0,2,33.33333333333333
+2819,213530,Allie Kiick,Hard,0.0,6,0.0
+2820,213544,Jana Fett,Clay,1.0,1,50.0
+2821,213544,Jana Fett,Grass,0.0,2,0.0
+2822,213544,Jana Fett,Hard,2.0,2,50.0
+2823,213550,Sofia Kenin,Clay,22.0,20,52.38095238095239
+2824,213550,Sofia Kenin,Grass,5.0,7,41.66666666666667
+2825,213550,Sofia Kenin,Hard,71.0,63,52.98507462686567
+2826,213576,Iryna Shymanovich,Clay,1.0,1,50.0
+2827,213576,Iryna Shymanovich,Hard,0.0,1,0.0
+2828,213583,Tatjana Maria,Clay,10.0,22,31.25
+2829,213583,Tatjana Maria,Grass,10.0,14,41.66666666666667
+2830,213583,Tatjana Maria,Hard,20.0,61,24.691358024691358
+2831,213602,Gabriella Taylor,Grass,0.0,1,0.0
+2832,213631,Marie Bouzkova,Clay,10.0,14,41.66666666666667
+2833,213631,Marie Bouzkova,Grass,9.0,8,52.94117647058824
+2834,213631,Marie Bouzkova,Hard,39.0,46,45.88235294117647
+2835,213646,Dalma Galfi,Clay,0.0,5,0.0
+2836,213646,Dalma Galfi,Grass,4.0,3,57.14285714285714
+2837,213646,Dalma Galfi,Hard,4.0,8,33.33333333333333
+2838,213666,Maddison Inglis,Clay,0.0,1,0.0
+2839,213666,Maddison Inglis,Grass,0.0,1,0.0
+2840,213666,Maddison Inglis,Hard,4.0,8,33.33333333333333
+2841,213672,Usue Maitane Arconada,Hard,0.0,2,0.0
+2842,213706,Irene Burillo Escorihuela,Clay,1.0,2,33.33333333333333
+2843,213710,Cristina Bucsa,Clay,4.0,9,30.76923076923077
+2844,213710,Cristina Bucsa,Grass,2.0,2,50.0
+2845,213710,Cristina Bucsa,Hard,14.0,22,38.88888888888889
+2846,213734,Mariam Bolkvadze,Clay,0.0,1,0.0
+2847,213734,Mariam Bolkvadze,Hard,1.0,1,50.0
+2848,213837,Ylena In Albon,Clay,0.0,2,0.0
+2849,213837,Ylena In Albon,Grass,0.0,1,0.0
+2850,213887,Renata Zarazua,Clay,1.0,4,20.0
+2851,213887,Renata Zarazua,Grass,0.0,1,0.0
+2852,213887,Renata Zarazua,Hard,4.0,6,40.0
+2853,213889,Greet Minnen,Clay,1.0,8,11.11111111111111
+2854,213889,Greet Minnen,Grass,2.0,5,28.57142857142857
+2855,213889,Greet Minnen,Hard,12.0,17,41.37931034482759
+2856,213899,Frances Altick,Clay,0.0,1,0.0
+2857,213908,Yuriko Miyazaki,Grass,1.0,3,25.0
+2858,213908,Yuriko Miyazaki,Hard,1.0,1,50.0
+2859,213926,Bianca Turati,Hard,1.0,1,50.0
+2860,213998,Ipek Oz,Hard,0.0,3,0.0
+2861,214040,Kimberly Birrell,Clay,0.0,1,0.0
+2862,214040,Kimberly Birrell,Hard,4.0,14,22.22222222222222
+2863,214082,Daria Kasatkina,Clay,66.0,35,65.34653465346535
+2864,214082,Daria Kasatkina,Grass,27.0,15,64.28571428571429
+2865,214082,Daria Kasatkina,Hard,150.0,117,56.17977528089888
+2866,214096,Karolina Muchova,Clay,19.0,11,63.33333333333333
+2867,214096,Karolina Muchova,Grass,10.0,8,55.55555555555556
+2868,214096,Karolina Muchova,Hard,66.0,35,65.34653465346535
+2869,214119,Rebeka Masarova,Clay,2.0,4,33.33333333333333
+2870,214119,Rebeka Masarova,Grass,1.0,5,16.666666666666664
+2871,214119,Rebeka Masarova,Hard,3.0,6,33.33333333333333
+2872,214149,Viktoria Hruncakova,Clay,6.0,6,50.0
+2873,214149,Viktoria Hruncakova,Grass,0.0,3,0.0
+2874,214149,Viktoria Hruncakova,Hard,8.0,19,29.629629629629626
+2875,214181,Anastasia Gasanova,Clay,0.0,2,0.0
+2876,214181,Anastasia Gasanova,Grass,0.0,1,0.0
+2877,214181,Anastasia Gasanova,Hard,5.0,3,62.5
+2878,214219,Tessah Andrianjafitrimo,Clay,0.0,3,0.0
+2879,214262,Ena Shibahara,Hard,2.0,4,33.33333333333333
+2880,214263,Catherine Cartan Bellis,Clay,4.0,4,50.0
+2881,214263,Catherine Cartan Bellis,Grass,0.0,1,0.0
+2882,214263,Catherine Cartan Bellis,Hard,26.0,24,52.0
+2883,214304,Vera Lapko,Clay,0.0,2,0.0
+2884,214304,Vera Lapko,Grass,1.0,2,33.33333333333333
+2885,214304,Vera Lapko,Hard,4.0,9,30.76923076923077
+2886,214386,Xinyu Gao,Hard,0.0,1,0.0
+2887,214388,Anna Bondar,Clay,3.0,7,30.0
+2888,214388,Anna Bondar,Grass,0.0,2,0.0
+2889,214388,Anna Bondar,Hard,3.0,13,18.75
+2890,214405,Mirjam Bjorklund,Clay,0.0,1,0.0
+2891,214405,Mirjam Bjorklund,Grass,0.0,1,0.0
+2892,214405,Mirjam Bjorklund,Hard,1.0,2,33.33333333333333
+2893,214452,Caroline Dolehide,Clay,7.0,8,46.666666666666664
+2894,214452,Caroline Dolehide,Grass,0.0,3,0.0
+2895,214452,Caroline Dolehide,Hard,16.0,29,35.55555555555556
+2896,214453,Sophie Chang,Clay,0.0,1,0.0
+2897,214459,Lucia Bronzetti,Clay,1.0,8,11.11111111111111
+2898,214459,Lucia Bronzetti,Grass,0.0,4,0.0
+2899,214459,Lucia Bronzetti,Hard,14.0,21,40.0
+2900,214461,Tamara Zidansek,Clay,11.0,13,45.83333333333333
+2901,214461,Tamara Zidansek,Grass,2.0,5,28.57142857142857
+2902,214461,Tamara Zidansek,Hard,9.0,21,30.0
+2903,214541,Fanny Stollar,Clay,4.0,3,57.14285714285714
+2904,214544,Aryna Sabalenka,Clay,55.0,23,70.51282051282051
+2905,214544,Aryna Sabalenka,Grass,20.0,12,62.5
+2906,214544,Aryna Sabalenka,Hard,186.0,69,72.94117647058823
+2907,214577,Stacey Fung,Hard,0.0,1,0.0
+2908,214593,Lucrezia Stefanini,Clay,1.0,2,33.33333333333333
+2909,214593,Lucrezia Stefanini,Grass,0.0,1,0.0
+2910,214593,Lucrezia Stefanini,Hard,2.0,4,33.33333333333333
+2911,214604,Maria Lourdes Carle,Clay,2.0,3,40.0
+2912,214604,Maria Lourdes Carle,Grass,0.0,1,0.0
+2913,214604,Maria Lourdes Carle,Hard,1.0,3,25.0
+2914,214643,Liudmila Samsonova,Clay,11.0,15,42.30769230769231
+2915,214643,Liudmila Samsonova,Grass,12.0,7,63.1578947368421
+2916,214643,Liudmila Samsonova,Hard,60.0,51,54.054054054054056
+2917,214646,Xiaodi You,Hard,0.0,3,0.0
+2918,214684,Katherine Sebov,Clay,1.0,1,50.0
+2919,214684,Katherine Sebov,Hard,1.0,3,25.0
+2920,214728,Ashley Kratzer,Hard,1.0,2,33.33333333333333
+2921,214782,Fernanda Contreras Gomez,Clay,1.0,1,50.0
+2922,214782,Fernanda Contreras Gomez,Grass,0.0,1,0.0
+2923,214782,Fernanda Contreras Gomez,Hard,1.0,4,20.0
+2924,214839,Jodie Burrage,Grass,4.0,5,44.44444444444444
+2925,214839,Jodie Burrage,Hard,3.0,4,42.857142857142854
+2926,214863,Sofya Zhuk,Clay,0.0,1,0.0
+2927,214863,Sofya Zhuk,Hard,2.0,5,28.57142857142857
+2928,214906,Claire Liu,Clay,5.0,8,38.46153846153847
+2929,214906,Claire Liu,Grass,3.0,4,42.857142857142854
+2930,214906,Claire Liu,Hard,12.0,25,32.432432432432435
+2931,214919,Dalila Spiteri,Clay,0.0,1,0.0
+2932,214939,Anna Kalinskaya,Clay,9.0,8,52.94117647058824
+2933,214939,Anna Kalinskaya,Grass,8.0,6,57.14285714285714
+2934,214939,Anna Kalinskaya,Hard,45.0,39,53.57142857142857
+2935,214954,Marketa Vondrousova,Clay,33.0,19,63.46153846153846
+2936,214954,Marketa Vondrousova,Grass,12.0,10,54.54545454545454
+2937,214954,Marketa Vondrousova,Hard,68.0,48,58.620689655172406
+2938,214981,Elena Rybakina,Clay,36.0,16,69.23076923076923
+2939,214981,Elena Rybakina,Grass,22.0,7,75.86206896551724
+2940,214981,Elena Rybakina,Hard,108.0,58,65.06024096385542
+2941,215018,Destanee Aiava,Clay,0.0,1,0.0
+2942,215018,Destanee Aiava,Hard,2.0,8,20.0
+2943,215020,Anna Blinkova,Clay,10.0,11,47.61904761904761
+2944,215020,Anna Blinkova,Grass,7.0,7,50.0
+2945,215020,Anna Blinkova,Hard,16.0,36,30.76923076923077
+2946,215035,Dayana Yastremska,Clay,7.0,15,31.818181818181817
+2947,215035,Dayana Yastremska,Grass,6.0,7,46.15384615384615
+2948,215035,Dayana Yastremska,Hard,40.0,48,45.45454545454545
+2949,215037,Kayla Day,Clay,2.0,5,28.57142857142857
+2950,215037,Kayla Day,Hard,5.0,14,26.31578947368421
+2951,215042,Katie Swan,Grass,1.0,9,10.0
+2952,215042,Katie Swan,Hard,0.0,1,0.0
+2953,215064,Maria Mateas,Hard,0.0,2,0.0
+2954,215096,Jaimee Fourlis,Clay,0.0,1,0.0
+2955,215096,Jaimee Fourlis,Grass,1.0,2,33.33333333333333
+2956,215096,Jaimee Fourlis,Hard,1.0,6,14.285714285714285
+2957,215138,Lulu Sun,Grass,4.0,1,80.0
+2958,215138,Lulu Sun,Hard,6.0,6,50.0
+2959,215151,Lina Glushko,Hard,1.0,1,50.0
+2960,215155,Olesya Pervushina,Hard,0.0,1,0.0
+2961,215219,Kaja Juvan,Clay,2.0,6,25.0
+2962,215219,Kaja Juvan,Grass,6.0,4,60.0
+2963,215219,Kaja Juvan,Hard,14.0,14,50.0
+2964,215250,Hanyu Guo,Hard,0.0,1,0.0
+2965,215290,Katarina Zavatska,Clay,1.0,3,25.0
+2966,215290,Katarina Zavatska,Hard,0.0,4,0.0
+2967,215305,Desirae Krawczyk,Clay,0.0,1,0.0
+2968,215306,Emiliana Arango,Clay,1.0,1,50.0
+2969,215306,Emiliana Arango,Hard,4.0,2,66.66666666666666
+2970,215314,En Shuo Liang,Clay,0.0,1,0.0
+2971,215314,En Shuo Liang,Hard,0.0,3,0.0
+2972,215337,Olga Danilovic,Clay,7.0,4,63.63636363636363
+2973,215337,Olga Danilovic,Grass,0.0,1,0.0
+2974,215337,Olga Danilovic,Hard,2.0,7,22.22222222222222
+2975,215370,Bianca Andreescu,Clay,12.0,10,54.54545454545454
+2976,215370,Bianca Andreescu,Grass,6.0,9,40.0
+2977,215370,Bianca Andreescu,Hard,53.0,30,63.85542168674698
+2978,215371,Francesca Di Lorenzo,Clay,0.0,4,0.0
+2979,215371,Francesca Di Lorenzo,Hard,3.0,4,42.857142857142854
+2980,215453,Marina Bassols Ribera,Clay,0.0,1,0.0
+2981,215453,Marina Bassols Ribera,Hard,0.0,1,0.0
+2982,215572,Nuria Brancaccio,Clay,0.0,2,0.0
+2983,215613,Emma Navarro,Clay,8.0,9,47.05882352941176
+2984,215613,Emma Navarro,Grass,7.0,4,63.63636363636363
+2985,215613,Emma Navarro,Hard,28.0,19,59.57446808510638
+2986,215614,Mei Yamaguchi,Hard,0.0,1,0.0
+2987,215713,Anastasia Potapova,Clay,14.0,12,53.84615384615385
+2988,215713,Anastasia Potapova,Grass,3.0,6,33.33333333333333
+2989,215713,Anastasia Potapova,Hard,35.0,47,42.68292682926829
+2990,215785,Camila Osorio,Clay,10.0,8,55.55555555555556
+2991,215785,Camila Osorio,Grass,4.0,6,40.0
+2992,215785,Camila Osorio,Hard,10.0,18,35.714285714285715
+2993,215872,Kamilla Rakhimova,Clay,3.0,5,37.5
+2994,215872,Kamilla Rakhimova,Grass,0.0,1,0.0
+2995,215872,Kamilla Rakhimova,Hard,9.0,14,39.130434782608695
+2996,215898,Jule Niemeier,Clay,2.0,8,20.0
+2997,215898,Jule Niemeier,Grass,8.0,8,50.0
+2998,215898,Jule Niemeier,Hard,7.0,8,46.666666666666664
+2999,215899,Simona Waltert,Clay,1.0,1,50.0
+3000,215899,Simona Waltert,Grass,0.0,1,0.0
+3001,215910,Panna Udvardy,Clay,0.0,3,0.0
+3002,215910,Panna Udvardy,Grass,1.0,4,20.0
+3003,215910,Panna Udvardy,Hard,0.0,4,0.0
+3004,215936,Francesca Jones,Grass,0.0,2,0.0
+3005,215936,Francesca Jones,Hard,0.0,2,0.0
+3006,215946,Ye Xin Ma,Hard,1.0,2,33.33333333333333
+3007,215983,Ann Li,Clay,1.0,2,33.33333333333333
+3008,215983,Ann Li,Grass,1.0,3,25.0
+3009,215983,Ann Li,Hard,15.0,18,45.45454545454545
+3010,215988,Mai Hontama,Grass,1.0,1,50.0
+3011,215988,Mai Hontama,Hard,5.0,10,33.33333333333333
+3012,215992,Whitney Osuigwe,Clay,0.0,1,0.0
+3013,215992,Whitney Osuigwe,Hard,1.0,8,11.11111111111111
+3014,215996,Arianne Hartono,Clay,0.0,1,0.0
+3015,215996,Arianne Hartono,Hard,0.0,2,0.0
+3016,216016,Xiyu Wang,Clay,7.0,9,43.75
+3017,216016,Xiyu Wang,Grass,1.0,4,20.0
+3018,216016,Xiyu Wang,Hard,12.0,26,31.57894736842105
+3019,216044,Yuki Naito,Hard,0.0,1,0.0
+3020,216062,Meiling Wang,Hard,0.0,2,0.0
+3021,216081,Maja Chwalinska,Grass,1.0,1,50.0
+3022,216083,Caty Mcnally,Clay,5.0,5,50.0
+3023,216083,Caty Mcnally,Grass,0.0,2,0.0
+3024,216083,Caty Mcnally,Hard,8.0,14,36.36363636363637
+3025,216097,Elizabeth Mandlik,Clay,0.0,1,0.0
+3026,216097,Elizabeth Mandlik,Hard,3.0,4,42.857142857142854
+3027,216133,Xin Yu Wang,Clay,6.0,9,40.0
+3028,216133,Xin Yu Wang,Grass,5.0,7,41.66666666666667
+3029,216133,Xin Yu Wang,Hard,24.0,28,46.15384615384615
+3030,216146,Marta Kostyuk,Clay,11.0,16,40.74074074074074
+3031,216146,Marta Kostyuk,Grass,8.0,6,57.14285714285714
+3032,216146,Marta Kostyuk,Hard,56.0,43,56.56565656565656
+3033,216153,Amanda Anisimova,Clay,26.0,19,57.77777777777777
+3034,216153,Amanda Anisimova,Grass,5.0,4,55.55555555555556
+3035,216153,Amanda Anisimova,Hard,52.0,45,53.608247422680414
+3036,216262,Clara Burel,Clay,2.0,8,20.0
+3037,216262,Clara Burel,Grass,2.0,4,33.33333333333333
+3038,216262,Clara Burel,Hard,15.0,21,41.66666666666667
+3039,216265,Olivia Gadecki,Grass,0.0,1,0.0
+3040,216265,Olivia Gadecki,Hard,6.0,8,42.857142857142854
+3041,216347,Iga Swiatek,Clay,78.0,7,91.76470588235294
+3042,216347,Iga Swiatek,Grass,11.0,6,64.70588235294117
+3043,216347,Iga Swiatek,Hard,138.0,38,78.4090909090909
+3044,216566,Mananchaya Sawangkaew,Hard,1.0,1,50.0
+3045,219434,Brienne Minor,Hard,0.0,1,0.0
+3046,219875,Varvara Gracheva,Clay,12.0,13,48.0
+3047,219875,Varvara Gracheva,Grass,2.0,4,33.33333333333333
+3048,219875,Varvara Gracheva,Hard,20.0,27,42.5531914893617
+3049,219917,Alycia Parks,Clay,2.0,6,25.0
+3050,219917,Alycia Parks,Grass,2.0,3,40.0
+3051,219917,Alycia Parks,Hard,7.0,12,36.84210526315789
+3052,220309,Zeynep Sonmez,Clay,0.0,1,0.0
+3053,220309,Zeynep Sonmez,Grass,1.0,1,50.0
+3054,220309,Zeynep Sonmez,Hard,1.0,3,25.0
+3055,220332,Eva Lys,Clay,1.0,2,33.33333333333333
+3056,220332,Eva Lys,Grass,0.0,1,0.0
+3057,220332,Eva Lys,Hard,1.0,4,20.0
+3058,220348,Diane Parry,Clay,5.0,7,41.66666666666667
+3059,220348,Diane Parry,Grass,3.0,4,42.857142857142854
+3060,220348,Diane Parry,Hard,8.0,12,40.0
+3061,220367,Leylah Fernandez,Clay,15.0,15,50.0
+3062,220367,Leylah Fernandez,Grass,6.0,4,60.0
+3063,220367,Leylah Fernandez,Hard,40.0,42,48.78048780487805
+3064,220416,Moyuka Uchijima,Clay,1.0,1,50.0
+3065,220416,Moyuka Uchijima,Grass,0.0,1,0.0
+3066,220416,Moyuka Uchijima,Hard,4.0,8,33.33333333333333
+3067,220432,Dayeon Back,Hard,0.0,1,0.0
+3068,220435,Anastasia Zakharova,Hard,2.0,2,50.0
+3069,220440,Alexa Noel,Hard,0.0,1,0.0
+3070,220465,Katie Volynets,Clay,4.0,8,33.33333333333333
+3071,220465,Katie Volynets,Grass,1.0,3,25.0
+3072,220465,Katie Volynets,Hard,9.0,17,34.61538461538461
+3073,220520,Mccartney Kessler,Clay,0.0,1,0.0
+3074,220520,Mccartney Kessler,Grass,0.0,1,0.0
+3075,220520,Mccartney Kessler,Hard,2.0,6,25.0
+3076,220548,Peyton Stearns,Clay,4.0,3,57.14285714285714
+3077,220548,Peyton Stearns,Grass,1.0,3,25.0
+3078,220548,Peyton Stearns,Hard,16.0,20,44.44444444444444
+3079,220589,Elina Avanesyan,Clay,7.0,5,58.333333333333336
+3080,220589,Elina Avanesyan,Grass,3.0,3,50.0
+3081,220589,Elina Avanesyan,Hard,10.0,11,47.61904761904761
+3082,220680,Fiona Crawley,Clay,0.0,1,0.0
+3083,220680,Fiona Crawley,Hard,0.0,1,0.0
+3084,220699,Julia Riera,Clay,0.0,1,0.0
+3085,220699,Julia Riera,Grass,0.0,1,0.0
+3086,220699,Julia Riera,Hard,2.0,1,66.66666666666666
+3087,220704,Clara Tauson,Clay,8.0,6,57.14285714285714
+3088,220704,Clara Tauson,Grass,0.0,3,0.0
+3089,220704,Clara Tauson,Hard,12.0,16,42.857142857142854
+3090,220714,Elisabetta Cocciaretto,Clay,9.0,12,42.857142857142854
+3091,220714,Elisabetta Cocciaretto,Grass,3.0,2,60.0
+3092,220714,Elisabetta Cocciaretto,Hard,8.0,23,25.806451612903224
+3093,220718,Sakura Hosogi,Hard,0.0,1,0.0
+3094,220722,Elvina Kalieva,Hard,0.0,2,0.0
+3095,220733,Carole Monnet,Clay,0.0,1,0.0
+3096,220750,Daria Snigur,Grass,1.0,1,50.0
+3097,220750,Daria Snigur,Hard,1.0,2,33.33333333333333
+3098,221000,Diletta Cherubini,Clay,0.0,1,0.0
+3099,221012,Qinwen Zheng,Clay,16.0,11,59.25925925925925
+3100,221012,Qinwen Zheng,Grass,3.0,8,27.27272727272727
+3101,221012,Qinwen Zheng,Hard,66.0,33,66.66666666666666
+3102,221024,Hailey Baptiste,Clay,5.0,7,41.66666666666667
+3103,221024,Hailey Baptiste,Grass,0.0,1,0.0
+3104,221024,Hailey Baptiste,Hard,10.0,19,34.48275862068966
+3105,221039,Elsa Jacquemot,Clay,1.0,4,20.0
+3106,221039,Elsa Jacquemot,Grass,0.0,1,0.0
+3107,221039,Elsa Jacquemot,Hard,0.0,2,0.0
+3108,221054,Emma Raducanu,Clay,7.0,7,50.0
+3109,221054,Emma Raducanu,Grass,9.0,4,69.23076923076923
+3110,221054,Emma Raducanu,Hard,23.0,19,54.761904761904766
+3111,221096,Sijia Wei,Hard,1.0,1,50.0
+3112,221099,Rina Saigo,Hard,0.0,2,0.0
+3113,221103,Coco Gauff,Clay,42.0,18,70.0
+3114,221103,Coco Gauff,Grass,20.0,9,68.96551724137932
+3115,221103,Coco Gauff,Hard,107.0,50,68.15286624203821
+3116,221124,Himeno Sakatsume,Hard,0.0,1,0.0
+3117,221190,Julia Middendorf,Clay,0.0,1,0.0
+3118,221236,Polina Kudermetova,Grass,0.0,1,0.0
+3119,221236,Polina Kudermetova,Hard,2.0,2,50.0
+3120,221237,Maria Timofeeva,Clay,0.0,1,0.0
+3121,221237,Maria Timofeeva,Hard,4.0,2,66.66666666666666
+3122,221257,Sinja Kraus,Hard,0.0,1,0.0
+3123,221333,Solana Sierra,Hard,0.0,1,0.0
+3124,221354,Lisa Pigato,Clay,1.0,2,33.33333333333333
+3125,221407,Oksana Selekhmeteva,Clay,0.0,1,0.0
+3126,221407,Oksana Selekhmeteva,Hard,0.0,2,0.0
+3127,221512,Katrina Scott,Hard,1.0,3,25.0
+3128,221746,Oceane Babel,Clay,0.0,1,0.0
+3129,221768,Nastasja Schunk,Clay,0.0,3,0.0
+3130,221768,Nastasja Schunk,Grass,0.0,1,0.0
+3131,221768,Nastasja Schunk,Hard,0.0,1,0.0
+3132,221883,Talia Gibson,Hard,0.0,1,0.0
+3133,221885,Fangran Tian,Hard,0.0,1,0.0
+3134,221905,Robin Montgomery,Clay,2.0,1,66.66666666666666
+3135,221905,Robin Montgomery,Grass,1.0,1,50.0
+3136,221905,Robin Montgomery,Hard,3.0,11,21.428571428571427
+3137,221909,Ashlyn Krueger,Clay,3.0,4,42.857142857142854
+3138,221909,Ashlyn Krueger,Grass,1.0,2,33.33333333333333
+3139,221909,Ashlyn Krueger,Hard,10.0,26,27.77777777777778
+3140,221911,Selena Janicijevic,Clay,0.0,2,0.0
+3141,221911,Selena Janicijevic,Hard,0.0,1,0.0
+3142,222081,Eleana Yu,Hard,0.0,1,0.0
+3143,222233,Marina Stakusic,Grass,0.0,1,0.0
+3144,222233,Marina Stakusic,Hard,4.0,3,57.14285714285714
+3145,222258,Linda Fruhvirtova,Clay,3.0,8,27.27272727272727
+3146,222258,Linda Fruhvirtova,Grass,0.0,1,0.0
+3147,222258,Linda Fruhvirtova,Hard,10.0,11,47.61904761904761
+3148,222296,Zhuoxuan Bai,Clay,0.0,2,0.0
+3149,222296,Zhuoxuan Bai,Grass,1.0,2,33.33333333333333
+3150,222296,Zhuoxuan Bai,Hard,1.0,2,33.33333333333333
+3151,222328,Linda Noskova,Clay,5.0,7,41.66666666666667
+3152,222328,Linda Noskova,Grass,3.0,4,42.857142857142854
+3153,222328,Linda Noskova,Hard,29.0,16,64.44444444444444
+3154,222396,Matilde Paoletti,Clay,0.0,1,0.0
+3155,222559,Han Shi,Hard,0.0,1,0.0
+3156,222601,Jessica Bouzas Maneiro,Clay,1.0,2,33.33333333333333
+3157,222601,Jessica Bouzas Maneiro,Grass,2.0,2,50.0
+3158,222601,Jessica Bouzas Maneiro,Hard,3.0,3,50.0
+3159,222661,Sonay Kartal,Grass,2.0,3,40.0
+3160,222866,Katherine Hui,Hard,0.0,1,0.0
+3161,222919,Julia Avdeeva,Clay,0.0,1,0.0
+3162,222965,Erika Andreeva,Clay,0.0,2,0.0
+3163,222965,Erika Andreeva,Grass,1.0,1,50.0
+3164,222965,Erika Andreeva,Hard,7.0,11,38.88888888888889
+3165,223079,Katerina Bohmova,Clay,1.0,2,33.33333333333333
+3166,223079,Katerina Bohmova,Grass,0.0,1,0.0
+3167,223079,Katerina Bohmova,Hard,0.0,1,0.0
+3168,223194,Taylah Preston,Hard,1.0,4,20.0
+3169,223253,Alexandra Eala,Clay,1.0,2,33.33333333333333
+3170,223253,Alexandra Eala,Hard,0.0,5,0.0
+3171,223286,Victoria Jimenez Kasintseva,Clay,1.0,3,25.0
+3172,223286,Victoria Jimenez Kasintseva,Hard,0.0,1,0.0
+3173,223331,Anca Alexia Todoni,Grass,1.0,1,50.0
+3174,223410,Georgia Pedone,Clay,0.0,1,0.0
+3175,223670,Diana Shnaider,Clay,5.0,6,45.45454545454545
+3176,223670,Diana Shnaider,Grass,7.0,1,87.5
+3177,223670,Diana Shnaider,Hard,17.0,15,53.125
+3178,230870,Ella Seidel,Hard,1.0,2,33.33333333333333
+3179,232447,Celine Naef,Grass,0.0,1,0.0
+3180,232447,Celine Naef,Hard,0.0,1,0.0
+3181,233741,Maya Joint,Hard,1.0,1,50.0
+3182,234222,Liv Hovde,Hard,0.0,1,0.0
+3183,236955,Tatiana Prozorova,Hard,0.0,1,0.0
+3184,238064,Clervie Ngounoue,Clay,0.0,1,0.0
+3185,238064,Clervie Ngounoue,Hard,0.0,3,0.0
+3186,239156,Lucija Ciric Bagaric,Clay,0.0,1,0.0
+3187,239383,Sara Bejlek,Clay,3.0,2,60.0
+3188,239383,Sara Bejlek,Hard,0.0,3,0.0
+3189,248660,Lya Fernandez,Hard,0.0,1,0.0
+3190,252499,Alina Korneeva,Hard,1.0,1,50.0
+3191,252587,Xinxin Yao,Hard,0.0,1,0.0
+3192,259104,Brenda Fruhvirtova,Clay,1.0,4,20.0
+3193,259104,Brenda Fruhvirtova,Grass,1.0,1,50.0
+3194,259104,Brenda Fruhvirtova,Hard,2.0,5,28.57142857142857
+3195,259799,Mirra Andreeva,Clay,14.0,5,73.68421052631578
+3196,259799,Mirra Andreeva,Grass,3.0,3,50.0
+3197,259799,Mirra Andreeva,Hard,21.0,11,65.625
+3198,259967,Sayaka Ishii,Hard,2.0,1,66.66666666666666
+3199,260170,Sara Saito,Hard,0.0,1,0.0
+3200,260300,Iva Jovic,Hard,1.0,1,50.0
+3201,260510,Vittoria Paganetti,Clay,0.0,1,0.0
+3202,260847,Julia Stusek,Grass,0.0,1,0.0
+3203,260913,Yufei Ren,Hard,0.0,1,0.0
+3204,261963,Mika Stojsavljevic,Hard,0.0,1,0.0
+3205,263857,Yuliia Starodubtseva,Clay,0.0,1,0.0
+3206,263857,Yuliia Starodubtseva,Grass,1.0,1,50.0
+3207,263857,Yuliia Starodubtseva,Hard,4.0,3,57.14285714285714
