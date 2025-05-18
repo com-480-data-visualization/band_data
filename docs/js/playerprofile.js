@@ -9,6 +9,8 @@ let csvATPPlayerProfile = [];
 let csvATPPlayerStats = [];
 let csvATPPropSurfaceSunburst = [];
 
+let csvWinRates = [];
+
 // Load CSV on page load
 function loadCSV(url) {
   return new Promise((resolve, reject) => {
@@ -34,6 +36,8 @@ function loadCSV(url) {
           csvWTAPlayerStats = data;
         } else if (url.includes('wta_prop_surface_sunburst')) {
           csvWTAPropSurfaceSunburst = data;
+        } else if(url.includes('win_rates.csv')) {
+          csvWinRates = data;
         }
 
         resolve();
@@ -45,19 +49,69 @@ function loadCSV(url) {
   });
 }
 
-
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
 
+function loadStats(playerName, data) {
+  // Stats Section
+  playerData = data.filter(row => row.player_name === playerName);
+
+  const statWrapper = document.createElement("div");
+  statWrapper.className = "flex gap-3";
+
+  const surfaceColors = {
+    Hard: { bg: "bg-blue-50", text: "text-blue-500" },
+    Clay: { bg: "bg-orange-50", text: "text-orange-500" },
+    Grass: { bg: "bg-green-50", text: "text-green-500" },
+    Carpet: { bg: "bg-gray-50", text: "text-gray-500" }
+  };
+
+  for (const surface in surfaceColors) {
+    surfaceStats = playerData.filter(row => row.surface === surface)
+    var winRate;
+    if (surfaceStats.length === 0) {
+      winRate = -1
+    } else {
+      winRate = parseFloat(surfaceStats[0].win_rate).toFixed(0);
+    }
+
+    //const winRate = surfaceStats[surface];
+    const color = surfaceColors[surface] || { bg: "bg-gray-100", text: "text-gray-500" };
+
+    const statBlock = document.createElement("div");
+    statBlock.className = "flex flex-col items-center";
+
+    const circle = document.createElement("div");
+    circle.className = `flex items-center justify-center h-10 w-10 rounded-full ${color.bg} mb-1`;
+
+    const span = document.createElement("span");
+    span.className = `text-base font-bold ${color.text}`;
+    span.textContent = winRate == -1 ? `NA`: `${winRate}%`;
+
+    circle.appendChild(span);
+
+    const label = document.createElement("span");
+    label.className = "text-xs text-gray-500 text-center";
+    label.textContent = surface;
+
+    statBlock.appendChild(circle);
+    statBlock.appendChild(label);
+    statWrapper.appendChild(statBlock);
+  }
+
+  //container.appendChild(statWrapper);
+  document.getElementById("perf-overview").appendChild(statWrapper);
+}
+
+
 function playerDescription(playerName, data) {
-    console.log(playerName);
     const filtered = data.filter(row => {
         return row['winner_name'] === playerName;
 
     });
-    console.log(filtered);
+
     if (filtered.length == 1) {
         const player = filtered[0];
 
@@ -688,7 +742,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       loadCSV('../data/wta_player_perf.csv'),
       loadCSV('../data/wta_player_profile.csv'),
       loadCSV('../data/wta_player_stats.csv'),
-      loadCSV('../data/wta_prop_surface_sunburst.csv')
+      loadCSV('../data/wta_prop_surface_sunburst.csv'),
+      loadCSV('../data/win_rates.csv')
     ]);
 
     // All CSVs loaded, now safe to use:
@@ -698,8 +753,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (playerName && nameEl) {
       nameEl.textContent = decodeURIComponent(playerName);
+      loadStats(playerName, csvWinRates);
       loadGraphs(playerName, association);
-
     }
   } catch (err) {
     console.error("Error loading one or more CSVs:", err);

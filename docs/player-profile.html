@@ -72,47 +72,21 @@
 
           <!-- Performance overview  -->
           <div class="md:w-3/4 bg-white rounded-xl shadow-sm p-4 relative overflow-hidden">
-            <div class="flex justify-between items-start mb-3 relative">
+            <div id='perf-overview' class="flex justify-between items-start mb-3 relative">
               <div>
                 <h2 class="text-xl font-semibold text-gray-800">Career Overview</h2>
                 <p class="text-gray-600 text-sm">Player specializes in hard court surfaces with exceptional first serve statistics.</p>
               </div>
 
               <!-- Surface win stats  -->
-              <div class="flex gap-3">
-                <div class="flex flex-col items-center">
-                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-blue-50 mb-1">
-                    <span class="text-base font-bold text-blue-500">82%</span>
-                  </div>
-                  <span class="text-xs text-gray-500 text-center">Hard</span>
-                </div>
-                <div class="flex flex-col items-center">
-                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-orange-50 mb-1">
-                    <span class="text-base font-bold text-orange-500">65%</span>
-                  </div>
-                  <span class="text-xs text-gray-500 text-center">Clay</span>
-                </div>
-                <div class="flex flex-col items-center">
-                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-green-50 mb-1">
-                    <span class="text-base font-bold text-green-500">71%</span>
-                  </div>
-                  <span class="text-xs text-gray-500 text-center">Grass</span>
-                </div>
-                <div class="flex flex-col items-center">
-                  <div class="flex items-center justify-center h-10 w-10 rounded-full bg-gray-50 mb-1">
-                    <span class="text-base font-bold text-gray-500">53%</span>
-                  </div>
-                  <span class="text-xs text-gray-500 text-center">Carpet</span>
-                </div>
-              </div>
+              <!-- added dynamically-->
             </div>
 
             <!-- Timeline visualization  -->
-            <div  class="flex justify-between items-start mb-3 relative h-auto w-full">
+            <div class="flex justify-between items-start mb-3 relative h-auto w-full">
               <div class="absolute inset-0 bg-gradient-to-r from-transparent via-blue-50 to-transparent opacity-50 rounded-lg"></div>
               <div id='timelineHolder' class="w-full h-full bg-white rounded-lg overflow-hidden relative">
                 <!-- <svg id="timelineChart" class="w-full object-contain" preserveAspectRatio="xMidYMid meet"></svg>-->
-
                 <canvas id="timelineChart" class="w-full h-full object-contain"></canvas>
                 <!-- <img src="assets/graphs/performance-timeline.png" alt="Performance Timeline" class="w-full h-full object-contain" /> -->
               </div>
@@ -128,7 +102,7 @@
             <h3 class="text-lg font-semibold text-gray-800 mb-2 relative">Performance by Surface & Rivals</h3>
             <div class="w-full bg-white flex items-center justify-center rounded-lg">
               <!-- Subtle highlight for the graph area -->
-              <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-30 rounded-lg"></div>
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-30 rounded-lg pointer-events-none"></div>
               <img src="assets/graphs/rivalries.png" alt="Biggest Rivalries" class="w-3/5 h-full object-contain relative" />
             </div>
           </div>
@@ -138,7 +112,7 @@
             <h3 class="text-lg font-semibold text-gray-800 mb-2 relative">Tournament Wins By Surface & Level</h3>
             <div class="w-full bg-white flex items-center justify-center rounded-lg">
               <!-- Subtle highlight for the graph area -->
-              <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-30 rounded-lg"></div>
+              <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-30 rounded-lg pointer-events-none"></div>
               <img src="assets/graphs/tournament-wins.png" alt="Tournament Wins" class="w-3/5 h-full object-contain relative" />
             </div>
           </div>
@@ -158,13 +132,6 @@
                 <!--<div class="absolute inset-0 bg-gradient-to-r from-blue-50 via-transparent to-green-50 opacity-20 rounded-lg  pointer-events-none"></div>-->
                 <canvas id="radarChart2" class="w-full h-full"></canvas>
               </div>
-
-              <!--<div id="radarContainer" class="w-full h-full flex items-center justify-center bg-white rounded-lg">
-                 highlight for the graph area
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-50 via-transparent to-green-50 opacity-20 rounded-lg"></div>
-                <svg id="radarChart"></svg>
-                <img src="assets/graphs/performance-metrics.png" alt="Performance Metrics" class="w-3/5 h-full object-contain" />
-              </div>-->
             </div>
 
             <!-- Stats  -->
