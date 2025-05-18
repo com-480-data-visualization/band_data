@@ -105,7 +105,6 @@ function loadStats(playerName, data) {
   document.getElementById("perf-overview").appendChild(statWrapper);
 }
 
-
 function playerDescription(playerName, data) {
     const filtered = data.filter(row => {
         return row['winner_name'] === playerName;
@@ -717,8 +716,118 @@ function drawRadarChartjs(playerName, data) {
   new Chart(ctx, config);
 }
 
+function classifyImprovements(playerName, data) {
+  const statLabels = {
+    ace_pct: "Aces",
+    "1stIn_pct": "First Serve In %",
+    "1stWon_pct": "First Serve Win %",
+    "2ndWon_pct": "Second Serve Win %",
+    df_pct: "Double Fault %",
+    bpSaved_pct: "Break Points Saved %"
+  };
+
+  const thresholds = {
+    ace_pct: val => val >= 10,
+    "1stIn_pct": val => val >= 70,
+    "1stWon_pct": val => val >= 70,
+    "2ndWon_pct": val => val >= 70,
+    df_pct: val => val <= 5,
+    bpSaved_pct: val => val >= 70
+  };
+
+  const playerData = data.filter(d => d.winner_name === playerName);
+
+  const results = playerData.map(surfaceData => {
+    const strengths = [];
+    const improvements = [];
+
+    Object.keys(statLabels).forEach(stat => {
+      const value = parseFloat(surfaceData[stat]);
+      const label = statLabels[stat];
+      const isStrength = thresholds[stat](value);
+
+      const entry = {
+        label,
+        value: value.toFixed(1)
+      };
+
+      if (isStrength) {
+        strengths.push(entry);
+      } else {
+        improvements.push(entry);
+      }
+    });
+
+    return {
+      surface: surfaceData.surface,
+      strengths,
+      improvements
+    };
+  });
+
+  return results;
+}
+
+function loadImprovements(playerName, data) {
+  const insightData = classifyImprovements(playerName, data);
+  const container = document.getElementById('improvementsContainer');
+  if (!container) return;
+  container.innerHTML = ''; // Clear any existing content
+
+  const createBox = (title, color, icon, groupedItems) => {
+    const box = document.createElement('div');
+    box.className = 'bg-gray-50 rounded-lg p-4 mb-6 hover:scale-102 transition';
+
+    const heading = document.createElement('h4');
+    heading.className = 'text-sm font-semibold text-gray-700 flex items-center mb-3';
+    heading.innerHTML = `<span class="inline-block w-2 h-2 rounded-full bg-${color}-500 mr-2"></span>${title}`;
+
+    box.appendChild(heading);
+
+    // Each surface group
+    groupedItems.forEach(({ surface, items }) => {
+      if (items.length === 0) return;
+
+      const surfaceTitle = document.createElement('h5');
+      surfaceTitle.className = 'text-xs font-medium text-gray-600 mt-2 mb-1';
+      surfaceTitle.textContent = surface;
+
+      const list = document.createElement('ul');
+      list.className = 'mb-2';
+
+      items.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'flex items-center text-xs text-gray-600';
+        li.innerHTML = `<span class="text-${color}-500 mr-2">${icon}</span> ${item.label} (${item.value}%)`;
+        list.appendChild(li);
+      });
+
+      box.appendChild(surfaceTitle);
+      box.appendChild(list);
+    });
+
+    return box;
+  };
+
+  const strengthsBySurface = [];
+  const improvementsBySurface = [];
+
+  insightData.forEach(({ surface, strengths, improvements }) => {
+    strengthsBySurface.push({ surface, items: strengths });
+    improvementsBySurface.push({ surface, items: improvements });
+  });
+
+  const strengthsBox = createBox('Strengths', 'green', '▲', strengthsBySurface);
+  const improvementsBox = createBox('Improvement Areas', 'red', '▼', improvementsBySurface);
+
+  container.appendChild(strengthsBox);
+  container.appendChild(improvementsBox);
+}
+
+
 function loadGraphs(playerName, association) {
     if (association === 'atp') {
+        loadImprovements(playerName, csvATPPlayerStats);
         playerDescription(playerName, csvATPPlayerProfile);
         drawTimelineChart(playerName, csvATPPlayerPerf);
         //drawRadarChart(playerName, csvATPPlayerStats);
