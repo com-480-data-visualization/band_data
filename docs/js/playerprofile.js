@@ -3,14 +3,15 @@ let csvWTAPlayerPerf = [];
 let csvWTAPlayerProfile = [];
 let csvWTAPlayerStats = [];
 let csvWTAPropSurfaceSunburst = [];
+let csvWTARivalries = [];
+let csvWTAWinRates = [];
 
 let csvATPPlayerPerf = [];
 let csvATPPlayerProfile = [];
 let csvATPPlayerStats = [];
 let csvATPPropSurfaceSunburst = [];
-
+let csvATPRivalries = [];
 let csvATPWinRates = [];
-let csvWTAWinRates = [];
 
 // Load CSV on page load
 function loadCSV(url) {
@@ -31,6 +32,8 @@ function loadCSV(url) {
           csvATPPropSurfaceSunburst = data;
         } else if (url.includes('atp_win_rates')) {
           csvATPWinRates = data;
+        } else if (url.includes('atp_rivalries')) {
+          csvATPRivalries = data;
         } else if (url.includes('wta_player_perf')) {
           csvWTAPlayerPerf = data;
         } else if (url.includes('wta_player_profile')) {
@@ -40,7 +43,9 @@ function loadCSV(url) {
         } else if (url.includes('wta_prop_surface')) {
           csvWTAPropSurfaceSunburst = data;
         } else if(url.includes('wta_win_rates')) {
-          csvWTAWinRates.push(data);
+          csvWTAWinRates = data ;
+        } else if (url.includes('wta_rivalries')) {
+          csvWTARivalries = data;
         }
         resolve();
       },
@@ -972,6 +977,177 @@ function drawSunburstChart(playerId, data) {
       .on("click", () => clicked(null, root));
 }
 
+function drawOpponentPacking(playerId, data, association) {
+  const container = document.getElementById("rivalryContainer");
+  const width = container.clientWidth;
+  const height = width;
+  const surfaceColorMap = {
+    "Carpet": {
+      backgroundColor: "rgba(150, 150, 150, 0.25)",
+      borderColor: 'rgba(150, 150, 150, 1)'
+    },
+    "Clay": {
+      backgroundColor: "rgba(255, 159, 64, 0.25)",
+      borderColor: "rgba(255, 159, 64, 1)"
+    },
+    "Grass": {
+      backgroundColor: "rgba(75, 192, 192, 0.25)",
+      borderColor: "rgba(75, 192, 192, 1)"
+    },
+    "Hard": {
+      backgroundColor: "rgba(54, 162, 235, 0.25)",
+      borderColor: "rgba(54, 162, 235, 1)"
+    }
+  };
+
+  const filtered = data.filter(d => d.player_id === playerId);
+  const hierarchy = {
+      name: "root",
+      children: Array.from(
+        d3.group(filtered, d => d.surface),
+        ([surface, entries]) => ({
+          name: surface,
+          children: Array.from(
+            d3.rollups(
+              entries,
+              v => d3.sum(v, d => +d.match_count),
+              d => `${d.opponent}|||${d.opponent_id}`
+            ),
+            ([key, count]) => {
+              const [opponent, opponent_id] = key.split("|||");
+              return { name: opponent, id: opponent_id, value: count };
+            }
+          )
+        })
+      )
+    };
+
+    const root = d3.pack()
+      .size([width, height])
+      .padding(4)(
+        d3.hierarchy(hierarchy)
+          .sum(d => d.value)
+          .sort((a, b) => b.value - a.value)
+      );
+
+    const svg = d3.select("#rivalryChart")
+      .append("svg")
+      .attr("viewBox", [0, 0, width, height])
+      .style("font-family", "'Source Sans Pro', sans-serif")
+      .style("font-size", "11px");
+
+    const tooltip = d3.select("body").append("div")
+      .style("position", "absolute")
+      .style("background", "white")
+      .style("border", "1px solid #ccc")
+      .style("padding", "5px 10px")
+      .style("border-radius", "4px")
+      .style("pointer-events", "none")
+      .style("display", "none");
+
+    const node = svg.selectAll("g")
+      .data(root.descendants().slice(1))
+      .join("g")
+      .attr("transform", d => `translate(${d.x},${d.y})`);
+
+    node.append("circle")
+      .attr("r", d => d.r)
+      .attr("fill", d => {
+        const surface = d.ancestors().find(a => a.depth === 1)?.data.name;
+        const colorSet = surfaceColorMap[surface] || {};
+
+        if (d.depth === 1) {
+          // Surface circle
+          return colorSet.backgroundColor || "#eee";
+        } else if (d.depth === 2) {
+          // Opponent circle
+          return colorSet.borderColor || "#ccc";
+        } else {
+          return "#fff"; // fallback
+        }
+      })
+      .attr("stroke-width", 2)
+      .on("mouseover", (event, d) => {
+        if (d.data.name && d.data.value) {
+          tooltip.html(`<strong>${d.data.name}</strong><br/>Matches: ${d.data.value}`)
+            .style("left", `${event.pageX + 10}px`)
+            .style("top", `${event.pageY}px`)
+            .style("display", "block");
+        }
+      })
+      .on("mousemove", event => {
+        tooltip.style("left", `${event.pageX + 10}px`)
+               .style("top", `${event.pageY}px`);
+      })
+      .on("mouseout", () => tooltip.style("display", "none"))
+      .on("click", (event, d) => {
+        if (d.data.id) {
+          const url = `player-profile.html?name=${encodeURIComponent(d.data.name)}&playerId=${d.data.id}&association=${association}`;
+        window.open(url, "_blank");
+        }
+      });
+    node.filter(d => !d.children).append("text")
+    .attr("text-anchor", "middle")
+    .attr("dy", "0.3em")
+    .text(d => {
+      const limit = d.r / 4;
+      return d.data.name.length > limit ? d.data.name.slice(0, limit) + "…" : d.data.name;
+    })
+    .style("pointer-events", "none")
+    .style("fill", "#000");
+
+  // Add legend
+  const legend = svg.append("g")
+    .attr("transform", `translate(10, ${height - 20 * Object.keys(surfaceColors).length - 10})`);
+
+  Object.entries(surfaceColors).forEach(([surface, color], i) => {
+    const g = legend.append("g").attr("transform", `translate(0, ${i * 20})`);
+    g.append("rect")
+      .attr("width", 12)
+      .attr("height", 12)
+      .attr("fill", color)
+    g.append("text")
+      .attr("x", 18)
+      .attr("y", 10)
+      .text(surface);
+  });
+
+  svg.on("click", (event) => zoom(event, root));
+  let focus = root;
+  let view;
+  zoomTo([focus.x, focus.y, focus.r * 2]);
+
+  function zoomTo(v) {
+    const k = width / v[2];
+
+    view = v;
+
+    label.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
+    node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
+    node.attr("r", d => d.r * k);
+  }
+
+  function zoom(event, d) {
+    const focus0 = focus;
+
+    focus = d;
+
+    const transition = svg.transition()
+        .duration(event.altKey ? 7500 : 750)
+        .tween("zoom", d => {
+          const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
+          return t => zoomTo(i(t));
+        });
+
+    label
+      .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+      .transition(transition)
+        .style("fill-opacity", d => d.parent === focus ? 1 : 0)
+        .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+        .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+  }
+}
+
 function loadGraphs(playerId, association) {
     if (association === 'atp') {
         loadImprovements(playerId, csvATPPlayerStats);
@@ -979,6 +1155,7 @@ function loadGraphs(playerId, association) {
         drawTimelineChart(playerId, csvATPPlayerPerf);
         drawRadarChartjs(playerId, csvATPPlayerStats);
         drawSunburstChart(playerId, csvATPPropSurfaceSunburst);
+        drawOpponentPacking(playerId, csvATPRivalries, association);
     } else if (association === 'wta') {
         loadImprovements(playerId, csvWTAPlayerStats);
         playerDescription(playerId, csvWTAPlayerProfile);
@@ -992,18 +1169,20 @@ function loadGraphs(playerId, association) {
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    await Promise.all([
-      loadCSV('../data/atp_player_perf.csv'),
-      loadCSV('../data/atp_player_profile.csv'),
-      loadCSV('../data/atp_player_stats.csv'),
-      loadCSV('../data/atp_prop_surface.csv'),
-      loadCSV('../data/wta_player_perf.csv'),
-      loadCSV('../data/wta_player_profile.csv'),
-      loadCSV('../data/wta_player_stats.csv'),
-      loadCSV('../data/wta_prop_surface.csv'),
-      loadCSV('../data/atp_win_rates.csv'),
-      loadCSV('../data/wta_win_rates.csv'),
-    ]);
+      await Promise.all([
+          loadCSV('../data/atp_player_perf.csv'),
+          loadCSV('../data/atp_player_profile.csv'),
+          loadCSV('../data/atp_player_stats.csv'),
+          loadCSV('../data/atp_prop_surface.csv'),
+          loadCSV('../data/wta_player_perf.csv'),
+          loadCSV('../data/wta_player_profile.csv'),
+          loadCSV('../data/wta_player_stats.csv'),
+          loadCSV('../data/wta_prop_surface.csv'),
+          loadCSV('../data/atp_win_rates.csv'),
+          loadCSV('../data/wta_win_rates.csv'),
+          loadCSV('../data/wta_rivalries.csv'),
+          loadCSV('../data/atp_rivalries.csv'),
+      ]);
 
     // All CSVs loaded, now safe to use:
     const playerName = getQueryParam('name').split("_").join(" ");
