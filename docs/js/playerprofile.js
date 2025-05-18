@@ -260,6 +260,9 @@ function drawTimelineChart(playerId, data) {
             font: {
               size: 14
             }
+          },
+          grid: {
+            drawOnChartArea:false,
           }
         },
         x: {
@@ -270,6 +273,10 @@ function drawTimelineChart(playerId, data) {
               size: 18,
               weight: 'bold'
             }
+          },
+          ticks: {
+            stepSize:1,
+            callback: value => value.toString()  // display as plain number
           }
         }
       },
@@ -292,6 +299,146 @@ function drawTimelineChart(playerId, data) {
     }
   });
 }
+
+function renderPlayerChart(playerId, data) {
+  const roundOrder = ['RR', 'BR', 'ER', 'R128', 'R64', 'R32', 'R16', 'QF', 'SF', 'F', 'Titles'];
+  const levelColors = {
+    'G': 'rgba(255, 99, 132, 0.7)',
+    'M': 'rgba(54, 162, 235, 0.7)',
+    'A': 'rgba(75, 192, 192, 0.7)',
+    'F': 'rgba(200, 192, 0, 0.7)',
+    'D': 'rgba(150, 150, 150, 0.7)'
+  };
+
+  const playerData = data.filter(d => d.player_id === playerId);
+
+  // Group best ranks per year (lowest rank = best)
+  const yearRankMap = {};
+  playerData.forEach(d => {
+    if (!yearRankMap[d.tourney_year] || d.best_rank < yearRankMap[d.tourney_year]) {
+      yearRankMap[d.tourney_year] = d.best_rank;
+    }
+  });
+
+  const rankLabels = Object.keys(yearRankMap).sort((a, b) => +a - +b);
+  const rankDataset = {
+    type: 'line',
+    label: 'Best Rank',
+    data: rankLabels.map(year => ({
+      x: +year.toString(),
+      y: yearRankMap[year]
+    })),
+    borderColor: 'rgba(255, 206, 86, 1)',
+    backgroundColor: 'rgba(255, 206, 86, 0.5)',
+    tension: 0.3,
+    yAxisID: 'y-rank',
+  };
+
+  // Bubble dataset
+  const tourneyLevels = [...new Set(playerData.map(d => d.tourney_level))];
+  const bubbleDatasets = tourneyLevels.map(level => {
+    return {
+      type: 'bubble',
+      label: `${level} Matches`,
+      data: playerData.filter(d => d.tourney_level === level).map(d => ({
+        x: +d.tourney_year,
+        y: roundOrder.indexOf(d.round),
+        r: Math.sqrt(d.match_count) * 5,
+        round: d.round,
+        match_count: d.match_count,
+        tourney_level: d.tourney_level
+      })),
+      backgroundColor: levelColors[level] || 'gray',
+      yAxisID: 'y-round'
+    };
+  });
+
+  const highlightMatches = playerData.filter(d => d.tourney_level === 'G' && d.round === 'F' && d.match_count > 0);
+
+  const highlightDataset = {
+    type: 'scatter',
+    label: 'Grand Slam Titles',
+    data: highlightMatches.map(d => ({
+      x: +d.tourney_year,
+      y: roundOrder.indexOf('Titles'),
+      r: Math.sqrt(d.match_count) * 10,
+      match_count: d.match_count
+    })),
+    pointStyle: 'triangle',
+    pointRadius: ctx => ctx.raw.r,
+    backgroundColor: "rgba(255, 159, 64, 0.7)",
+    borderColor: "rgba(255, 159, 64, 1)",
+    borderWidth: 1,
+    yAxisID: 'y-round'
+  };
+
+
+  const ctx = document.getElementById('timelineChart').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'scatter', // parent type needed for mixed chart
+    data: {
+      datasets: [rankDataset, ...bubbleDatasets, highlightDataset]
+    },
+    options: {
+      responsive: true,
+      interaction: {
+        mode: 'nearest',
+        intersect: false
+      },
+      scales: {
+        x: {
+          title: { display: true, text: 'Year' },
+          type: 'linear',
+          ticks: {
+            stepSize:1,
+            callback: value => value.toString()  // display as plain number
+          }
+        },
+        'y-rank': {
+          type: 'logarithmic',
+          position: 'right',
+          reverse: true,
+          title: { display: true, text: 'Rank' },
+          beginAtZero: false,
+          grid: {
+            drawOnChartArea: false // avoid overlapping
+          }
+        },
+        'y-round': {
+          position: 'left',
+          type: 'linear',
+          title: { display: true, text: 'Round' },
+          min: -1,
+          max: roundOrder.length,
+          ticks: {
+            callback: value => roundOrder[value],
+            stepSize: 1
+          },
+          grid: {
+            drawOnChartArea: true // avoid overlapping
+          }
+        }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const d = ctx.raw;
+              if (ctx.dataset.type === 'line') {
+                return `Rank: ${d.y}`;
+              } if (ctx.dataset.label === 'Grand Slam Titles') {
+                return `🏆 Grand Slam Titles: ${d.match_count}`;
+              }
+              return `Level ${d.tourney_level} - Round ${d.round}, ${d.match_count} Matche(s) Won`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
 
 function drawTimelineChart2(playerName, data) {
   const container = document.getElementById("timelineHolder");
@@ -1148,11 +1295,173 @@ function drawOpponentPacking(playerId, data, association) {
   }
 }
 
+/*function drawOpponentPacking(playerId, data, association) {
+  const container = document.getElementById("rivalryContainer");
+  const width = container.clientWidth;
+  const height = width;
+
+  const surfaceColorMap = {
+    "Carpet": {
+      backgroundColor: "rgba(150, 150, 150, 0.25)",
+      borderColor: 'rgba(150, 150, 150, 1)'
+    },
+    "Clay": {
+      backgroundColor: "rgba(255, 159, 64, 0.25)",
+      borderColor: "rgba(255, 159, 64, 1)"
+    },
+    "Grass": {
+      backgroundColor: "rgba(75, 192, 192, 0.25)",
+      borderColor: "rgba(75, 192, 192, 1)"
+    },
+    "Hard": {
+      backgroundColor: "rgba(54, 162, 235, 0.25)",
+      borderColor: "rgba(54, 162, 235, 1)"
+    }
+  };
+
+  const filtered = data.filter(d => d.player_id === playerId);
+  const hierarchy = {
+    name: "root",
+    children: Array.from(
+      d3.group(filtered, d => d.surface),
+      ([surface, entries]) => ({
+        name: surface,
+        children: Array.from(
+          d3.rollups(
+            entries,
+            v => d3.sum(v, d => +d.match_count),
+            d => `${d.opponent}|||${d.opponent_id}`
+          ),
+          ([key, count]) => {
+            const [opponent, opponent_id] = key.split("|||");
+            return { name: opponent, id: opponent_id, value: count };
+          }
+        )
+      })
+    )
+  };
+
+  const root = d3.pack()
+    .size([width, height])
+    .padding(4)(
+      d3.hierarchy(hierarchy)
+        .sum(d => d.value)
+        .sort((a, b) => b.value - a.value)
+    );
+
+  const svg = d3.select("#rivalryChart")
+    .append("svg")
+    .attr("viewBox", `-${width / 2} -${height / 2} ${width} ${height}`)
+    .attr("width", width)
+    .attr("height", height)
+    .style("cursor", "pointer");
+
+  const tooltip = d3.select("body").append("div")
+    .style("position", "absolute")
+    .style("background", "white")
+    .style("border", "1px solid #ccc")
+    .style("padding", "5px 10px")
+    .style("border-radius", "4px")
+    .style("pointer-events", "none")
+    .style("display", "none");
+
+  let focus = root;
+  let view;
+
+  const circle = svg.append("g")
+    .selectAll("circle")
+    .data(root.descendants())
+    .join("circle")
+    .attr("fill", d => {
+      if (d.depth === 1) {
+        return surfaceColorMap[d.data.name]?.backgroundColor || "#ddd";
+      } else if (d.depth === 2) {
+        const surface = d.ancestors().find(a => a.depth === 1)?.data.name;
+        return surfaceColorMap[surface]?.borderColor || "#ccc";
+      } else {
+        return "#fff";
+      }
+    })
+    .attr("pointer-events", d => !d.children ? "none" : null)
+    .on("mouseover", function () {
+      d3.select(this).attr("stroke", "#000");
+    })
+    .on("mouseout", function () {
+      d3.select(this).attr("stroke", null);
+    })
+    .on("click", (event, d) => {
+      if (d.depth === 1) {
+        if (focus !== d) {
+          zoom(event, d);
+          event.stopPropagation();
+        }
+      } else if (d.depth === 2 && d.data.id) {
+        const url = `player-profile.html?name=${encodeURIComponent(d.data.name)}&playerId=${d.data.id}&association=${association}`;
+        window.open(url, "_blank");
+        event.stopPropagation();
+      }
+    });
+
+
+  const label = svg.append("g")
+    .style("font", "10px sans-serif")
+    .attr("pointer-events", "none")
+    .attr("text-anchor", "middle")
+    .selectAll("text")
+    .data(root.descendants())
+    .join("text")
+    .text(d => d.data.name)
+    .attr("dy", "0.3em")
+    .style("fill-opacity", d => d.depth === 2 ? 1 : 0.7); // Always visible
+
+
+  svg.on("click", event => zoom(event, root));
+
+  zoomTo([root.x, root.y, root.r * 2]);
+
+  function zoomTo(v) {
+    const k = width / v[2];
+    view = v;
+
+    label
+      .attr("transform", d => `translate(${(d.x - v[0]) * k}, ${(d.y - v[1]) * k})`)
+      .style("font-size", d => `${Math.max(8, d.r * k / 4)}px`); // scale font
+
+    circle
+      .attr("transform", d => `translate(${(d.x - v[0]) * k}, ${(d.y - v[1]) * k})`)
+      .attr("r", d => d.r * k);
+  }
+
+
+  function zoom(event, d) {
+    focus = d;
+    const transition = svg.transition()
+      .duration(event.altKey ? 7500 : 750)
+      .tween("zoom", () => {
+        const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
+        return t => zoomTo(i(t));
+      });
+
+    label
+      .filter(function (d) {
+        return d.parent === focus || this.style.display === "inline";
+      })
+      .transition(transition)
+      .style("fill-opacity", d => d.parent === focus ? 1 : 0)
+      .on("start", function (d) {
+        if (d.parent === focus) this.style.display = "inline";
+      })
+      .on("end", function (d) {
+        if (d.parent !== focus) this.style.display = "none";
+      });
+  }
+}*/
+
 function loadGraphs(playerId, association) {
     if (association === 'atp') {
         loadImprovements(playerId, csvATPPlayerStats);
         playerDescription(playerId, csvATPPlayerProfile);
-        drawTimelineChart(playerId, csvATPPlayerPerf);
+        renderPlayerChart(playerId, csvATPPlayerPerf);
         drawRadarChartjs(playerId, csvATPPlayerStats);
         drawSunburstChart(playerId, csvATPPropSurfaceSunburst);
         drawOpponentPacking(playerId, csvATPRivalries, association);
