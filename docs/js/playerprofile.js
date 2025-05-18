@@ -79,10 +79,6 @@ function playerDescription(playerName, data) {
     }
 }
 
-function playerStats(playerName, data) {
-
-}
-
 function drawTimelineChart(playerName, data) {
   const ctx = document.getElementById('timelineChart').getContext('2d');
 
@@ -136,7 +132,7 @@ function drawTimelineChart(playerName, data) {
         x: year,
         y: wins,
         r: pts / 100,
-        title: titleCount > 0 ? '★' : ''
+        //title: titleCount > 0 ? '★' : ''
       };
     }).filter(d => d !== null);
 
@@ -149,7 +145,6 @@ function drawTimelineChart(playerName, data) {
       type: 'bubble'
     };
   });
-  console.log(bubbleDatasets)
 
   const lineDataset = {
     label: 'Rank',
@@ -163,8 +158,6 @@ function drawTimelineChart(playerName, data) {
     pointStyle: 'circle'
   };
 
-  console.log(lineDataset)
-
   new Chart(ctx, {
     data: {
       labels: years,
@@ -172,7 +165,7 @@ function drawTimelineChart(playerName, data) {
     },
     options: {
       responsive: true,
-      maintainAspectRatio: false,
+      maintainAspectRatio: true,
       scales: {
         y: {
           title: {
@@ -546,22 +539,140 @@ function drawRadarChart(playerName, data) {
       .enter()
       .append("text")
       .attr("class", "value-label")
-      .attr("x", (d, i) => rScale(d) * Math.cos(angleSlice * i - Math.PI / 2))
-      .attr("y", (d, i) => rScale(d) * Math.sin(angleSlice * i - Math.PI / 2))
-      .text(d => `${d}%`)
+      .attr("x", (d, i) => rScale(d) * Math.cos(angleSlice * i - Math.PI / 2) * 1.2)
+      .attr("y", (d, i) => rScale(d) * Math.sin(angleSlice * i - Math.PI / 2) * 1.2)
+      .text(d => `${d.toFixed(2)}%`)
       .attr("font-size", "12px")
       .attr("fill", "#000")
       .attr("text-anchor", "middle")
       .attr("dy", "0.35em");
 }
 
+function generateRadarDatasets(playerName, data) {
+  const statKeys = [
+    "ace_pct",
+    "1stIn_pct",
+    "1stWon_pct",
+    "2ndWon_pct",
+    "df_pct",
+    "bpSaved_pct"
+  ];
+
+  /*const colors = [
+    "rgba(255, 99, 132, 0.5)",
+    "rgba(54, 162, 235, 0.5)",
+    "rgba(255, 206, 86, 0.5)",
+    "rgba(75, 192, 192, 0.5)"
+  ];*/
+  /*backgroundColor: "rgba(153, 102, 255, 0.25)",
+      borderColor: "rgba(153, 102, 255, 1)"*/
+  const surfaceColorMap = {
+    "Carpet": {
+      backgroundColor: "rgba(150, 150, 150, 0.25)",
+      borderColor: 'rgba(150, 150, 150, 1)'
+    },
+    "Clay": {
+      backgroundColor: "rgba(255, 159, 64, 0.25)",
+      borderColor: "rgba(255, 159, 64, 1)"
+    },
+    "Grass": {
+      backgroundColor: "rgba(75, 192, 192, 0.25)",
+      borderColor: "rgba(75, 192, 192, 1)"
+    },
+    "Hard": {
+      backgroundColor: "rgba(54, 162, 235, 0.25)",
+      borderColor: "rgba(54, 162, 235, 1)"
+    }
+  };
+
+  return data
+    .filter(d => d.winner_name === playerName)
+    .map((d) => {
+      const surface = d.surface;
+      const colors = surfaceColorMap[surface] || {
+        backgroundColor: "rgba(200,200,200,0.3)",
+        borderColor: "rgba(200,200,200,1)"
+      };
+
+      return {
+        label: surface,
+        data: statKeys.map(key => +d[key]),
+        fill: true,
+        backgroundColor: colors.backgroundColor,
+        borderColor: colors.borderColor,
+        pointBackgroundColor: colors.borderColor,
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: colors.borderColor
+      };
+    });
+}
+
+function drawRadarChartjs(playerName, data) {
+  const ctx = document.getElementById('radarChart2').getContext('2d');
+
+  const radarDataset = generateRadarDatasets(playerName, data);
+
+  const radarData = {
+    labels: ['Ace %', 'First In %', 'First In Win %', 'Second In Win %', 'Double Fault %', 'Break Point Saved %'],
+    datasets: radarDataset
+  }
+
+  const config = {
+    type: "radar",
+    data: radarData,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        tooltip: {
+          enabled: true,
+          callbacks: {
+            label: function (context) {
+              const label = context.dataset.label || '';
+              const value = context.formattedValue || '';
+              return `${label}: ${value}%`;
+            }
+          }
+        },
+        title: {
+          display: true,
+          text: 'Performance by Surface'
+        }
+      },
+      elements: {
+        line: {
+          borderWidth: 2
+        }
+      },
+      scales: {
+        r: {
+          beginAtZero: true,
+          suggestedMax: 100,
+          ticks: {
+            stepSize: 10,
+            callback: value => value + "%"
+          }
+        },
+      }
+    }
+  };
+  new Chart(ctx, config);
+}
+
 function loadGraphs(playerName, association) {
     if (association === 'atp') {
         playerDescription(playerName, csvATPPlayerProfile);
         drawTimelineChart(playerName, csvATPPlayerPerf);
-        drawRadarChart(playerName, csvATPPlayerStats);
+        //drawRadarChart(playerName, csvATPPlayerStats);
+        drawRadarChartjs(playerName, csvATPPlayerStats);
     } else if (association === 'wta') {
         playerDescription(playerName, csvWTAPlayerProfile);
+        drawTimelineChart(playerName, csvWTAPlayerPerf);
+        drawRadarChart(playerName, csvWTAPlayerStats);
     } else {
         console.log('error')
     }
