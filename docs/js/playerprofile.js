@@ -9,7 +9,8 @@ let csvATPPlayerProfile = [];
 let csvATPPlayerStats = [];
 let csvATPPropSurfaceSunburst = [];
 
-let csvWinRates = [];
+let csvATPWinRates = [];
+let csvWTAWinRates = [];
 
 // Load CSV on page load
 function loadCSV(url) {
@@ -26,18 +27,20 @@ function loadCSV(url) {
           csvATPPlayerProfile = data;
         } else if (url.includes('atp_player_stats')) {
           csvATPPlayerStats = data;
-        } else if (url.includes('atp_prop_surface_sunburst')) {
+        } else if (url.includes('atp_prop_surface')) {
           csvATPPropSurfaceSunburst = data;
+        } else if (url.includes('atp_win_rates')) {
+          csvATPWinRates = data;
         } else if (url.includes('wta_player_perf')) {
           csvWTAPlayerPerf = data;
         } else if (url.includes('wta_player_profile')) {
           csvWTAPlayerProfile = data;
         } else if (url.includes('wta_player_stats')) {
           csvWTAPlayerStats = data;
-        } else if (url.includes('wta_prop_surface_sunburst')) {
+        } else if (url.includes('wta_prop_surface')) {
           csvWTAPropSurfaceSunburst = data;
-        } else if(url.includes('win_rates.csv')) {
-          csvWinRates = data;
+        } else if(url.includes('wta_win_rates')) {
+          csvWTAWinRates.push(data);
         }
         resolve();
       },
@@ -53,9 +56,9 @@ function getQueryParam(param) {
   return urlParams.get(param);
 }
 
-function loadStats(playerName, data) {
+function loadStats(playerId, data) {
   // Stats Section
-  playerData = data.filter(row => row.player_name === playerName);
+  playerData = data.filter(row => row.player_id === playerId);
 
   const statWrapper = document.createElement("div");
   statWrapper.className = "flex gap-3";
@@ -104,9 +107,9 @@ function loadStats(playerName, data) {
   document.getElementById("perf-overview").appendChild(statWrapper);
 }
 
-function playerDescription(playerName, data) {
+function playerDescription(playerId, data) {
     const filtered = data.filter(row => {
-        return row['winner_name'] === playerName;
+        return row['player_id'] === playerId;
 
     });
 
@@ -119,7 +122,7 @@ function playerDescription(playerName, data) {
 
         // win rate
         const winRate = document.getElementById('win-rate');
-        winRate.textContent = (parseInt(player['matches_won']) / parseInt(player['total']) * 100).toFixed(2) + "%";
+        winRate.textContent = (parseFloat(player['win_rate'])*100).toFixed(2) + "%";
 
         // grand slam titles
         const titles = document.getElementById('titles');
@@ -131,13 +134,13 @@ function playerDescription(playerName, data) {
     }
 }
 
-function drawTimelineChart(playerName, data) {
+function drawTimelineChart(playerId, data) {
   const ctx = document.getElementById('timelineChart').getContext('2d');
 
   // Filter data for the selected player
-  const playerData = data.filter(row => row.winner_name === playerName);
+  const playerData = data.filter(row => row.player_id === playerId);
   if (playerData.length === 0) {
-    console.warn(`No data found for player: ${playerName}`);
+    console.warn(`No data found for player: ${playerId}`);
     return;
   }
 
@@ -295,9 +298,9 @@ function drawTimelineChart2(playerName, data) {
 
 
   // Filter data for player
-  const playerData = data.filter(d => d.winner_name === playerName);
+  const playerData = data.filter(d => d.player_id === playerId);
   if (playerData.length === 0) {
-    console.warn(`No data found for player: ${playerName}`);
+    console.warn(`No data found for player: ${playerId}`);
     return;
   }
 
@@ -477,10 +480,10 @@ function drawTimelineChart2(playerName, data) {
     .attr("y", 30)
     .attr("text-anchor", "middle")
     .attr("font-size", "20px")
-    .text(`Timeline Chart for ${playerName}`);
+    .text(`Timeline Chart for ${playerId}`);
 }
 
-function drawRadarChart(playerName, data) {
+function drawRadarChart(playerId, data) {
   const axisLabels = {
     ace_pct: "Aces",
     "1stIn_pct": "1st In",
@@ -510,9 +513,9 @@ function drawRadarChart(playerName, data) {
   const angleSlice = (Math.PI * 2) / axes.length;
 
   // Filter data
-  const playerData = data.find(d => d.winner_name === playerName);
+  const playerData = data.find(d => d.player_id === playerId);
   if (!playerData) {
-    console.warn(`No data for player: ${playerName}`);
+    console.warn(`No data for player: ${playerId}`);
     return;
   }
 
@@ -600,7 +603,7 @@ function drawRadarChart(playerName, data) {
       .attr("dy", "0.35em");
 }
 
-function generateRadarDatasets(playerName, data) {
+function generateRadarDatasets(playerId, data) {
   const statKeys = [
     "ace_pct",
     "1stIn_pct",
@@ -638,7 +641,7 @@ function generateRadarDatasets(playerName, data) {
   };
 
   return data
-    .filter(d => d.winner_name === playerName)
+    .filter(d => d.player_id === playerId)
     .map((d) => {
       const surface = d.surface;
       const colors = surfaceColorMap[surface] || {
@@ -660,10 +663,10 @@ function generateRadarDatasets(playerName, data) {
     });
 }
 
-function drawRadarChartjs(playerName, data) {
+function drawRadarChartjs(playerId, data) {
   const ctx = document.getElementById('radarChart2').getContext('2d');
 
-  const radarDataset = generateRadarDatasets(playerName, data);
+  const radarDataset = generateRadarDatasets(playerId, data);
 
   const radarData = {
     labels: ['Ace %', 'First In %', 'First In Win %', 'Second In Win %', 'Double Fault %', 'Break Point Saved %'],
@@ -715,7 +718,7 @@ function drawRadarChartjs(playerName, data) {
   new Chart(ctx, config);
 }
 
-function classifyImprovements(playerName, data) {
+function classifyImprovements(playerId, data) {
   const statLabels = {
     ace_pct: "Aces",
     "1stIn_pct": "First Serve In %",
@@ -743,7 +746,7 @@ function classifyImprovements(playerName, data) {
     bpSaved_pct: 55
   };
 
-  const playerData = data.filter(d => d.winner_name === playerName);
+  const playerData = data.filter(d => d.player_id === playerId);
   return playerData.map(row => {
     const surface = row.surface;
     const strengths = [];
@@ -771,8 +774,8 @@ function classifyImprovements(playerName, data) {
   });
 }
 
-function loadImprovements(playerName, data) {
-  const insightData = classifyImprovements(playerName, data);
+function loadImprovements(playerId, data) {
+  const insightData = classifyImprovements(playerId, data);
   const container = document.getElementById('improvementsContainer');
   if (!container) return;
   container.innerHTML = ''; // Clear any existing content
@@ -826,7 +829,7 @@ function loadImprovements(playerName, data) {
 }
 
 function buildHierarchy(data) {
-  const root = { name: data[0].winner_name, children: [] };
+  const root = { name: data[0].player_name, children: [] };
   const surfaceMap = new Map();
 
   data.forEach(row => {
@@ -851,8 +854,8 @@ function buildHierarchy(data) {
   return root;
 }
 
-function drawSunburstChart(playerName, data) {
-  const playerData = data.filter(row => row.winner_name === playerName)
+function drawSunburstChart(playerId, data) {
+  const playerData = data.filter(row => row.player_id === playerId)
   if (playerData.length === 0) {
     return;
   }
@@ -885,7 +888,6 @@ function drawSunburstChart(playerName, data) {
   const svg = d3.select("#sunburstChart")
       .append("svg")
       .attr("viewBox", [0, 0, width, width])
-      //.style("font", "12px sans-serif");
       .style("font-family", "'Source Sans Pro', sans-serif")
       .style("font-size", "12px");
 
@@ -926,6 +928,7 @@ function drawSunburstChart(playerName, data) {
 
   path.append("title")
       .text(d => `${d.ancestors().map(d => d.data.name).reverse().join(" → ")}\n${d.value}`);
+
   function labelVisible(d) {
     return d.y1 <= 3 && d.y0 >= 1 && (d.x1 - d.x0) > 0.03;
   }
@@ -969,19 +972,19 @@ function drawSunburstChart(playerName, data) {
       .on("click", () => clicked(null, root));
 }
 
-function loadGraphs(playerName, association) {
+function loadGraphs(playerId, association) {
     if (association === 'atp') {
-        loadImprovements(playerName, csvATPPlayerStats);
-        playerDescription(playerName, csvATPPlayerProfile);
-        drawTimelineChart(playerName, csvATPPlayerPerf);
-        drawRadarChartjs(playerName, csvATPPlayerStats);
-        drawSunburstChart(playerName, csvATPPropSurfaceSunburst);
+        loadImprovements(playerId, csvATPPlayerStats);
+        playerDescription(playerId, csvATPPlayerProfile);
+        drawTimelineChart(playerId, csvATPPlayerPerf);
+        drawRadarChartjs(playerId, csvATPPlayerStats);
+        drawSunburstChart(playerId, csvATPPropSurfaceSunburst);
     } else if (association === 'wta') {
-        loadImprovements(playerName, csvWTAPlayerStats);
-        playerDescription(playerName, csvWTAPlayerProfile);
-        drawTimelineChart(playerName, csvWTAPlayerPerf);
-        drawRadarChart(playerName, csvWTAPlayerStats);
-        drawSunburstChart(playerName, csvWTAPropSurfaceSunburst);
+        loadImprovements(playerId, csvWTAPlayerStats);
+        playerDescription(playerId, csvWTAPlayerProfile);
+        drawTimelineChart(playerId, csvWTAPlayerPerf);
+        drawRadarChartjs(playerId, csvWTAPlayerStats);
+        drawSunburstChart(playerId, csvWTAPropSurfaceSunburst);
     } else {
         console.log('error')
     }
@@ -993,23 +996,29 @@ document.addEventListener("DOMContentLoaded", async () => {
       loadCSV('../data/atp_player_perf.csv'),
       loadCSV('../data/atp_player_profile.csv'),
       loadCSV('../data/atp_player_stats.csv'),
-      loadCSV('../data/atp_prop_surface_sunburst.csv'),
+      loadCSV('../data/atp_prop_surface.csv'),
       loadCSV('../data/wta_player_perf.csv'),
       loadCSV('../data/wta_player_profile.csv'),
       loadCSV('../data/wta_player_stats.csv'),
-      loadCSV('../data/wta_prop_surface_sunburst.csv'),
-      loadCSV('../data/win_rates.csv')
+      loadCSV('../data/wta_prop_surface.csv'),
+      loadCSV('../data/atp_win_rates.csv'),
+      loadCSV('../data/wta_win_rates.csv'),
     ]);
 
     // All CSVs loaded, now safe to use:
     const playerName = getQueryParam('name').split("_").join(" ");
     const nameEl = document.getElementById('player-name');
     const association = getQueryParam('association');
+    const playerId = getQueryParam('playerId');
 
     if (playerName && nameEl) {
       nameEl.textContent = decodeURIComponent(playerName);
-      loadStats(playerName, csvWinRates);
-      loadGraphs(playerName, association);
+      if (association === 'atp') {
+        loadStats(playerId, csvATPWinRates);
+      } else if (association === 'wta') {
+        loadStats(playerId, csvWTAWinRates);
+      }
+      loadGraphs(playerId, association);
     }
   } catch (err) {
     console.error("Error loading one or more CSVs:", err);
