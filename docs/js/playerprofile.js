@@ -825,17 +825,163 @@ function loadImprovements(playerName, data) {
   container.appendChild(improvementsBox);
 }
 
+function buildHierarchy(data) {
+  const root = { name: data[0].winner_name, children: [] };
+  const surfaceMap = new Map();
+
+  data.forEach(row => {
+    const { surface, tourney_level, tourney_name, count } = row;
+
+    if (!surfaceMap.has(surface)) {
+      const surfaceNode = { name: surface, children: [] };
+      surfaceMap.set(surface, surfaceNode);
+      root.children.push(surfaceNode);
+    }
+
+    const surfaceNode = surfaceMap.get(surface);
+    let levelNode = surfaceNode.children.find(n => n.name === tourney_level);
+    if (!levelNode) {
+      levelNode = { name: tourney_level, children: [] };
+      surfaceNode.children.push(levelNode);
+    }
+
+    levelNode.children.push({ name: tourney_name, value: +count });
+  });
+
+  return root;
+}
+
+function drawSunburstChart(playerName, data) {
+  const playerData = data.filter(row => row.winner_name === playerName)
+  if (playerData.length === 0) {
+    return;
+  }
+  const hierarchyData = buildHierarchy(playerData);
+
+  // Color by surface
+  const surfaceColors = {
+    Hard: "rgba(54, 162, 235, 1)",
+    Clay: "rgba(255, 159, 64, 1)",
+    Grass: "rgba(75, 192, 192, 1)",
+    Carpet: 'rgba(150, 150, 150, 1)'
+  };
+
+  // Set dimensions
+  const container = document.getElementById("sunburstContainer");
+  const width = Math.min(container.clientWidth);
+  const radius = width / 8;
+
+  const partition = hierarchyData => {
+    const root = d3.hierarchy(hierarchyData)
+        .sum(d => d.value)
+        .sort((a, b) => b.value - a.value);
+    return d3.partition()
+        .size([2 * Math.PI, root.height + 1])(root);
+  };
+
+  const root = partition(hierarchyData);
+  root.each(d => d.current = d);
+
+  const svg = d3.select("#sunburstChart")
+      .append("svg")
+      .attr("viewBox", [0, 0, width, width])
+      //.style("font", "12px sans-serif");
+      .style("font-family", "'Source Sans Pro', sans-serif")
+      .style("font-size", "12px");
+
+  const g = svg.append("g")
+      .attr("transform", `translate(${width / 2},${width / 2})`);
+
+  const arc = d3.arc()
+      .startAngle(d => d.x0)
+      .endAngle(d => d.x1)
+      .innerRadius(d => d.y0 * radius)
+      .outerRadius(d => d.y1 * radius - 1);
+
+  const color = d => {
+    const surface = d.ancestors().find(a => surfaceColors[a.data.name]);
+    return surface ? surfaceColors[surface.data.name] : "#ccc";
+  };
+
+  const path = g.append("g")
+      .selectAll("path")
+      .data(root.descendants().slice(1))
+      .join("path")
+      .attr("fill", d => color(d))
+      .attr("d", d => arc(d.current))
+      .attr("stroke", "#fff")
+      .attr("stroke-width", "1px");
+
+  const label = g.append("g")
+    .attr("pointer-events", "none")
+    .attr("text-anchor", "middle")
+    .selectAll("text")
+    .data(root.descendants().slice(1))
+    .join("text")
+    .attr("dy", "0.35em")
+    .attr("fill-opacity", d => +labelVisible(d.current))
+    .attr("transform", d => labelTransform(d.current))
+    .text(d => d.data.name);
+
+
+  path.append("title")
+      .text(d => `${d.ancestors().map(d => d.data.name).reverse().join(" → ")}\n${d.value}`);
+  function labelVisible(d) {
+    return d.y1 <= 3 && d.y0 >= 1 && (d.x1 - d.x0) > 0.03;
+  }
+
+  function labelTransform(d) {
+    const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+    const y = (d.y0 + d.y1) / 2 * radius;
+    return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+  }
+
+  function clicked(event, p) {
+    root.each(d => d.target = {
+      x0: Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+      x1: Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) * 2 * Math.PI,
+      y0: Math.max(0, d.y0 - p.y0),
+      y1: Math.max(0, d.y1 - p.y0)
+    });
+
+    const t = g.transition().duration(750);
+
+    path.transition(t)
+        .tween("hierarchyData", d => {
+          const i = d3.interpolate(d.current, d.target);
+          return t => d.current = i(t);
+        })
+        .attrTween("d", d => () => arc(d.current));
+    label.transition(t)
+        .attr("fill-opacity", d => +labelVisible(d.target))
+        .attr("transform", d => labelTransform(d.target));
+
+  }
+
+  path.on("click", clicked);
+
+  // Add center label and zoom-out
+  g.append("text")
+      .attr("text-anchor", "middle")
+      .attr("dy", "0.35em")
+      .text(hierarchyData.name)
+      .style("cursor", "pointer")
+      .on("click", () => clicked(null, root));
+}
+
 function loadGraphs(playerName, association) {
     if (association === 'atp') {
         loadImprovements(playerName, csvATPPlayerStats);
         playerDescription(playerName, csvATPPlayerProfile);
         drawTimelineChart(playerName, csvATPPlayerPerf);
         drawRadarChartjs(playerName, csvATPPlayerStats);
+        drawSunburstChart(playerName, csvATPPropSurfaceSunburst);
     } else if (association === 'wta') {
         loadImprovements(playerName, csvWTAPlayerStats);
         playerDescription(playerName, csvWTAPlayerProfile);
         drawTimelineChart(playerName, csvWTAPlayerPerf);
         drawRadarChart(playerName, csvWTAPlayerStats);
+        drawSunburstChart(playerName, csvWTAPropSurfaceSunburst);
     } else {
         console.log('error')
     }
