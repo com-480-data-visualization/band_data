@@ -3,8 +3,8 @@ selectedOptions = {};
 csvATPData = [];
 csvWTAData = [];
 csvPlayers = [];
-let mapping = {'Association':'association','Tournament': 'tourney_level', 'Court Surface':'surface', 'Decade':'decade', 'Nationality':'ioc', 'Handedness': 'hand'};
-
+let titleMapping = {'Association':'association','Tournament': 'tourney_level', 'Court Surface':'surface', 'Decade':'decade', 'Nationality':'ioc', 'Handedness': 'hand'};
+let dropdownMappings = {}
 
 
 // Load CSV on page load
@@ -31,6 +31,23 @@ function loadCSV(url) {
   });
 }
 
+async function loadDropdownMappings() {
+  const res = await fetch("../data/labels_mapping.json");
+  dropdownMappings = await res.json();
+}
+
+function populatePlayers() {
+    return new Promise((resolve) => {
+        const datalist = document.getElementById("players");
+        csvPlayers.forEach(player => {
+            const option = document.createElement("option");
+            option.value = player.player_name;
+            datalist.appendChild(option);
+        });
+        resolve(); // Notify that we're done
+  });
+}
+
 function createDropdown(containerId, dropdownName, options, selectedOptions) {
     const dropdownContainer = document.createElement('div');
     dropdownContainer.classList.add('relative', 'inline-block', 'w-full', 'text-left');
@@ -44,28 +61,30 @@ function createDropdown(containerId, dropdownName, options, selectedOptions) {
         </svg>
     `;
 
+    const mapping = dropdownMappings[titleMapping[dropdownName]] || {};
+    console.log(mapping);
     const dropdownMenu = document.createElement('div');
     dropdownMenu.classList.add('hidden', 'absolute', 'right-0', 'w-full', 'mt-2', 'origin-top-right', 'bg-white', 'shadow-lg', 'rounded-3xl', 'border', 'border-black', 'z-10');
-    dropdownMenu.innerHTML = options.map(option => `
-        <a href="#" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">${option}</a>
+
+    // Reverse lookup: internal to display
+    const entries = Object.entries(mapping);
+    dropdownMenu.innerHTML = entries.map(([displayText, internalValue]) => `
+        <a href="#" data-value="${internalValue}" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">${displayText}</a>
     `).join('');
 
-    const optionElements = dropdownMenu.querySelectorAll('a');
-    optionElements.forEach(optionElement => {
+    dropdownMenu.querySelectorAll('a').forEach(optionElement => {
         optionElement.addEventListener('click', (event) => {
             event.preventDefault();
-            const selectedValue = optionElement.textContent;
-            button.querySelector('span').textContent = selectedValue;
-
-            // Store selected value
-            selectedOptions[mapping[dropdownName]] = selectedValue;
-
+            const displayText = optionElement.textContent;
+            const internalValue = optionElement.getAttribute("data-value");
+            button.querySelector('span').textContent = displayText;
+            selectedOptions[titleMapping[dropdownName]] = internalValue;
             dropdownMenu.classList.add('hidden');
         });
     });
 
     button.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hidden');
+      dropdownMenu.classList.toggle('hidden');
     });
 
     window.addEventListener('click', (event) => {
@@ -82,21 +101,6 @@ function createDropdown(containerId, dropdownName, options, selectedOptions) {
     }
 }
 
-function populatePlayers() {
-    return new Promise((resolve) => {
-        const datalist = document.getElementById("players");
-        console.log(datalist);
-        console.log(csvPlayers.length);
-        csvPlayers.forEach(player => {
-            const option = document.createElement("option");
-            option.value = player.player_name;
-            datalist.appendChild(option);
-        });
-        resolve(); // Notify that we're done
-  });
-}
-
-
 // Function to create player finder dropdowns
 function createPlayerDropdowns() {
     // Create all dropdowns
@@ -108,7 +112,7 @@ function createPlayerDropdowns() {
     createDropdown('dropdownsContainer', 'Handedness', ['All', 'Left', 'Right'], selectedOptions);
 }
 
-function showPlayers(playersToShow) {
+function showPlayers(playersToShow, association) {
   const container = document.querySelector("#results-container");
   container.innerHTML = ''; // Clear previous results
 
@@ -116,7 +120,7 @@ function showPlayers(playersToShow) {
     const params = new URLSearchParams({
       playerName: player.player_name,
       playerId: player.player_id,
-      association: player.association || 'atp', // fallback if missing
+      association: association || 'atp', // fallback if missing
     });
 
     const card = document.createElement("div");
@@ -130,7 +134,6 @@ function showPlayers(playersToShow) {
     container.appendChild(card);
   });
 }
-
 
 function handleFindPlayer() {
   const inputVal = document.getElementById("playerInput").value.trim();
@@ -155,8 +158,10 @@ function handleFindPlayer() {
   } else {
       console.log(selectedOptions)
       var csvData;
+      var assoc = 'wta'
       if (selectedOptions['association'] === 'ATP') {
           csvData = csvATPData;
+          assoc = 'atp'
       } else {
           csvData = csvWTAData;
       }
@@ -180,41 +185,10 @@ function handleFindPlayer() {
           alert("No players match your criteria.");
           return;
       }
-      showPlayers(topPlayers);
+      console.log(topPlayers);
+      showPlayers(topPlayers, assoc);
   }
 
-}
-
-
-// Filter data & update DOM
-function filterCSVData() {
-    console.log(selectedOptions)
-
-  const filtered = csvData.filter(row => {
-    for (let key in selectedOptions) {
-        if (key === 'association') continue;
-      const value = selectedOptions[key];
-      if (value === 'All') continue;
-      if (row[key] !== value) {
-          return false;
-      }
-    }
-    return true;
-  });
-    console.log(filtered.length)
-
-  // Sort by rank (or whatever makes sense for your data)
-  filtered.sort((a, b) => parseInt(a.score) - parseInt(b.score)); // Replace with "Score" if needed
-
-  const topPlayer = filtered[0];
-  console.log(topPlayer);
-  const nameEl = document.getElementById('top-player-name');
-
-  if (topPlayer && nameEl) {
-    nameEl.textContent = topPlayer.Name;
-  } else if (nameEl) {
-    nameEl.textContent = "No matching player";
-  }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -223,11 +197,12 @@ document.addEventListener('DOMContentLoaded', async () => {
           loadCSV('../data/atp_filter_player_data.csv'),
           loadCSV('../data/wta_filter_player_data.csv'),
           loadCSV('../data/all_players.csv', ''),
-
+          loadDropdownMappings()
       ]);
     } catch (err) {
         console.error("Error loading one or more CSVs:", err);
     }
+    createPlayerDropdowns()
     try{
         await populatePlayers()
     } catch (err) {

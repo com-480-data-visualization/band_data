@@ -59,8 +59,12 @@ function loadComponent(url, targetId) {
             
             // Initialize player finder dropdowns if that component is loaded
             if (url.includes('find-your-player.html')) {
-                populatePlayers().then();
-                createPlayerDropdowns();
+                populatePlayers().then(
+                    loadDropdownMappings().then(
+                       // createPlayerDropdowns
+                    )
+                );
+                //createPlayerDropdowns();
                 //setupFindPlayerButton();
                 //setupPlayerProfileNavigation();
             }
