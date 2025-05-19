@@ -28,7 +28,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Setup cursor selection
     setupCursorSelector();
+
+    if (window.location.hash === "#player-finder-section") {
+      scrollToSectionWhenReady("player-finder-section");
+    }
 });
+
+function scrollToSectionWhenReady(id) {
+  const checkExist = setInterval(() => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      clearInterval(checkExist);
+    }
+  }, 100);
+}
+
 
 // Load HTML components
 function loadComponent(url, targetId) {
@@ -44,8 +59,9 @@ function loadComponent(url, targetId) {
             
             // Initialize player finder dropdowns if that component is loaded
             if (url.includes('find-your-player.html')) {
+                populatePlayers().then();
                 createPlayerDropdowns();
-                setupFindPlayerButton();
+                //setupFindPlayerButton();
                 //setupPlayerProfileNavigation();
             }
 

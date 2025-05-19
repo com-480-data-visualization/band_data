@@ -1,4 +1,4 @@
-<div class="bg-[#F6FCDF] flex flex-col" id="player-finder">
+<div class="bg-[#F6FCDF] flex flex-col h-screen" id="player-finder">
   <!-- Header  -->
   <header class="w-full py-4 bg-[#0a1721] text-white text-center">
     <h1 class="text-4xl md:text-6xl font-bold">Find your player</h1>
@@ -9,13 +9,15 @@
     <!-- Left Column -->
     <div class="md:col-span-1 flex flex-col space-y-4 overflow-y-auto">
       <!-- Input Box -->
-      <div class="w-full">
+      <div class="relative w-full">
         <input
-          type="text"
-          placeholder="Enter Player Name"
-          class="w-full p-3 text-xl md:text-2xl font-bold text-black bg-white border-4 border-black rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
+            class="w-full p-3 text-xl md:text-2xl font-bold text-black bg-white border-4 border-black rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+            list="players" id="playerInput" placeholder="Enter Player Name">
+        <datalist id="players">
+          <!-- populated dynamically -->
+        </datalist>
       </div>
+
       
       <!-- OR Separator -->
       <div class="w-full text-center">
@@ -30,32 +32,33 @@
     <div class="md:col-span-2 flex flex-col space-y-6">
       <!-- Find Button  -->
       <div class="flex justify-center items-center mt-2 md:mt-10">
-        <button id="find-player-button" class="px-5 py-4 w-4/5 text-3xl md:text-4xl font-bold text-white bg-black rounded-full shadow-lg hover:bg-gray-800 transition duration-300">
+        <button id="find-player-button" onclick="handleFindPlayer()" class="px-5 py-4 w-4/5 text-3xl md:text-4xl font-bold text-white bg-black rounded-full shadow-lg hover:bg-gray-800 transition duration-300">
           Find my player
         </button>
       </div>
 
       <!-- Results -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-2 md:px-8">
-        <div class="flex justify-center text-center">
-          <a href="#player-profile-section" onclick="document.getElementById('player-profile-section').scrollIntoView({behavior: 'smooth'})"
-             class="transform hover:scale-105 transition-all">
+      <div id="results-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 px-2 md:px-8">
+        <!-- Player Result Section: initially hidden -->
+
+        <div id="player-result-1" class="flex justify-center text-center hidden">
+          <a id="player-link-1" href="#" class="transform hover:scale-105 transition-all">
             <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
-            <p>Player 1</p>
+            <p id="player-name-1">Player 1</p>
           </a>
         </div>
-        <div class="flex justify-center text-center">
-          <a href="#player-profile-section" onclick="document.getElementById('player-profile-section').scrollIntoView({behavior: 'smooth'})"
-             class="transform hover:scale-105 transition-all">
+
+
+        <div id="player-result-2" class="flex justify-center text-center hidden">
+          <a id="player-link-2" href="#" class="transform hover:scale-105 transition-all">
             <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
-            <p>Player 2</p>
+            <p id="player-name-2">Player 2</p>
           </a>
         </div>
-        <div class="flex justify-center text-center">
-          <a href="#player-profile-section" onclick="document.getElementById('player-profile-section').scrollIntoView({behavior: 'smooth'})"
-             class="transform hover:scale-105 transition-all">
+        <div id="player-result-3" class="flex justify-center text-center hidden">
+          <a id="player-link-3" href="#" class="transform hover:scale-105 transition-all">
             <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
-            <p>Player 3</p>
+            <p id="player-name-3">Player 3</p>
           </a>
         </div>
       </div>

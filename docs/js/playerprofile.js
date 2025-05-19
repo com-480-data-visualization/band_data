@@ -58,6 +58,15 @@ function loadCSV(url) {
   });
 }
 
+function loadImage(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.src = url;
+  });
+}
+
+
 function getQueryParam(param) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
@@ -307,7 +316,9 @@ function renderPlayerChart(playerId, data) {
   const levelColors = {
     'G': 'rgba(255, 99, 132, 0.7)',
     'M': 'rgba(54, 162, 235, 0.7)',
+    'P': 'rgba(54, 162, 235, 0.7)',
     'A': 'rgba(75, 192, 192, 0.7)',
+    'PM': 'rgba(75, 192, 192, 0.7)',
     'F': 'rgba(200, 192, 0, 0.7)',
     'D': 'rgba(150, 150, 150, 0.7)'
   };
@@ -350,12 +361,29 @@ function renderPlayerChart(playerId, data) {
         match_count: d.match_count,
         tourney_level: d.tourney_level
       })),
+      pointStyle: (level === 'A' ? 'star' : 'circle'),
       backgroundColor: levelColors[level] || 'gray',
+      borderColor: levelColors[level] || 'gray',
       yAxisID: 'y-round'
     };
   });
 
   const highlightMatches = playerData.filter(d => d.tourney_level === 'G' && d.round === 'F' && d.match_count > 0);
+  /*const trophyImage = await loadImage('assets/icons/trophy-svgrepo-com.png');
+
+  function resizeImage(img, width, height) {
+    const canvas = document.createElement('canvas');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, width, height);
+    const resizedImg = new Image();
+    resizedImg.src = canvas.toDataURL();
+    return new Promise(resolve => {
+      resizedImg.onload = () => resolve(resizedImg);
+    });
+  }
+  resizedImage = await resizeImage(trophyImage, 30, 30)*/
 
   const highlightDataset = {
     type: 'scatter',
@@ -367,7 +395,7 @@ function renderPlayerChart(playerId, data) {
       match_count: d.match_count
     })),
     pointStyle: 'triangle',
-    pointRadius: ctx => ctx.raw.r,
+    pointRadius: ctx => ctx.raw ? ctx.raw.r : 1,
     backgroundColor: "rgba(255, 159, 64, 0.7)",
     borderColor: "rgba(255, 159, 64, 1)",
     borderWidth: 1,
@@ -1239,7 +1267,7 @@ function drawOpponentPacking(playerId, data, association) {
       .on("mouseout", () => tooltip.style("display", "none"))
       .on("click", (event, d) => {
         if (d.data.id) {
-          const url = `player-profile.html?name=${encodeURIComponent(d.data.name)}&playerId=${d.data.id}&association=${association}`;
+          const url = `player-profile.html?playerName=${encodeURIComponent(d.data.name)}&playerId=${d.data.id}&association=${association}`;
         window.open(url, "_blank");
         }
       });
@@ -1480,9 +1508,10 @@ function loadGraphs(playerId, association) {
     } else if (association === 'wta') {
         loadImprovements(playerId, csvWTAPlayerStats);
         playerDescription(playerId, csvWTAPlayerProfile);
-        drawTimelineChart(playerId, csvWTAPlayerPerf);
+        renderPlayerChart(playerId, csvWTAPlayerPerf);
         drawRadarChartjs(playerId, csvWTAPlayerStats);
         drawSunburstChart(playerId, csvWTAPropSurfaceSunburst);
+        drawOpponentPacking(playerId, csvWTARivalries, association);
     } else {
         console.log('error')
     }
@@ -1504,23 +1533,25 @@ document.addEventListener("DOMContentLoaded", async () => {
           loadCSV('../data/wta_rivalries2.csv'),
           loadCSV('../data/atp_rivalries2.csv'),
       ]);
-
-    // All CSVs loaded, now safe to use:
-    const playerName = getQueryParam('name').split("_").join(" ");
-    const nameEl = document.getElementById('player-name');
-    const association = getQueryParam('association');
-    const playerId = getQueryParam('playerId');
-
-    if (playerName && nameEl) {
-      nameEl.textContent = decodeURIComponent(playerName);
-      if (association === 'atp') {
-        loadStats(playerId, csvATPWinRates);
-      } else if (association === 'wta') {
-        loadStats(playerId, csvWTAWinRates);
-      }
-      loadGraphs(playerId, association);
-    }
   } catch (err) {
     console.error("Error loading one or more CSVs:", err);
+  }
+  // All CSVs loaded, now safe to use:
+  const playerName = getQueryParam('playerName');
+  const association = getQueryParam('association');
+  const playerId = getQueryParam('playerId');
+
+  console.log(playerName);
+  console.log(association);
+
+  const nameEl = document.getElementById('player-name');
+  if (playerName && nameEl) {
+    nameEl.textContent = decodeURIComponent(playerName);
+    if (association === 'atp') {
+      loadStats(playerId, csvATPWinRates);
+    } else if (association === 'wta') {
+      loadStats(playerId, csvWTAWinRates);
+    }
+    loadGraphs(playerId, association);
   }
 });

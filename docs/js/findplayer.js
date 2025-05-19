@@ -2,20 +2,32 @@
 selectedOptions = {};
 csvATPData = [];
 csvWTAData = [];
+csvPlayers = [];
 let mapping = {'Association':'association','Tournament': 'tourney_level', 'Court Surface':'surface', 'Decade':'decade', 'Nationality':'ioc', 'Handedness': 'hand'};
 
+
+
 // Load CSV on page load
-function loadCSV(url, association) {
-  Papa.parse(url, {
-    download: true,
-    header: true,
-    complete: function (results) {
-        if (association === 'atp') {
-            csvATPData = results.data;
-        } else {
-            csvWTAData = results.data;
+function loadCSV(url) {
+  return new Promise((resolve, reject) => {
+    Papa.parse(url, {
+      download: true,
+      header: true,
+      complete: function (results) {
+        const data = results.data;
+        if (url.includes('atp_filter_player')) {
+          csvATPData = data;
+        } else if (url.includes('wta_filter_player')) {
+          csvWTAData = data;
+        } else if (url.includes('all_players')) {
+          csvPlayers = data;
         }
-    }
+        resolve();
+      },
+      error: function (err) {
+        reject(err);
+      }
+    });
   });
 }
 
@@ -70,9 +82,22 @@ function createDropdown(containerId, dropdownName, options, selectedOptions) {
     }
 }
 
+function populatePlayers() {
+    return new Promise((resolve) => {
+        const datalist = document.getElementById("players");
+        console.log(datalist);
+        console.log(csvPlayers.length);
+        csvPlayers.forEach(player => {
+            const option = document.createElement("option");
+            option.value = player.player_name;
+            datalist.appendChild(option);
+        });
+        resolve(); // Notify that we're done
+  });
+}
 
 
-// 2. Function to create player finder dropdowns
+// Function to create player finder dropdowns
 function createPlayerDropdowns() {
     // Create all dropdowns
     createDropdown('dropdownsContainer', 'Association', ['ATP', 'WTA'], selectedOptions);
@@ -83,27 +108,88 @@ function createPlayerDropdowns() {
     createDropdown('dropdownsContainer', 'Handedness', ['All', 'Left', 'Right'], selectedOptions);
 }
 
-// Attach event to button
-function setupFindPlayerButton() {
-  const button = document.getElementById('find-player-button');
-  if (button) {
-    button.addEventListener('click', () => {
-      filterCSVData();
+function showPlayers(playersToShow) {
+  const container = document.querySelector("#results-container");
+  container.innerHTML = ''; // Clear previous results
+
+  playersToShow.forEach((player, index) => {
+    const params = new URLSearchParams({
+      playerName: player.player_name,
+      playerId: player.player_id,
+      association: player.association || 'atp', // fallback if missing
     });
-  } else {
-      console.log('error find player-button');
-  }
+
+    const card = document.createElement("div");
+    card.className = "flex justify-center text-center";
+    card.innerHTML = `
+      <a href="player-profile.html?${params.toString()}" class="transform hover:scale-105 transition-all">
+        <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+        <p>${player.player_name}</p>
+      </a>
+    `;
+    container.appendChild(card);
+  });
 }
+
+
+function handleFindPlayer() {
+  const inputVal = document.getElementById("playerInput").value.trim();
+  // player name manually selected
+  if (inputVal) {
+      const selectedPlayer = csvPlayers.find(p => p.player_name === inputVal);
+      if (!selectedPlayer) {
+        alert("Please select a valid player.");
+        return;
+      }
+
+      document.getElementById("player-name-1").textContent = selectedPlayer.player_name;
+
+      const params = new URLSearchParams({
+        playerName: selectedPlayer.player_name,
+        playerId: selectedPlayer.player_id,
+        association: selectedPlayer.association,
+      });
+
+      document.getElementById("player-link-1").href = `player-profile.html?${params.toString()}`;
+      document.getElementById("player-result-1").classList.remove("hidden");
+  } else {
+      console.log(selectedOptions)
+      var csvData;
+      if (selectedOptions['association'] === 'ATP') {
+          csvData = csvATPData;
+      } else {
+          csvData = csvWTAData;
+      }
+      const filtered = csvData.filter(row => {
+        for (let key in selectedOptions) {
+            if (key === 'association') continue;
+
+            const value = selectedOptions[key];
+            if (key === 'hand' && value === 'All') continue;
+            if (key === 'ioc' && value === 'All') continue;
+            if (row[key] !== value) {
+                return false;
+            }
+        }
+        return true;
+      });
+      const topPlayers = filtered
+          .sort((a, b) => parseFloat(b.score) - parseFloat(a.score))
+          .slice(0, 3);
+      if (topPlayers.length === 0) {
+          alert("No players match your criteria.");
+          return;
+      }
+      showPlayers(topPlayers);
+  }
+
+}
+
 
 // Filter data & update DOM
 function filterCSVData() {
     console.log(selectedOptions)
-    var csvData;
-    if (selectedOptions['association'] === 'ATP') {
-        csvData = csvATPData;
-    } else {
-        csvData = csvWTAData;
-    }
+
   const filtered = csvData.filter(row => {
     for (let key in selectedOptions) {
         if (key === 'association') continue;
@@ -125,15 +211,27 @@ function filterCSVData() {
   const nameEl = document.getElementById('top-player-name');
 
   if (topPlayer && nameEl) {
-    nameEl.textContent = topPlayer.Name; // Adjust field to match your CSV header
+    nameEl.textContent = topPlayer.Name;
   } else if (nameEl) {
     nameEl.textContent = "No matching player";
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  //createPlayerDropdowns();
-  //setupFindPlayerButton();
-  loadCSV('../data/atp_filter_player_data.csv', 'atp');
-  loadCSV('../data/wta_filter_player_data.csv', 'wta')
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+      await Promise.all([
+          loadCSV('../data/atp_filter_player_data.csv'),
+          loadCSV('../data/wta_filter_player_data.csv'),
+          loadCSV('../data/all_players.csv', ''),
+
+      ]);
+    } catch (err) {
+        console.error("Error loading one or more CSVs:", err);
+    }
+    try{
+        await populatePlayers()
+    } catch (err) {
+        console.error("Error loading populatePlayers():", err);
+    }
+
 });
