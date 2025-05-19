@@ -75,7 +75,7 @@
             <div id='perf-overview' class="flex justify-between items-start mb-3 relative">
               <div>
                 <h2 class="text-xl font-semibold text-gray-800">Career Overview</h2>
-                <p class="text-gray-600 text-sm">Player specializes in hard court surfaces with exceptional first serve statistics.</p>
+                <!--<p class="text-gray-600 text-sm">Player specializes in hard court surfaces with exceptional first serve statistics.</p>-->
               </div>
 
               <!-- Surface win stats  -->
@@ -99,7 +99,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
           <!-- Left graph  -->
           <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2 relative">Performance by Surface & Rivals</h3>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 relative text-center">Biggest Rivals Per Surface</h3>
             <div id='rivalryContainer' class="w-full bg-white flex items-center justify-center rounded-lg">
               <!-- Subtle highlight for the graph area -->
               <!-- <div class="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-30 rounded-lg pointer-events-none"></div>-->
@@ -110,7 +110,7 @@
 
           <!-- Right graph  -->
           <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2 relative">Tournament Wins By Surface & Level</h3>
+            <h3 class="text-lg font-semibold text-gray-800 mb-2 relative text-center">Match Wins By Surface & Tournament Level</h3>
             <div id='sunburstContainer' class="w-full bg-white flex items-center justify-center rounded-lg">
               <div id="sunburstChart" class="w-full h-full"></div>
               <!-- Subtle highlight for the graph area -->
@@ -123,15 +123,15 @@
         <!-- Bottom section: Performance metrics  -->
         <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden mb-4">
           <div class="flex flex-col md:flex-row relative">
-            <div class="w-full md:w-2/3">
-              <h3 class="text-lg font-semibold text-gray-800 mb-2">Key Performance Metrics</h3>
+            <div class="w-full md:w-2/3 justify-center items-center">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2 text-center">Key Performance Metrics</h3>
               <!--<div id="radarContainer" class="w-full h-[400px] relative flex items-center justify-center bg-white rounded-lg">
                 <div class="absolute inset-0 bg-gradient-to-r from-blue-50 via-transparent to-green-50 opacity-20 rounded-lg"></div>
                 <svg id="radarChart" class="w-full h-full"></svg>
               </div>-->
 
-              <div id="radarContainer2" class="w-4/5 relative mx-auto flex items-center justify-center bg-white rounded-lg">
-                <canvas id="radarChart2" class="w-full h-full"></canvas>
+              <div id="radarContainer2" class="w-full relative mx-4 flex items-center justify-center bg-white rounded-lg">
+                <canvas id="radarChart2" class="w-3/5 "></canvas>
               </div>
             </div>
 
