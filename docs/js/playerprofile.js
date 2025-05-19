@@ -13,6 +13,8 @@ let csvATPPropSurfaceSunburst = [];
 let csvATPRivalries = [];
 let csvATPWinRates = [];
 
+Chart.defaults.font.family = "'Source Sans Pro', sans-serif"
+
 // Load CSV on page load
 function loadCSV(url) {
   return new Promise((resolve, reject) => {
@@ -378,7 +380,7 @@ function renderPlayerChart(playerId, data) {
   new Chart(ctx, {
     type: 'scatter', // parent type needed for mixed chart
     data: {
-      datasets: [rankDataset, ...bubbleDatasets, highlightDataset]
+      datasets: [...bubbleDatasets, highlightDataset, rankDataset]
     },
     options: {
       responsive: true,
@@ -388,18 +390,21 @@ function renderPlayerChart(playerId, data) {
       },
       scales: {
         x: {
-          title: { display: true, text: 'Year' },
+          title: {display: true, text: 'Year'},
           type: 'linear',
           ticks: {
-            stepSize:1,
+            stepSize: 1,
             callback: value => value.toString()  // display as plain number
+          },
+          grid: {
+            display: false
           }
         },
         'y-rank': {
           type: 'logarithmic',
           position: 'right',
           reverse: true,
-          title: { display: true, text: 'Rank' },
+          title: {display: true, text: 'Rank'},
           beginAtZero: false,
           grid: {
             drawOnChartArea: false // avoid overlapping
@@ -408,7 +413,7 @@ function renderPlayerChart(playerId, data) {
         'y-round': {
           position: 'left',
           type: 'linear',
-          title: { display: true, text: 'Round' },
+          title: {display: true, text: 'Tournament Round'},
           min: -1,
           max: roundOrder.length,
           ticks: {
@@ -416,7 +421,7 @@ function renderPlayerChart(playerId, data) {
             stepSize: 1
           },
           grid: {
-            drawOnChartArea: true // avoid overlapping
+            drawOnChartArea: true
           }
         }
       },
@@ -427,10 +432,11 @@ function renderPlayerChart(playerId, data) {
               const d = ctx.raw;
               if (ctx.dataset.type === 'line') {
                 return `Rank: ${d.y}`;
-              } if (ctx.dataset.label === 'Grand Slam Titles') {
+              }
+              if (ctx.dataset.label === 'Grand Slam Titles') {
                 return `🏆 Grand Slam Titles: ${d.match_count}`;
               }
-              return `Level ${d.tourney_level} - Round ${d.round}, ${d.match_count} Matche(s) Won`;
+              return `Level ${d.tourney_level} - Round ${d.round}, ${d.match_count} Match(es) Won`;
             }
           }
         }
@@ -846,8 +852,8 @@ function drawRadarChartjs(playerId, data) {
           }
         },
         title: {
-          display: true,
-          text: 'Performance by Surface'
+          display: false,
+          text: 'Performance by Surface',
         }
       },
       elements: {
@@ -861,7 +867,11 @@ function drawRadarChartjs(playerId, data) {
           suggestedMax: 100,
           ticks: {
             stepSize: 10,
-            callback: value => value + "%"
+            callback: value => value + "%",
+          }, pointLabels: {
+            font: {
+              size: 14,
+            },
           }
         },
       }
@@ -937,7 +947,7 @@ function loadImprovements(playerId, data) {
     box.className = 'bg-gray-50 rounded-lg p-4 mb-6 hover:scale-102 transition';
 
     const heading = document.createElement('h4');
-    heading.className = 'text-sm font-semibold text-gray-700 flex items-center mb-3';
+    heading.className = 'text-lg font-semibold text-gray-700 flex items-center mb-3 justify-center';
     heading.innerHTML = `<span class="inline-block w-2 h-2 rounded-full bg-${color}-500 mr-2"></span>${title}`;
 
     box.appendChild(heading);
@@ -946,7 +956,7 @@ function loadImprovements(playerId, data) {
       if (items.length === 0) return;
 
       const surfaceTitle = document.createElement('h5');
-      surfaceTitle.className = 'text-xs font-medium text-gray-600 mt-2 mb-1';
+      surfaceTitle.className = 'text-base font-medium text-gray-600 mt-2 mb-1';
       surfaceTitle.textContent = surface;
 
       const list = document.createElement('ul');
@@ -954,7 +964,7 @@ function loadImprovements(playerId, data) {
 
       items.forEach(item => {
         const li = document.createElement('li');
-        li.className = 'flex items-center text-xs text-gray-600';
+        li.className = 'flex items-center text-sm text-gray-600';
         li.innerHTML = `<span class="text-${color}-500 mr-2">${icon}</span> ${item.label} (${item.value}%)`;
         list.appendChild(li);
       });
@@ -1181,7 +1191,6 @@ function drawOpponentPacking(playerId, data, association) {
       .append("svg")
       .attr("viewBox", [0, 0, width, height])
       .style("font-family", "'Source Sans Pro', sans-serif")
-      .style("font-size", "11px");
 
     const tooltip = d3.select("body").append("div")
       .style("position", "absolute")
@@ -1219,7 +1228,8 @@ function drawOpponentPacking(playerId, data, association) {
           tooltip.html(`<strong>${d.data.name}</strong><br/>Matches: ${d.data.value}`)
             .style("left", `${event.pageX + 10}px`)
             .style("top", `${event.pageY}px`)
-            .style("display", "block");
+            .style("display", "block")
+            .style("fontsize", "12");
         }
       })
       .on("mousemove", event => {
@@ -1244,22 +1254,24 @@ function drawOpponentPacking(playerId, data, association) {
     .style("fill", "#000");
 
   // Add legend
+  /*const legend = svg.append("g")
+    .attr("transform", `translate(10, ${height - 20 * Object.keys(surfaceColorMap).length - 10})`);*/
   const legend = svg.append("g")
-    .attr("transform", `translate(10, ${height - 20 * Object.keys(surfaceColors).length - 10})`);
+    .attr("transform", `translate(${(width - 100 * Object.keys(surfaceColorMap).length)/2}, 20)`);
 
-  Object.entries(surfaceColors).forEach(([surface, color], i) => {
-    const g = legend.append("g").attr("transform", `translate(0, ${i * 20})`);
+  Object.entries(surfaceColorMap).forEach(([surface, color], i) => {
+    const g = legend.append("g").attr("transform", `translate(${i * 100}, 0)`);
     g.append("rect")
-      .attr("width", 12)
-      .attr("height", 12)
-      .attr("fill", color)
+      .attr("width", 20)
+      .attr("height", 20)
+      .attr("fill", color['borderColor'])
     g.append("text")
-      .attr("x", 18)
-      .attr("y", 10)
+      .attr("x", 25)
+      .attr("y", 15)
       .text(surface);
   });
 
-  svg.on("click", (event) => zoom(event, root));
+  /*svg.on("click", (event) => zoom(event, root));
   let focus = root;
   let view;
   zoomTo([focus.x, focus.y, focus.r * 2]);
@@ -1269,7 +1281,7 @@ function drawOpponentPacking(playerId, data, association) {
 
     view = v;
 
-    label.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
+    //label.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
     node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
     node.attr("r", d => d.r * k);
   }
@@ -1286,13 +1298,13 @@ function drawOpponentPacking(playerId, data, association) {
           return t => zoomTo(i(t));
         });
 
-    label
+    /*label
       .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
       .transition(transition)
         .style("fill-opacity", d => d.parent === focus ? 1 : 0)
         .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
         .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
-  }
+  }*/
 }
 
 /*function drawOpponentPacking(playerId, data, association) {
@@ -1489,8 +1501,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           loadCSV('../data/wta_prop_surface.csv'),
           loadCSV('../data/atp_win_rates.csv'),
           loadCSV('../data/wta_win_rates.csv'),
-          loadCSV('../data/wta_rivalries.csv'),
-          loadCSV('../data/atp_rivalries.csv'),
+          loadCSV('../data/wta_rivalries2.csv'),
+          loadCSV('../data/atp_rivalries2.csv'),
       ]);
 
     // All CSVs loaded, now safe to use:
