@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-body, html, button {
+body, html, button, input {
   height: 100%;
   font-family: var(--font-primary);
   scroll-behavior: smooth;

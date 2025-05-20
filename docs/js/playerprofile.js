@@ -1544,9 +1544,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   console.log(playerName);
   console.log(association);
 
-  const nameEl = document.getElementById('player-name');
-  if (playerName && nameEl) {
+  if (playerName && playerId) {
+    const nameEl = document.getElementById('player-name');
     nameEl.textContent = decodeURIComponent(playerName);
+
+    const headerEl = document.getElementById('header-name');
+    headerEl.textContent = decodeURIComponent(playerName) + " Profile";
+
     if (association === 'atp') {
       loadStats(playerId, csvATPWinRates);
     } else if (association === 'wta') {
