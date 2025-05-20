@@ -51,36 +51,37 @@ function loadComponent(url, targetId) {
         .then(response => response.text())
         .then(data => {
             document.getElementById(targetId).innerHTML = data;
-            
-            // Initialize component-specific functions after loading
-            if (url.includes('landing.html')) {
-                initLandingAnimations();
-            }
-            
-            // Initialize player finder dropdowns if that component is loaded
-            if (url.includes('find-your-player.html')) {
-                initFindYourPlayerComponent();
-            }
 
-            if (url.includes('players-overview.html')) {
-                new gridjs.Grid({
-                    columns: ["Rank", "Name"],
-                    data: [
-                      ["1", "Roger Federer"],
-                      ["2", "Novak Djokovic"],
-                      ["3", "Raphael Nadal"],
-                      ["4", "Roger Federer"],
-                      ["5", "Novak Djokovic"]
-                    ],
-                    fixedHeader: true,
-                    search: true,
-                    style: { 
-                        table: { 
-                          'white-space': 'nowrap'
-                        }
-                      },
-                  }).render(document.getElementById("topplayers_table"));
-            }
+            requestAnimationFrame(() => {
+                // Initialize component-specific functions after loading
+                if (url.includes('landing.html')) {
+                    initLandingAnimations();
+                }
+
+                // Initialize player finder dropdowns if that component is loaded
+                if (url.includes('find-your-player.html')) {
+                    initFindYourPlayerComponent();
+                }
+                if (url.includes('players-overview.html')) {
+                    new gridjs.Grid({
+                        columns: ["Rank", "Name"],
+                        data: [
+                          ["1", "Roger Federer"],
+                          ["2", "Novak Djokovic"],
+                          ["3", "Raphael Nadal"],
+                          ["4", "Roger Federer"],
+                          ["5", "Novak Djokovic"]
+                        ],
+                        fixedHeader: true,
+                        search: true,
+                        style: {
+                            table: {
+                              'white-space': 'nowrap'
+                            }
+                        },
+                    }).render(document.getElementById("topplayers_table"));
+                }
+            });
         })
         .catch(error => {
             console.error('Error loading component:', error);
