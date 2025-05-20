@@ -53,7 +53,7 @@ function createDropdown(containerId, dropdownName, options, selectedOptions) {
     dropdownContainer.classList.add('relative', 'inline-block', 'w-full', 'text-left');
 
     const button = document.createElement('button');
-    button.classList.add('w-full', 'px-6', 'py-3', 'font-bold', 'text-black', 'bg-white', 'border-4', 'border-black', 'rounded-full', 'shadow-md', 'focus:outline-none', 'flex', 'items-center', 'justify-between');
+    button.classList.add('w-full', 'px-6', 'py-3', 'text-black', 'bg-white', 'border-4', 'border-black', 'rounded-full', 'shadow-md', 'focus:outline-none', 'flex', 'items-center', 'justify-between');
     button.innerHTML = `
         <span>${dropdownName}</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -103,13 +103,20 @@ function createDropdown(containerId, dropdownName, options, selectedOptions) {
 
 // Function to create player finder dropdowns
 function createPlayerDropdowns() {
-    // Create all dropdowns
-    createDropdown('dropdownsContainer', 'Association', ['ATP', 'WTA'], selectedOptions);
-    createDropdown('dropdownsContainer', 'Tournament', ['All', 'G - Grand Slam', 'M - Masters', 'F - Tour-level finals', 'A - Other Tour-level events', 'D - Davis Cup'], selectedOptions);
-    createDropdown('dropdownsContainer', 'Court Surface', ['All', 'Clay', 'Grass', 'Hard', 'Carpet'], selectedOptions);
-    createDropdown('dropdownsContainer', 'Decade', ['90s', '00s', '10s', '20s'], selectedOptions);
-    createDropdown('dropdownsContainer', 'Nationality', ['All', 'Switzerland', 'Canada', 'UK'], selectedOptions);
-    createDropdown('dropdownsContainer', 'Handedness', ['All', 'Left', 'Right'], selectedOptions);
+    return new Promise((resolve) => {
+        // Create all dropdowns
+        createDropdown('dropdownsContainer', 'Association', ['ATP', 'WTA'], selectedOptions);
+        createDropdown('dropdownsContainer', 'Tournament', ['All', 'G - Grand Slam', 'M - Masters', 'F - Tour-level finals', 'A - Other Tour-level events', 'D - Davis Cup'], selectedOptions);
+        createDropdown('dropdownsContainer', 'Court Surface', ['All', 'Clay', 'Grass', 'Hard', 'Carpet'], selectedOptions);
+        createDropdown('dropdownsContainer', 'Decade', ['90s', '00s', '10s', '20s'], selectedOptions);
+        createDropdown('dropdownsContainer', 'Nationality', ['All', 'Switzerland', 'Canada', 'UK'], selectedOptions);
+        createDropdown('dropdownsContainer', 'Handedness', ['All', 'Left', 'Right'], selectedOptions);
+
+        // Wait for next frame to ensure DOM is updated (optional but safer)
+        requestAnimationFrame(() => {
+            resolve();
+        });
+    });
 }
 
 function showPlayers(playersToShow, association) {
@@ -192,7 +199,7 @@ function handleFindPlayer() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    try {
+    /*try {
       await Promise.all([
           loadCSV('../data/atp_filter_player_data.csv'),
           loadCSV('../data/wta_filter_player_data.csv'),
@@ -202,11 +209,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (err) {
         console.error("Error loading one or more CSVs:", err);
     }
-    createPlayerDropdowns()
+    await createPlayerDropdowns()
     try{
         await populatePlayers()
     } catch (err) {
         console.error("Error loading populatePlayers():", err);
-    }
-
+    }*/
 });

@@ -59,14 +59,7 @@ function loadComponent(url, targetId) {
             
             // Initialize player finder dropdowns if that component is loaded
             if (url.includes('find-your-player.html')) {
-                populatePlayers().then(
-                    loadDropdownMappings().then(
-                       // createPlayerDropdowns
-                    )
-                );
-                //createPlayerDropdowns();
-                //setupFindPlayerButton();
-                //setupPlayerProfileNavigation();
+                initFindYourPlayerComponent();
             }
 
             if (url.includes('players-overview.html')) {
@@ -95,18 +88,7 @@ function loadComponent(url, targetId) {
         });
 }
 
-// Setup navigation between player finder and profile
-/*function setupPlayerProfileNavigation() {
-    // Add event listener to the Find my player button
-    const findPlayerButton = document.querySelector('#player-finder button');
-    if (findPlayerButton) {
-        findPlayerButton.addEventListener('click', function() {
-            document.getElementById('player-profile-section').scrollIntoView({behavior: 'smooth'});
-        });
-    }
-}*/
-
-// 1. Initialize landing page animations
+// Initialize landing page animations
 function initLandingAnimations() {
     setTimeout(function() { 
         document.getElementById('tennis').classList.add('show'); 
@@ -119,6 +101,22 @@ function initLandingAnimations() {
     setTimeout(function() { 
         document.getElementById('dummies').classList.add('show'); 
     }, 2500);
+}
+
+async function initFindYourPlayerComponent() {
+    try {
+        await Promise.all([
+            loadCSV('../data/atp_filter_player_data.csv'),
+            loadCSV('../data/wta_filter_player_data.csv'),
+            loadCSV('../data/all_players.csv', ''),
+            loadDropdownMappings()
+        ]);
+
+        await createPlayerDropdowns();
+        await populatePlayers();
+    } catch (err) {
+        console.error("Error initializing Find Your Player component:", err);
+    }
 }
 
 // Setup cursor selector functionality
