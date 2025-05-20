@@ -62,7 +62,6 @@ function createDropdown(containerId, dropdownName, options, selectedOptions) {
     `;
 
     const mapping = dropdownMappings[titleMapping[dropdownName]] || {};
-    console.log(mapping);
     const dropdownMenu = document.createElement('div');
     dropdownMenu.classList.add('hidden', 'absolute', 'right-0', 'w-full', 'mt-2', 'origin-top-right', 'bg-white', 'shadow-lg', 'rounded-3xl', 'border', 'border-black', 'z-10');
 
@@ -163,7 +162,6 @@ function handleFindPlayer() {
       document.getElementById("player-link-1").href = `player-profile.html?${params.toString()}`;
       document.getElementById("player-result-1").classList.remove("hidden");
   } else {
-      console.log(selectedOptions)
       var csvData;
       var assoc = 'wta'
       if (selectedOptions['association'] === 'ATP') {
@@ -192,7 +190,6 @@ function handleFindPlayer() {
           alert("No players match your criteria.");
           return;
       }
-      console.log(topPlayers);
       showPlayers(topPlayers, assoc);
   }
 

@@ -412,6 +412,7 @@ function renderPlayerChart(playerId, data) {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       interaction: {
         mode: 'nearest',
         intersect: false
