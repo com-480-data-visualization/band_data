@@ -107,9 +107,9 @@ function initLandingAnimations() {
 async function initFindYourPlayerComponent() {
     try {
         await Promise.all([
-            loadCSV('../data/atp_filter_player_data.csv'),
-            loadCSV('../data/wta_filter_player_data.csv'),
-            loadCSV('../data/all_players.csv', ''),
+            loadCSV('data/atp_filter_player_data.csv'),
+            loadCSV('data/wta_filter_player_data.csv'),
+            loadCSV('data/all_players.csv', ''),
             loadDropdownMappings()
         ]);
 

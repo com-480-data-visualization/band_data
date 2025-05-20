@@ -1034,18 +1034,18 @@ function loadGraphs(playerId, association) {
 document.addEventListener("DOMContentLoaded", async () => {
   try {
       await Promise.all([
-          loadCSV('../data/atp_player_perf.csv'),
-          loadCSV('../data/atp_player_profile.csv'),
-          loadCSV('../data/atp_player_stats.csv'),
-          loadCSV('../data/atp_prop_surface.csv'),
-          loadCSV('../data/wta_player_perf.csv'),
-          loadCSV('../data/wta_player_profile.csv'),
-          loadCSV('../data/wta_player_stats.csv'),
-          loadCSV('../data/wta_prop_surface.csv'),
-          loadCSV('../data/atp_win_rates.csv'),
-          loadCSV('../data/wta_win_rates.csv'),
-          loadCSV('../data/wta_rivalries2.csv'),
-          loadCSV('../data/atp_rivalries2.csv'),
+          loadCSV('data/atp_player_perf.csv'),
+          loadCSV('data/atp_player_profile.csv'),
+          loadCSV('data/atp_player_stats.csv'),
+          loadCSV('data/atp_prop_surface.csv'),
+          loadCSV('data/wta_player_perf.csv'),
+          loadCSV('data/wta_player_profile.csv'),
+          loadCSV('data/wta_player_stats.csv'),
+          loadCSV('data/wta_prop_surface.csv'),
+          loadCSV('data/atp_win_rates.csv'),
+          loadCSV('data/wta_win_rates.csv'),
+          loadCSV('data/wta_rivalries2.csv'),
+          loadCSV('data/atp_rivalries2.csv'),
       ]);
   } catch (err) {
     console.error("Error loading one or more CSVs:", err);

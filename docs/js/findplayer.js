@@ -32,7 +32,7 @@ function loadCSV(url) {
 }
 
 async function loadDropdownMappings() {
-  const res = await fetch("../data/labels_mapping.json");
+  const res = await fetch("data/labels_mapping.json");
   dropdownMappings = await res.json();
 }
 
