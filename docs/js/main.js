@@ -63,6 +63,7 @@ function loadComponent(url, targetId) {
                     initFindYourPlayerComponent();
                 }
                 if (url.includes('players-overview.html')) {
+                    import("/js/global_stats.js")
                     new gridjs.Grid({
                         columns: ["Rank", "Name"],
                         data: [
