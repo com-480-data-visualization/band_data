@@ -33,26 +33,8 @@ async function loadCountryCoords() {
 
 const countryCoords = await loadCountryCoords()
 
-// ######################## Declare UI elements #################################
-let playersDropdown = document.getElementById("playersDropdown")
-
-playersDropdown = document.getElementById("playersDropdown")
-playersDropdown.addEventListener("change", function (event) {
-    const value = event.target.value
-    switch (value) {
-        case "top100_atp":
-            worldMap.draw(atp_stats[1000].country_counts)
-            break
-        case "top100_wta":
-            worldMap.draw(wta_stats[1000].country_counts)
-            break
-        case "top100":
-            break
-    }
-    console.log(value)
-});
-
-
+// ##################### Declare UI elements #################################
+const playersDropdown = document.getElementById("playersDropdown")
 
 
 // ####################### Code #################################################
@@ -99,55 +81,73 @@ function draw_statsbydate_linechart(stats) {
         .attr("d", line);
 }
 
-function draw_slider(stats, worldmap) {
-    const containerWidth = document.getElementById("slider-container").clientWidth;
-    // Convert stats to indexable by date
-    const dateToStats = new Map(stats.map(s => [s.ranking_date.toISOString().slice(0, 10), s]));
+class TimeSlider {
 
-    // --- D3 Slider (Time-based) ---
-    const dates = stats.map(d => d.ranking_date);
+    constructor(initvalue = null, app) {
+        this.initValue = initvalue // date
+        this.app = app
+        this.slider = null
 
-    const formatWeek = date => {
-        const year = date.getFullYear();
-        const week = d3.timeFormat("%U")(date); // %U = week number starting Sunday
-        return `${year} Week ${+week}`;
-    };
-
-    // Choose when to put ticks
-    const groupedByYear = Array.from(d3.group(dates, d => d.getFullYear()).values());
-    const approxLabelWidth = 80; // px per label
-    const maxTicks = Math.floor((containerWidth - 50) / approxLabelWidth); // account for padding
-    const everyNthYear = Math.ceil(groupedByYear.length / maxTicks);
-    const tickValues = groupedByYear
-        .filter((group, i) => i % everyNthYear === 0)
-        .map(group => group[0]); // first date of each selected year
-
-    const slider = d3.sliderBottom()
-        .min(d3.min(dates))
-        .max(d3.max(dates))
-        .step(1000 * 60 * 60 * 24 * 7) // 1 week
-        .width(containerWidth - 50) // subtract some padding
-        .tickFormat(d3.timeFormat("%Y"))
-        .tickValues(tickValues) // Show 1 tick per year
-        .displayValue(false) // Do not show current date as its not very readable
-        .default(dates[0])
-        .on('onchange', date => {
-            d3.select("#slider-date-label").text(formatWeek(date));
-            const key = date.toISOString().slice(0, 10);
-            const stat = dateToStats.get(key);
-            if (stat) worldmap.draw(stat.country_counts);
+        window.addEventListener("resize", () => {
+            this.draw(this.app.statsOn); // re-render the slider on window resize
         });
+    }
 
-    d3.select("#slider-container").select("svg").remove();
-    d3.select("#slider-container")
-        .append("svg")
-        .attr("width", containerWidth)
-        .attr("height", 70)
-        .append("g")
-        .attr("transform", "translate(30,30)")
-        .call(slider);
-    
-    d3.select("#slider-date-label").text(formatWeek(dates[0]));
+
+    draw(stats) {
+        const containerWidth = document.getElementById("slider-container").clientWidth;
+        // Convert stats to indexable by date
+        const dateToStats = new Map(stats.map(s => [s.ranking_date.toISOString().slice(0, 10), s]));
+
+        // --- D3 Slider (Time-based) ---
+        const dates = stats.map(d => d.ranking_date);
+
+        const formatWeek = date => {
+            const year = date.getFullYear();
+            const week = d3.timeFormat("%U")(date); // %U = week number starting Sunday
+            return `${year} Week ${+week}`;
+        };
+
+        // Choose when to put ticks
+        const groupedByYear = Array.from(d3.group(dates, d => d.getFullYear()).values());
+        const approxLabelWidth = 80; // px per label
+        const maxTicks = Math.floor((containerWidth - 50) / approxLabelWidth); // account for padding
+        const everyNthYear = Math.ceil(groupedByYear.length / maxTicks);
+        const tickValues = groupedByYear
+            .filter((group, i) => i % everyNthYear === 0)
+            .map(group => group[0]); // first date of each selected year
+
+        const newValue = this.slider?.value() ?? this.initValue
+        this.slider = d3.sliderBottom()
+            .min(d3.min(dates))
+            .max(d3.max(dates))
+            .step(1000 * 60 * 60 * 24 * 7) // 1 week
+            .width(containerWidth - 50) // subtract some padding
+            .tickFormat(d3.timeFormat("%Y"))
+            .tickValues(tickValues) // Show 1 tick per year
+            .displayValue(false) // Do not show current date as its not very readable
+            .default(newValue ?? dates[0])
+            .on('onchange', date => {
+                d3.select("#slider-date-label").text(formatWeek(date));
+                const key = date.toISOString().slice(0, 10);
+                const stat = dateToStats.get(key);
+                if (stat) this.app.stats = stat;
+            });
+
+        d3.select("#slider-container").select("svg").remove();
+        d3.select("#slider-container")
+            .append("svg")
+            .attr("width", containerWidth)
+            .attr("height", 70)
+            .append("g")
+            .attr("transform", "translate(30,30)")
+            .call(this.slider);
+        
+        d3.select("#slider-date-label").text(formatWeek(newValue ?? dates[0]));
+        const key = this.slider.value().toISOString().slice(0, 10);
+        const stat = dateToStats.get(key);
+        if (stat) this.app.stats = stat;
+    }
 }
 
 class WorldMap {
@@ -247,13 +247,66 @@ class WorldMap {
             );
     }
 }
- 
 
-const worldMap = new WorldMap()
-draw_slider(atp_stats, worldMap)
-// draw_statsbydate_linechart(stats)
-worldMap.draw(atp_stats[1000].country_counts)
+// ######################## Declare UI elements #################################
 
-window.addEventListener("resize", () => {
-  draw_slider(atp_stats, worldMap); // re-render the slider on window resize
+class OverviewApp {
+    constructor() {
+        const initstats = atp_stats[1000]
+        this.worldMap=new WorldMap()
+        this.timeSlider =new TimeSlider(initstats.ranking_date, this)
+        this.statsOn=atp_stats
+        this.stats=initstats
+    }
+
+    #statsOn
+    get statsOn() {
+        return this.#statsOn
+    }
+    set statsOn(group) {
+        if (group !== atp_stats && group !== wta_stats) {
+            console.log(`Tried to set illegal players group ${group}`)
+            return
+        }
+        if (group === this.#statsOn) return
+        this.#statsOn = group
+        switch (group) {
+            case atp_stats:
+                playersDropdown.value = "top100_atp"
+                break
+            case wta_stats:
+                playersDropdown.value = "top100_wta"
+                break
+        }
+        this.timeSlider.draw(group)
+    }
+
+    #stats
+    get stats() {
+        return this.#stats
+    }
+    set stats(s) {
+        if (s === this.#stats) return
+        this.#stats = s
+
+        this.worldMap.draw(s.country_counts)
+        this.timeSlider.slider.value(s.ranking_date) // Does not dispatch on change, so no loop
+    }
+}
+
+const app = new OverviewApp()
+
+playersDropdown.addEventListener("change", function (event) {
+    const value = event.target.value
+    switch (value) {
+        case "top100_atp":
+            app.statsOn = atp_stats
+            break
+        case "top100_wta":
+            app.statsOn = wta_stats
+            break
+        case "top100":
+            break
+    }
+    console.log(value)
 });
