@@ -1,5 +1,5 @@
 // Global state
-selectedOptions = {};
+selectedOptions = {'association':'WTA', 'tourney_level':'All', 'surface':'All', 'decade':'20s','ioc':'All', 'hand':'All'};
 csvATPData = [];
 csvWTAData = [];
 csvPlayers = [];
