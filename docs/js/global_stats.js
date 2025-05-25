@@ -3,6 +3,9 @@
 import atp_stats from "/data/overview_atp_stats.json" with {type: "json"}
 import wta_stats from "/data/overview_wta_stats.json" with {type: "json"}
 
+const parseDate = d3.timeParse("%Y%m%d");
+atp_stats.forEach(x => x.ranking_date = parseDate(x.ranking_date))
+wta_stats.forEach(x => x.ranking_date = parseDate(x.ranking_date))
 // ######################## Load data #############################################
 // Load atp datasets
 // const atp_rankings = await d3.csv("data/atp_rankings.csv", d3.autoType);
@@ -96,28 +99,101 @@ function draw_statsbydate_linechart(stats) {
         .attr("d", line);
 }
 
+function draw_slider(stats, worldmap) {
+    const containerWidth = document.getElementById("slider-container").clientWidth;
+    // Convert stats to indexable by date
+    const dateToStats = new Map(stats.map(s => [s.ranking_date.toISOString().slice(0, 10), s]));
+
+    // --- D3 Slider (Time-based) ---
+    const dates = stats.map(d => d.ranking_date);
+
+    const formatWeek = date => {
+        const year = date.getFullYear();
+        const week = d3.timeFormat("%U")(date); // %U = week number starting Sunday
+        return `${year} Week ${+week}`;
+    };
+
+    // Choose when to put ticks
+    const groupedByYear = Array.from(d3.group(dates, d => d.getFullYear()).values());
+    const approxLabelWidth = 80; // px per label
+    const maxTicks = Math.floor((containerWidth - 50) / approxLabelWidth); // account for padding
+    const everyNthYear = Math.ceil(groupedByYear.length / maxTicks);
+    const tickValues = groupedByYear
+        .filter((group, i) => i % everyNthYear === 0)
+        .map(group => group[0]); // first date of each selected year
+
+    const slider = d3.sliderBottom()
+        .min(d3.min(dates))
+        .max(d3.max(dates))
+        .step(1000 * 60 * 60 * 24 * 7) // 1 week
+        .width(containerWidth - 50) // subtract some padding
+        .tickFormat(d3.timeFormat("%Y"))
+        .tickValues(tickValues) // Show 1 tick per year
+        .displayValue(false) // Do not show current date as its not very readable
+        .default(dates[0])
+        .on('onchange', date => {
+            d3.select("#slider-date-label").text(formatWeek(date));
+            const key = date.toISOString().slice(0, 10);
+            const stat = dateToStats.get(key);
+            if (stat) worldmap.draw(stat.country_counts);
+        });
+
+    d3.select("#slider-container").select("svg").remove();
+    d3.select("#slider-container")
+        .append("svg")
+        .attr("width", containerWidth)
+        .attr("height", 70)
+        .append("g")
+        .attr("transform", "translate(30,30)")
+        .call(slider);
+    
+    d3.select("#slider-date-label").text(formatWeek(dates[0]));
+}
+
 class WorldMap {
-    constructor() {
-        // Setup svg and projection
-        const width = 900, height = 500;
-
-        this.svg = d3.select("#world-map")
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height);
-
-        this.projection = d3.geoMercator()
-            .scale(130) // Adjust for zoom
-            .translate([width / 2, height / 1.5]); // Center map nicely
-
+    constructor(containerId = "#world-map", maxHeightRatio = 0.6) {
+        this.containerId = containerId;
+        this.maxHeightRatio = maxHeightRatio;
+        this.svg = null;
         this.radiusScale = d3.scaleSqrt().range([5, 40]);
+
+        this._init();
+        window.addEventListener("resize", () => this._init()); // Update on resize
     }
 
-    draw(countryCounts) {
-        console.log(countryCounts)
+    _init() {
+        // Remove previous SVG if it exists
+        d3.select(this.containerId).select("svg").remove();
 
-        this.radiusScale = d3.scaleSqrt().domain([0, d3.max(Object.values(countryCounts))]).range([5, 40]);
-        //this.radiusScale.domain([0, d3.max(Object.values(countryCounts))]);
+        const container = document.querySelector(this.containerId);
+        const maxWidth = container.clientWidth; //clientwidth excludes scrollbar (inner would be with)
+        const maxHeight = window.innerHeight * this.maxHeightRatio;
+        const height = Math.min(maxWidth * 0.55, maxHeight); // maintain aspect ratio (approx 16:9)
+        const width = height / 0.55
+
+
+        // Create new SVG
+        this.svg = d3.select(this.containerId)
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .style("display", "block")
+            .style("margin", "0 auto"); // center horizontally
+
+        // Setup projection
+        this.projection = d3.geoMercator()
+            .scale((width / 800) * 130) // scale relative to original 800px width
+            .translate([width / 2, height / 1.5]); // center projection (center is a bit in the north)
+        
+        this.draw()
+    }
+
+    draw(countryCounts = null) {
+        if (countryCounts == null) countryCounts = this.countryCounts
+        else this.countryCounts = countryCounts
+        if (countryCounts == null || this.svg == null) return
+
+        this.radiusScale.domain([0, d3.max(Object.values(countryCounts))]);
 
         // Draw Bubbles
         const data = Object.entries(countryCounts)
@@ -174,5 +250,10 @@ class WorldMap {
  
 
 const worldMap = new WorldMap()
+draw_slider(atp_stats, worldMap)
 // draw_statsbydate_linechart(stats)
 worldMap.draw(atp_stats[1000].country_counts)
+
+window.addEventListener("resize", () => {
+  draw_slider(atp_stats, worldMap); // re-render the slider on window resize
+});

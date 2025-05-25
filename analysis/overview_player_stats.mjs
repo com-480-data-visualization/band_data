@@ -105,10 +105,8 @@ async function get_stats_per_date(rankings, players) {
         const avgBegin = countTitleAge ? sumTitleAge / countTitleAge : null;
         const avgEnd = countRetireAge ? sumRetireAge / countRetireAge : null;
 
-        const parseDate = d3.timeParse("%Y%m%d");
-
         return {
-            ranking_date: parseDate(date),
+            ranking_date: date,
             avg_height: avgHeight,
             avg_first_title: avgBegin,
             avg_retirement: avgEnd,
@@ -116,5 +114,8 @@ async function get_stats_per_date(rankings, players) {
             pct_still_active: (stillActive / top100.length) * 100,
             country_counts: countryCounts
         };
-    }).sort((a, b) => a.ranking_date - b.ranking_date);
+    }).sort((a, b) => {
+        const parseDate = d3.timeParse("%Y%m%d");
+        return parseDate(a.ranking_date) - parseDate(b.ranking_date)
+    });
 }
