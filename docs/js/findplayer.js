@@ -62,28 +62,50 @@ function createDropdown(containerId, dropdownName, options, selectedOptions) {
     `;
 
     const mapping = dropdownMappings[titleMapping[dropdownName]] || {};
+    const entries = Object.entries(mapping);
+
     const dropdownMenu = document.createElement('div');
     dropdownMenu.classList.add('hidden', 'absolute', 'right-0', 'w-full', 'mt-2', 'origin-top-right', 'bg-white', 'shadow-lg', 'rounded-3xl', 'border', 'border-black', 'z-10');
 
-    // Reverse lookup: internal to display
-    const entries = Object.entries(mapping);
-    dropdownMenu.innerHTML = entries.map(([displayText, internalValue]) => `
-        <a href="#" data-value="${internalValue}" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">${displayText}</a>
-    `).join('');
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = `Search ${dropdownName}...`;
+    searchInput.classList.add('w-full', 'px-4', 'py-2', 'border-b', 'border-gray-300', 'focus:outline-none', 'rounded-t-3xl');
 
-    dropdownMenu.querySelectorAll('a').forEach(optionElement => {
-        optionElement.addEventListener('click', (event) => {
+    dropdownMenu.appendChild(searchInput);
+
+    const optionsWrapper = document.createElement('div');
+    entries.forEach(([displayText, internalValue]) => {
+        const option = document.createElement('a');
+        option.href = '#';
+        option.dataset.value = internalValue;
+        option.textContent = displayText;
+        option.classList.add('block', 'px-6', 'py-3', 'text-gray-700', 'hover:bg-gray-100');
+
+        option.addEventListener('click', (event) => {
             event.preventDefault();
-            const displayText = optionElement.textContent;
-            const internalValue = optionElement.getAttribute("data-value");
             button.querySelector('span').textContent = displayText;
             selectedOptions[titleMapping[dropdownName]] = internalValue;
             dropdownMenu.classList.add('hidden');
         });
+        optionsWrapper.appendChild(option);
+    });
+
+    dropdownMenu.appendChild(optionsWrapper);
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        optionsWrapper.querySelectorAll('a').forEach(option => {
+            const text = option.textContent.toLowerCase();
+            option.style.display = text.includes(query) ? 'block' : 'none';
+        });
     });
 
     button.addEventListener('click', () => {
-      dropdownMenu.classList.toggle('hidden');
+        dropdownMenu.classList.toggle('hidden');
+        if (!dropdownMenu.classList.contains('hidden')) {
+            searchInput.focus();
+        }
     });
 
     window.addEventListener('click', (event) => {
