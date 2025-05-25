@@ -81,6 +81,31 @@ function draw_statsbydate_linechart(stats) {
         .attr("d", line);
 }
 
+class Table {
+    constructor(containerId = "topplayers_table") {
+        this.containerId = containerId;
+        this.gridInstance = null;
+    }
+
+    draw(data) {
+        if (this.gridInstance) {
+            this.gridInstance.updateConfig({ data }).forceRender();
+        } else {
+            this.gridInstance = new gridjs.Grid({
+                columns: ["Rank", "Name"],
+                data,
+                fixedHeader: true,
+                search: true,
+                style: {
+                    table: {
+                        'white-space': 'nowrap'
+                    }
+                },
+            }).render(document.getElementById(this.containerId));
+        }
+    }
+}
+
 class TimeSlider {
 
     constructor(initvalue = null, app) {
@@ -255,6 +280,7 @@ class OverviewApp {
         const initstats = atp_stats[1000]
         this.worldMap=new WorldMap()
         this.timeSlider =new TimeSlider(initstats.ranking_date, this)
+        this.table = new Table()
         this.statsOn=atp_stats
         this.stats=initstats
     }
@@ -279,6 +305,7 @@ class OverviewApp {
                 break
         }
         this.timeSlider.draw(group)
+        //draw_statsbydate_linechart(group)
     }
 
     #stats
@@ -290,6 +317,7 @@ class OverviewApp {
         this.#stats = s
 
         this.worldMap.draw(s.country_counts)
+        this.table.draw(s.players)
         this.timeSlider.slider.value(s.ranking_date) // Does not dispatch on change, so no loop
     }
 }

@@ -101,6 +101,7 @@ async function get_stats_per_date(rankings, players) {
             }
         }
 
+        const out_players = top100.map(record => players[record.player]).map((p,i) => ([i+1, `${p.name_first} ${p.name_last}`]))
         const avgHeight = countHeight ? sumHeight / countHeight : null;
         const avgBegin = countTitleAge ? sumTitleAge / countTitleAge : null;
         const avgEnd = countRetireAge ? sumRetireAge / countRetireAge : null;
@@ -112,7 +113,8 @@ async function get_stats_per_date(rankings, players) {
             avg_retirement: avgEnd,
             pct_never_won_title: (neverWon / top100.length) * 100,
             pct_still_active: (stillActive / top100.length) * 100,
-            country_counts: countryCounts
+            country_counts: countryCounts,
+            players: out_players
         };
     }).sort((a, b) => {
         const parseDate = d3.timeParse("%Y%m%d");
