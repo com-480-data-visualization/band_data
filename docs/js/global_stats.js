@@ -2,6 +2,7 @@
 
 import atp_stats from "/data/overview_atp_stats.json" with {type: "json"}
 import wta_stats from "/data/overview_wta_stats.json" with {type: "json"}
+import * as countriesLib from "https://esm.sh/countries-list@3.1.1"
 
 const parseDate = d3.timeParse("%Y%m%d");
 atp_stats.forEach(x => x.ranking_date = parseDate(x.ranking_date))
@@ -88,13 +89,11 @@ class LineChart {
             .range([0, this.width]);
 
         const y = d3.scaleLinear()
-            .domain([
-                d3.min(stats, d => d[on]),
-                d3.max(stats, d => d[on])
-            ]).nice()
+            .domain(d3.extent(stats.filter(d => d[on] != null), d => d[on])).nice()
             .range([this.height, 0]);
 
         const line = d3.line()
+            .defined(d => d[on] != null)
             .x(d => x(d.ranking_date))
             .y(d => y(d[on]));
 
@@ -259,14 +258,15 @@ class WorldMap {
         // Draw Bubbles
         const data = Object.entries(countryCounts)
             .map(([ioc, count]) => {
-                const coords = countryCoords[ioc];
+                const info = countryCoords[ioc]
+                const coords = info?.coords;
                 if (!coords) {
                     console.log(`Country ${ioc} not found`)
                     return null
                 }
                 const [x, y] = this.projection(coords);
                 // x0 and y0 are ideal positions, x,y are the simulated positions to avoid overlap.
-                return { ioc, count, x0: x, y0: y, x, y, r: this.radiusScale(count) };
+                return { info, ioc, count, x0: x, y0: y, x, y, r: this.radiusScale(count) };
             })
             .filter(d => d !== null);
 
@@ -288,13 +288,13 @@ class WorldMap {
                         .attr("cx", d => d.x)
                         .attr("cy", d => d.y)
                         .attr("r", d => d.r)
-                        .attr("fill", "steelblue")
+                        .attr("fill", d => continentToColor(d.info.continent))
                         .attr("fill-opacity", 0.6)
                         .attr("stroke", "black")
                         .attr("stroke-width", 0.5)
 
                     circle.append("title")
-                        .text(d => `${d.ioc}: ${d.count} players`)
+                        .text(d => `${d.info.country}: ${d.count} players`)
                     return circle
             },
 
@@ -306,6 +306,19 @@ class WorldMap {
                     return update;
                 }
             );
+    }
+}
+
+function continentToColor(continent) {
+    switch (continent) {
+        case 'AF': return "#8dd3c7" // Africa
+        case 'AN': return "#ffffb3" // Antartica
+        case 'AS': return "#fb8072" // Asia
+        case 'EU': return "#80b1d3" // Europa
+        case 'NA': return "#bebada" // North America
+        case 'OC': return "#ffffb3" // Oceania (Australia)
+        case 'SA': return "#fdb462" // South America
+        default: return "#000000"
     }
 }
 
