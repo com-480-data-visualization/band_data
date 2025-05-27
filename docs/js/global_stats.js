@@ -280,11 +280,13 @@ class WorldMap {
         for (let i = 0; i < 120; ++i) simulation.tick();
 
         // d => d.ioc here tells d3 that d.ioc is the id to look for to know if it's a knew circle or not
-        this.svg.selectAll("circle")
+        this.svg.selectAll("g.country-bubble") // all g (group) elements with class country-bubble
             .data(data, d => d.ioc)
             .join(
                 enter => {
-                    const circle = enter.append("circle")
+                    const g = enter.append("g")
+                        .attr("class", "country-bubble");
+                    g.append("circle")
                         .attr("cx", d => d.x)
                         .attr("cy", d => d.y)
                         .attr("r", d => d.r)
@@ -293,16 +295,37 @@ class WorldMap {
                         .attr("stroke", "black")
                         .attr("stroke-width", 0.5)
 
-                    circle.append("title")
+                    g.append("title")
                         .text(d => `${d.info.country}: ${d.count} players`)
-                    return circle
+                    
+                    g.append("text")
+                        .filter(d => d.r > 10) // Show label only if radius is large enough
+                        .attr("x", d => d.x)
+                        .attr("y", d => d.y + d.r * 0.07)
+                        .attr("text-anchor", "middle")
+                        .attr("dominant-baseline", "middle")
+                        .attr("pointer-events", "none") // Let clicks go through the label
+                        .attr("fill", "black")
+                        .attr("font-size", d => Math.min(d.r, 50) + "px")
+                        //.attr("font-weight", "bold")
+                        .text(d => d.info.emojiflag);
+                    return g
             },
 
                 update => {
-                    update.transition().duration(300)
+                    console.log("Haha")
+                    update.select("circle").transition().duration(300)
                         .attr("cx", d => d.x)
                         .attr("cy", d => d.y)
                         .attr("r", d => d.r);
+                    
+                    update.select("text")
+                        .filter(d => d.r > 10)
+                        .transition().duration(300)
+                        .attr("x", d => d.x)
+                        .attr("y", d => d.y + d.r * 0.07)
+                        .attr("font-size", d => Math.min(d.r, 50) + "px")
+                        .text(d => d.info.emojiflag);
                     return update;
                 }
             );
