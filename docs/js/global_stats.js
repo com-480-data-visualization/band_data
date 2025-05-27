@@ -35,50 +35,86 @@ const countryCoords = await loadCountryCoords()
 
 // ##################### Declare UI elements #################################
 const playersDropdown = document.getElementById("playersDropdown")
+const overviewStatsDropdown = document.getElementById("overviewStatsDropdown")
 
 
 // ####################### Code #################################################
 
+class LineChart {
+    constructor(containerId = "#statsbydate-linechart") {
+        this.containerId = containerId;
+        this.margin = { top: 20, right: 30, bottom: 30, left: 40 };
+        this.svg = null;
+        this.width = 0;
+        this.height = 0;
 
-function draw_statsbydate_linechart(stats) {
+        this.stats = null
+        this.on = null
 
-    // Step 4: Line Chart
-    const margin = { top: 20, right: 30, bottom: 30, left: 40 };
-    const width = 800 - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
+        window.addEventListener("resize", () => this.draw()); // Redraw on resize
+        this._initSVG();
+    }
 
-    const svg = d3.select("#statsbydate-linechart")
-        .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
+    _initSVG() {
+        // Clear old svg
+        d3.select(this.containerId).select("svg").remove();
 
-    const x = d3.scaleTime()
-        .domain(d3.extent(stats, d => d.ranking_date))
-        .range([0, width]);
+        const container = document.querySelector(this.containerId);
+        const fullWidth = container.clientWidth;
+        const fullHeight = 400;
 
-    const y = d3.scaleLinear()
-        .domain([d3.min(stats, d => d.avg_retirement), d3.max(stats, d => d.avg_retirement)]).nice()
-        .range([height, 0]);
+        this.width = fullWidth - this.margin.left - this.margin.right;
+        this.height = fullHeight - this.margin.top - this.margin.bottom;
 
-    const line = d3.line()
-        .x(d => x(d.ranking_date))
-        .y(d => y(d.avg_retirement));
+        this.svg = d3.select(this.containerId)
+            .append("svg")
+            .attr("width", fullWidth)
+            .attr("height", fullHeight)
+            .append("g")
+            .attr("transform", `translate(${this.margin.left},${this.margin.top})`);
+    }
 
-    svg.append("g")
-        .attr("transform", `translate(0,${height})`)
-        .call(d3.axisBottom(x));
+    draw(stats = null, on = null) {
+        if (stats == null) stats = this.stats
+        else this.stats = stats
+        if (on == null) on = this.on
+        else this.on = on
+        this._initSVG(); // Clear and reset SVG each draw
 
-    svg.append("g")
-        .call(d3.axisLeft(y));
+        if (!stats || stats.length === 0 || on == null) return;
 
-    svg.append("path")
-        .datum(stats)
-        .attr("fill", "none")
-        .attr("stroke", "steelblue")
-        .attr("stroke-width", 1.5)
-        .attr("d", line);
+        const x = d3.scaleTime()
+            .domain(d3.extent(stats, d => d.ranking_date))
+            .range([0, this.width]);
+
+        const y = d3.scaleLinear()
+            .domain([
+                d3.min(stats, d => d[on]),
+                d3.max(stats, d => d[on])
+            ]).nice()
+            .range([this.height, 0]);
+
+        const line = d3.line()
+            .x(d => x(d.ranking_date))
+            .y(d => y(d[on]));
+
+        // X Axis
+        this.svg.append("g")
+            .attr("transform", `translate(0,${this.height})`)
+            .call(d3.axisBottom(x));
+
+        // Y Axis
+        this.svg.append("g")
+            .call(d3.axisLeft(y));
+
+        // Line path
+        this.svg.append("path")
+            .datum(stats)
+            .attr("fill", "none")
+            .attr("stroke", "steelblue")
+            .attr("stroke-width", 1.5)
+            .attr("d", line);
+    }
 }
 
 class Table {
@@ -273,16 +309,18 @@ class WorldMap {
     }
 }
 
-// ######################## Declare UI elements #################################
+// ######################## UI reactivity #################################
 
 class OverviewApp {
     constructor() {
         const initstats = atp_stats[1000]
         this.worldMap=new WorldMap()
         this.timeSlider =new TimeSlider(initstats.ranking_date, this)
+        this.lineChart = new LineChart()
         this.table = new Table()
         this.statsOn=atp_stats
         this.stats=initstats
+        this.statOverTime="avg_retirement"
     }
 
     #statsOn
@@ -305,7 +343,7 @@ class OverviewApp {
                 break
         }
         this.timeSlider.draw(group)
-        //draw_statsbydate_linechart(group)
+        this.lineChart.draw(group, this.statOverTime)
     }
 
     #stats
@@ -320,9 +358,30 @@ class OverviewApp {
         this.table.draw(s.players)
         this.timeSlider.slider.value(s.ranking_date) // Does not dispatch on change, so no loop
     }
+
+    #statOverTime
+    get statOverTime() {
+        return this.#statOverTime
+    }
+    set statOverTime(s) {
+        console.log("Hey!")
+        if (!Array.from(overviewStatsDropdown.options).some(option => option.value === s))  {
+            console.log(`Tried to set illegal time stat "${s}"`)
+            return
+        }
+        if (s === this.#statOverTime) return
+        overviewStatsDropdown.value = s
+
+        this.#statOverTime = s
+        this.lineChart.draw(this.statsOn, s)
+    }
 }
 
 const app = new OverviewApp()
+
+overviewStatsDropdown.addEventListener("change", function (event) {
+    app.statOverTime = event.target.value
+})
 
 playersDropdown.addEventListener("change", function (event) {
     const value = event.target.value

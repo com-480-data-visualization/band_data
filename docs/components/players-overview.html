@@ -23,7 +23,7 @@
         <!-- List of players used for the rest of the statistics -->
         <div class="lg:w-1/3 min-w-96 bg-white rounded-xl shadow-sm p-4 overflow-hidden">
             <h2 class="text-xl font-semibold text-gray-800">Top 100 players</h2>
-            <div id="topplayers_table" class="max-h-96 overflow-y-auto border border-gray-300"></div>
+            <div id="topplayers_table" class="overflow-y-auto border border-gray-300" style="max-height:500px"></div>
         </div>
   
         <!-- Performance overview  -->
@@ -34,9 +34,9 @@
           <div class="mb-4 flex items-center gap-2">
               <label for="overviewStatsDropdown" class="text-gray-700 font-medium whitespace-nowrap">Attribute:</label>
               <select id="overviewStatsDropdown" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                  <option value="player_age_lastmatch">Retirement age</option>
-                  <option value="player_height">Player height</option>
-                  <option value="player_age_firstwin">Age when they win their first tournament</option>
+                  <option value="avg_retirement">Retirement age</option>
+                  <option value="avg_height">Player height</option>
+                  <option value="avg_first_title">Age when they win their first tournament</option>
               </select>
           </div>
 
