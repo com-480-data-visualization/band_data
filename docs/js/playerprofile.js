@@ -975,41 +975,6 @@ function drawOpponentPacking(playerId, data, association) {
       .attr("y", 15)
       .text(surface);
   });
-
-  /*svg.on("click", (event) => zoom(event, root));
-  let focus = root;
-  let view;
-  zoomTo([focus.x, focus.y, focus.r * 2]);
-
-  function zoomTo(v) {
-    const k = width / v[2];
-
-    view = v;
-
-    //label.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-    node.attr("transform", d => `translate(${(d.x - v[0]) * k},${(d.y - v[1]) * k})`);
-    node.attr("r", d => d.r * k);
-  }
-
-  function zoom(event, d) {
-    const focus0 = focus;
-
-    focus = d;
-
-    const transition = svg.transition()
-        .duration(event.altKey ? 7500 : 750)
-        .tween("zoom", d => {
-          const i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2]);
-          return t => zoomTo(i(t));
-        });
-
-    /*label
-      .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
-      .transition(transition)
-        .style("fill-opacity", d => d.parent === focus ? 1 : 0)
-        .on("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
-        .on("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
-  }*/
 }
 
 function loadGraphs(playerId, association) {
