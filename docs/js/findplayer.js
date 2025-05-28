@@ -141,7 +141,7 @@ function createPlayerDropdowns() {
 }
 
 function showPlayers(playersToShow, association) {
-  const container = document.querySelector("#results-container");
+    const container = document.querySelector("#results-container");
     container.innerHTML = ''; // Clear previous results
 
     playersToShow.forEach((player, index) => {
@@ -178,8 +178,9 @@ function handleFindPlayer() {
         alert("Please select a valid player.");
         return;
       }
-
-      document.getElementById("player-name-1").textContent = selectedPlayer.player_name;
+      showPlayers([selectedPlayer], selectedPlayer.association);
+      /*const container = document.querySelector("#results-container");
+      container.innerHTML = '';
 
       const params = new URLSearchParams({
         playerName: selectedPlayer.player_name,
@@ -187,8 +188,21 @@ function handleFindPlayer() {
         association: selectedPlayer.association,
       });
 
-      document.getElementById("player-link-1").href = `player-profile.html?${params.toString()}`;
-      document.getElementById("player-result-1").classList.remove("hidden");
+      const card = document.createElement("div");
+      card.className = "flex justify-center text-center opacity-0 translate-y-4 transition-all duration-500"; // Start hidden + moved down
+
+      card.innerHTML = `
+        <a href="player-profile.html?${params.toString()}" class="transform hover:scale-105 transition-all">
+          <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+          <p>${selectedPlayer.player_name}</p>
+        </a>
+      `;
+
+      container.appendChild(card);
+      setTimeout(() => {
+        card.classList.remove("opacity-0", "translate-y-4");
+        card.classList.add("opacity-100", "translate-y-0");
+      });*/
   } else {
       var csvData;
       var assoc = 'wta'
