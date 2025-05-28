@@ -1,14 +1,47 @@
-<div class="landing flex flex-col justify-center items-center h-screen" id="home">
-    <div class="title">
-        <div id="tennis" class="text">Tennis</div>
-        <div id="for" class="text">FOR</div>
-        <div id="dummies" class="text">DUMMIES</div>
+<div class="landing flex flex-col justify-center items-center min-h-screen relative" id="home">
+    <!-- Tennis court lines decoration -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-0 right-0 h-1 bg-white/10"></div>
+        <div class="absolute bottom-1/4 left-0 right-0 h-1 bg-white/10"></div>
+        <div class="absolute top-0 bottom-0 left-1/2 w-1 bg-white/10 transform -translate-x-1/2"></div>
     </div>
     
-    <!-- Arrow to scroll down -->
-    <div class="arrow absolute bottom-8" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'})">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 animate-bounce">
+    <!-- Main title with enhanced styling -->
+    <div class="title text-center px-4">
+        <div class="mb-4">
+            <span class="text-white/80 text-lg md:text-xl font-medium animate-fade-in">Welcome to</span>
+        </div>
+        <div id="tennis" class="text relative">
+            Tennis
+        </div>
+        <div id="for" class="text">FOR</div>
+        <div id="dummies" class="text relative">
+            DUMMIES
+        </div>
+        <div class="mt-6 text-white/80 text-lg md:text-xl max-w-md mx-auto animate-fade-in animation-delay-800">
+            <p>Learn tennis the fun way! From beginners to pros, we've got you covered.</p>
+        </div>
+    </div>
+    
+    <!-- Enhanced scroll arrow -->
+    <div class="arrow" onclick="document.getElementById('about-section').scrollIntoView({behavior: 'smooth'})">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M12 17.414l-6.707-6.707 1.414-1.414L12 14.586l5.293-5.293 1.414 1.414z"/>
         </svg>
     </div>
 </div>
+
+<style>
+    @keyframes spin-slow {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    .animate-spin-slow {
+        animation: spin-slow 3s linear infinite;
+    }
+</style>

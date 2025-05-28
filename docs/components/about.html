@@ -1,73 +1,121 @@
-<div class="bg-white flex flex-col" id="about">
-    <div class="container mx-auto px-4 py-8 flex-grow overflow-y-auto">
-        <!-- Main about content -->
-        <h2 class="text-4xl md:text-5xl font-bold text-center mb-6">Learn Tennis Basics</h2>
-        <p class="text-lg text-center max-w-4xl mx-auto mb-4">Welcome to Tennis for Dummies, your guide to understanding and enjoying the game of tennis. Whether you're a complete beginner or looking to brush up on the fundamentals, we've got you covered.</p>
-        <p class="text-lg text-center max-w-4xl mx-auto mb-8">Tennis is a racket sport played on a rectangular court. Players use a stringed racket to hit a ball over a net into the opponent's court. The game can be played as singles (one player per side) or doubles (two players per side).</p>
+<div class="bg-tennis-light min-h-screen flex flex-col py-20" id="about">
+    <div class="container mx-auto px-4 py-8 flex-grow">
+        <!-- Main about content with enhanced styling -->
+        <div class="text-center mb-12 animate-fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">Learn Tennis Basics</h2>
+            <p class="text-lg text-tennis-dark max-w-4xl mx-auto mb-4 leading-relaxed">
+                Welcome to <span class="font-bold text-tennis-green">Tennis for Dummies</span>, your fun guide to understanding and enjoying the game of tennis. Whether you're a complete beginner or looking to brush up on the fundamentals, we've got you covered!
+            </p>
+            <p class="text-lg text-tennis-dark max-w-4xl mx-auto mb-8 leading-relaxed">
+                Tennis is a racket sport played on a rectangular court. Players use a stringed racket to hit a ball over a net into the opponent's court. The game can be played as singles (one player per side) or doubles (two players per side).
+            </p>
+        </div>
         
-        <!-- Info boxes - added within the same content-inner div -->
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mt-8 w-full">
+        <!-- Info boxes with modern card design -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mt-12 w-full">
             <!-- Box 1: Scoring System -->
-            <a href="pages/scoring.html" class="tennis-info-box bg-[#0a1721] text-white transform hover:scale-105 transition-all animate-bounce-slow">
-                <div class="flex flex-col items-center p-6 text-center h-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Scoring</h3>
-                    <p class="text-sm">Learn about tennis points</p>
+            <a href="pages/scoring.html" class="group relative overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 animate-fade-in animation-delay-200">
+                <div class="absolute inset-0 bg-gradient-to-br from-tennis-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="flex flex-col items-center p-6 text-center h-full relative z-10">
+                    <div class="w-16 h-16 mb-4 rounded-full bg-tennis-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tennis-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-tennis-dark">Scoring</h3>
+                    <p class="text-sm text-gray-600">Learn about tennis points</p>
                 </div>
             </a>
 
             <!-- Box 2: Tournaments -->
-            <a href="pages/tournaments.html" class="tennis-info-box bg-[rgb(54,162,235,0.9)] text-white transform hover:scale-105 transition-all animate-bounce-slow animation-delay-200">
-                <div class="flex flex-col items-center p-6 text-center h-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Tournaments</h3>
-                    <p class="text-sm">Grand Slams and more</p>
+            <a href="pages/tournaments.html" class="group relative overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 animate-fade-in animation-delay-400">
+                <div class="absolute inset-0 bg-gradient-to-br from-tennis-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="flex flex-col items-center p-6 text-center h-full relative z-10">
+                    <div class="w-16 h-16 mb-4 rounded-full bg-tennis-green/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tennis-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-tennis-dark">Tournaments</h3>
+                    <p class="text-sm text-gray-600">Grand Slams and more</p>
                 </div>
             </a>
 
             <!-- Box 3: Court -->
-            <a href="pages/court.html" class="tennis-info-box bg-[rgb(75,192,192,0.9)] text-white transform hover:scale-105 transition-all animate-bounce-slow animation-delay-400">
-                <div class="flex flex-col items-center p-6 text-center h-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Court</h3>
-                    <p class="text-sm">Court zones and lines</p>
+            <a href="pages/court.html" class="group relative overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 animate-fade-in animation-delay-600">
+                <div class="absolute inset-0 bg-gradient-to-br from-tennis-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="flex flex-col items-center p-6 text-center h-full relative z-10">
+                    <div class="w-16 h-16 mb-4 rounded-full bg-tennis-accent-blue/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tennis-accent-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-tennis-dark">Court</h3>
+                    <p class="text-sm text-gray-600">Court zones and lines</p>
                 </div>
             </a>
 
             <!-- Box 4: Equipment -->
-            <a href="pages/equipment.html" class="tennis-info-box bg-[rgb(200,192,0,0.9)] text-white transform hover:scale-105 transition-all animate-bounce-slow animation-delay-600">
-                <div class="flex flex-col items-center p-6 text-center h-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Equipment</h3>
-                    <p class="text-sm">Rackets and gear</p>
+            <a href="pages/equipment.html" class="group relative overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 animate-fade-in animation-delay-800">
+                <div class="absolute inset-0 bg-gradient-to-br from-tennis-yellow/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="flex flex-col items-center p-6 text-center h-full relative z-10">
+                    <div class="w-16 h-16 mb-4 rounded-full bg-tennis-yellow/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-tennis-dark">Equipment</h3>
+                    <p class="text-sm text-gray-600">Rackets and gear</p>
                 </div>
             </a>
             
             <!-- Box 5: Player Stats -->
-            <a href="pages/stats.html" class="tennis-info-box bg-[rgb(255,99,132,0.9)] text-white transform hover:scale-105 transition-all animate-bounce-slow animation-delay-800">
-                <div class="flex flex-col items-center p-6 text-center h-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                    <h3 class="text-xl font-bold mb-2">Stats</h3>
-                    <p class="text-sm">Tennis statistics</p>
+            <a href="pages/stats.html" class="group relative overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 animate-fade-in animation-delay-200">
+                <div class="absolute inset-0 bg-gradient-to-br from-tennis-accent-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="flex flex-col items-center p-6 text-center h-full relative z-10">
+                    <div class="w-16 h-16 mb-4 rounded-full bg-tennis-accent-green/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-tennis-accent-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-tennis-dark">Stats</h3>
+                    <p class="text-sm text-gray-600">Tennis statistics</p>
                 </div>
             </a>
+        </div>
+
+        <!-- Fun tennis tips section -->
+        <div class="mt-16 bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto animate-fade-in">
+            <h3 class="text-2xl font-bold text-center mb-6 text-tennis-dark">
+                <span class="gradient-text">Did You Know?</span>
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🎾</span>
+                    <p class="text-gray-700">The fuzzy felt on tennis balls helps create drag and spin during play!</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">⚡</span>
+                    <p class="text-gray-700">The fastest tennis serve ever recorded was 163.7 mph (263.4 km/h)!</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🏃</span>
+                    <p class="text-gray-700">Professional players run about 3 miles (5 km) during an average match!</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">💡</span>
+                    <p class="text-gray-700">The term "love" in tennis comes from the French word "l'oeuf" (egg) meaning zero!</p>
+                </div>
+            </div>
         </div>
     </div>
     
     <!-- Arrow to scroll down to player finder -->
-    <div class="flex justify-center py-4 cursor-pointer" onclick="document.getElementById('players-overview').scrollIntoView({behavior: 'smooth'})">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10 animate-bounce">
-            <path d="M12 17.414l-6.707-6.707 1.414-1.414L12 14.586l5.293-5.293 1.414 1.414z"/>
-        </svg>
+    <div class="flex justify-center mt-8 cursor-pointer" onclick="document.getElementById('players-overview').scrollIntoView({behavior: 'smooth'})">
+        <div class="arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 17.414l-6.707-6.707 1.414-1.414L12 14.586l5.293-5.293 1.414 1.414z"/>
+            </svg>
+        </div>
     </div>
 </div>

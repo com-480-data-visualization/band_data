@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennis for Dummies</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Source+Sans+Pro:ital,wght@1,700&display=swap" rel="stylesheet">
+    <title>Tennis for Dummies - Learn Tennis the Fun Way!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,98 +15,141 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
     <style>
+      /* Tailwind Custom Config */
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'tennis-green': '#7ED4AD',
+              'tennis-blue': '#87CEEB',
+              'tennis-accent-green': '#B8E6B8',
+              'tennis-accent-blue': '#B0E0E6',
+              'tennis-dark': '#2C3E50',
+              'tennis-light': '#F7FFFE',
+              'tennis-yellow': '#FFE066',
+            }
+          }
+        }
+      }
+      
       /* Animation delays */
       .animation-delay-200 { animation-delay: 0.2s; }
       .animation-delay-400 { animation-delay: 0.4s; }
       .animation-delay-600 { animation-delay: 0.6s; }
       .animation-delay-800 { animation-delay: 0.8s; }
       
-      /* Box styling */
-      .tennis-info-box {
-        border-radius: 1rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        min-height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
       }
       
-      /* Smooth scrolling */
-      html {
-        scroll-behavior: smooth;
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, #87CEEB, #7ED4AD);
+        border-radius: 6px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, #7ED4AD, #87CEEB);
       }
     </style>
 </head>
-<body>
+<body class="bg-tennis-light">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <span class="text-xl font-bold gradient-text">Tennis for Dummies</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#landing-section" class="text-tennis-dark hover:text-tennis-green transition-colors font-medium">Home</a>
+                    <a href="#about-section" class="text-tennis-dark hover:text-tennis-green transition-colors font-medium">About</a>
+                    <a href="#players-overview" class="text-tennis-dark hover:text-tennis-green transition-colors font-medium">Historical Trends</a>
+                    <a href="#player-finder-section" class="text-tennis-dark hover:text-tennis-green transition-colors font-medium">Find Player</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#landing-section" class="block py-2 text-tennis-dark hover:text-tennis-green transition-colors">Home</a>
+                <a href="#about-section" class="block py-2 text-tennis-dark hover:text-tennis-green transition-colors">About</a>
+                <a href="#players-overview" class="block py-2 text-tennis-dark hover:text-tennis-green transition-colors">Players</a>
+                <a href="#player-finder-section" class="block py-2 text-tennis-dark hover:text-tennis-green transition-colors">Find Player</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Component containers -->
-    <div id="landing-section"></div>
+    <div id="landing-section" class="pt-16"></div>
     <div id="about-section"></div>
     <div id="players-overview"></div>
     <div id="player-finder-section">
-        <div class="bg-[#F6FCDF] flex flex-col h-full" id="player-finder">
-          <!-- Header  -->
-          <header class="w-full py-4 bg-[#0a1721] text-white text-center">
-            <h1 class="text-4xl md:text-6xl font-bold">Find your player</h1>
+        <div class="bg-tennis-light flex flex-col min-h-screen" id="player-finder">
+          <!-- Header with gradient -->
+          <header class="w-full py-8 bg-gradient-to-r from-tennis-blue to-tennis-green text-white text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <h1 class="text-4xl md:text-6xl font-bold relative z-10 drop-shadow-lg">Find Your Player</h1>
+            <p class="text-lg md:text-xl mt-2 opacity-90 relative z-10">Discover tennis players that match your style!</p>
           </header>
-          <!--<div class="flex flex-col justify-center items-center w-full py-0.5 bg-[#0A3981]"></div>-->
 
-          <!-- Main Content  -->
-          <div class="container bg-[#F6FCDF] mx-auto px-4 md:px-10 py-4 grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow">
+          <!-- Main Content with modern styling -->
+          <div class="container mx-auto px-4 md:px-10 py-8 grid grid-cols-1 md:grid-cols-3 gap-8 flex-grow">
             <!-- Left Column -->
-            <div class="md:col-span-1 flex flex-col space-y-4">
-              <!-- Input Box -->
+            <div class="md:col-span-1 flex flex-col space-y-6">
+              <!-- Input Box with modern styling -->
               <div class="relative w-full">
+                <div class="absolute inset-0 bg-gradient-to-r from-tennis-blue to-tennis-green rounded-full blur-xl opacity-30"></div>
                 <input
-                    class="w-full p-3 text-xl md:text-2xl text-black bg-white border-4 border-black rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    class="relative w-full p-4 text-xl md:text-2xl text-tennis-dark bg-white border-2 border-tennis-green/30 rounded-full shadow-lg focus:outline-none focus:ring-4 focus:ring-tennis-blue/30 focus:border-tennis-blue transition-all placeholder-gray-400"
                     list="players" id="playerInput" placeholder="Enter Player Name">
                 <datalist id="players">
                   <!-- populated dynamically -->
                 </datalist>
               </div>
 
-
-              <!-- OR Separator -->
-              <div class="w-full text-center">
-                <p class="text-xl md:text-2xl font-bold">Or choose your characteristics:</p>
+              <!-- OR Separator with tennis ball -->
+              <div class="w-full text-center relative py-4">
+                <div class="absolute inset-0 flex items-center">
+                  <div class="w-full border-t-2 border-tennis-green/20"></div>
+                </div>
+                <div class="relative bg-tennis-light px-4">
+                  <p class="text-xl md:text-2xl font-bold text-tennis-dark">Or choose your style</p>
+                </div>
               </div>
 
-              <!-- Dropdowns Container - populated dynamically  -->
-              <div id="dropdownsContainer" class="w-full flex flex-col space-y-3"></div>
-               <!-- Find Button  -->
-              <div class="flex justify-center items-center mt-2 md:mt-10">
-                <button id="find-player-button" onclick="handleFindPlayer()" class="px-5 py-4 w-full text-3xl md:text-4xl font-bold text-white bg-black rounded-full shadow-lg hover:bg-gray-800 transition duration-300">
-                  Find my player
+              <!-- Dropdowns Container with modern styling -->
+              <div id="dropdownsContainer" class="w-full flex flex-col space-y-4"></div>
+              
+              <!-- Find Button with gradient -->
+              <div class="flex justify-center items-center mt-6">
+                <button id="find-player-button" onclick="handleFindPlayer()" class="group relative px-8 py-4 w-full text-2xl md:text-3xl font-bold text-white bg-gradient-to-r from-tennis-blue to-tennis-green rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                  <span class="relative z-10">Find My Player</span>
+                  <div class="absolute inset-0 bg-gradient-to-r from-tennis-green to-tennis-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
               </div>
             </div>
 
-            <!-- Right Column -->
+            <!-- Right Column with modern card design -->
             <div class="md:col-span-2 flex flex-col space-y-6">
+              <!-- Results Section Header -->
+              <div class="text-center mb-4">
+                <h2 class="text-2xl font-semibold text-tennis-dark">Your Matches</h2>
+                <p class="text-gray-600 mt-1">Click on a player to view their detailed profile</p>
+              </div>
 
-              <!-- Results -->
-              <div id="results-container" class="grid grid-cols-1 md:grid-cols-3 gap-4 px-2 md:px-8 flex flex-wrap h-full place-items-center">
-                <!-- Player Result Section: initially hidden -->
-
-                <!--<div id="player-result-1" class="flex justify-center text-center hidden">
-                  <a id="player-link-1" href="#" class="transform hover:scale-105 transition-all">
-                    <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
-                    <p id="player-name-1">Player 1</p>
-                  </a>
-                </div>
-
-
-                <div id="player-result-2" class="flex justify-center text-center hidden">
-                  <a id="player-link-2" href="#" class="transform hover:scale-105 transition-all">
-                    <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
-                    <p id="player-name-2">Player 2</p>
-                  </a>
-                </div>
-                <div id="player-result-3" class="flex justify-center text-center hidden">
-                  <a id="player-link-3" href="#" class="transform hover:scale-105 transition-all">
-                    <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
-                    <p id="player-name-3">Player 3</p>
-                  </a>
-                </div>-->
+              <!-- Results Container -->
+              <div id="results-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 px-2 md:px-8">
+                <!-- Player results will be populated dynamically -->
               </div>
             </div>
           </div>
@@ -112,19 +157,42 @@
     </div>
     <div id="player-profile-section"></div>
     
-    <!-- Cursor selector (stays in main file) -->
+    <!-- Cursor selector (updated styling) -->
     <div class="cursor-menu">
-        <div class="cursor-option active" data-cursor="assets/cursor/ball.png">
+        <div class="cursor-option active" data-cursor="assets/cursor/ball.png" title="Tennis Ball">
             <img src="assets/cursor/ball.png" alt="Tennis Ball">
         </div>
-        <div class="cursor-option" data-cursor="assets/cursor/racket.png">
+        <div class="cursor-option" data-cursor="assets/cursor/racket.png" title="Tennis Racket">
             <img src="assets/cursor/racket.png" alt="Tennis Racket">
         </div>
-        <div class="cursor-option" data-cursor="auto">
+        <div class="cursor-option" data-cursor="auto" title="Default Cursor">
             <img src="assets/cursor/default.png" alt="Default">
         </div>
     </div>
 
+    <script>
+        // Smooth scroll to top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2');
+            }
+        });
+    </script>
     <script src="js/main.js"></script>
     <script src="js/findplayer.js"></script>
 </body>
