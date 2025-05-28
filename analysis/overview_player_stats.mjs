@@ -101,7 +101,7 @@ async function get_stats_per_date(rankings, players) {
             }
         }
 
-        const out_players = top100.map(record => players[record.player]).map((p,i) => ([i+1, `${p.name_first} ${p.name_last}`]))
+        const out_players = top100.map(record => players[record.player]).map((p,i) => ([i+1, `${p.name_first} ${p.name_last}`, p.ioc]))
         const avgHeight = countHeight ? sumHeight / countHeight : null;
         const avgBegin = countTitleAge ? sumTitleAge / countTitleAge : null;
         const avgEnd = countRetireAge ? sumRetireAge / countRetireAge : null;

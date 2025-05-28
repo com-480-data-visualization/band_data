@@ -117,8 +117,9 @@ class LineChart {
 }
 
 class Table {
-    constructor(containerId = "topplayers_table") {
+    constructor(containerId = "topplayers_table", gridjsClass="topplayers-gridjs-container") {
         this.containerId = containerId;
+        this.gridjsClass = gridjsClass
         this.gridInstance = null;
     }
 
@@ -127,14 +128,12 @@ class Table {
             this.gridInstance.updateConfig({ data }).forceRender();
         } else {
             this.gridInstance = new gridjs.Grid({
-                columns: ["Rank", "Name"],
+                columns: ["Rank", "Name", {name: "ioc", hidden: true}],
                 data,
                 fixedHeader: true,
                 search: true,
-                style: {
-                    table: {
-                        'white-space': 'nowrap'
-                    }
+                className: {
+                    container: this.gridjsClass,
                 },
             }).render(document.getElementById(this.containerId));
         }
@@ -216,6 +215,7 @@ class WorldMap {
         this.maxHeightRatio = maxHeightRatio;
         this.svg = null;
         this.radiusScale = d3.scaleSqrt().range([5, 40]);
+        this.table = new Table("countrymap-popup-table", "countrymap-gridjs-container");
 
         this._init();
         window.addEventListener("resize", () => this._init()); // Update on resize
@@ -248,10 +248,14 @@ class WorldMap {
         this.draw()
     }
 
-    draw(countryCounts = null) {
-        if (countryCounts == null) countryCounts = this.countryCounts
-        else this.countryCounts = countryCounts
-        if (countryCounts == null || this.svg == null) return
+    draw(stats = null) {
+        if (stats == null) stats = this.stats
+        else this.stats = stats
+        if (stats == null || this.svg == null) return
+        const countryCounts = stats.country_counts
+        const players = stats.players
+
+        document.getElementById("countrymap-popup").classList.add("hidden");
 
         this.radiusScale.domain([0, d3.max(Object.values(countryCounts))]);
 
@@ -291,9 +295,11 @@ class WorldMap {
                         .attr("cy", d => d.y)
                         .attr("r", d => d.r)
                         .attr("fill", d => continentToColor(d.info.continent))
+                        .attr("cursor", "pointer")
                         .attr("fill-opacity", 0.6)
                         .attr("stroke", "black")
                         .attr("stroke-width", 0.5)
+                        .on("click", (event, d) => this.openPopup(d, players));
 
                     g.append("title")
                         .text(d => `${d.info.country}: ${d.count} players`)
@@ -313,8 +319,9 @@ class WorldMap {
             },
 
                 update => {
-                    console.log("Haha")
-                    update.select("circle").transition().duration(300)
+                    update.select("circle")
+                        .on("click", (event, d) => this.openPopup(d, players))
+                        .transition().duration(300)
                         .attr("cx", d => d.x)
                         .attr("cy", d => d.y)
                         .attr("r", d => d.r);
@@ -330,6 +337,41 @@ class WorldMap {
                 }
             );
     }
+
+    openPopup(d, players) {
+        const popup = d3.select("#countrymap-popup");
+        const title = d3.select("#countrymap-popup-title");
+        const popupTable = d3.select("#countrymap-popup-table");
+        console.log(d)
+
+        // Clear and show popup
+        popup.classed("hidden", false);
+        title.text(d.info.country); // Use a mapping of IOC to full country name
+        popupTable.html("");
+
+        console.log(d)
+        this.table.draw(players.filter(p => p[2] == d.ioc)); // Your logic
+
+        // Positioning based on circle's projected center
+        const circleX = d.x;
+        const circleY = d.y;
+
+        // Get SVG's position relative to the document
+        const svgNode = this.svg.node();
+        const svgRect = svgNode.getBoundingClientRect();
+
+        const popupWidth = 350;
+
+        const arrowHeight = 10; //must match css
+        const left = svgRect.left + window.scrollX + circleX - popupWidth / 2;
+        const bottom = window.innerHeight - (svgRect.top + window.scrollY + circleY - d.r - arrowHeight);
+
+        popup
+            .style("left", `${left}px`)
+            .style("bottom", `${bottom}px`)
+            .style("width", `${popupWidth}px`)
+    }
+
 }
 
 function continentToColor(continent) {
@@ -390,7 +432,7 @@ class OverviewApp {
         if (s === this.#stats) return
         this.#stats = s
 
-        this.worldMap.draw(s.country_counts)
+        this.worldMap.draw(s)
         this.table.draw(s.players)
         this.timeSlider.slider.value(s.ranking_date) // Does not dispatch on change, so no loop
     }
@@ -432,4 +474,8 @@ playersDropdown.addEventListener("change", function (event) {
             break
     }
     console.log(value)
+});
+
+document.getElementById("countrymap-popup-close").addEventListener("click", () => {
+    document.getElementById("countrymap-popup").classList.add("hidden");
 });
