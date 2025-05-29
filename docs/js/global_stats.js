@@ -1,10 +1,10 @@
 /// <reference types="d3" />
 
-import atp_stats from "/data/overview_atp_stats.json" with {type: "json"}
-import wta_stats from "/data/overview_wta_stats.json" with {type: "json"}
-import atp_player_stats from "/data/atp_player_stats.json" with {type: "json"}
-import wta_player_stats from "/data/wta_player_stats.json" with {type: "json"}
-import * as countriesLib from "https://esm.sh/countries-list@3.1.1"
+import atp_stats from "../data/overview_atp_stats.json" with {type: "json"}
+import wta_stats from "../data/overview_wta_stats.json" with {type: "json"}
+import atp_player_stats from "../data/atp_player_stats.json" with {type: "json"}
+import wta_player_stats from "../data/wta_player_stats.json" with {type: "json"}
+// import * as countriesLib from "https://esm.sh/countries-list@3.1.1"
 
 const parseDate = d3.timeParse("%Y%m%d");
 atp_stats.forEach(x => x.ranking_date = parseDate(x.ranking_date))
