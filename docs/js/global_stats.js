@@ -349,7 +349,6 @@ class WorldMap {
                         .text(d => `${d.info.country}: ${d.count} players`)
                     
                     g.append("text")
-                        .filter(d => d.r > 10) // Show label only if radius is large enough
                         .attr("x", d => d.x)
                         .attr("y", d => d.y + d.r * 0.07)
                         .attr("text-anchor", "middle")
@@ -370,8 +369,10 @@ class WorldMap {
                         .attr("cy", d => d.y)
                         .attr("r", d => d.r);
                     
+                    update.select("title")
+                        .text(d => `${d.info.country}: ${d.count} players`)
+
                     update.select("text")
-                        .filter(d => d.r > 10)
                         .transition().duration(300)
                         .attr("x", d => d.x)
                         .attr("y", d => d.y + d.r * 0.07)
