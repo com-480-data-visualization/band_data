@@ -80,10 +80,10 @@ function loadStats(playerId, data) {
   statWrapper.className = "flex gap-3";
 
   const surfaceColors = {
-    Hard: { bg: "bg-blue-50", text: "text-blue-500" },
-    Clay: { bg: "bg-orange-50", text: "text-orange-500" },
-    Grass: { bg: "bg-green-50", text: "text-green-500" },
-    Carpet: { bg: "bg-gray-50", text: "text-gray-500" }
+    Hard: { bg: "bg-[#36A2EB40]", text: "text-[#2688c9]" },
+    Clay: { bg: "bg-[#FF9F4040]", text: "text-[#e0852b]" },
+    Grass: { bg: "bg-[#4BC0C030]", text: "text-[#3eadad]" },
+    Carpet: { bg: "bg-[#8A2D3B40]", text: "text-[#8A2D3B]" }
   };
 
   for (const surface in surfaceColors) {
@@ -100,6 +100,7 @@ function loadStats(playerId, data) {
 
     const statBlock = document.createElement("div");
     statBlock.className = "flex flex-col items-center";
+
 
     const circle = document.createElement("div");
     circle.className = `flex items-center justify-center h-10 w-10 rounded-full ${color.bg} mb-1`;
@@ -486,8 +487,8 @@ function generateRadarDatasets(playerId, data) {
 
   const surfaceColorMap = {
     "Carpet": {
-      backgroundColor: "rgba(150, 150, 150, 0.25)",
-      borderColor: 'rgba(150, 150, 150, 1)'
+      backgroundColor: "rgb(138, 45, 59, 0.25)", //"rgba(150, 150, 150, 0.25)",
+      borderColor: "rgb(138, 45, 59, 0.75)"//'rgba(150, 150, 150, 1)'
     },
     "Clay": {
       backgroundColor: "rgba(255, 159, 64, 0.25)",
@@ -733,7 +734,7 @@ function drawSunburstChart(playerId, data) {
     Hard: "rgba(54, 162, 235, 1)",
     Clay: "rgba(255, 159, 64, 1)",
     Grass: "rgba(75, 192, 192, 1)",
-    Carpet: 'rgba(150, 150, 150, 1)'
+    Carpet: "rgb(138, 45, 59, 0.75)" //'rgba(150, 150, 150, 1)'
   };
 
   // Set dimensions
@@ -845,8 +846,8 @@ function drawOpponentPacking(playerId, data, association) {
   const height = width;
   const surfaceColorMap = {
     "Carpet": {
-      backgroundColor: "rgba(150, 150, 150, 0.25)",
-      borderColor: 'rgba(150, 150, 150, 1)'
+      backgroundColor: "rgb(138, 45, 59, 0.25)", //"rgba(150, 150, 150, 0.25)",
+      borderColor: "rgb(138, 45, 59, 0.75)"//'rgba(150, 150, 150, 1)'
     },
     "Clay": {
       backgroundColor: "rgba(255, 159, 64, 0.25)",
