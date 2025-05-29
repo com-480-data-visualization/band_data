@@ -47,8 +47,8 @@ const wta_play_stats = group_stats(wta_play_stats_csv, wta_rankings_ids)
 
 // Generate stats
 console.log("Generate stats")
-const atp_stats = await get_stats_per_date(atp_rankings, atp_players)
-const wta_stats = await get_stats_per_date(wta_rankings, wta_players)
+const atp_stats = await get_stats_per_date(atp_rankings, atp_players, "atp")
+const wta_stats = await get_stats_per_date(wta_rankings, wta_players, "wta")
 
 // Write stats
 console.log("Write stats")
@@ -94,7 +94,7 @@ function count_ids_in_ranking(ranking) {
     return ids
 }
 
-async function get_stats_per_date(rankings, players) {
+async function get_stats_per_date(rankings, players, affiliation) {
 
     // Step 1: Filter rank <= 100
     const filtered = rankings.filter(d => d.rank <= 100);
@@ -144,13 +144,14 @@ async function get_stats_per_date(rankings, players) {
             }
         }
 
-        const out_players = top100.map(record => players[record.player]).map((p,i) => ([i+1, `${p.name_first} ${p.name_last}`, p.ioc]))
+        const out_players = top100.map(record => players[record.player]).map((p,i) => ([i+1, `${p.name_first} ${p.name_last}`, p.ioc, p.player_id]))
         const player_ids = top100.map(record => record.player)
         const avgHeight = countHeight ? sumHeight / countHeight : null;
         const avgBegin = countTitleAge ? sumTitleAge / countTitleAge : null;
         const avgEnd = countRetireAge ? sumRetireAge / countRetireAge : null;
 
         return {
+            affiliation,
             ranking_date: date,
             avg_height: avgHeight,
             avg_first_title: avgBegin,

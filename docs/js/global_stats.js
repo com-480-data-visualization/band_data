@@ -137,20 +137,37 @@ class Table {
         this.gridInstance = null;
     }
 
-    draw(data) {
+    draw(data, affiliation) {
+        if (affiliation !== "atp" && affiliation !== "wta") {
+            console.log(affiliation)
+            console.log("Error: Expected affiliation to be atp or wta")
+        }
+        this.affiliation = affiliation
         if (this.gridInstance) {
             this.gridInstance.updateConfig({ data }).forceRender();
         } else {
             this.gridInstance = new gridjs.Grid({
-                columns: ["Rank", "Name", {name: "ioc", hidden: true}],
+                columns: ["Rank", "Name", {name: "ioc", hidden: true}, {name: "player_id", hidden: true}],
                 data,
                 fixedHeader: true,
                 search: true,
                 className: {
                     container: this.gridjsClass,
                 },
-            }).render(document.getElementById(this.containerId));
+            }).on("rowClick", this._rowclickevent.bind(this)).render(document.getElementById(this.containerId));
         }
+    }
+
+    _rowclickevent(event, row) {
+        console.log(row)
+        console.log(event)
+        const params = new URLSearchParams({
+            playerName: row.cells[1].data,
+            playerId: row.cells[3].data,
+            association: this.affiliation || 'wta',
+      });
+        console.log("Hey!!!!!!!!!!!!!")
+        window.location.href = `player-profile.html?${params.toString()}`;
     }
 }
 
@@ -308,7 +325,6 @@ class WorldMap {
         else this.stats = stats
         if (stats == null || this.svg == null) return
         const countryCounts = stats.country_counts
-        const players = stats.players
 
         document.getElementById("countrymap-popup").classList.add("hidden");
 
@@ -354,7 +370,7 @@ class WorldMap {
                         .attr("fill-opacity", 0.6)
                         .attr("stroke", "black")
                         .attr("stroke-width", 0.5)
-                        .on("click", (event, d) => this.openPopup(d, players));
+                        .on("click", (event, d) => this.openPopup(d, stats));
 
                     g.append("title")
                         .text(d => `${d.info.country}: ${d.count} players`)
@@ -375,7 +391,7 @@ class WorldMap {
 
                 update => {
                     update.select("circle")
-                        .on("click", (event, d) => this.openPopup(d, players))
+                        .on("click", (event, d) => this.openPopup(d, stats))
                         .transition().duration(300)
                         .attr("cx", d => d.x)
                         .attr("cy", d => d.y)
@@ -393,7 +409,8 @@ class WorldMap {
             );
     }
 
-    openPopup(d, players) {
+    openPopup(d, stats) {
+        const players = stats.players
         const popup = d3.select("#countrymap-popup");
         const title = d3.select("#countrymap-popup-title");
         const popupTable = d3.select("#countrymap-popup-table");
@@ -403,7 +420,7 @@ class WorldMap {
         title.text(d.info.country); // Use a mapping of IOC to full country name
         popupTable.html("");
 
-        this.table.draw(players.filter(p => p[2] == d.ioc)); // Your logic
+        this.table.draw(players.filter(p => p[2] == d.ioc), stats.affiliation);
 
         // Positioning based on circle's projected center
         const circleX = d.x;
@@ -607,7 +624,7 @@ class OverviewApp {
         this.#stats = s
 
         this.worldMap.draw(s)
-        this.table.draw(s.players)
+        this.table.draw(s.players, s.affiliation)
         if (this.surfaceType)
             this.parallelCoordsChart.draw(s[this.surfaceType])
         this.timeSlider.setValue(s.ranking_date) // Does not dispatch on change, so no loop
