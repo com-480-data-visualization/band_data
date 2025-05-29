@@ -154,9 +154,38 @@ class Table {
     }
 }
 
+class TimeSliders {
+    constructor(initvalue = null, app) {
+        const positions = [
+            ["#slider-container", "#slider-date-label"],
+            ["#slider-container2", "#slider-date-label2"],
+            ["#slider-container3", "#slider-date-label3"],
+        ]
+        this.sliders = []
+        for (const position of positions) {
+            this.sliders.push(new TimeSlider(initvalue, app, position[0], position[1]))
+        }
+    }
+
+    draw(stats) {
+        for (const slider of this.sliders) {
+            slider.draw(stats)
+        }
+    }
+
+    setValue(value) {
+        for (const slider of this.sliders) {
+            if (slider.slider)
+                slider.setValue(value)
+        }
+    }
+}
+
 class TimeSlider {
 
-    constructor(initvalue = null, app) {
+    constructor(initvalue = null, app, containerId, labelId) {
+        this.containerId=containerId
+        this.labelId=labelId
         this.initValue = initvalue // date
         this.app = app
         this.slider = null
@@ -168,7 +197,7 @@ class TimeSlider {
 
 
     draw(stats) {
-        const containerWidth = document.getElementById("slider-container").clientWidth;
+        const containerWidth = document.querySelector(this.containerId).clientWidth;
         // Convert stats to indexable by date
         const dateToStats = new Map(stats.map(s => [s.ranking_date.toISOString().slice(0, 10), s]));
 
@@ -190,6 +219,14 @@ class TimeSlider {
             .filter((group, i) => i % everyNthYear === 0)
             .map(group => group[0]); // first date of each selected year
 
+        this._onchangeCallback =  date => {
+            d3.select(this.labelId).text(formatWeek(date));
+            const key = date.toISOString().slice(0, 10);
+            const stat = dateToStats.get(key);
+            if (stat) this.app.stats = stat;
+        }
+
+
         const newValue = this.slider?.value() ?? this.initValue
         this.slider = d3.sliderBottom()
             .min(d3.min(dates))
@@ -200,15 +237,10 @@ class TimeSlider {
             .tickValues(tickValues) // Show 1 tick per year
             .displayValue(false) // Do not show current date as its not very readable
             .default(newValue ?? dates[0])
-            .on('onchange', date => {
-                d3.select("#slider-date-label").text(formatWeek(date));
-                const key = date.toISOString().slice(0, 10);
-                const stat = dateToStats.get(key);
-                if (stat) this.app.stats = stat;
-            });
+            .on('onchange', date => this._onchangeCallback(date));
 
-        d3.select("#slider-container").select("svg").remove();
-        d3.select("#slider-container")
+        d3.select(this.containerId).select("svg").remove();
+        d3.select(this.containerId)
             .append("svg")
             .attr("width", containerWidth)
             .attr("height", 70)
@@ -216,10 +248,18 @@ class TimeSlider {
             .attr("transform", "translate(30,30)")
             .call(this.slider);
         
-        d3.select("#slider-date-label").text(formatWeek(newValue ?? dates[0]));
+        d3.select(this.labelId).text(formatWeek(newValue ?? dates[0]));
         const key = this.slider.value().toISOString().slice(0, 10);
         const stat = dateToStats.get(key);
         if (stat) this.app.stats = stat;
+    }
+
+    setValue(value) {
+        this.slider.on("onchange", null)
+        this.slider.value(value)
+        if (this._onchangeCallback) {
+            this.slider.on("onchange", date => this._onchangeCallback(date))
+        }
     }
 }
 
@@ -521,7 +561,7 @@ class OverviewApp {
     constructor() {
         const initstats = atp_stats[1000]
         this.worldMap=new WorldMap()
-        this.timeSlider =new TimeSlider(initstats.ranking_date, this)
+        this.timeSlider =new TimeSliders(initstats.ranking_date, this)
         this.lineChart = new LineChart()
         this.parallelCoordsChart = new ParallelCoordsChart()
         this.table = new Table()
@@ -569,7 +609,7 @@ class OverviewApp {
         this.table.draw(s.players)
         if (this.surfaceType)
             this.parallelCoordsChart.draw(s[this.surfaceType])
-        this.timeSlider.slider.value(s.ranking_date) // Does not dispatch on change, so no loop
+        this.timeSlider.setValue(s.ranking_date) // Does not dispatch on change, so no loop
     }
 
     #statOverTime

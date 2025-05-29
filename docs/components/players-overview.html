@@ -24,6 +24,8 @@
         <div class="lg:w-1/3 min-w-96 bg-white rounded-xl shadow-sm p-4 overflow-hidden">
             <h2 class="text-xl font-semibold text-gray-800">Top 100 players</h2>
             <div id="topplayers_table" class="overflow-y-auto border border-gray-300" style="max-height:500px"></div>
+            <div class="w-full bg-white" id="slider-container"></div>
+            <div class="w-full bg-white" id="slider-date-label"></div>
         </div>
   
         <!-- Performance overview  -->
@@ -43,20 +45,21 @@
           <div class="w-full bg-white" id="statsbydate-linechart">
             <!-- <img src="assets/graphs/ageyear_pseudo.svg" alt="Performance Timeline" /> -->
           </div>
-          <div class="w-full bg-white" id="slider-container"></div>
-          <div class="w-full bg-white" id="slider-date-label"></div>
         </div>
       </div>
   
       <!-- Middle section  -->
-      <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden mb-4" id="world-map">
+      <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden mb-4">
         <h2 class="text-xl font-semibold text-gray-800">Players by Country</h2>
         <p class="mt-2 mb-4 text-gray-600 text-sm">See how the players are distributed among countries. The size of the bubble indicates how many players come from that country.</p>
         <!-- <img src="assets/graphs/worldview_pseudo.jpeg" alt="Performance Metrics" class="w-4/5 h-full object-contain mx-auto" /> -->
+        <div id="world-map"></div>
+        <div class="w-full bg-white" id="slider-container2"></div>
+        <div class="w-full bg-white" id="slider-date-label2"></div>
       </div>
 
       <!-- Bottom section  -->
-      <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden mb-4" id="overview-parallelcoordschart">
+      <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden mb-4">
         <h2 class="text-xl font-semibold text-gray-800">Player style by surface</h2>
         <p class="mt-2 mb-4 text-gray-600 text-sm">See how player statistics are influenced by the surface.</p>
         <div class="mb-4 flex items-center gap-2">
@@ -70,6 +73,9 @@
           </select>
         </div>
         <!-- <img src="assets/graphs/stats_across_surfaces.jpeg" alt="Performance Metrics" class="w-3/5 object-contain mx-auto" /> -->
+        <div id="overview-parallelcoordschart"></div>
+        <div class="w-full bg-white" id="slider-container3"></div>
+        <div class="w-full bg-white" id="slider-date-label3"></div>
       </div>
     </div>
     <div id="countrymap-popup" class="hidden absolute bg-white shadow-lg rounded-lg p-4 border border-gray-300 z-50" style="min-width: 250px;">
