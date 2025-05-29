@@ -6,6 +6,10 @@ const countries = await fsExtra.readJson("../data/countries.geojson")
 
 const countryInfo = {}
 for (const feature of countries.features) {
+    if (feature.properties.COUNTRY === "Canarias") {
+        // Collides ISO collides with that of Spain.
+        continue
+    }
     const iso = feature.properties.ISO
     const ioc = convertCountryCodes.convertIso2Code(iso).ioc
     countryInfo[ioc] = {
