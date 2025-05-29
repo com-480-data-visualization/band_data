@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Tournaments Guide - Tennis for Dummies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tennis-green': '#7ED4AD',
+                        'tennis-blue': '#87CEEB',
+                        'tennis-accent-green': '#B8E6B8',
+                        'tennis-accent-blue': '#B0E0E6',
+                        'tennis-dark': '#2C3E50',
+                        'tennis-light': '#F7FFFE',
+                        'tennis-yellow': '#FFE066',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .slam-card {
+            transition: all 0.3s ease;
+        }
+        
+        .slam-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .surface-clay {
+            background: linear-gradient(135deg, #D2691E 0%, #CD853F 100%);
+        }
+        
+        .surface-grass {
+            background: linear-gradient(135deg, #228B22 0%, #32CD32 100%);
+        }
+        
+        .surface-hard {
+            background: linear-gradient(135deg, #4682B4 0%, #5F9EA0 100%);
+        }
+        
+        .calendar-month {
+            transition: all 0.2s ease;
+        }
+        
+        .calendar-month:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+        
+        @keyframes trophySpin {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+        
+        .trophy-icon:hover {
+            animation: trophySpin 2s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-tennis-light">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <a href="../index.html" class="text-xl font-bold gradient-text">Tennis for Dummies</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <nav class="text-sm breadcrumb">
+                        <a href="../index.html" class="text-tennis-dark hover:text-tennis-green">Home</a>
+                        <span class="mx-2 text-gray-400">/</span>
+                        <span class="text-tennis-green font-medium">Tournaments</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-16 bg-gradient-to-br from-tennis-blue to-tennis-green overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold text-white text-center mb-6 drop-shadow-lg">
+                The Grand Stage of Tennis
+            </h1>
+            <p class="text-xl text-white/90 text-center max-w-3xl mx-auto">
+                From Grand Slams to local tournaments - discover where champions are made!
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- Section 1: Grand Slams -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                The Grand Slams
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+                The four most prestigious tennis tournaments in the world, each with its unique character and challenges.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Australian Open -->
+                <div class="slam-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="surface-hard h-2"></div>
+                    <div class="p-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="trophy-icon text-6xl">🏆</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Australian Open</h3>
+                        <div class="text-center text-gray-600 mb-4">Melbourne, Australia</div>
+                        
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="font-medium">When:</span>
+                                <span>January</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Surface:</span>
+                                <span class="text-blue-600">Hard Court</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Founded:</span>
+                                <span>1905</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-tennis-accent-blue/20 rounded-lg">
+                            <p class="text-xs text-gray-700">
+                                Known as the "Happy Slam" for its festive atmosphere and extreme heat conditions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- French Open -->
+                <div class="slam-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="surface-clay h-2"></div>
+                    <div class="p-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="trophy-icon text-6xl">🏆</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">French Open</h3>
+                        <div class="text-center text-gray-600 mb-4">Paris, France</div>
+                        
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="font-medium">When:</span>
+                                <span>May-June</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Surface:</span>
+                                <span class="text-orange-600">Clay Court</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Founded:</span>
+                                <span>1891</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-orange-100 rounded-lg">
+                            <p class="text-xs text-gray-700">
+                                Roland Garros - The ultimate test of endurance on slow clay courts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wimbledon -->
+                <div class="slam-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="surface-grass h-2"></div>
+                    <div class="p-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="trophy-icon text-6xl">🏆</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Wimbledon</h3>
+                        <div class="text-center text-gray-600 mb-4">London, England</div>
+                        
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="font-medium">When:</span>
+                                <span>June-July</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Surface:</span>
+                                <span class="text-green-600">Grass Court</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Founded:</span>
+                                <span>1877</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-green-100 rounded-lg">
+                            <p class="text-xs text-gray-700">
+                                The oldest and most prestigious, famous for traditions and strawberries & cream.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- US Open -->
+                <div class="slam-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="surface-hard h-2"></div>
+                    <div class="p-6">
+                        <div class="flex justify-center mb-4">
+                            <div class="trophy-icon text-6xl">🏆</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">US Open</h3>
+                        <div class="text-center text-gray-600 mb-4">New York, USA</div>
+                        
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="font-medium">When:</span>
+                                <span>Aug-Sept</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Surface:</span>
+                                <span class="text-blue-600">Hard Court</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Founded:</span>
+                                <span>1881</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-tennis-accent-blue/20 rounded-lg">
+                            <p class="text-xs text-gray-700">
+                                The loudest and most electric atmosphere, played under lights in NYC.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Tournament Tiers -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Tournament Hierarchy
+            </h2>
+            
+            <!-- Tournament Pyramid -->
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <!-- Grand Slams -->
+                    <div class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white p-6 rounded-xl shadow-lg text-center">
+                        <h3 class="text-2xl font-bold mb-2">Grand Slams</h3>
+                        <p class="mb-2">4 tournaments • 2000 ranking points</p>
+                        <p class="text-sm opacity-90">The pinnacle of tennis achievement</p>
+                    </div>
+                    
+                    <!-- Masters 1000 -->
+                    <div class="bg-gradient-to-r from-tennis-blue to-tennis-green text-white p-6 rounded-xl shadow-lg text-center mx-auto w-11/12">
+                        <h3 class="text-xl font-bold mb-2">ATP/WTA 1000 (Masters)</h3>
+                        <p class="mb-2">9 tournaments • 1000 ranking points</p>
+                        <p class="text-sm opacity-90">Indian Wells, Miami, Monte Carlo, etc.</p>
+                    </div>
+                    
+                    <!-- 500 Series -->
+                    <div class="bg-gradient-to-r from-tennis-accent-blue to-tennis-accent-green text-tennis-dark p-6 rounded-xl shadow-lg text-center mx-auto w-9/12">
+                        <h3 class="text-lg font-bold mb-2">ATP/WTA 500</h3>
+                        <p class="mb-2">13 tournaments • 500 ranking points</p>
+                        <p class="text-sm">Dubai, Barcelona, Washington, etc.</p>
+                    </div>
+                    
+                    <!-- 250 Series -->
+                    <div class="bg-white border-2 border-tennis-green text-tennis-dark p-6 rounded-xl shadow-lg text-center mx-auto w-7/12">
+                        <h3 class="text-lg font-bold mb-2">ATP/WTA 250</h3>
+                        <p class="mb-2">~40 tournaments • 250 ranking points</p>
+                        <p class="text-sm">Entry-level professional tournaments</p>
+                    </div>
+                    
+                    <!-- Challenger/125 -->
+                    <div class="bg-gray-100 text-gray-700 p-4 rounded-xl shadow text-center mx-auto w-5/12">
+                        <h3 class="font-bold mb-1">Challenger/125 Series</h3>
+                        <p class="text-sm">50-175 points • Developmental tours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Calendar Timeline -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                The Tennis Calendar
+            </h2>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    <!-- January -->
+                    <div class="calendar-month bg-gradient-to-br from-blue-400 to-blue-500 text-white p-4 rounded-lg text-center">
+                        <div class="font-bold">JAN</div>
+                        <div class="text-xs mt-2">Australian Open</div>
+                        <div class="text-xs opacity-75">Hard</div>
+                    </div>
+                    
+                    <!-- February -->
+                    <div class="calendar-month bg-gray-200 text-gray-700 p-4 rounded-lg text-center">
+                        <div class="font-bold">FEB</div>
+                        <div class="text-xs mt-2">Dubai, Rotterdam</div>
+                        <div class="text-xs opacity-75">Hard</div>
+                    </div>
+                    
+                    <!-- March -->
+                    <div class="calendar-month bg-gradient-to-br from-tennis-blue to-tennis-green text-white p-4 rounded-lg text-center">
+                        <div class="font-bold">MAR</div>
+                        <div class="text-xs mt-2">Indian Wells, Miami</div>
+                        <div class="text-xs opacity-75">Hard</div>
+                    </div>
+                    
+                    <!-- April -->
+                    <div class="calendar-month bg-gradient-to-br from-orange-400 to-orange-500 text-white p-4 rounded-lg text-center">
+                        <div class="font-bold">APR</div>
+                        <div class="text-xs mt-2">Monte Carlo, Barcelona</div>
+                        <div class="text-xs opacity-75">Clay</div>
+                    </div>
+                    
+                    <!-- May -->
+                    <div class="calendar-month bg-gradient-to-br from-orange-400 to-orange-500 text-white p-4 rounded-lg text-center">
+                        <div class="font-bold">MAY</div>
+                        <div class="text-xs mt-2">Madrid, Rome</div>
+                        <div class="text-xs opacity-75">Clay</div>
+                    </div>
+                    
+                    <!-- June -->
+                    <div class="calendar-month bg-gradient-to-br from-orange-500 to-green-500 text-white p-4 rounded-lg text-center">
+                        <div class="font-bold">JUN</div>
+                        <div class="text-xs mt-2">French Open → Grass</div>
+                        <div class="text-xs opacity-75">Clay/Grass</div>
+                    </div>
+                    
+                    <!-- July -->
+                    <div class="calendar-month bg-gradient-to-br from-green-400 to-green-500 text-white p-4 rounded-lg text-center">
+                        <div class="font-bold">JUL</div>
+                        <div class="text-xs mt-2">Wimbledon</div>
+                        <div class="text-xs opacity-75">Grass</div>
+                    </div>
+                    
+                    <!-- August -->
+                    <div class="calendar-month bg-gradient-to-br from-blue-400 to-blue-500 text-white p-4 rounded-lg text-center">
+                        <div class="font-bold">AUG</div>
+                        <div class="text-xs mt-2">Canada, Cincinnati</div>
+                        <div class="text-xs opacity-75">Hard</div>
+                    </div>
+                    
+                    <!-- September -->
+                    <div class="calendar-month bg-gradient-to-br from-blue-400 to-blue-500 text-white p-4 rounded-lg text-center">
+                        <div class="font-bold">SEP</div>
+                        <div class="text-xs mt-2">US Open</div>
+                        <div class="text-xs opacity-75">Hard</div>
+                    </div>
+                    
+                    <!-- October -->
+                    <div class="calendar-month bg-gray-200 text-gray-700 p-4 rounded-lg text-center">
+                        <div class="font-bold">OCT</div>
+                        <div class="text-xs mt-2">Shanghai, Vienna</div>
+                        <div class="text-xs opacity-75">Hard</div>
+                    </div>
+                    
+                    <!-- November -->
+                    <div class="calendar-month bg-gradient-to-br from-purple-400 to-purple-500 text-white p-4 rounded-lg text-center">
+                        <div class="font-bold">NOV</div>
+                        <div class="text-xs mt-2">Paris, ATP Finals</div>
+                        <div class="text-xs opacity-75">Indoor</div>
+                    </div>
+                    
+                    <!-- December -->
+                    <div class="calendar-month bg-gray-300 text-gray-600 p-4 rounded-lg text-center">
+                        <div class="font-bold">DEC</div>
+                        <div class="text-xs mt-2">Off Season</div>
+                        <div class="text-xs opacity-75">Rest</div>
+                    </div>
+                </div>
+                
+                <!-- Surface Legend -->
+                <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-4 h-4 rounded surface-hard"></div>
+                        <span class="text-sm">Hard Court</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-4 h-4 rounded surface-clay"></div>
+                        <span class="text-sm">Clay Court</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-4 h-4 rounded surface-grass"></div>
+                        <span class="text-sm">Grass Court</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-4 h-4 rounded bg-purple-500"></div>
+                        <span class="text-sm">Indoor</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Tournament Formats -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Tournament Formats Explained
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Single Elimination -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-4">Single Elimination</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-700 mb-3">Most common format - lose once and you're out!</p>
+                        
+                        <!-- Simple bracket visualization -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="text-center text-sm font-mono">
+                                <div class="mb-2">128 → 64 → 32 → 16 → QF → SF → F</div>
+                                <div class="text-xs text-gray-600">
+                                    R1 &nbsp; R2 &nbsp; R3 &nbsp; R4 &nbsp;&nbsp; QF &nbsp;&nbsp; SF &nbsp; Final
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-start">
+                            <span class="text-tennis-green mr-2">•</span>
+                            <span>Used in all Grand Slams and most ATP/WTA events</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-tennis-green mr-2">•</span>
+                            <span>Seeded players avoid each other in early rounds</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-tennis-green mr-2">•</span>
+                            <span>Lucky losers can replace withdrawn players</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Round Robin -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-4">Round Robin</h3>
+                    <div class="mb-4">
+                        <p class="text-gray-700 mb-3">Everyone plays everyone in their group!</p>
+                        
+                        <!-- Group visualization -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="grid grid-cols-2 gap-2">
+                                <div class="bg-tennis-accent-blue/30 p-2 rounded text-center text-sm">
+                                    <div class="font-semibold">Group A</div>
+                                    <div class="text-xs mt-1">4 players</div>
+                                </div>
+                                <div class="bg-tennis-accent-green/30 p-2 rounded text-center text-sm">
+                                    <div class="font-semibold">Group B</div>
+                                    <div class="text-xs mt-1">4 players</div>
+                                </div>
+                            </div>
+                            <div class="text-center text-xs text-gray-600 mt-2">
+                                Top 2 from each group → Semifinals
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex items-start">
+                            <span class="text-tennis-green mr-2">•</span>
+                            <span>Used in ATP/WTA Finals (year-end championships)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-tennis-green mr-2">•</span>
+                            <span>Can still qualify even after losing a match</span>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-tennis-green mr-2">•</span>
+                            <span>Points decide who advances to knockouts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Terms -->
+            <div class="mt-8 bg-gradient-to-r from-tennis-yellow/20 to-transparent rounded-xl p-6">
+                <h3 class="text-lg font-bold text-tennis-dark mb-4">Tournament Terms to Know</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div>
+                        <span class="font-semibold text-tennis-green">Seed:</span>
+                        <span class="text-sm text-gray-700"> Top-ranked players who are separated in the draw</span>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-tennis-green">Wildcard:</span>
+                        <span class="text-sm text-gray-700"> Free entry given by tournament organizers</span>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-tennis-green">Qualifier:</span>
+                        <span class="text-sm text-gray-700"> Players who earn entry through qualifying rounds</span>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-tennis-green">Lucky Loser:</span>
+                        <span class="text-sm text-gray-700"> Highest-ranked player who lost in qualifying but gets in due to withdrawal</span>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-tennis-green">Walkover:</span>
+                        <span class="text-sm text-gray-700"> Win awarded when opponent withdraws before match</span>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-tennis-green">Retirement:</span>
+                        <span class="text-sm text-gray-700"> When a player quits during a match due to injury</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fun Facts -->
+        <section class="bg-white rounded-2xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-tennis-dark mb-6 text-center">
+                Tournament Trivia 🏆
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🎾</span>
+                    <p class="text-gray-700">Wimbledon requires all players to wear predominantly white clothing!</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">💰</span>
+                    <p class="text-gray-700">Grand Slam winners earn over $3 million in prize money!</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🌡️</span>
+                    <p class="text-gray-700">The Australian Open has an "Extreme Heat Policy" when temps exceed 40°C (104°F)!</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🍓</span>
+                    <p class="text-gray-700">28,000 kg of strawberries are consumed during Wimbledon fortnight!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cursor Menu -->
+    <div class="cursor-menu">
+        <div class="cursor-option active" data-cursor="../assets/cursor/ball.png" title="Tennis Ball">
+            <img src="../assets/cursor/ball.png" alt="Tennis Ball">
+        </div>
+        <div class="cursor-option" data-cursor="../assets/cursor/racket.png" title="Tennis Racket">
+            <img src="../assets/cursor/racket.png" alt="Tennis Racket">
+        </div>
+        <div class="cursor-option" data-cursor="auto" title="Default Cursor">
+            <img src="../assets/cursor/default.png" alt="Default">
+        </div>
+    </div>
+
+    <script src="../js/cursor.js"></script>
+</body>
+</html> 

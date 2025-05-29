@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Equipment Guide - Tennis for Dummies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tennis-green': '#7ED4AD',
+                        'tennis-blue': '#87CEEB',
+                        'tennis-accent-green': '#B8E6B8',
+                        'tennis-accent-blue': '#B0E0E6',
+                        'tennis-dark': '#2C3E50',
+                        'tennis-light': '#F7FFFE',
+                        'tennis-yellow': '#FFE066',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .equipment-card {
+            transition: all 0.3s ease;
+        }
+        
+        .equipment-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .price-indicator {
+            font-family: monospace;
+        }
+        
+        .racket-part {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .racket-part:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        
+        @keyframes bounce-ball {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .bounce-animation {
+            animation: bounce-ball 1s ease-in-out;
+        }
+        
+        .comparison-table td {
+            transition: background-color 0.2s ease;
+        }
+        
+        .comparison-table tr:hover td {
+            background-color: rgba(126, 212, 173, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-tennis-light">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <a href="../index.html" class="text-xl font-bold gradient-text">Tennis for Dummies</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <nav class="text-sm breadcrumb">
+                        <a href="../index.html" class="text-tennis-dark hover:text-tennis-green">Home</a>
+                        <span class="mx-2 text-gray-400">/</span>
+                        <span class="text-tennis-green font-medium">Equipment</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-16 bg-gradient-to-br from-tennis-blue to-tennis-green overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold text-white text-center mb-6 drop-shadow-lg">
+                Gear Up Like a Pro<br>
+                <span class="text-3xl md:text-4xl font-normal">(Without Breaking the Bank!)</span>
+            </h1>
+            <p class="text-xl text-white/90 text-center max-w-3xl mx-auto">
+                Everything you need to know about tennis equipment - from rackets to shoes!
+            </p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- Section 1: Rackets 101 -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Tennis Rackets 101
+            </h2>
+            
+            <!-- Interactive Racket Anatomy -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+                <h3 class="text-2xl font-bold text-center mb-6">Racket Anatomy</h3>
+                
+                <!-- Racket SVG Diagram -->
+                <div class="max-w-md mx-auto relative">
+                    <svg viewBox="0 0 300 500" class="w-full">
+                        <!-- Racket Head -->
+                        <ellipse cx="150" cy="100" rx="80" ry="100" fill="#E8E8E8" stroke="#333" stroke-width="3" class="racket-part" onclick="showPart('head')"/>
+                        <!-- Strings -->
+                        <g stroke="#666" stroke-width="1" opacity="0.5">
+                            <line x1="90" y1="50" x2="210" y2="50"/>
+                            <line x1="90" y1="70" x2="210" y2="70"/>
+                            <line x1="90" y1="90" x2="210" y2="90"/>
+                            <line x1="90" y1="110" x2="210" y2="110"/>
+                            <line x1="90" y1="130" x2="210" y2="130"/>
+                            <line x1="90" y1="150" x2="210" y2="150"/>
+                            <line x1="110" y1="30" x2="110" y2="170"/>
+                            <line x1="130" y1="20" x2="130" y2="180"/>
+                            <line x1="150" y1="15" x2="150" y2="185"/>
+                            <line x1="170" y1="20" x2="170" y2="180"/>
+                            <line x1="190" y1="30" x2="190" y2="170"/>
+                        </g>
+                        <!-- Throat -->
+                        <path d="M 120 180 L 150 250 L 180 180" fill="#D8D8D8" stroke="#333" stroke-width="3" class="racket-part" onclick="showPart('throat')"/>
+                        <!-- Shaft -->
+                        <rect x="140" y="250" width="20" height="150" fill="#666" stroke="#333" stroke-width="3" class="racket-part" onclick="showPart('shaft')"/>
+                        <!-- Handle/Grip -->
+                        <rect x="135" y="400" width="30" height="80" rx="5" fill="#333" stroke="#333" stroke-width="3" class="racket-part" onclick="showPart('grip')"/>
+                        <!-- Butt Cap -->
+                        <ellipse cx="150" cy="485" rx="20" ry="10" fill="#222" class="racket-part" onclick="showPart('butt')"/>
+                    </svg>
+                    
+                    <!-- Labels -->
+                    <div class="absolute top-20 left-0 text-sm font-medium pointer-events-none">Head</div>
+                    <div class="absolute top-44 right-0 text-sm font-medium pointer-events-none">Throat</div>
+                    <div class="absolute top-72 left-0 text-sm font-medium pointer-events-none">Shaft</div>
+                    <div class="absolute bottom-20 right-0 text-sm font-medium pointer-events-none">Grip</div>
+                </div>
+                
+                <!-- Part Description -->
+                <div id="part-description" class="mt-6 p-4 bg-tennis-accent-blue/20 rounded-lg text-center">
+                    <p class="text-gray-700">Click on any part of the racket to learn more!</p>
+                </div>
+            </div>
+            
+            <!-- Racket Selection Guide -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Beginner Racket -->
+                <div class="equipment-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-tennis-green">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-3">Beginner Racket</h3>
+                    <div class="space-y-2 text-sm text-gray-700 mb-4">
+                        <div class="flex justify-between">
+                            <span>Head Size:</span>
+                            <span class="font-medium">100-110 sq in</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Weight:</span>
+                            <span class="font-medium">9-10.5 oz</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Length:</span>
+                            <span class="font-medium">27 inches</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Balance:</span>
+                            <span class="font-medium">Head Heavy</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-green-100 rounded-lg">
+                        <p class="text-xs text-gray-700">Larger sweet spot, lighter weight for easy handling</p>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <span class="price-indicator text-2xl text-green-600">$</span>
+                        <p class="text-xs text-gray-600 mt-1">$50-150</p>
+                    </div>
+                </div>
+                
+                <!-- Intermediate Racket -->
+                <div class="equipment-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-tennis-blue">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-3">Intermediate Racket</h3>
+                    <div class="space-y-2 text-sm text-gray-700 mb-4">
+                        <div class="flex justify-between">
+                            <span>Head Size:</span>
+                            <span class="font-medium">98-102 sq in</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Weight:</span>
+                            <span class="font-medium">10.5-11.5 oz</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Length:</span>
+                            <span class="font-medium">27 inches</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Balance:</span>
+                            <span class="font-medium">Even/Slightly Head Light</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-blue-100 rounded-lg">
+                        <p class="text-xs text-gray-700">Good control and power balance, versatile play</p>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <span class="price-indicator text-2xl text-blue-600">$$</span>
+                        <p class="text-xs text-gray-600 mt-1">$150-250</p>
+                    </div>
+                </div>
+                
+                <!-- Advanced Racket -->
+                <div class="equipment-card bg-white rounded-xl shadow-lg p-6 border-t-4 border-tennis-yellow">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-3">Advanced Racket</h3>
+                    <div class="space-y-2 text-sm text-gray-700 mb-4">
+                        <div class="flex justify-between">
+                            <span>Head Size:</span>
+                            <span class="font-medium">95-98 sq in</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Weight:</span>
+                            <span class="font-medium">11.5-12.5 oz</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Length:</span>
+                            <span class="font-medium">27 inches</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Balance:</span>
+                            <span class="font-medium">Head Light</span>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-yellow-100 rounded-lg">
+                        <p class="text-xs text-gray-700">Maximum control, precision, requires good technique</p>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <span class="price-indicator text-2xl text-yellow-600">$$$</span>
+                        <p class="text-xs text-gray-600 mt-1">$200-400+</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grip Size Calculator -->
+            <div class="mt-8 bg-gradient-to-r from-tennis-green/20 to-tennis-blue/20 rounded-xl p-6">
+                <h3 class="text-xl font-bold text-tennis-dark mb-4">Find Your Grip Size</h3>
+                <p class="text-gray-700 mb-4">Measure from the middle crease of your palm to the tip of your ring finger:</p>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="text-center">
+                        <div class="font-bold">4"</div>
+                        <div class="text-sm text-gray-600">Grip 0</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-bold">4 1/8"</div>
+                        <div class="text-sm text-gray-600">Grip 1</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-bold">4 1/4"</div>
+                        <div class="text-sm text-gray-600">Grip 2</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-bold">4 3/8"</div>
+                        <div class="text-sm text-gray-600">Grip 3</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="font-bold">4 1/2"</div>
+                        <div class="text-sm text-gray-600">Grip 4</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Tennis Balls -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Tennis Balls Explained
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Ball Types -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-4">Ball Types Comparison</h3>
+                    
+                    <table class="w-full comparison-table">
+                        <thead>
+                            <tr class="border-b">
+                                <th class="text-left py-2">Type</th>
+                                <th class="text-center py-2">Best For</th>
+                                <th class="text-right py-2">Durability</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="border-b">
+                                <td class="py-3">Regular Duty</td>
+                                <td class="text-center">Clay/Indoor</td>
+                                <td class="text-right">⭐⭐⭐</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-3">Extra Duty</td>
+                                <td class="text-center">Hard Courts</td>
+                                <td class="text-right">⭐⭐⭐⭐</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="py-3">High Altitude</td>
+                                <td class="text-center">3,500ft+</td>
+                                <td class="text-right">⭐⭐⭐</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3">Practice Balls</td>
+                                <td class="text-center">Training</td>
+                                <td class="text-right">⭐⭐⭐⭐⭐</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="mt-4 p-3 bg-tennis-yellow/20 rounded-lg">
+                        <p class="text-xs text-gray-700">
+                            <strong>Tip:</strong> New balls bounce higher and fly faster. Replace every 2-3 sets for best play!
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Ball Bounce Test -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-4">The Bounce Test</h3>
+                    
+                    <div class="text-center mb-6">
+                        <div id="tennis-ball" class="inline-block text-6xl cursor-pointer" onclick="bounceBall()">
+                            🎾
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">Click the ball to test!</p>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between p-3 bg-green-100 rounded-lg">
+                            <span class="text-sm font-medium">New Ball</span>
+                            <span class="text-sm">53-58 inches bounce</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-yellow-100 rounded-lg">
+                            <span class="text-sm font-medium">Used Ball</span>
+                            <span class="text-sm">48-53 inches bounce</span>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-red-100 rounded-lg">
+                            <span class="text-sm font-medium">Dead Ball</span>
+                            <span class="text-sm">&lt; 48 inches bounce</span>
+                        </div>
+                    </div>
+                    
+                    <p class="text-xs text-gray-600 mt-4">
+                        Drop from 100 inches (8.33 feet) onto concrete to test
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Strings & Tension -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Strings & Tension Guide
+            </h2>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- String Materials -->
+                    <div>
+                        <h3 class="text-xl font-bold text-tennis-dark mb-4">String Materials</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-tennis-green pl-4">
+                                <h4 class="font-semibold">Synthetic Gut</h4>
+                                <p class="text-sm text-gray-700">Most popular, good all-around performance</p>
+                                <p class="text-xs text-gray-600 mt-1">💰 $10-20 | ⏱️ 10-20 hrs play</p>
+                            </div>
+                            
+                            <div class="border-l-4 border-tennis-blue pl-4">
+                                <h4 class="font-semibold">Polyester</h4>
+                                <p class="text-sm text-gray-700">Durable, control, less power</p>
+                                <p class="text-xs text-gray-600 mt-1">💰 $15-30 | ⏱️ 20-40 hrs play</p>
+                            </div>
+                            
+                            <div class="border-l-4 border-tennis-yellow pl-4">
+                                <h4 class="font-semibold">Natural Gut</h4>
+                                <p class="text-sm text-gray-700">Best feel and power, expensive</p>
+                                <p class="text-xs text-gray-600 mt-1">💰 $40-80 | ⏱️ 5-15 hrs play</p>
+                            </div>
+                            
+                            <div class="border-l-4 border-gray-400 pl-4">
+                                <h4 class="font-semibold">Hybrid</h4>
+                                <p class="text-sm text-gray-700">Mix of materials for custom feel</p>
+                                <p class="text-xs text-gray-600 mt-1">💰 $20-50 | ⏱️ Varies</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tension Effects -->
+                    <div>
+                        <h3 class="text-xl font-bold text-tennis-dark mb-4">Tension Effects</h3>
+                        
+                        <div class="bg-gradient-to-b from-red-100 to-blue-100 rounded-lg p-6">
+                            <div class="space-y-4">
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-red-600">HIGH (58-68 lbs)</div>
+                                    <ul class="text-sm text-gray-700 mt-2">
+                                        <li>+ More Control</li>
+                                        <li>+ Better Feel</li>
+                                        <li>- Less Power</li>
+                                        <li>- Smaller Sweet Spot</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="text-center py-4 border-t border-b">
+                                    <div class="text-xl font-medium text-gray-600">MEDIUM (52-57 lbs)</div>
+                                    <p class="text-sm text-gray-600 mt-1">Balanced performance</p>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-blue-600">LOW (45-51 lbs)</div>
+                                    <ul class="text-sm text-gray-700 mt-2">
+                                        <li>+ More Power</li>
+                                        <li>+ Larger Sweet Spot</li>
+                                        <li>- Less Control</li>
+                                        <li>- Less Feel</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mt-4 text-center">
+                            🎯 Beginners: Start with lower tension for more power!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Footwear & Apparel -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Footwear & Apparel
+            </h2>
+            
+            <!-- Court-Specific Shoes -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold text-tennis-dark mb-6 text-center">Court-Specific Shoes</h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Hard Court Shoes -->
+                    <div class="equipment-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-2 bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-tennis-dark mb-3">Hard Court Shoes</h4>
+                            <div class="mb-4">
+                                <div class="text-6xl text-center mb-2">👟</div>
+                            </div>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Durable outsole</li>
+                                <li>• Modified herringbone pattern</li>
+                                <li>• Extra toe protection</li>
+                                <li>• Good cushioning</li>
+                            </ul>
+                            <div class="mt-4 text-center">
+                                <span class="price-indicator text-lg">$$</span>
+                                <span class="text-xs text-gray-600 ml-2">$60-150</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Clay Court Shoes -->
+                    <div class="equipment-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-2 bg-gradient-to-r from-orange-400 to-orange-600"></div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-tennis-dark mb-3">Clay Court Shoes</h4>
+                            <div class="mb-4">
+                                <div class="text-6xl text-center mb-2">👟</div>
+                            </div>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Full herringbone pattern</li>
+                                <li>• Prevents clay buildup</li>
+                                <li>• Lateral support</li>
+                                <li>• Tight upper knit</li>
+                            </ul>
+                            <div class="mt-4 text-center">
+                                <span class="price-indicator text-lg">$$</span>
+                                <span class="text-xs text-gray-600 ml-2">$60-140</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Grass Court Shoes -->
+                    <div class="equipment-card bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="h-2 bg-gradient-to-r from-green-400 to-green-600"></div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-bold text-tennis-dark mb-3">Grass Court Shoes</h4>
+                            <div class="mb-4">
+                                <div class="text-6xl text-center mb-2">👟</div>
+                            </div>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Pimpled/nub outsole</li>
+                                <li>• Better grass traction</li>
+                                <li>• Protects court surface</li>
+                                <li>• Often required at clubs</li>
+                            </ul>
+                            <div class="mt-4 text-center">
+                                <span class="price-indicator text-lg">$$$</span>
+                                <span class="text-xs text-gray-600 ml-2">$80-180</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Essential Gear Checklist -->
+            <div class="bg-gradient-to-r from-tennis-yellow/20 to-transparent rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-tennis-dark mb-6">Starter Kit Essentials</h3>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold mb-3">Must-Haves</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Tennis Racket</span>
+                                <span class="ml-auto text-sm text-gray-600">$50-150</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Tennis Shoes</span>
+                                <span class="ml-auto text-sm text-gray-600">$60-120</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Tennis Balls (can)</span>
+                                <span class="ml-auto text-sm text-gray-600">$3-5</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-green-600 mr-2">✓</span>
+                                <span>Water Bottle</span>
+                                <span class="ml-auto text-sm text-gray-600">$10-20</span>
+                            </li>
+                        </ul>
+                        <div class="mt-4 p-3 bg-white rounded-lg">
+                            <p class="text-sm font-semibold">Total Budget: $123-295</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-semibold mb-3">Nice-to-Haves</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-blue-600 mr-2">○</span>
+                                <span>Tennis Bag</span>
+                                <span class="ml-auto text-sm text-gray-600">$30-80</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-blue-600 mr-2">○</span>
+                                <span>Overgrips (3-pack)</span>
+                                <span class="ml-auto text-sm text-gray-600">$5-10</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-blue-600 mr-2">○</span>
+                                <span>Vibration Dampener</span>
+                                <span class="ml-auto text-sm text-gray-600">$3-10</span>
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-blue-600 mr-2">○</span>
+                                <span>Wristbands</span>
+                                <span class="ml-auto text-sm text-gray-600">$10-20</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipment Care Tips -->
+        <section class="bg-white rounded-2xl shadow-lg p-8">
+            <h3 class="text-2xl font-bold text-tennis-dark mb-6 text-center">
+                Equipment Care Tips 🛠️
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🎾</span>
+                    <p class="text-gray-700">Store rackets at room temperature - extreme heat/cold damages frames!</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🧵</span>
+                    <p class="text-gray-700">Restring every 3-6 months or after 40-50 hours of play.</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">👟</span>
+                    <p class="text-gray-700">Rotate between 2 pairs of shoes to extend their lifespan.</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🧽</span>
+                    <p class="text-gray-700">Clean grip regularly with damp cloth to maintain tackiness.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cursor Menu -->
+    <div class="cursor-menu">
+        <div class="cursor-option active" data-cursor="../assets/cursor/ball.png" title="Tennis Ball">
+            <img src="../assets/cursor/ball.png" alt="Tennis Ball">
+        </div>
+        <div class="cursor-option" data-cursor="../assets/cursor/racket.png" title="Tennis Racket">
+            <img src="../assets/cursor/racket.png" alt="Tennis Racket">
+        </div>
+        <div class="cursor-option" data-cursor="auto" title="Default Cursor">
+            <img src="../assets/cursor/default.png" alt="Default">
+        </div>
+    </div>
+
+    <script src="../js/cursor.js"></script>
+    <script>
+        // Racket part descriptions
+        const partDescriptions = {
+            head: "The head is where the strings are located. Larger heads (100+ sq in) provide more power and a bigger sweet spot, while smaller heads offer more control.",
+            throat: "The throat connects the head to the shaft. Some rackets have an open throat for added flexibility, while others have a closed throat for stability.",
+            shaft: "The shaft affects the racket's flexibility. Stiffer shafts provide more power and control, while flexible shafts offer more comfort.",
+            grip: "The grip is where you hold the racket. Proper grip size is crucial - too small causes over-gripping, too large reduces wrist action.",
+            butt: "The butt cap prevents the racket from slipping and often contains weight to adjust balance."
+        };
+        
+        function showPart(part) {
+            const descEl = document.getElementById('part-description');
+            descEl.innerHTML = `<p class="text-gray-700">${partDescriptions[part]}</p>`;
+            descEl.classList.add('bg-tennis-green/20');
+            setTimeout(() => {
+                descEl.classList.remove('bg-tennis-green/20');
+            }, 300);
+        }
+        
+        function bounceBall() {
+            const ball = document.getElementById('tennis-ball');
+            ball.classList.add('bounce-animation');
+            setTimeout(() => {
+                ball.classList.remove('bounce-animation');
+            }, 1000);
+        }
+    </script>
+</body>
+</html> 

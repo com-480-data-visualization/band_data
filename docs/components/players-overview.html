@@ -71,3 +71,46 @@
       </div>
     </div>
   </div>
+
+<style>
+    .timeline-btn {
+        @apply px-6 py-3 rounded-full font-medium text-gray-600 bg-white shadow-md transition-all duration-300 hover:shadow-lg;
+    }
+    
+    .timeline-btn.active {
+        @apply bg-gradient-to-r from-tennis-blue to-tennis-green text-white;
+    }
+    
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .animate-slide-up {
+        animation: slideInUp 0.6s ease forwards;
+    }
+</style>
+
+<script>
+    // Simple initialization for Overview page
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Overview page loaded');
+        
+        // Add any interactive features here for the overview section
+        const cards = document.querySelectorAll('.transform');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    });
+</script>

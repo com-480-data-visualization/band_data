@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Scoring Explained - Tennis for Dummies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tennis-green': '#7ED4AD',
+                        'tennis-blue': '#87CEEB',
+                        'tennis-accent-green': '#B8E6B8',
+                        'tennis-accent-blue': '#B0E0E6',
+                        'tennis-dark': '#2C3E50',
+                        'tennis-light': '#F7FFFE',
+                        'tennis-yellow': '#FFE066',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .score-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .score-card:hover {
+            transform: translateY(-10px) rotateY(10deg);
+        }
+        
+        .flip-card {
+            background-color: transparent;
+            width: 150px;
+            height: 200px;
+            perspective: 1000px;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+        
+        @keyframes scoreCount {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .score-animate {
+            animation: scoreCount 0.5s ease;
+        }
+    </style>
+</head>
+<body class="bg-tennis-light">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <a href="../index.html" class="text-xl font-bold gradient-text">Tennis for Dummies</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <nav class="text-sm breadcrumb">
+                        <a href="../index.html" class="text-tennis-dark hover:text-tennis-green">Home</a>
+                        <span class="mx-2 text-gray-400">/</span>
+                        <span class="text-tennis-green font-medium">Scoring</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-16 bg-gradient-to-br from-tennis-blue to-tennis-green overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold text-white text-center mb-6 drop-shadow-lg">
+                Scoring<br>
+                <span class="text-3xl md:text-4xl font-normal">Explained</span>
+            </h1>
+            <!-- Score Progression Visual
+            <div class="flex justify-center items-center mt-12 space-x-4 md:space-x-8">
+                <div class="score-card text-white text-center">
+                    <div class="text-4xl md:text-5xl font-bold">0</div>
+                    <div class="text-lg">Love</div>
+                </div>
+                <span class="text-white text-2xl">→</span>
+                <div class="score-card text-white text-center">
+                    <div class="text-4xl md:text-5xl font-bold">15</div>
+                </div>
+                <span class="text-white text-2xl">→</span>
+                <div class="score-card text-white text-center">
+                    <div class="text-4xl md:text-5xl font-bold">30</div>
+                </div>
+                <span class="text-white text-2xl">→</span>
+                <div class="score-card text-white text-center">
+                    <div class="text-4xl md:text-5xl font-bold">40</div>
+                </div>
+                <span class="text-white text-2xl">→</span>
+                <div class="score-card text-white text-center">
+                    <div class="text-4xl md:text-5xl font-bold">GAME</div>
+                </div>
+            </div>
+        </div> -->
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- Section 1: Basic Scoring -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Scoring in Tennis differs from traditional sports
+            </h2>
+            
+            <!-- Score Progression with Arrows -->
+            <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 mb-12">
+                <!-- Love Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-tennis-blue to-tennis-accent-blue text-white shadow-lg">
+                            <div class="text-5xl font-bold">0</div>
+                            <div class="text-2xl mt-2">Love</div>
+                        </div>
+                        <div class="flip-card-back text-black shadow-lg p-4">
+                            <p class="text-sm">From French "l'oeuf" meaning egg (zero shape)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Arrow 1 -->
+                <div class="flex items-center justify-center">
+                    <svg class="w-8 h-8 md:w-12 md:h-12 text-tennis-green animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                </div>
+                
+                <!-- 15 Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-tennis-green to-tennis-accent-green text-white shadow-lg">
+                            <div class="text-5xl font-bold">15</div>
+                            <div class="text-2xl mt-2">Fifteen</div>
+                        </div>
+                        <div class="flip-card-back text-white shadow-lg p-4">
+                            <p class="text-sm">First point won</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Arrow 2 -->
+                <div class="flex items-center justify-center">
+                    <svg class="w-8 h-8 md:w-12 md:h-12 text-tennis-yellow animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                </div>
+                
+                <!-- 30 Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-tennis-yellow to-yellow-400 text-tennis-dark shadow-lg">
+                            <div class="text-5xl font-bold">30</div>
+                            <div class="text-2xl mt-2">Thirty</div>
+                        </div>
+                        <div class="flip-card-back text-black shadow-lg p-4">
+                            <p class="text-sm">Second point won</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Arrow 3 -->
+                <div class="flex items-center justify-center">
+                    <svg class="w-8 h-8 md:w-12 md:h-12 text-red-400 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                </div>
+                
+                <!-- 40 Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-red-400 to-pink-400 text-white shadow-lg">
+                            <div class="text-5xl font-bold">40</div>
+                            <div class="text-2xl mt-2">Forty</div>
+                        </div>
+                        <div class="flip-card-back text-black shadow-lg p-4">
+                            <p class="text-sm">One point away from winning the game!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Arrow 4 - Final -->
+                <div class="flex items-center justify-center">
+                    <svg class="w-8 h-8 md:w-12 md:h-12 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
+                    </svg>
+                </div>
+                
+                <!-- Game Won Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-green-500 to-green-600 text-white shadow-lg border-4 border-yellow-400">
+                            <div class="text-4xl font-bold">GAME</div>
+                            <div class="text-xl mt-2">Won! 🎾</div>
+                        </div>
+                        <div class="flip-card-back text-black shadow-lg p-4">
+                            <p class="text-sm font-semibold">🏆 Victory!</p>
+                            <p class="text-xs mt-2">You've won this game. Now win 6 games to win the set!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Why These Numbers? -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-tennis-dark mb-4 flex items-center">
+                    <span class="text-3xl mr-3">🤔</span> Why 15, 30, 40?
+                </h3>
+                <p class="text-lg text-gray-700 mb-4">
+                    Tennis scoring comes from medieval France! The numbers may represent:
+                </p>
+                <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-start">
+                        <span class="text-tennis-green mr-2">•</span>
+                        <span><strong>Clock quarters:</strong> 15, 30, 45 (shortened to 40) minutes</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-tennis-green mr-2">•</span>
+                        <span><strong>Movement on court:</strong> Players moved 15 feet closer to net with each point</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-tennis-green mr-2">•</span>
+                        <span><strong>Betting stakes:</strong> Medieval French coins (15 sous increments)</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Games, Sets & Matches -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Games, Sets & Matches
+            </h2>
+            
+            <!-- Visual Hierarchy -->
+            <div class="bg-gradient-to-br from-tennis-blue/10 to-tennis-green/10 rounded-2xl p-8 mb-8">
+                <div class="max-w-3xl mx-auto">
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-gradient-to-r from-tennis-blue to-tennis-green text-white px-8 py-4 rounded-full text-2xl font-bold shadow-lg">
+                            MATCH
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center items-center mb-8">
+                        <div class="w-1 h-16 bg-gradient-to-b from-tennis-blue to-tennis-green"></div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-4 mb-8">
+                        <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                            <div class="text-xl font-bold text-tennis-dark">SET 1</div>
+                            <div class="text-gray-600">First to 6 games</div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                            <div class="text-xl font-bold text-tennis-dark">SET 2</div>
+                            <div class="text-gray-600">Win by 2 games</div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md text-center">
+                            <div class="text-xl font-bold text-tennis-dark">SET 3</div>
+                            <div class="text-gray-600">(If needed)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center items-center mb-8">
+                        <div class="w-32 h-1 bg-gradient-to-r from-tennis-blue to-tennis-green"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-6 gap-2">
+                        <div class="bg-white rounded-lg p-4 shadow text-center">
+                            <div class="font-bold text-tennis-green">Game 1</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow text-center">
+                            <div class="font-bold text-tennis-green">Game 2</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow text-center">
+                            <div class="font-bold text-tennis-green">Game 3</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow text-center">
+                            <div class="font-bold text-tennis-green">Game 4</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow text-center">
+                            <div class="font-bold text-tennis-green">Game 5</div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow text-center">
+                            <div class="font-bold text-tennis-green">Game 6</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Match Formats -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-tennis-blue">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-3">Best of 3 Sets</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Most common format</li>
+                        <li>• Used in regular ATP/WTA tours</li>
+                        <li>• Women's Grand Slams</li>
+                        <li>• Typical duration: 1.5-3 hours</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-tennis-green">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-3">Best of 5 Sets</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• Men's Grand Slams only</li>
+                        <li>• Davis Cup</li>
+                        <li>• More physically demanding</li>
+                        <li>• Can last 3-5+ hours</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Special Situations -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Special Situations
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Deuce -->
+                <div class="bg-gradient-to-br from-tennis-blue/20 to-transparent rounded-xl p-8">
+                    <h3 class="text-2xl font-bold text-tennis-dark mb-4">Deuce (40-40)</h3>
+                    <p class="text-gray-700 mb-4">
+                        When both players reach 40 points, it's called "Deuce". Now someone must win by 2 points!
+                    </p>
+                    <div class="bg-white rounded-lg p-4 shadow">
+                        <div class="font-semibold mb-2">The Deuce Cycle:</div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center">
+                                <span class="w-20 font-medium">Deuce</span>
+                                <span class="mx-2">→</span>
+                                <span>Player A wins point</span>
+                                <span class="mx-2">→</span>
+                                <span class="font-medium text-tennis-green">Ad-In (server)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-20 font-medium">Deuce</span>
+                                <span class="mx-2">→</span>
+                                <span>Player B wins point</span>
+                                <span class="mx-2">→</span>
+                                <span class="font-medium text-tennis-blue">Ad-Out (receiver)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tiebreak -->
+                <div class="bg-gradient-to-br from-tennis-green/20 to-transparent rounded-xl p-8">
+                    <h3 class="text-2xl font-bold text-tennis-dark mb-4">Tiebreak (6-6)</h3>
+                    <p class="text-gray-700 mb-4">
+                        When a set reaches 6-6, play a tiebreak to 7 points (win by 2).
+                    </p>
+                    <div class="bg-white rounded-lg p-4 shadow">
+                        <div class="font-semibold mb-2">Tiebreak Rules:</div>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• First to 7 points (must win by 2)</li>
+                            <li>• Serve alternates every 2 points</li>
+                            <li>• Switch sides every 6 points</li>
+                            <li>• Winner takes the set 7-6</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Interactive Practice -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Test Your Knowledge!
+            </h2>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
+                <div id="quiz-container">
+                    <h3 class="text-xl font-bold mb-4">Quick Scoring Quiz</h3>
+                    <div id="question" class="text-lg mb-6"></div>
+                    <div id="options" class="space-y-3"></div>
+                    <div id="result" class="mt-6 text-center hidden"></div>
+                    <button id="next-btn" class="btn btn-primary mt-6 hidden mx-auto">Next Question</button>
+                </div>
+                
+                <!-- Score Tracker -->
+                <div class="mt-8 pt-8 border-t">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Your Score:</span>
+                        <span id="score" class="text-2xl font-bold text-tennis-green">0/0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fun Facts -->
+        <section class="bg-gradient-to-r from-tennis-yellow/20 to-transparent rounded-2xl p-8 mb-16">
+            <h3 class="text-2xl font-bold text-tennis-dark mb-6 text-center">
+                Did You Know? 🎾
+            </h3>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">📢</span>
+                    <p class="text-gray-700">The umpire calls the server's score first, so "30-15" means the server has 30 points.</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🏆</span>
+                    <p class="text-gray-700">The longest match ever lasted 11 hours and 5 minutes over 3 days!</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">🎯</span>
+                    <p class="text-gray-700">"Bagel" means winning a set 6-0 (the zero looks like a bagel).</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <span class="text-2xl">💫</span>
+                    <p class="text-gray-700">A "Golden Set" is winning all 24 points in a set - extremely rare!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cursor Menu -->
+    <div class="cursor-menu">
+        <div class="cursor-option active" data-cursor="../assets/cursor/ball.png" title="Tennis Ball">
+            <img src="../assets/cursor/ball.png" alt="Tennis Ball">
+        </div>
+        <div class="cursor-option" data-cursor="../assets/cursor/racket.png" title="Tennis Racket">
+            <img src="../assets/cursor/racket.png" alt="Tennis Racket">
+        </div>
+        <div class="cursor-option" data-cursor="auto" title="Default Cursor">
+            <img src="../assets/cursor/default.png" alt="Default">
+        </div>
+    </div>
+
+    <script src="../js/cursor.js"></script>
+    <script>
+        // Quiz functionality
+        const quizData = [
+            {
+                question: "What does 'Love' mean in tennis?",
+                options: ["15 points", "0 points", "Winning the game", "40 points"],
+                correct: 1
+            },
+            {
+                question: "If the score is 40-30, how many points does the server need to win the game?",
+                options: ["1 point", "2 points", "3 points", "Already won"],
+                correct: 0
+            },
+            {
+                question: "What happens when both players reach 40 points?",
+                options: ["Game over", "Tiebreak", "Deuce", "New set"],
+                correct: 2
+            },
+            {
+                question: "How many games do you need to win a set?",
+                options: ["4", "5", "6", "7"],
+                correct: 2
+            },
+            {
+                question: "In a tiebreak, how many points do you need to win?",
+                options: ["5", "6", "7", "8"],
+                correct: 2
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        function loadQuestion() {
+            answered = false;
+            const questionEl = document.getElementById('question');
+            const optionsEl = document.getElementById('options');
+            const resultEl = document.getElementById('result');
+            const nextBtn = document.getElementById('next-btn');
+            
+            resultEl.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+            
+            const q = quizData[currentQuestion];
+            questionEl.textContent = q.question;
+            
+            optionsEl.innerHTML = '';
+            q.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.className = 'w-full p-4 text-left bg-gray-100 hover:bg-tennis-green/20 rounded-lg transition-colors';
+                button.textContent = option;
+                button.onclick = () => checkAnswer(index);
+                optionsEl.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selected) {
+            if (answered) return;
+            answered = true;
+            
+            const correct = quizData[currentQuestion].correct;
+            const buttons = document.querySelectorAll('#options button');
+            const resultEl = document.getElementById('result');
+            const nextBtn = document.getElementById('next-btn');
+            
+            buttons[selected].classList.remove('bg-gray-100');
+            
+            if (selected === correct) {
+                score++;
+                buttons[selected].classList.add('bg-green-500', 'text-white');
+                resultEl.innerHTML = '<span class="text-green-600 font-bold">Correct! 🎉</span>';
+            } else {
+                buttons[selected].classList.add('bg-red-500', 'text-white');
+                buttons[correct].classList.add('bg-green-500', 'text-white');
+                resultEl.innerHTML = '<span class="text-red-600 font-bold">Not quite! The correct answer is highlighted.</span>';
+            }
+            
+            resultEl.classList.remove('hidden');
+            
+            if (currentQuestion < quizData.length - 1) {
+                nextBtn.classList.remove('hidden');
+            } else {
+                resultEl.innerHTML += `<br><span class="text-xl font-bold mt-4">Final Score: ${score}/${quizData.length}</span>`;
+            }
+            
+            updateScore();
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            loadQuestion();
+        }
+
+        function updateScore() {
+            document.getElementById('score').textContent = `${score}/${currentQuestion + 1}`;
+        }
+
+        document.getElementById('next-btn').onclick = nextQuestion;
+        
+        // Initialize quiz
+        loadQuestion();
+    </script>
+</body>
+</html> 

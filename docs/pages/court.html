@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Court - Tennis for Dummies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        /* Tailwind Custom Config */
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tennis-green': '#7ED4AD',
+                        'tennis-blue': '#87CEEB',
+                        'tennis-accent-green': '#B8E6B8',
+                        'tennis-accent-blue': '#B0E0E6',
+                        'tennis-dark': '#2C3E50',
+                        'tennis-light': '#F7FFFE',
+                        'tennis-yellow': '#FFE066',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Court styling */
+        .tennis-court {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background: #7ED4AD;
+            border: 4px solid white;
+            aspect-ratio: 78/36;
+        }
+        
+        /* Court lines */
+        .court-line {
+            position: absolute;
+            background: white;
+        }
+        
+        /* Hoverable sections */
+        .court-section {
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .court-section:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Tooltip styling */
+        .tooltip {
+            position: absolute;
+            background: white;
+            padding: 12px 16px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            max-width: 250px;
+            font-size: 14px;
+            color: #2C3E50;
+        }
+        
+        .tooltip.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tooltip h4 {
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #7ED4AD;
+        }
+        
+        /* Net styling */
+        .net {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #333;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        
+        .net::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10px;
+            right: -10px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 4px,
+                #666 4px,
+                #666 6px
+            );
+        }
+    </style>
+</head>
+<body class="bg-tennis-light">
+    <!-- Header -->
+    <header class="w-full py-4 bg-gradient-to-r from-tennis-blue to-tennis-green text-white shadow-lg">
+        <div class="container mx-auto px-4 flex items-center justify-between">
+            <button onclick="window.location.href='../index.html'" class="group flex items-center space-x-2 text-white hover:text-tennis-yellow transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span class="font-medium">Back to Home</span>
+            </button>
+            <h1 class="text-2xl md:text-3xl font-bold">Tennis Court Layout</h1>
+            <div class="w-24"></div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-tennis-dark mb-4">Understanding the Tennis Court</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                Hover over different sections of the court below to learn about each area and its purpose in the game.
+            </p>
+        </div>
+        
+        <!-- Interactive Tennis Court -->
+        <div class="tennis-court">
+            <!-- Net -->
+            <div class="net"></div>
+            
+            <!-- Court Lines -->
+            <!-- Baseline -->
+            <div class="court-line" style="bottom: 0; left: 0; right: 0; height: 3px;"></div>
+            <div class="court-line" style="top: 0; left: 0; right: 0; height: 3px;"></div>
+            
+            <!-- Service lines -->
+            <div class="court-line" style="top: 21.5%; left: 0; right: 0; height: 2px;"></div>
+            <div class="court-line" style="bottom: 21.5%; left: 0; right: 0; height: 2px;"></div>
+            
+            <!-- Singles sidelines -->
+            <div class="court-line" style="top: 0; bottom: 0; left: 10.5%; width: 2px;"></div>
+            <div class="court-line" style="top: 0; bottom: 0; right: 10.5%; width: 2px;"></div>
+            
+            <!-- Center service line -->
+            <div class="court-line" style="top: 21.5%; bottom: 21.5%; left: 50%; width: 2px; transform: translateX(-50%);"></div>
+            
+            <!-- Hoverable Sections -->
+            <!-- Left Service Box -->
+            <div class="court-section" style="top: 21.5%; left: 10.5%; width: 39.5%; height: 57%;" 
+                 data-title="Service Box (Deuce Court)" 
+                 data-description="Where serves must land when serving to the deuce court (right side when facing the net). Serves must land within this box to be valid.">
+            </div>
+            
+            <!-- Right Service Box -->
+            <div class="court-section" style="top: 21.5%; right: 10.5%; width: 39.5%; height: 57%;" 
+                 data-title="Service Box (Ad Court)" 
+                 data-description="Where serves must land when serving to the ad court (left side when facing the net). Players alternate between deuce and ad courts when serving.">
+            </div>
+            
+            <!-- Left Baseline Area -->
+            <div class="court-section" style="bottom: 0; left: 10.5%; width: 39.5%; height: 21.5%;" 
+                 data-title="Baseline Area" 
+                 data-description="The back area of the court where players often position themselves for baseline rallies. The baseline is the back boundary line.">
+            </div>
+            
+            <!-- Right Baseline Area -->
+            <div class="court-section" style="bottom: 0; right: 10.5%; width: 39.5%; height: 21.5%;" 
+                 data-title="Baseline Area" 
+                 data-description="The back area of the court where players often position themselves for baseline rallies. The baseline is the back boundary line.">
+            </div>
+            
+            <!-- Left Alley -->
+            <div class="court-section" style="top: 0; left: 0; width: 10.5%; height: 100%;" 
+                 data-title="Doubles Alley" 
+                 data-description="This area is only in play during doubles matches. In singles, any ball landing here is out.">
+            </div>
+            
+            <!-- Right Alley -->
+            <div class="court-section" style="top: 0; right: 0; width: 10.5%; height: 100%;" 
+                 data-title="Doubles Alley" 
+                 data-description="This area is only in play during doubles matches. In singles, any ball landing here is out.">
+            </div>
+            
+            <!-- No Man's Land Left -->
+            <div class="court-section" style="top: 0; left: 10.5%; width: 39.5%; height: 21.5%;" 
+                 data-title="No Man's Land" 
+                 data-description="The area between the baseline and service line. Players try to avoid staying here as it's a vulnerable position.">
+            </div>
+            
+            <!-- No Man's Land Right -->
+            <div class="court-section" style="top: 0; right: 10.5%; width: 39.5%; height: 21.5%;" 
+                 data-title="No Man's Land" 
+                 data-description="The area between the baseline and service line. Players try to avoid staying here as it's a vulnerable position.">
+            </div>
+        </div>
+        
+        <!-- Tooltip element -->
+        <div class="tooltip" id="tooltip">
+            <h4 id="tooltip-title"></h4>
+            <p id="tooltip-description"></p>
+        </div>
+        
+        <!-- Additional Information -->
+        <div class="mt-12 grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-tennis-dark mb-3">Court Dimensions</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li><strong>Singles:</strong> 78 ft × 27 ft</li>
+                    <li><strong>Doubles:</strong> 78 ft × 36 ft</li>
+                    <li><strong>Net Height:</strong> 3 ft at center</li>
+                    <li><strong>Service Box:</strong> 21 ft × 13.5 ft</li>
+                </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-tennis-dark mb-3">Court Surfaces</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li><strong>Hard Court:</strong> Most common, medium speed</li>
+                    <li><strong>Clay Court:</strong> Slow, high bounce</li>
+                    <li><strong>Grass Court:</strong> Fast, low bounce</li>
+                    <li><strong>Carpet:</strong> Indoor, various speeds</li>
+                </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-xl font-bold text-tennis-dark mb-3">Key Rules</h3>
+                <ul class="space-y-2 text-gray-600">
+                    <li>• Ball must land inside lines</li>
+                    <li>• Serves must go diagonally</li>
+                    <li>• Two serve attempts allowed</li>
+                    <li>• Ball can only bounce once</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cursor selector -->
+    <div class="cursor-menu">
+        <div class="cursor-option active" data-cursor="../assets/cursor/ball.png" title="Tennis Ball">
+            <img src="../assets/cursor/ball.png" alt="Tennis Ball">
+        </div>
+        <div class="cursor-option" data-cursor="../assets/cursor/racket.png" title="Tennis Racket">
+            <img src="../assets/cursor/racket.png" alt="Tennis Racket">
+        </div>
+        <div class="cursor-option" data-cursor="auto" title="Default Cursor">
+            <img src="../assets/cursor/default.png" alt="Default">
+        </div>
+    </div>
+    
+    <script>
+        // Cursor functionality
+        const cursorOptions = document.querySelectorAll('.cursor-option');
+        
+        cursorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const cursorPath = this.getAttribute('data-cursor');
+                
+                // Remove active class from all options
+                cursorOptions.forEach(opt => opt.classList.remove('active'));
+                
+                // Add active class to clicked option
+                this.classList.add('active');
+                
+                // Set cursor
+                if (cursorPath === 'auto') {
+                    document.body.style.cursor = 'auto';
+                } else {
+                    document.body.style.cursor = `url(${cursorPath}), auto`;
+                }
+                
+                // Save preference
+                localStorage.setItem('selectedCursor', cursorPath);
+            });
+        });
+        
+        // Load saved cursor preference
+        const savedCursor = localStorage.getItem('selectedCursor');
+        if (savedCursor) {
+            if (savedCursor === 'auto') {
+                document.body.style.cursor = 'auto';
+            } else {
+                document.body.style.cursor = `url(${savedCursor}), auto`;
+            }
+            
+            // Update active button
+            cursorOptions.forEach(opt => {
+                if (opt.getAttribute('data-cursor') === savedCursor) {
+                    opt.classList.add('active');
+                } else {
+                    opt.classList.remove('active');
+                }
+            });
+        }
+        
+        // Tooltip functionality
+        const tooltip = document.getElementById('tooltip');
+        const tooltipTitle = document.getElementById('tooltip-title');
+        const tooltipDescription = document.getElementById('tooltip-description');
+        const courtSections = document.querySelectorAll('.court-section');
+        
+        courtSections.forEach(section => {
+            section.addEventListener('mouseenter', (e) => {
+                const title = e.target.getAttribute('data-title');
+                const description = e.target.getAttribute('data-description');
+                
+                tooltipTitle.textContent = title;
+                tooltipDescription.textContent = description;
+                
+                // Position tooltip near mouse
+                const rect = e.target.getBoundingClientRect();
+                const tooltipRect = tooltip.getBoundingClientRect();
+                
+                let left = e.pageX + 10;
+                let top = e.pageY - tooltipRect.height - 10;
+                
+                // Keep tooltip within viewport
+                if (left + tooltipRect.width > window.innerWidth) {
+                    left = e.pageX - tooltipRect.width - 10;
+                }
+                if (top < window.scrollY) {
+                    top = e.pageY + 10;
+                }
+                
+                tooltip.style.left = left + 'px';
+                tooltip.style.top = top + 'px';
+                tooltip.classList.add('show');
+            });
+            
+            section.addEventListener('mouseleave', () => {
+                tooltip.classList.remove('show');
+            });
+            
+            section.addEventListener('mousemove', (e) => {
+                const tooltipRect = tooltip.getBoundingClientRect();
+                let left = e.pageX + 10;
+                let top = e.pageY - tooltipRect.height - 10;
+                
+                // Keep tooltip within viewport
+                if (left + tooltipRect.width > window.innerWidth) {
+                    left = e.pageX - tooltipRect.width - 10;
+                }
+                if (top < window.scrollY) {
+                    top = e.pageY + 10;
+                }
+                
+                tooltip.style.left = left + 'px';
+                tooltip.style.top = top + 'px';
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('components/landing.html', 'landing-section');
     loadComponent('components/about.html', 'about-section');
     loadComponent('components/players-overview.html', 'players-overview');
-    //loadComponent('components/find-your-player.html', 'player-finder-section');
-    //loadComponent('components/player-profile.html', 'player-profile-section');
     initFindYourPlayerComponent().then()
     
     // Setup cursor selection
@@ -59,10 +57,6 @@ function loadComponent(url, targetId) {
                     initLandingAnimations();
                 }
 
-                // Initialize player finder dropdowns if that component is loaded
-                /*if (url.includes('find-your-player.html')) {
-                    initFindYourPlayerComponent();
-                }*/
                 if (url.includes('players-overview.html')) {
                     new gridjs.Grid({
                         columns: ["Rank", "Name"],
@@ -98,11 +92,11 @@ function initLandingAnimations() {
     
     setTimeout(function() { 
         document.getElementById('for').classList.add('show'); 
-    }, 1500);
+    }, 1000);
     
     setTimeout(function() { 
         document.getElementById('dummies').classList.add('show'); 
-    }, 2500);
+    }, 1500);
 }
 
 async function initFindYourPlayerComponent() {

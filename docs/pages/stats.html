@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tennis Statistics Guide - Tennis for Dummies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tennis-green': '#7ED4AD',
+                        'tennis-blue': '#87CEEB',
+                        'tennis-accent-green': '#B8E6B8',
+                        'tennis-accent-blue': '#B0E0E6',
+                        'tennis-dark': '#2C3E50',
+                        'tennis-light': '#F7FFFE',
+                        'tennis-yellow': '#FFE066',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .stat-counter {
+            animation: countUp 0.5s ease-out;
+        }
+        
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .progress-bar {
+            transition: width 1s ease-out;
+        }
+        
+        .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .tooltip-trigger:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-tennis-light">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <a href="../index.html" class="text-xl font-bold gradient-text">Tennis for Dummies</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <nav class="text-sm breadcrumb">
+                        <a href="../index.html" class="text-tennis-dark hover:text-tennis-green">Home</a>
+                        <span class="mx-2 text-gray-400">/</span>
+                        <span class="text-tennis-green font-medium">Stats</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-16 bg-gradient-to-br from-tennis-blue to-tennis-green overflow-hidden">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold text-white text-center mb-6 drop-shadow-lg">
+                Numbers That Actually Matter
+            </h1>
+            <p class="text-xl text-white/90 text-center max-w-3xl mx-auto">
+                Understanding tennis statistics - from aces to unforced errors!
+            </p>
+            
+            <!-- Live Counter Animation -->
+            <div class="mt-12 flex justify-center items-center space-x-8">
+                <div class="text-center text-white">
+                    <div class="text-4xl font-bold stat-counter" id="ace-counter">0</div>
+                    <div class="text-sm">Aces</div>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-4xl font-bold stat-counter" id="winner-counter">0</div>
+                    <div class="text-sm">Winners</div>
+                </div>
+                <div class="text-center text-white">
+                    <div class="text-4xl font-bold stat-counter" id="rally-counter">0</div>
+                    <div class="text-sm">Rally Shots</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <!-- Section 1: Understanding Tennis Stats -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Key Tennis Statistics Explained
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Ace -->
+                <div class="stat-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-tennis-green rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">⚡</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tennis-dark">Ace</h3>
+                    </div>
+                    <p class="text-gray-700 mb-3">A serve that the opponent cannot touch with their racket.</p>
+                    <div class="p-3 bg-green-50 rounded-lg">
+                        <p class="text-sm text-gray-600">
+                            <strong>Good:</strong> 5-10% of serves<br>
+                            <strong>Pro level:</strong> 10-20% of serves
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Winner -->
+                <div class="stat-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-tennis-blue rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">🎯</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tennis-dark">Winner</h3>
+                    </div>
+                    <p class="text-gray-700 mb-3">A shot that the opponent cannot reach before it bounces twice.</p>
+                    <div class="p-3 bg-blue-50 rounded-lg">
+                        <p class="text-sm text-gray-600">
+                            <strong>Indicates:</strong> Aggressive play<br>
+                            <strong>Balance:</strong> Winners > UE = Good
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Unforced Error -->
+                <div class="stat-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-400 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">❌</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tennis-dark">Unforced Error</h3>
+                    </div>
+                    <p class="text-gray-700 mb-3">Missing a shot when not under pressure from opponent.</p>
+                    <div class="p-3 bg-red-50 rounded-lg">
+                        <p class="text-sm text-gray-600">
+                            <strong>Target:</strong> < 20 per set<br>
+                            <strong>Focus:</strong> Consistency
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- First Serve % -->
+                <div class="stat-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-tennis-yellow rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">1️⃣</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tennis-dark">First Serve %</h3>
+                    </div>
+                    <p class="text-gray-700 mb-3">Percentage of first serves that land in the service box.</p>
+                    <div class="p-3 bg-yellow-50 rounded-lg">
+                        <p class="text-sm text-gray-600">
+                            <strong>Good:</strong> 60-65%<br>
+                            <strong>Pro level:</strong> 65-70%
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Break Points -->
+                <div class="stat-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-400 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">🔨</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tennis-dark">Break Points</h3>
+                    </div>
+                    <p class="text-gray-700 mb-3">Opportunities to win opponent's service game.</p>
+                    <div class="p-3 bg-purple-50 rounded-lg">
+                        <p class="text-sm text-gray-600">
+                            <strong>Convert:</strong> 40%+ is good<br>
+                            <strong>Key stat:</strong> Match momentum
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Rally Length -->
+                <div class="stat-card bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-400 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-2xl">🔄</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-tennis-dark">Rally Length</h3>
+                    </div>
+                    <p class="text-gray-700 mb-3">Number of shots in a point including serve.</p>
+                    <div class="p-3 bg-orange-50 rounded-lg">
+                        <p class="text-sm text-gray-600">
+                            <strong>Hard court:</strong> 4-6 shots<br>
+                            <strong>Clay court:</strong> 7-9 shots
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Reading Match Statistics -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                How to Read Match Statistics
+            </h2>
+            
+            <!-- Sample Match Stats -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto">
+                <h3 class="text-xl font-bold text-center mb-6">Sample Match Statistics</h3>
+                
+                <div class="grid grid-cols-3 gap-4 text-center mb-8">
+                    <div>
+                        <p class="font-bold text-tennis-dark">Player A</p>
+                        <p class="text-2xl font-bold">6-4, 7-6</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Final Score</p>
+                    </div>
+                    <div>
+                        <p class="font-bold text-tennis-dark">Player B</p>
+                        <p class="text-2xl font-bold">4-6, 6-7</p>
+                    </div>
+                </div>
+                
+                <!-- Stat Comparison -->
+                <div class="space-y-4">
+                    <!-- Aces -->
+                    <div class="tooltip-trigger relative">
+                        <div class="flex items-center justify-between">
+                            <div class="w-1/3 text-right">
+                                <span class="font-bold text-lg">12</span>
+                            </div>
+                            <div class="w-1/3 text-center">
+                                <span class="text-sm text-gray-600">Aces</span>
+                            </div>
+                            <div class="w-1/3 text-left">
+                                <span class="font-bold text-lg">8</span>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full mt-2 flex">
+                            <div class="bg-tennis-green rounded-l-full" style="width: 60%"></div>
+                            <div class="bg-tennis-blue rounded-r-full" style="width: 40%"></div>
+                        </div>
+                        <div class="tooltip absolute left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs p-2 rounded mt-2">
+                            Player A dominated with serve power
+                        </div>
+                    </div>
+                    
+                    <!-- Winners -->
+                    <div class="tooltip-trigger relative">
+                        <div class="flex items-center justify-between">
+                            <div class="w-1/3 text-right">
+                                <span class="font-bold text-lg">28</span>
+                            </div>
+                            <div class="w-1/3 text-center">
+                                <span class="text-sm text-gray-600">Winners</span>
+                            </div>
+                            <div class="w-1/3 text-left">
+                                <span class="font-bold text-lg">22</span>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full mt-2 flex">
+                            <div class="bg-tennis-green rounded-l-full" style="width: 56%"></div>
+                            <div class="bg-tennis-blue rounded-r-full" style="width: 44%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Unforced Errors -->
+                    <div class="tooltip-trigger relative">
+                        <div class="flex items-center justify-between">
+                            <div class="w-1/3 text-right">
+                                <span class="font-bold text-lg">15</span>
+                            </div>
+                            <div class="w-1/3 text-center">
+                                <span class="text-sm text-gray-600">Unforced Errors</span>
+                            </div>
+                            <div class="w-1/3 text-left">
+                                <span class="font-bold text-lg">24</span>
+                            </div>
+                        </div>
+                        <div class="h-2 bg-gray-200 rounded-full mt-2 flex">
+                            <div class="bg-red-400 rounded-l-full" style="width: 38%"></div>
+                            <div class="bg-red-500 rounded-r-full" style="width: 62%"></div>
+                        </div>
+                        <div class="tooltip absolute left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs p-2 rounded mt-2">
+                            Player B made more errors under pressure
+                        </div>
+                    </div>
+                    
+                    <!-- First Serve % -->
+                    <div class="flex items-center justify-between">
+                        <div class="w-1/3 text-right">
+                            <span class="font-bold text-lg">68%</span>
+                        </div>
+                        <div class="w-1/3 text-center">
+                            <span class="text-sm text-gray-600">First Serve %</span>
+                        </div>
+                        <div class="w-1/3 text-left">
+                            <span class="font-bold text-lg">61%</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Break Points Won -->
+                    <div class="flex items-center justify-between">
+                        <div class="w-1/3 text-right">
+                            <span class="font-bold text-lg">4/7</span>
+                        </div>
+                        <div class="w-1/3 text-center">
+                            <span class="text-sm text-gray-600">Break Points Won</span>
+                        </div>
+                        <div class="w-1/3 text-left">
+                            <span class="font-bold text-lg">2/5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-tennis-accent-blue/20 rounded-lg">
+                    <p class="text-sm text-gray-700">
+                        <strong>Key Insight:</strong> Player A won by serving better (more aces, higher %), playing cleaner tennis (fewer errors), and converting more break point opportunities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Surface-Specific Stats -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Stats by Surface Type
+            </h2>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <!-- Chart Container -->
+                <div class="mb-8">
+                    <canvas id="surfaceChart" width="400" height="200"></canvas>
+                </div>
+                
+                <!-- Surface Insights -->
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-blue-500 flex items-center justify-center">
+                            <span class="text-2xl text-white">🏃</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Hard Courts</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Balanced stats</li>
+                            <li>Medium rally length</li>
+                            <li>Reward all-around play</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-orange-500 flex items-center justify-center">
+                            <span class="text-2xl text-white">🏃</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Clay Courts</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Fewer aces</li>
+                            <li>Longer rallies (7-9 shots)</li>
+                            <li>Physical endurance key</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-green-500 flex items-center justify-center">
+                            <span class="text-2xl text-white">🏃</span>
+                        </div>
+                        <h4 class="font-bold text-lg mb-2">Grass Courts</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>Most aces</li>
+                            <li>Short rallies (2-4 shots)</li>
+                            <li>Serve dominates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Historical Records -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Tennis Records & Milestones
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service Records -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-4">Service Records</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-tennis-green pl-4">
+                            <p class="font-semibold">Fastest Serve Ever</p>
+                            <p class="text-2xl font-bold text-tennis-green">163.7 mph</p>
+                            <p class="text-sm text-gray-600">Sam Groth (2012)</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-tennis-blue pl-4">
+                            <p class="font-semibold">Most Aces in a Match</p>
+                            <p class="text-2xl font-bold text-tennis-blue">113</p>
+                            <p class="text-sm text-gray-600">John Isner vs Nicolas Mahut (2010)</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-tennis-yellow pl-4">
+                            <p class="font-semibold">Most Aces in a Season</p>
+                            <p class="text-2xl font-bold text-yellow-600">1,477</p>
+                            <p class="text-sm text-gray-600">Goran Ivanisevic (1996)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Match Records -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-tennis-dark mb-4">Match Records</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="border-l-4 border-red-400 pl-4">
+                            <p class="font-semibold">Longest Match Ever</p>
+                            <p class="text-2xl font-bold text-red-500">11h 5min</p>
+                            <p class="text-sm text-gray-600">Isner vs Mahut, Wimbledon 2010</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-purple-400 pl-4">
+                            <p class="font-semibold">Longest Rally (shots)</p>
+                            <p class="text-2xl font-bold text-purple-500">643</p>
+                            <p class="text-sm text-gray-600">Richmond 1984 (29 minutes!)</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-orange-400 pl-4">
+                            <p class="font-semibold">Most Games in a Set</p>
+                            <p class="text-2xl font-bold text-orange-500">70-68</p>
+                            <p class="text-sm text-gray-600">Isner vs Mahut, 5th set</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Track Your Stats -->
+        <section class="mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
+                Track Your Own Stats
+            </h2>
+            
+            <div class="bg-gradient-to-r from-tennis-yellow/20 to-transparent rounded-2xl p-8">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Simple Stat Tracker -->
+                    <div>
+                        <h3 class="text-xl font-bold text-tennis-dark mb-4">Basic Match Tracker</h3>
+                        <div class="bg-white rounded-lg p-4 shadow">
+                            <form class="space-y-3">
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="text-sm text-gray-600">Aces</label>
+                                        <input type="number" class="w-full p-2 border rounded" placeholder="0" min="0">
+                                    </div>
+                                    <div>
+                                        <label class="text-sm text-gray-600">Double Faults</label>
+                                        <input type="number" class="w-full p-2 border rounded" placeholder="0" min="0">
+                                    </div>
+                                    <div>
+                                        <label class="text-sm text-gray-600">Winners</label>
+                                        <input type="number" class="w-full p-2 border rounded" placeholder="0" min="0">
+                                    </div>
+                                    <div>
+                                        <label class="text-sm text-gray-600">Unforced Errors</label>
+                                        <input type="number" class="w-full p-2 border rounded" placeholder="0" min="0">
+                                    </div>
+                                </div>
+                                <button type="button" class="w-full bg-tennis-green text-white py-2 rounded-lg hover:bg-tennis-green/80 transition">
+                                    Calculate Performance
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Recommended Apps -->
+                    <div>
+                        <h3 class="text-xl font-bold text-tennis-dark mb-4">Recommended Tracking Apps</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-tennis-green mr-2">📱</span>
+                                <div>
+                                    <p class="font-semibold">TennisBot</p>
+                                    <p class="text-sm text-gray-600">AI-powered video analysis</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-tennis-blue mr-2">📊</span>
+                                <div>
+                                    <p class="font-semibold">My Tennis Stats</p>
+                                    <p class="text-sm text-gray-600">Simple match tracking</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-tennis-yellow mr-2">🎾</span>
+                                <div>
+                                    <p class="font-semibold">SwingVision</p>
+                                    <p class="text-sm text-gray-600">Auto line-calling + stats</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-4 p-3 bg-white rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <strong>Pro Tip:</strong> Start simple - track just winners and errors to calculate your aggression index!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stat of the Day -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 text-center">
+            <h3 class="text-2xl font-bold text-tennis-dark mb-4">
+                Stat of the Day 📊
+            </h3>
+            <div class="max-w-2xl mx-auto">
+                <p class="text-4xl font-bold text-tennis-green mb-2">54</p>
+                <p class="text-lg text-gray-700 mb-2">
+                    The longest game in tennis history lasted 54 deuces!
+                </p>
+                <p class="text-sm text-gray-600">
+                    Keith Glass vs Anthony Fawcett (1975) - The game alone took 37 minutes!
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cursor Menu -->
+    <div class="cursor-menu">
+        <div class="cursor-option active" data-cursor="../assets/cursor/ball.png" title="Tennis Ball">
+            <img src="../assets/cursor/ball.png" alt="Tennis Ball">
+        </div>
+        <div class="cursor-option" data-cursor="../assets/cursor/racket.png" title="Tennis Racket">
+            <img src="../assets/cursor/racket.png" alt="Tennis Racket">
+        </div>
+        <div class="cursor-option" data-cursor="auto" title="Default Cursor">
+            <img src="../assets/cursor/default.png" alt="Default">
+        </div>
+    </div>
+
+    <script src="../js/cursor.js"></script>
+    <script>
+        // Counter Animation
+        function animateCounter(id, target, duration = 2000) {
+            const element = document.getElementById(id);
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+        
+        // Start counters when page loads
+        window.addEventListener('load', () => {
+            animateCounter('ace-counter', 147);
+            animateCounter('winner-counter', 523);
+            animateCounter('rally-counter', 1847);
+        });
+        
+        // Surface Stats Chart
+        const ctx = document.getElementById('surfaceChart').getContext('2d');
+        const surfaceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Aces per Match', 'Rally Length', 'Break Points %', 'Avg Match Duration'],
+                datasets: [
+                    {
+                        label: 'Hard Court',
+                        data: [12, 5, 35, 120],
+                        backgroundColor: 'rgba(135, 206, 235, 0.8)',
+                        borderColor: 'rgba(135, 206, 235, 1)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Clay Court',
+                        data: [6, 8, 40, 180],
+                        backgroundColor: 'rgba(255, 165, 0, 0.8)',
+                        borderColor: 'rgba(255, 165, 0, 1)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Grass Court',
+                        data: [18, 3, 30, 90],
+                        backgroundColor: 'rgba(126, 212, 173, 0.8)',
+                        borderColor: 'rgba(126, 212, 173, 1)',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Tennis Statistics by Surface Type'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
