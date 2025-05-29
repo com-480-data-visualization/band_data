@@ -20,6 +20,7 @@ const atp_rankings = (
     periods.map(period => csv(`../../tennis_atp/atp_rankings_${period}.csv`))
   )
 ).flat();
+const atp_rankings_ids = count_ids_in_ranking(atp_rankings)
 
 // Load WTA data
 console.log("Load WTA data")
@@ -34,6 +35,15 @@ const wta_rankings = (
     periods.map(period => csv(`../../tennis_wta/wta_rankings_${period}.csv`))
   )
 ).flat();
+const wta_rankings_ids = count_ids_in_ranking(wta_rankings)
+
+console.log("Load player stats (Charlotte)")
+const atp_play_stats_csv = await csv('../docs/data/atp_player_stats.csv')
+const wta_play_stats_csv = await csv('../docs/data/wta_player_stats.csv')
+
+console.log("Filter and group stats")
+const atp_play_stats = group_stats(atp_play_stats_csv, atp_rankings_ids)
+const wta_play_stats = group_stats(wta_play_stats_csv, wta_rankings_ids)
 
 // Generate stats
 console.log("Generate stats")
@@ -43,13 +53,46 @@ const wta_stats = await get_stats_per_date(wta_rankings, wta_players)
 // Write stats
 console.log("Write stats")
 try {
-  await fsExtra.writeJson("../docs/data/overview_atp_stats.json", atp_stats, { spaces: 2 });
-  await fsExtra.writeJson("../docs/data/overview_wta_stats.json", wta_stats, { spaces: 2 });
-  console.log('JSON file written successfully!');
+    await fsExtra.writeJson("../docs/data/overview_atp_stats.json", atp_stats, { spaces: 2 });
+    await fsExtra.writeJson("../docs/data/overview_wta_stats.json", wta_stats, { spaces: 2 });
+    await fsExtra.writeJson("../docs/data/atp_player_stats.json", atp_play_stats, { spaces: 2 });
+    await fsExtra.writeJson("../docs/data/wta_player_stats.json", wta_play_stats, { spaces: 2 });
+    console.log('JSON file written successfully!');
 } catch (err) {
-  console.error('Error writing JSON file:', err);
+    console.error('Error writing JSON file:', err);
 }
 
+
+function group_stats(stats_csv, ids) {
+    const stats_dict = {
+        "Hard": {},
+        "Clay": {},
+        "Grass": {},
+        "Carpet": {},
+    }
+    for (const stat of stats_csv) {
+        if (ids.has(stat.player_id)) {
+            stats_dict[stat.surface][stat.player_id] = {
+                "id": stat.player_id,
+                "Ace%": stat.ace_pct,
+                "First In%": stat["1stIn_pct"],
+                "First In Win%": stat["1stWon_pct"],
+                "Second In Win%": stat["2ndWon_pct"],
+                "Double Fault%": stat.df_pct,
+                "Break Point Saved%": stat.bpSaved_pct
+            }
+        }
+    }
+    return stats_dict
+}
+
+function count_ids_in_ranking(ranking) {
+    const ids = new Set()
+    for (const r of ranking) {
+        ids.add(r.player)
+    }
+    return ids
+}
 
 async function get_stats_per_date(rankings, players) {
 
@@ -102,6 +145,7 @@ async function get_stats_per_date(rankings, players) {
         }
 
         const out_players = top100.map(record => players[record.player]).map((p,i) => ([i+1, `${p.name_first} ${p.name_last}`, p.ioc]))
+        const player_ids = top100.map(record => record.player)
         const avgHeight = countHeight ? sumHeight / countHeight : null;
         const avgBegin = countTitleAge ? sumTitleAge / countTitleAge : null;
         const avgEnd = countRetireAge ? sumRetireAge / countRetireAge : null;
@@ -114,7 +158,8 @@ async function get_stats_per_date(rankings, players) {
             pct_never_won_title: (neverWon / top100.length) * 100,
             pct_still_active: (stillActive / top100.length) * 100,
             country_counts: countryCounts,
-            players: out_players
+            players: out_players,
+            player_ids: player_ids
         };
     }).sort((a, b) => {
         const parseDate = d3.timeParse("%Y%m%d");

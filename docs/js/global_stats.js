@@ -2,6 +2,8 @@
 
 import atp_stats from "/data/overview_atp_stats.json" with {type: "json"}
 import wta_stats from "/data/overview_wta_stats.json" with {type: "json"}
+import atp_player_stats from "/data/atp_player_stats.json" with {type: "json"}
+import wta_player_stats from "/data/wta_player_stats.json" with {type: "json"}
 import * as countriesLib from "https://esm.sh/countries-list@3.1.1"
 
 const parseDate = d3.timeParse("%Y%m%d");
@@ -24,6 +26,17 @@ wta_stats.forEach(x => x.ranking_date = parseDate(x.ranking_date))
 //     return acc;
 // }, {});
 
+function enrich_stats(stats, player_stats) {
+    for (const stat of stats) {
+        stat.hard = stat.player_ids.map(id => player_stats.Hard[id])
+        stat.clay = stat.player_ids.map(id => player_stats.Clay[id])
+        stat.grass = stat.player_ids.map(id => player_stats.Grass[id])
+        stat.carpet = stat.player_ids.map(id => player_stats.Carpet[id])
+    }
+}
+enrich_stats(atp_stats, atp_player_stats)
+enrich_stats(wta_stats, wta_player_stats)
+
 async function loadCountryCoords() {
     const countries_raw = await fetch("data/countries.json")
     if (!countries_raw.ok) {
@@ -37,6 +50,7 @@ const countryCoords = await loadCountryCoords()
 // ##################### Declare UI elements #################################
 const playersDropdown = document.getElementById("playersDropdown")
 const overviewStatsDropdown = document.getElementById("overviewStatsDropdown")
+const overviewSurfaceDropdown = document.getElementById("overviewSurfaceDropdown")
 
 
 // ####################### Code #################################################
@@ -342,14 +356,12 @@ class WorldMap {
         const popup = d3.select("#countrymap-popup");
         const title = d3.select("#countrymap-popup-title");
         const popupTable = d3.select("#countrymap-popup-table");
-        console.log(d)
 
         // Clear and show popup
         popup.classed("hidden", false);
         title.text(d.info.country); // Use a mapping of IOC to full country name
         popupTable.html("");
 
-        console.log(d)
         this.table.draw(players.filter(p => p[2] == d.ioc)); // Your logic
 
         // Positioning based on circle's projected center
@@ -387,6 +399,122 @@ function continentToColor(continent) {
     }
 }
 
+class ParallelCoordsChart {
+    constructor(containerId = "#overview-parallelcoordschart") {
+        this.containerId = containerId;
+        this.margin = { top: 30, right: 10, bottom: 30, left: 10 };
+        this.dimensions = [
+            "Ace%",
+            "First In%",
+            "First In Win%",
+            "Second In Win%",
+            "Double Fault%",
+            "Break Point Saved%"
+        ];
+
+        this._init();
+        window.addEventListener("resize", () => this._init()); 
+    }
+
+    _init() {
+        const container = document.querySelector(this.containerId);
+        this.width = container.clientWidth;
+        this.height = 400;
+        this.chartWidth = this.width - this.margin.left - this.margin.right;
+        this.chartHeight = this.height - this.margin.top - this.margin.bottom;
+
+        d3.select(this.containerId).select("svg").remove();
+
+        this.svg = d3.select(this.containerId)
+            .append("svg")
+            .attr("width", this.width)
+            .attr("height", this.height)
+            .append("g")
+            .attr("transform", `translate(${this.margin.left},${this.margin.top})`);
+
+        // X: position of axes
+        this.x = d3.scalePoint()
+            .range([0, this.chartWidth])
+            .padding(0.5)
+            .domain(this.dimensions);
+
+        // Y: one scale per dimension
+        this.y = {};
+        for (const dim of this.dimensions) {
+            this.y[dim] = d3.scaleLinear()
+                .domain([1, 100])
+                .range([this.chartHeight, 0]);
+        }
+
+        // Draw static axes
+        this.svg.selectAll(".dimension")
+            .data(this.dimensions)
+            .join("g")
+            .attr("class", "dimension")
+            .attr("transform", d => `translate(${this.x(d)})`)
+            .each((d, i, nodes) => {
+                d3.select(nodes[i])
+                    .call(d3.axisLeft(this.y[d]).ticks(5))
+                    .append("text")
+                    .attr("y", -10)
+                    .style("text-anchor", "middle")
+                    .style("fill", "#000")
+                    .text(d);
+            });
+
+        this.draw()
+
+    }
+
+    draw(data) {
+        if (data == null) data = this.data
+        else this.data = data
+        if (data == null) return
+
+        // Filter out invalid data rows
+        const validData = data.filter(d => {
+            return d && this.dimensions.every(dim => typeof d[dim] === "number" && !isNaN(d[dim]));
+        });
+
+        const linePath = d => d3.line()(this.dimensions.map(p => [this.x(p), this.y[p](d[p])]));
+
+        console.log(validData)
+        this.svg.selectAll(".data-line")
+            .data(validData, d => d.id)
+            .join(
+                enter => {
+                    const path = enter.append("path")
+
+                    path.attr("class", "data-line")
+                        .attr("fill", "none")
+                        .attr("stroke", "steelblue")
+                        .attr("stroke-width", 1.5)
+                        .attr("stroke-opacity", 0.6)
+                        .attr("d", linePath)
+                        .attr("opacity", 0)
+                        .transition().duration(400)
+                        .attr("opacity", 1)
+
+                    return path
+                },
+
+                update => {
+                    update
+                        .transition().duration(500)
+                        .attr("d", linePath)
+                    return update
+                },
+
+                exit => {
+                    exit
+                        .transition().duration(300)
+                        .attr("opacity", 0)
+                        .remove()
+                }
+            );
+    }
+}
+
 // ######################## UI reactivity #################################
 
 class OverviewApp {
@@ -395,8 +523,10 @@ class OverviewApp {
         this.worldMap=new WorldMap()
         this.timeSlider =new TimeSlider(initstats.ranking_date, this)
         this.lineChart = new LineChart()
+        this.parallelCoordsChart = new ParallelCoordsChart()
         this.table = new Table()
         this.statsOn=atp_stats
+        this.surfaceType="hard"
         this.stats=initstats
         this.statOverTime="avg_retirement"
     }
@@ -420,6 +550,9 @@ class OverviewApp {
                 playersDropdown.value = "top100_wta"
                 break
         }
+        // This clearing is necessary as ids of atp and wta may overlap.
+        this.parallelCoordsChart.data = null
+        this.parallelCoordsChart._init()
         this.timeSlider.draw(group)
         this.lineChart.draw(group, this.statOverTime)
     }
@@ -434,6 +567,8 @@ class OverviewApp {
 
         this.worldMap.draw(s)
         this.table.draw(s.players)
+        if (this.surfaceType)
+            this.parallelCoordsChart.draw(s[this.surfaceType])
         this.timeSlider.slider.value(s.ranking_date) // Does not dispatch on change, so no loop
     }
 
@@ -442,16 +577,32 @@ class OverviewApp {
         return this.#statOverTime
     }
     set statOverTime(s) {
-        console.log("Hey!")
         if (!Array.from(overviewStatsDropdown.options).some(option => option.value === s))  {
             console.log(`Tried to set illegal time stat "${s}"`)
             return
         }
         if (s === this.#statOverTime) return
+        this.#statOverTime = s
         overviewStatsDropdown.value = s
 
-        this.#statOverTime = s
         this.lineChart.draw(this.statsOn, s)
+    }
+
+    #surfaceType
+    get surfaceType() {
+        return this.#surfaceType
+    }
+    set surfaceType(s) {
+        if (!Array.from(overviewSurfaceDropdown.options).some(option => option.value === s))  {
+            console.log(`Tried to set illegal surface type "${s}"`)
+            return
+        }
+        if (s === this.#surfaceType) return
+        this.#surfaceType = s
+        overviewSurfaceDropdown.value = s
+
+        if (this.stats)
+            this.parallelCoordsChart.draw(this.stats[s])
     }
 }
 
@@ -459,6 +610,10 @@ const app = new OverviewApp()
 
 overviewStatsDropdown.addEventListener("change", function (event) {
     app.statOverTime = event.target.value
+})
+
+overviewSurfaceDropdown.addEventListener("change", function (event) {
+    app.surfaceType = event.target.value
 })
 
 playersDropdown.addEventListener("change", function (event) {
@@ -473,7 +628,6 @@ playersDropdown.addEventListener("change", function (event) {
         case "top100":
             break
     }
-    console.log(value)
 });
 
 document.getElementById("countrymap-popup-close").addEventListener("click", () => {

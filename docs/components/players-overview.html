@@ -6,10 +6,10 @@
       <div class="mb-4 flex items-center gap-2 w-full justify-center">
         <label for="playersDropdown" class="text-white font-lg whitespace-nowrap">Statistics on:</label>
         <select id="playersDropdown" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-            <option value="top100">Top 100 players</option>
+            <!-- <option value="top100">Top 100 players</option> -->
             <option value="top100_wta">Top 100 WTA players</option>
             <option value="top100_atp">Top 100 ATP players</option>
-            <option value="all">All players</option>
+            <!-- <option value="all">All players</option> -->
         </select>
     </div>
     </header>
@@ -56,7 +56,7 @@
       </div>
 
       <!-- Bottom section  -->
-      <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden mb-4">
+      <div class="bg-white rounded-xl shadow-sm p-4 relative overflow-hidden mb-4" id="overview-parallelcoordschart">
         <h2 class="text-xl font-semibold text-gray-800">Player style by surface</h2>
         <p class="mt-2 mb-4 text-gray-600 text-sm">See how player statistics are influenced by the surface.</p>
         <div class="mb-4 flex items-center gap-2">
@@ -69,7 +69,7 @@
               <option value="carpet">Carpet</option>
           </select>
         </div>
-        <img src="assets/graphs/stats_across_surfaces.jpeg" alt="Performance Metrics" class="w-3/5 object-contain mx-auto" />
+        <!-- <img src="assets/graphs/stats_across_surfaces.jpeg" alt="Performance Metrics" class="w-3/5 object-contain mx-auto" /> -->
       </div>
     </div>
     <div id="countrymap-popup" class="hidden absolute bg-white shadow-lg rounded-lg p-4 border border-gray-300 z-50" style="min-width: 250px;">
