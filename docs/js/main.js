@@ -64,7 +64,7 @@ function loadComponent(url, targetId) {
                     initFindYourPlayerComponent();
                 }*/
                 if (url.includes('players-overview.html')) {
-                    import("/js/global_stats.js")
+                    import("./global_stats.js")
                 }
             });
         })
