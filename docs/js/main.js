@@ -23,8 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('components/landing.html', 'landing-section');
     loadComponent('components/about.html', 'about-section');
     loadComponent('components/players-overview.html', 'players-overview');
-    loadComponent('components/find-your-player.html', 'player-finder-section');
+    //loadComponent('components/find-your-player.html', 'player-finder-section');
     //loadComponent('components/player-profile.html', 'player-profile-section');
+    initFindYourPlayerComponent().then()
     
     // Setup cursor selection
     setupCursorSelector();
@@ -59,9 +60,9 @@ function loadComponent(url, targetId) {
                 }
 
                 // Initialize player finder dropdowns if that component is loaded
-                if (url.includes('find-your-player.html')) {
+                /*if (url.includes('find-your-player.html')) {
                     initFindYourPlayerComponent();
-                }
+                }*/
                 if (url.includes('players-overview.html')) {
                     import("/js/global_stats.js")
                 }

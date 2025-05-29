@@ -1,5 +1,5 @@
 // Global state
-selectedOptions = {};
+selectedOptions = {'association':'WTA', 'tourney_level':'All', 'surface':'All', 'decade':'20s','ioc':'All', 'hand':'All'};
 csvATPData = [];
 csvWTAData = [];
 csvPlayers = [];
@@ -48,7 +48,7 @@ function populatePlayers() {
   });
 }
 
-function createDropdown(containerId, dropdownName, options, selectedOptions) {
+function createDropdown(containerId, dropdownName, selectedOptions) {
     const dropdownContainer = document.createElement('div');
     dropdownContainer.classList.add('relative', 'inline-block', 'w-full', 'text-left');
 
@@ -62,28 +62,50 @@ function createDropdown(containerId, dropdownName, options, selectedOptions) {
     `;
 
     const mapping = dropdownMappings[titleMapping[dropdownName]] || {};
+    const entries = Object.entries(mapping);
+
     const dropdownMenu = document.createElement('div');
     dropdownMenu.classList.add('hidden', 'absolute', 'right-0', 'w-full', 'mt-2', 'origin-top-right', 'bg-white', 'shadow-lg', 'rounded-3xl', 'border', 'border-black', 'z-10');
 
-    // Reverse lookup: internal to display
-    const entries = Object.entries(mapping);
-    dropdownMenu.innerHTML = entries.map(([displayText, internalValue]) => `
-        <a href="#" data-value="${internalValue}" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">${displayText}</a>
-    `).join('');
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = `Search ${dropdownName}...`;
+    searchInput.classList.add('w-full', 'px-4', 'py-2', 'border-b', 'border-gray-300', 'focus:outline-none', 'rounded-t-3xl');
 
-    dropdownMenu.querySelectorAll('a').forEach(optionElement => {
-        optionElement.addEventListener('click', (event) => {
+    dropdownMenu.appendChild(searchInput);
+
+    const optionsWrapper = document.createElement('div');
+    entries.forEach(([displayText, internalValue]) => {
+        const option = document.createElement('a');
+        option.href = '#';
+        option.dataset.value = internalValue;
+        option.textContent = displayText;
+        option.classList.add('block', 'px-6', 'py-3', 'text-gray-700', 'hover:bg-gray-100');
+
+        option.addEventListener('click', (event) => {
             event.preventDefault();
-            const displayText = optionElement.textContent;
-            const internalValue = optionElement.getAttribute("data-value");
             button.querySelector('span').textContent = displayText;
             selectedOptions[titleMapping[dropdownName]] = internalValue;
             dropdownMenu.classList.add('hidden');
         });
+        optionsWrapper.appendChild(option);
+    });
+
+    dropdownMenu.appendChild(optionsWrapper);
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+        optionsWrapper.querySelectorAll('a').forEach(option => {
+            const text = option.textContent.toLowerCase();
+            option.style.display = text.includes(query) ? 'block' : 'none';
+        });
     });
 
     button.addEventListener('click', () => {
-      dropdownMenu.classList.toggle('hidden');
+        dropdownMenu.classList.toggle('hidden');
+        if (!dropdownMenu.classList.contains('hidden')) {
+            searchInput.focus();
+        }
     });
 
     window.addEventListener('click', (event) => {
@@ -104,12 +126,12 @@ function createDropdown(containerId, dropdownName, options, selectedOptions) {
 function createPlayerDropdowns() {
     return new Promise((resolve) => {
         // Create all dropdowns
-        createDropdown('dropdownsContainer', 'Association', ['ATP', 'WTA'], selectedOptions);
-        createDropdown('dropdownsContainer', 'Tournament', ['All', 'G - Grand Slam', 'M - Masters', 'F - Tour-level finals', 'A - Other Tour-level events', 'D - Davis Cup'], selectedOptions);
-        createDropdown('dropdownsContainer', 'Court Surface', ['All', 'Clay', 'Grass', 'Hard', 'Carpet'], selectedOptions);
-        createDropdown('dropdownsContainer', 'Decade', ['90s', '00s', '10s', '20s'], selectedOptions);
-        createDropdown('dropdownsContainer', 'Nationality', ['All', 'Switzerland', 'Canada', 'UK'], selectedOptions);
-        createDropdown('dropdownsContainer', 'Handedness', ['All', 'Left', 'Right'], selectedOptions);
+        createDropdown('dropdownsContainer', 'Association', selectedOptions);
+        createDropdown('dropdownsContainer', 'Tournament', selectedOptions);
+        createDropdown('dropdownsContainer', 'Court Surface', selectedOptions);
+        createDropdown('dropdownsContainer', 'Decade',  selectedOptions);
+        createDropdown('dropdownsContainer', 'Nationality',  selectedOptions);
+        createDropdown('dropdownsContainer', 'Handedness',  selectedOptions);
 
         // Wait for next frame to ensure DOM is updated (optional but safer)
         requestAnimationFrame(() => {
@@ -119,26 +141,32 @@ function createPlayerDropdowns() {
 }
 
 function showPlayers(playersToShow, association) {
-  const container = document.querySelector("#results-container");
-  container.innerHTML = ''; // Clear previous results
+    const container = document.querySelector("#results-container");
+    container.innerHTML = ''; // Clear previous results
 
-  playersToShow.forEach((player, index) => {
-    const params = new URLSearchParams({
-      playerName: player.player_name,
-      playerId: player.player_id,
-      association: association || 'atp', // fallback if missing
+    playersToShow.forEach((player, index) => {
+      const params = new URLSearchParams({
+        playerName: player.player_name,
+        playerId: player.player_id,
+        association: association || 'wta', // fallback if missing
+      });
+
+      const card = document.createElement("div");
+      card.className = "flex justify-center text-center opacity-0 translate-y-4 transition-all duration-500"; // Start hidden + moved down
+
+      card.innerHTML = `
+        <a href="player-profile.html?${params.toString()}" class="transform hover:scale-105 transition-all">
+          <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+          <p>${player.player_name}</p>
+        </a>
+      `;
+
+      container.appendChild(card);
+      setTimeout(() => {
+        card.classList.remove("opacity-0", "translate-y-4");
+        card.classList.add("opacity-100", "translate-y-0");
+      }, index * 200); // 100ms stagger
     });
-
-    const card = document.createElement("div");
-    card.className = "flex justify-center text-center";
-    card.innerHTML = `
-      <a href="player-profile.html?${params.toString()}" class="transform hover:scale-105 transition-all">
-        <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
-        <p>${player.player_name}</p>
-      </a>
-    `;
-    container.appendChild(card);
-  });
 }
 
 function handleFindPlayer() {
@@ -150,8 +178,9 @@ function handleFindPlayer() {
         alert("Please select a valid player.");
         return;
       }
-
-      document.getElementById("player-name-1").textContent = selectedPlayer.player_name;
+      showPlayers([selectedPlayer], selectedPlayer.association);
+      /*const container = document.querySelector("#results-container");
+      container.innerHTML = '';
 
       const params = new URLSearchParams({
         playerName: selectedPlayer.player_name,
@@ -159,8 +188,21 @@ function handleFindPlayer() {
         association: selectedPlayer.association,
       });
 
-      document.getElementById("player-link-1").href = `player-profile.html?${params.toString()}`;
-      document.getElementById("player-result-1").classList.remove("hidden");
+      const card = document.createElement("div");
+      card.className = "flex justify-center text-center opacity-0 translate-y-4 transition-all duration-500"; // Start hidden + moved down
+
+      card.innerHTML = `
+        <a href="player-profile.html?${params.toString()}" class="transform hover:scale-105 transition-all">
+          <img src="assets/icons/tennis-player-silhouette-svgrepo-com-2.svg" alt="Player Icon" class="w-4/5 max-w-xs rounded-lg" />
+          <p>${selectedPlayer.player_name}</p>
+        </a>
+      `;
+
+      container.appendChild(card);
+      setTimeout(() => {
+        card.classList.remove("opacity-0", "translate-y-4");
+        card.classList.add("opacity-100", "translate-y-0");
+      });*/
   } else {
       var csvData;
       var assoc = 'wta'
