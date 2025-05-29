@@ -195,6 +195,12 @@ class TimeSlider {
         });
     }
 
+    _formatWeek(date) {
+        const year = date.getFullYear();
+        const week = d3.timeFormat("%U")(date); // %U = week number starting Sunday
+        return `${year} Week ${+week}`;
+    }
+
 
     draw(stats) {
         const containerWidth = document.querySelector(this.containerId).clientWidth;
@@ -203,12 +209,6 @@ class TimeSlider {
 
         // --- D3 Slider (Time-based) ---
         const dates = stats.map(d => d.ranking_date);
-
-        const formatWeek = date => {
-            const year = date.getFullYear();
-            const week = d3.timeFormat("%U")(date); // %U = week number starting Sunday
-            return `${year} Week ${+week}`;
-        };
 
         // Choose when to put ticks
         const groupedByYear = Array.from(d3.group(dates, d => d.getFullYear()).values());
@@ -220,7 +220,7 @@ class TimeSlider {
             .map(group => group[0]); // first date of each selected year
 
         this._onchangeCallback =  date => {
-            d3.select(this.labelId).text(formatWeek(date));
+            d3.select(this.labelId).text(this._formatWeek(date));
             const key = date.toISOString().slice(0, 10);
             const stat = dateToStats.get(key);
             if (stat) this.app.stats = stat;
@@ -248,7 +248,7 @@ class TimeSlider {
             .attr("transform", "translate(30,30)")
             .call(this.slider);
         
-        d3.select(this.labelId).text(formatWeek(newValue ?? dates[0]));
+        d3.select(this.labelId).text(this._formatWeek(newValue ?? dates[0]));
         const key = this.slider.value().toISOString().slice(0, 10);
         const stat = dateToStats.get(key);
         if (stat) this.app.stats = stat;
@@ -256,6 +256,7 @@ class TimeSlider {
 
     setValue(value) {
         this.slider.on("onchange", null)
+        d3.select(this.labelId).text(this._formatWeek(value));
         this.slider.value(value)
         if (this._onchangeCallback) {
             this.slider.on("onchange", date => this._onchangeCallback(date))
