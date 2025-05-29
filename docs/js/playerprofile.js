@@ -73,11 +73,18 @@ function getQueryParam(param) {
 }
 
 function loadStats(playerId, data) {
-  // Stats Section
-  playerData = data.filter(row => row.player_id === playerId);
+  const container = document.getElementById("perf-overview");
+  const blockWrapper = document.createElement("div");
+
+  const heading = document.createElement("div");
+  heading.textContent = "Win Rate per Surface";
+  heading.className = "font-semibold text-gray-700 mb-2 w-full"; // Full width heading
+  blockWrapper.appendChild(heading);
 
   const statWrapper = document.createElement("div");
   statWrapper.className = "flex gap-3";
+
+  const playerData = data.filter(row => row.player_id === playerId);
 
   const surfaceColors = {
     Hard: { bg: "bg-[#36A2EB40]", text: "text-[#2688c9]" },
@@ -118,9 +125,8 @@ function loadStats(playerId, data) {
     statBlock.appendChild(label);
     statWrapper.appendChild(statBlock);
   }
-
-  //container.appendChild(statWrapper);
-  document.getElementById("perf-overview").appendChild(statWrapper);
+  blockWrapper.appendChild(statWrapper);
+  container.appendChild(blockWrapper);
 }
 
 function playerDescription(playerId, data) {
@@ -148,167 +154,6 @@ function playerDescription(playerId, data) {
         const hand = document.getElementById('hand');
         hand.textContent = player['hand'] === 'R'? 'Right' : 'Left';
     }
-}
-
-function drawTimelineChart(playerId, data) {
-  const ctx = document.getElementById('timelineChart').getContext('2d');
-
-  // Filter data for the selected player
-  const playerData = data.filter(row => row.player_id === playerId);
-  if (playerData.length === 0) {
-    console.warn(`No data found for player: ${playerId}`);
-    return;
-  }
-
-  const years = [...new Set(playerData.map(row => row.tourney_year))];
-  const tournamentLevels = [...new Set(playerData.map(row => row.tourney_level))];
-
-  const matchWins = {};
-  const titles = {};
-  const playerRanks = {};
-  const points = { 'G': 2000, 'M': 1000, 'F': 1500, 'A': 500, 'D': 200 };
-
-  tournamentLevels.forEach(level => {
-    matchWins[level] = years.map(year => {
-      const match = playerData.find(row => row.tourney_year === year && row.tourney_level === level);
-      return match ? parseInt(match.match_count) : 0;
-    });
-
-    titles[level] = years.map(year => {
-      const match = playerData.find(row => row.tourney_year === year && row.tourney_level === level);
-      return match ? parseInt(match.titles) : 0;
-    });
-  });
-
-  years.forEach(year => {
-    const row = playerData.find(r => r.tourney_year === year);
-    playerRanks[year] = row ? parseInt(row.best_rank) : 0;
-  });
-
-  const bubbleColors = {
-    'G': 'rgba(255, 99, 132, 0.7)',
-    'M': 'rgba(54, 162, 235, 0.7)',
-    'A': 'rgba(75, 192, 192, 0.7)',
-    'F': 'rgba(200, 192, 0, 0.7)',
-    'D': 'rgba(150, 150, 150, 0.7)'
-  };
-
-  const bubbleDatasets = tournamentLevels.map(level => {
-    const dataset = years.map((year, i) => {
-      const wins = matchWins[level][i];
-      const pts = points[level];
-      const titleCount = titles[level][i];
-      if (wins === 0) return null;
-      return {
-        x: year,
-        y: wins,
-        r: pts / 100,
-        //title: titleCount > 0 ? '★' : ''
-      };
-    }).filter(d => d !== null);
-
-    return {
-      label: level,
-      data: dataset,
-      backgroundColor: bubbleColors[level] || 'rgba(150, 150, 150, 0.6)',
-      borderColor: bubbleColors[level] || 'rgba(150, 150, 150, 1)',
-      borderWidth: 1,
-      type: 'bubble'
-    };
-  });
-
-  const lineDataset = {
-    label: 'Rank',
-    data: years.map(year => playerRanks[year] || 0),
-    borderColor: 'rgba(255, 206, 86, 1)',
-    backgroundColor: 'rgba(255, 206, 86, 0.5)',
-    yAxisID: 'ranking',
-    type: 'line',
-    fill: false,
-    tension: 0.3,
-    pointStyle: 'circle'
-  };
-
-  new Chart(ctx, {
-    data: {
-      labels: years,
-      datasets: [...bubbleDatasets, lineDataset]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: true,
-      scales: {
-        y: {
-          title: {
-            display: true,
-            text: 'Matches Won',
-            font: {
-              size: 18,
-              weight: 'bold'
-            }
-          },
-          beginAtZero: true,
-          ticks: {
-            font: {
-              size: 14
-            }
-          }
-        },
-        ranking: {
-          type: 'logarithmic',
-          position: 'right',
-          title: {
-            display: true,
-            text: 'Rank',
-            font: {
-              size: 18,
-              weight: 'bold'
-            }
-          },
-          reverse: true,
-          beginAtZero: false,
-          ticks: {
-            font: {
-              size: 14
-            }
-          },
-          grid: {
-            drawOnChartArea:false,
-          }
-        },
-        x: {
-          title: {
-            display: true,
-            text: 'Year',
-            font: {
-              size: 18,
-              weight: 'bold'
-            }
-          },
-          ticks: {
-            stepSize:1,
-            callback: value => value.toString()  // display as plain number
-          }
-        }
-      },
-      plugins: {
-        tooltip: {
-          callbacks: {
-            label: function (context) {
-              if (context.dataset.type === 'bubble') {
-                const star = context.raw.title ? ` ${context.raw.title}` : '';
-                return `${context.dataset.label}: ${context.raw.y} wins, ${context.raw.r * 100} pts${star}`;
-              }
-              return `Rank: ${context.raw}`;
-            }
-          }
-        },
-        legend: {
-          position: 'top'
-        }
-      }
-    }
-  });
 }
 
 function renderPlayerChart(playerId, data) {
