@@ -107,7 +107,6 @@ async function expandPlayers(conf, firstWins, retirementAges) {
   return expanded;
 }
 
-// Main
 async function main(conf) {
   console.log('\x1b[32m%s\x1b[0m', conf.name);
   console.log("Loading match data...");

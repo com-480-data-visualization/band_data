@@ -96,13 +96,9 @@ function count_ids_in_ranking(ranking) {
 
 async function get_stats_per_date(rankings, players, affiliation) {
 
-    // Step 1: Filter rank <= 100
     const filtered = rankings.filter(d => d.rank <= 100);
-
-    // Step 2: Group by ranking_date
     const grouped = d3.group(filtered, d => d.ranking_date);
 
-    // Step 3: Compute stat per date (e.g. average rank)
     return Array.from(grouped, ([date, top100]) => {
         let sumHeight = 0, countHeight = 0;
         let sumTitleAge = 0, countTitleAge = 0;

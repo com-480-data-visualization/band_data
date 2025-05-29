@@ -1,30 +1,16 @@
 /// <reference types="d3" />
 
+// ######################## Load data #############################################
 import atp_stats from "../data/overview_atp_stats.json" with {type: "json"}
 import wta_stats from "../data/overview_wta_stats.json" with {type: "json"}
 import atp_player_stats from "../data/atp_player_stats.json" with {type: "json"}
 import wta_player_stats from "../data/wta_player_stats.json" with {type: "json"}
+import countryCoords from "../data/countries.json" with {type: "json"}
 // import * as countriesLib from "https://esm.sh/countries-list@3.1.1"
 
 const parseDate = d3.timeParse("%Y%m%d");
 atp_stats.forEach(x => x.ranking_date = parseDate(x.ranking_date))
 wta_stats.forEach(x => x.ranking_date = parseDate(x.ranking_date))
-// ######################## Load data #############################################
-// Load atp datasets
-// const atp_rankings = await d3.csv("data/atp_rankings.csv", d3.autoType);
-// const atp_players_array = await d3.csv("data/atp_players_expanded.csv", d3.autoType);
-// const atp_players = atp_players_array.reduce((acc, player) => {
-//     acc[player.player_id] = player;
-//     return acc;
-// }, {});
-
-// Load wta datasets
-// const wta_rankings = await d3.csv("data/wta_rankings.csv", d3.autoType);
-// const wta_players_array = await d3.csv("data/wta_players_expanded.csv", d3.autoType);
-// const wta_players = wta_players_array.reduce((acc, player) => {
-//     acc[player.player_id] = player;
-//     return acc;
-// }, {});
 
 function enrich_stats(stats, player_stats) {
     for (const stat of stats) {
@@ -37,23 +23,13 @@ function enrich_stats(stats, player_stats) {
 enrich_stats(atp_stats, atp_player_stats)
 enrich_stats(wta_stats, wta_player_stats)
 
-async function loadCountryCoords() {
-    const countries_raw = await fetch("data/countries.json")
-    if (!countries_raw.ok) {
-        throw new Error("Loading of countries json failed")
-    }
-    return await countries_raw.json()
-}
-
-const countryCoords = await loadCountryCoords()
-
 // ##################### Declare UI elements #################################
 const playersDropdown = document.getElementById("playersDropdown")
 const overviewStatsDropdown = document.getElementById("overviewStatsDropdown")
 const overviewSurfaceDropdown = document.getElementById("overviewSurfaceDropdown")
 
 
-// ####################### Code #################################################
+// ####################### Charts #################################################
 
 class LineChart {
     constructor(containerId = "#statsbydate-linechart") {
@@ -159,14 +135,11 @@ class Table {
     }
 
     _rowclickevent(event, row) {
-        console.log(row)
-        console.log(event)
         const params = new URLSearchParams({
             playerName: row.cells[1].data,
             playerId: row.cells[3].data,
             association: this.affiliation || 'wta',
       });
-        console.log("Hey!!!!!!!!!!!!!")
         window.location.href = `player-profile.html?${params.toString()}`;
     }
 }
@@ -536,7 +509,6 @@ class ParallelCoordsChart {
 
         const linePath = d => d3.line()(this.dimensions.map(p => [this.x(p), this.y[p](d[p])]));
 
-        console.log(validData)
         this.svg.selectAll(".data-line")
             .data(validData, d => d.id)
             .join(
