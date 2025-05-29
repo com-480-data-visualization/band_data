@@ -268,7 +268,7 @@ class WorldMap {
         this.containerId = containerId;
         this.maxHeightRatio = maxHeightRatio;
         this.svg = null;
-        this.radiusScale = d3.scaleSqrt().range([5, 40]);
+        this.radiusScale = d3.scaleSqrt().range([5, 50]);
         this.table = new Table("countrymap-popup-table", "countrymap-gridjs-container");
 
         this._init();
@@ -294,10 +294,10 @@ class WorldMap {
             .style("display", "block")
             .style("margin", "0 auto"); // center horizontally
 
-        // Setup projection
+        // Setup projection (0.45 instead of 0.5 to be sure new zealand is visible)
         this.projection = d3.geoMercator()
             .scale((width / 800) * 130) // scale relative to original 800px width
-            .translate([width / 2, height / 1.5]); // center projection (center is a bit in the north)
+            .translate([width * 0.45, height / 1.5]); // center projection (center is a bit in the north)
         
         this.draw()
     }
