@@ -16,7 +16,7 @@
   --color-accent: var(--color-tennis-yellow);
   
   /* Fonts */
-  --font-primary: 'Inter', sans-serif;
+  --font-primary: 'Source Sans Pro', sans-serif;
   --font-accent: 'Bangers', cursive;
   
   /* Shadows */
@@ -47,7 +47,8 @@ body, html {
   height: 100%;
   font-family: var(--font-primary);
   scroll-behavior: smooth;
-  font-weight: 400;
+  font-weight: 700;
+  font-style: italic;
   color: var(--color-dark);
   background-color: var(--color-light);
   line-height: 1.6;
@@ -63,7 +64,7 @@ button, input {
 
 /* Remove default italic styling */
 body, html, button, input, p, h1, h2, h3, h4, h5, h6 {
-  font-style: normal;
+  font-style: italic;
 }
 
 /* ======= TYPOGRAPHY ======= */
@@ -104,7 +105,7 @@ p {
   align-items: center;
   position: relative;
   overflow: hidden;
-  /* scroll-snap-align: start; */ */
+  /* scroll-snap-align: start; */ 
 }
 
 /* tennis court pattern overlay */
