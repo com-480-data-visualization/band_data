@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennis Court - Tennis for Dummies</title>
+    <title>Tennis Court Markings - Tennis for Dummies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Source+Sans+Pro:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
-        /* Tailwind Custom Config */
+      /* Tailwind Custom Config - matching main site */
         tailwind.config = {
             theme: {
                 extend: {
@@ -30,340 +30,353 @@
     </script>
     
     <style>
-        /* Court styling */
-        .tennis-court {
-            position: relative;
-            width: 100%;
+        /* Court-specific styles */
+        .court-container {
             max-width: 800px;
             margin: 0 auto;
-            background: #7ED4AD;
-            border: 4px solid white;
-            aspect-ratio: 78/36;
+            position: relative;
         }
-        
-        /* Court lines */
-        .court-line {
+
+        .tennis-court-svg-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .tennis-court-svg {
+            width: 100%;
+            height: auto;
+            display: block;
+            min-height: 320px;
+        }
+
+        .court-marker {
             position: absolute;
+            width: 45px;
+            height: 45px;
             background: white;
-        }
-        
-        /* Hoverable sections */
-        .court-section {
-            position: absolute;
+            border: 3px solid #2C3E50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #2C3E50;
             cursor: pointer;
             transition: all 0.3s ease;
-        }
-        
-        .court-section:hover {
-            background: rgba(255, 255, 255, 0.2);
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Tooltip styling */
-        .tooltip {
-            position: absolute;
-            background: white;
-            padding: 12px 16px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            pointer-events: none;
-            opacity: 0;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            max-width: 250px;
-            font-size: 14px;
-            color: #2C3E50;
-        }
-        
-        .tooltip.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .tooltip h4 {
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: #7ED4AD;
-        }
-        
-        /* Net styling */
-        .net {
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #333;
-            transform: translateX(-50%);
             z-index: 10;
+            animation: pulse 2s infinite;
+            transform: translate(-50%, -50%);
         }
-        
-        .net::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -10px;
-            right: -10px;
-            height: 100%;
-            background: repeating-linear-gradient(
-                to bottom,
-                transparent,
-                transparent 4px,
-                #666 4px,
-                #666 6px
-            );
+
+        .court-marker:hover {
+            transform: translate(-50%, -50%) scale(1.2);
+            background: #FFE066;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .court-marker.active {
+            background: #FFE066;
+            transform: translate(-50%, -50%) scale(1.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Marker positions based on tennis court layout */
+        .marker-1 { bottom: 25%; left: 35%; }    /* Singles Sideline - bottom left */
+        .marker-2 { top: 50%; left: 2%; }        /* Baseline - left side */
+        .marker-3 { top: 20%; left: 45%; }       /* Doubles Sideline - top */
+        .marker-4 { top: 50%; left: 50%; }       /* Net - center */
+        .marker-5 { top: 60%; right: 30%; }      /* Service Box - right middle */
+        .marker-6 { top: 50%; right: 3%; }   /* Centre Mark - bottom right */
+
+        .info-panel {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #7ED4AD;
+            transition: all 0.3s ease;
+            min-height: 200px;
+            max-width: 350px;
+        }
+
+        .info-panel h3 {
+            color: #2C3E50;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, #87CEEB, #7ED4AD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .info-panel p {
+            color: #2C3E50;
+            line-height: 1.5;
+            font-size: 1rem;
+        }
+
+        .default-info {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 224, 102, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(255, 224, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 224, 102, 0); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .court-container {
+                max-width: 100%;
+                margin: 20px;
+            }
+            .tennis-court-svg-container {
+                max-width: 100%;
+            }
+            .court-marker {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            .info-panel {
+                max-width: 100%;
+                padding: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .court-container {
+                margin: 15px;
+            }
+            .tennis-court-svg {
+                min-height: 250px;
+            }
+            .court-marker {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+            .info-panel {
+                padding: 16px;
+                min-height: 150px;
+            }
+        }
+
+        /* Full width layout adjustment */
+        .court-section {
+            background: linear-gradient(135deg, #F7FFFE 0%, #F0F8FF 100%);
+            padding: 20px 0;
+            min-height: calc(100vh - 140px);
+            display: flex;
+            align-items: center;
+        }
+
+        .court-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Header adjustments for single page fit */
+        .header-compact {
+            padding: 30px 0 !important;
+        }
+
+        .header-compact h1 {
+            font-size: 2.5rem !important;
+            margin-bottom: 8px !important;
+        }
+
+        .header-compact p {
+            font-size: 1.2rem !important;
+        }
+
+        @media (max-width: 1024px) {
+            .court-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 100%;
+                padding: 0 20px;
+            }
+            .court-section {
+                padding: 15px 0;
+                min-height: auto;
+            }
         }
     </style>
 </head>
 <body class="bg-tennis-light">
-    <!-- Header -->
-    <header class="w-full py-4 bg-gradient-to-r from-tennis-blue to-tennis-green text-white shadow-lg">
-        <div class="container mx-auto px-4 flex items-center justify-between">
-            <button onclick="window.location.href='../index.html'" class="group flex items-center space-x-2 text-white hover:text-tennis-yellow transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                <span class="font-medium">Back to Home</span>
-            </button>
-            <h1 class="text-2xl md:text-3xl font-bold">Tennis Court Layout</h1>
-            <div class="w-24"></div>
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-md z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <a href="../index.html" class="text-xl font-bold gradient-text">Tennis for Dummies</a>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="../index.html" class="text-tennis-dark hover:text-tennis-green transition-colors font-medium">Home</a>
+                    <a href="../index.html#about-section" class="text-tennis-dark hover:text-tennis-green transition-colors font-medium">Basics</a>
+                    <a href="../index.html#player-finder-section" class="text-tennis-dark hover:text-tennis-green transition-colors font-medium">Find Player</a>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
     
     <!-- Main Content -->
-    <div class="container mx-auto px-4 py-8">
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-bold text-tennis-dark mb-4">Understanding the Tennis Court</h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Hover over different sections of the court below to learn about each area and its purpose in the game.
-            </p>
-        </div>
-        
-        <!-- Interactive Tennis Court -->
-        <div class="tennis-court">
-            <!-- Net -->
-            <div class="net"></div>
-            
-            <!-- Court Lines -->
-            <!-- Baseline -->
-            <div class="court-line" style="bottom: 0; left: 0; right: 0; height: 3px;"></div>
-            <div class="court-line" style="top: 0; left: 0; right: 0; height: 3px;"></div>
-            
-            <!-- Service lines -->
-            <div class="court-line" style="top: 21.5%; left: 0; right: 0; height: 2px;"></div>
-            <div class="court-line" style="bottom: 21.5%; left: 0; right: 0; height: 2px;"></div>
-            
-            <!-- Singles sidelines -->
-            <div class="court-line" style="top: 0; bottom: 0; left: 10.5%; width: 2px;"></div>
-            <div class="court-line" style="top: 0; bottom: 0; right: 10.5%; width: 2px;"></div>
-            
-            <!-- Center service line -->
-            <div class="court-line" style="top: 21.5%; bottom: 21.5%; left: 50%; width: 2px; transform: translateX(-50%);"></div>
-            
-            <!-- Hoverable Sections -->
-            <!-- Left Service Box -->
-            <div class="court-section" style="top: 21.5%; left: 10.5%; width: 39.5%; height: 57%;" 
-                 data-title="Service Box (Deuce Court)" 
-                 data-description="Where serves must land when serving to the deuce court (right side when facing the net). Serves must land within this box to be valid.">
+    <div class="pt-20 min-h-screen">
+        <!-- Header Section -->
+        <header class="header-compact w-full py-12 bg-gradient-to-r from-tennis-blue to-tennis-green text-white text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold drop-shadow-lg mb-4">Tennis Court Markings</h1>
+                <p class="text-xl md:text-2xl opacity-90">Learn the layout and rules of a tennis court</p>
             </div>
-            
-            <!-- Right Service Box -->
-            <div class="court-section" style="top: 21.5%; right: 10.5%; width: 39.5%; height: 57%;" 
-                 data-title="Service Box (Ad Court)" 
-                 data-description="Where serves must land when serving to the ad court (left side when facing the net). Players alternate between deuce and ad courts when serving.">
+        </header>
+
+        <!-- Interactive Court Section -->
+        <section class="court-section">
+            <div class="container mx-auto px-4">
+                <!-- Court and Info Grid -->
+                <div class="court-grid">
+                    <!-- Tennis Court SVG -->
+                    <div>
+                        <div class="court-container">
+                            <div class="tennis-court-svg-container">
+                                <!-- Professional Tennis Court SVG -->
+                                <svg class="tennis-court-svg" viewBox="0 0 448 448" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g transform="translate(0 -1020.36)" shape-rendering="auto" image-rendering="auto" color-rendering="auto" color-interpolation="sRGB">
+                                        <path style="fill:#3ba6f7;" d="M16.062,1116.328h416v32h-416L16.062,1116.328L16.062,1116.328z"></path>
+                                        <path style="fill:#29A3EC;" d="M16.062,1164.392h416v159.936h-416L16.062,1164.392L16.062,1164.392z"></path>
+                                        <path style="fill:#3ba6f7;" d="M16.062,1340.392h416v32.002h-416L16.062,1340.392L16.062,1340.392z"></path>
+                                        <g>
+                                            <path style="fill:#FFFFFF;" d="M216.031,1108.414v271.889h15.945v-271.889H216.031z"></path>
+                                            <path style="fill:#FFFFFF;" d="M4.023,1148.336v16.063h439.961v-16.063H4.023L4.023,1148.336z"></path>
+                                            <path style="fill:#FFFFFF;" d="M4.023,1324.32v16.063h439.961v-16.063H4.023L4.023,1324.32z"></path>
+                                            <path style="fill:#FFFFFF;" d="M4.023,1236.328v16.063h27.992v-16.063H4.023z"></path>
+                                            <path style="fill:#FFFFFF;" d="M415.991,1236.328v16.063h27.992v-16.063H415.991z"></path>
+                                            <path style="fill:#FFFFFF;" d="M111.976,1152.349v184.016h16.063v-184.016H111.976z"></path>
+                                            <path style="fill:#FFFFFF;" d="M320.086,1152.349v184.016h15.945v-184.016H320.086z"></path>
+                                            <path style="fill:#FFFFFF;" d="M115.991,1236.328v16.063h216.024v-16.063H115.991z"></path>
+                                        </g>
+                                        <path style="fill:#e0dce5;" d="M0,1100.392v287.936h448v-287.936H0z M16.062,1116.328h416v256.064h-416L16.062,1116.328z"></path>
+                                    </g>
+                                </svg>
+
+                                <!-- Interactive Markers -->
+                                <div class="court-marker marker-1" data-info="singles">1</div>
+                                <div class="court-marker marker-2" data-info="baseline">2</div>
+                                <div class="court-marker marker-3" data-info="doubles">3</div>
+                                <div class="court-marker marker-4" data-info="net">4</div>
+                                <div class="court-marker marker-5" data-info="service">5</div>
+                                <div class="court-marker marker-6" data-info="center">6</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Information Panel -->
+                    <div>
+                        <div class="info-panel" id="info-panel">
+                            <div class="default-info">
+                                <h3>Court Markings</h3>
+                                <p>Click on any numbered marker on the court to learn about that specific area.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <!-- Left Baseline Area -->
-            <div class="court-section" style="bottom: 0; left: 10.5%; width: 39.5%; height: 21.5%;" 
-                 data-title="Baseline Area" 
-                 data-description="The back area of the court where players often position themselves for baseline rallies. The baseline is the back boundary line.">
-            </div>
-            
-            <!-- Right Baseline Area -->
-            <div class="court-section" style="bottom: 0; right: 10.5%; width: 39.5%; height: 21.5%;" 
-                 data-title="Baseline Area" 
-                 data-description="The back area of the court where players often position themselves for baseline rallies. The baseline is the back boundary line.">
-            </div>
-            
-            <!-- Left Alley -->
-            <div class="court-section" style="top: 0; left: 0; width: 10.5%; height: 100%;" 
-                 data-title="Doubles Alley" 
-                 data-description="This area is only in play during doubles matches. In singles, any ball landing here is out.">
-            </div>
-            
-            <!-- Right Alley -->
-            <div class="court-section" style="top: 0; right: 0; width: 10.5%; height: 100%;" 
-                 data-title="Doubles Alley" 
-                 data-description="This area is only in play during doubles matches. In singles, any ball landing here is out.">
-            </div>
-            
-            <!-- No Man's Land Left -->
-            <div class="court-section" style="top: 0; left: 10.5%; width: 39.5%; height: 21.5%;" 
-                 data-title="No Man's Land" 
-                 data-description="The area between the baseline and service line. Players try to avoid staying here as it's a vulnerable position.">
-            </div>
-            
-            <!-- No Man's Land Right -->
-            <div class="court-section" style="top: 0; right: 10.5%; width: 39.5%; height: 21.5%;" 
-                 data-title="No Man's Land" 
-                 data-description="The area between the baseline and service line. Players try to avoid staying here as it's a vulnerable position.">
-            </div>
-        </div>
-        
-        <!-- Tooltip element -->
-        <div class="tooltip" id="tooltip">
-            <h4 id="tooltip-title"></h4>
-            <p id="tooltip-description"></p>
-        </div>
-        
-        <!-- Additional Information -->
-        <div class="mt-12 grid md:grid-cols-3 gap-6">
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-tennis-dark mb-3">Court Dimensions</h3>
-                <ul class="space-y-2 text-gray-600">
-                    <li><strong>Singles:</strong> 78 ft × 27 ft</li>
-                    <li><strong>Doubles:</strong> 78 ft × 36 ft</li>
-                    <li><strong>Net Height:</strong> 3 ft at center</li>
-                    <li><strong>Service Box:</strong> 21 ft × 13.5 ft</li>
-                </ul>
-            </div>
-            
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-tennis-dark mb-3">Court Surfaces</h3>
-                <ul class="space-y-2 text-gray-600">
-                    <li><strong>Hard Court:</strong> Most common, medium speed</li>
-                    <li><strong>Clay Court:</strong> Slow, high bounce</li>
-                    <li><strong>Grass Court:</strong> Fast, low bounce</li>
-                    <li><strong>Carpet:</strong> Indoor, various speeds</li>
-                </ul>
-            </div>
-            
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-tennis-dark mb-3">Key Rules</h3>
-                <ul class="space-y-2 text-gray-600">
-                    <li>• Ball must land inside lines</li>
-                    <li>• Serves must go diagonally</li>
-                    <li>• Two serve attempts allowed</li>
-                    <li>• Ball can only bounce once</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Cursor selector -->
-    <div class="cursor-menu">
-        <div class="cursor-option active" data-cursor="../assets/cursor/ball.png" title="Tennis Ball">
-            <img src="../assets/cursor/ball.png" alt="Tennis Ball">
-        </div>
-        <div class="cursor-option" data-cursor="../assets/cursor/racket.png" title="Tennis Racket">
-            <img src="../assets/cursor/racket.png" alt="Tennis Racket">
-        </div>
-        <div class="cursor-option" data-cursor="auto" title="Default Cursor">
-            <img src="../assets/cursor/default.png" alt="Default">
-        </div>
+        </section>
     </div>
     
     <script>
-        // Cursor functionality
-        const cursorOptions = document.querySelectorAll('.cursor-option');
-        
-        cursorOptions.forEach(option => {
-            option.addEventListener('click', function() {
-                const cursorPath = this.getAttribute('data-cursor');
+        // Court information data
+        const courtInfo = {
+            singles: {
+                title: "1. Singles Sideline",
+                description: "This is the outer edge of the court during singles competition. In singles matches, the ball is considered out if it lands beyond this line on the sides. The singles court is narrower than the doubles court, making the game more challenging as players have less court width to work with."
+            },
+            baseline: {
+                title: "2. Baseline",
+                description: "The furthest line back at each end of a tennis court. This is where players will serve from and the line is divided by a centre mark. Standing at the centre will provide maximum coverage for serving and returns. Players typically position themselves near the baseline during rallies."
+            },
+            doubles: {
+                title: "3. Doubles Sideline",
+                description: "The outer edge of the tennis court during doubles competition. In doubles matches, this wider area is in play, giving teams more court space to work with. The additional width makes doubles a different strategic game compared to singles."
+            },
+            net: {
+                title: "4. The Tennis Net",
+                description: "Always down the centre of the court. This can be adjusted using the levers on the tennis post. The net is 3 feet high at the posts and 3 feet 6 inches high in the center. All shots must go over the net to be considered legal."
+            },
+            service: {
+                title: "5. Service Box",
+                description: "This is the area the ball must land in when serving. The ball must be served into the opposite service box from the side you are serving from and alternates after each point. There are four service boxes total on a tennis court - two on each side of the net."
+            },
+            center: {
+                title: "6. Baseline Centre Mark",
+                description: "This signifies the central point of the baseline. Players serve from either side of this point, placing the ball into the service box on the opposite side. The server alternates between the right and left sides of this center mark after each point."
+            }
+        };
+
+        // Get all markers and info panel
+        const markers = document.querySelectorAll('.court-marker');
+        const infoPanel = document.getElementById('info-panel');
+
+        // Add click event listeners to markers
+        markers.forEach(marker => {
+            marker.addEventListener('click', function() {
+                // Remove active class from all markers
+                markers.forEach(m => m.classList.remove('active'));
                 
-                // Remove active class from all options
-                cursorOptions.forEach(opt => opt.classList.remove('active'));
-                
-                // Add active class to clicked option
+                // Add active class to clicked marker
                 this.classList.add('active');
                 
-                // Set cursor
-                if (cursorPath === 'auto') {
-                    document.body.style.cursor = 'auto';
-                } else {
-                    document.body.style.cursor = `url(${cursorPath}), auto`;
-                }
+                // Get the info key
+                const infoKey = this.getAttribute('data-info');
+                const info = courtInfo[infoKey];
                 
-                // Save preference
-                localStorage.setItem('selectedCursor', cursorPath);
+                // Update info panel
+                infoPanel.innerHTML = `
+                    <h3>${info.title}</h3>
+                    <p>${info.description}</p>
+                    <div class="mt-4 text-sm text-tennis-green font-medium">
+                        Click another marker to learn about different court areas!
+                    </div>
+                `;
+                
+                // Add border color based on marker number
+                const markerNumber = this.textContent;
+                const colors = {
+                    '1': '#7ED4AD',
+                    '2': '#87CEEB', 
+                    '3': '#B8E6B8',
+                    '4': '#B0E0E6',
+                    '5': '#FFE066',
+                    '6': '#7ED4AD'
+                };
+                infoPanel.style.borderLeftColor = colors[markerNumber] || '#7ED4AD';
             });
         });
         
-        // Load saved cursor preference
-        const savedCursor = localStorage.getItem('selectedCursor');
-        if (savedCursor) {
-            if (savedCursor === 'auto') {
-                document.body.style.cursor = 'auto';
-            } else {
-                document.body.style.cursor = `url(${savedCursor}), auto`;
+        // Optional: Auto-highlight markers in sequence for demo
+        let currentMarker = 0;
+        function demoMode() {
+            if (currentMarker < markers.length) {
+                markers[currentMarker].click();
+                currentMarker++;
+                setTimeout(demoMode, 3000);
             }
-            
-            // Update active button
-            cursorOptions.forEach(opt => {
-                if (opt.getAttribute('data-cursor') === savedCursor) {
-                    opt.classList.add('active');
-                } else {
-                    opt.classList.remove('active');
-                }
-            });
         }
-        
-        // Tooltip functionality
-        const tooltip = document.getElementById('tooltip');
-        const tooltipTitle = document.getElementById('tooltip-title');
-        const tooltipDescription = document.getElementById('tooltip-description');
-        const courtSections = document.querySelectorAll('.court-section');
-        
-        courtSections.forEach(section => {
-            section.addEventListener('mouseenter', (e) => {
-                const title = e.target.getAttribute('data-title');
-                const description = e.target.getAttribute('data-description');
-                
-                tooltipTitle.textContent = title;
-                tooltipDescription.textContent = description;
-                
-                // Position tooltip near mouse
-                const rect = e.target.getBoundingClientRect();
-                const tooltipRect = tooltip.getBoundingClientRect();
-                
-                let left = e.pageX + 10;
-                let top = e.pageY - tooltipRect.height - 10;
-                
-                // Keep tooltip within viewport
-                if (left + tooltipRect.width > window.innerWidth) {
-                    left = e.pageX - tooltipRect.width - 10;
-                }
-                if (top < window.scrollY) {
-                    top = e.pageY + 10;
-                }
-                
-                tooltip.style.left = left + 'px';
-                tooltip.style.top = top + 'px';
-                tooltip.classList.add('show');
-            });
-            
-            section.addEventListener('mouseleave', () => {
-                tooltip.classList.remove('show');
-            });
-            
-            section.addEventListener('mousemove', (e) => {
-                const tooltipRect = tooltip.getBoundingClientRect();
-                let left = e.pageX + 10;
-                let top = e.pageY - tooltipRect.height - 10;
-                
-                // Keep tooltip within viewport
-                if (left + tooltipRect.width > window.innerWidth) {
-                    left = e.pageX - tooltipRect.width - 10;
-                }
-                if (top < window.scrollY) {
-                    top = e.pageY + 10;
-                }
-                
-                tooltip.style.left = left + 'px';
-                tooltip.style.top = top + 'px';
-            });
-        });
+
+        // Uncomment the line below to enable auto-demo mode
+        // setTimeout(demoMode, 2000);
     </script>
 </body>
 </html> 
