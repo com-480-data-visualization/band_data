@@ -20,7 +20,7 @@
 -->
 
 :green_book: Check out how our design decisions and how we reached our final website in our [Process Book](./processbook.pdf)! \
-:movie_camera: Check out our website's different functionalities in our [Screen Cast]()! \
+:movie_camera: Check out our website's different functionalities in our [Screen Cast](./ScreenCast.MOV)! \
 :sparkles: Or simply have fun on the [deployed website](https://com-480-data-visualization.github.io/band_data/)!
 
 If you're using firefox please make sure you are on version 138 or later when visiting our website.
