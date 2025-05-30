@@ -23,6 +23,8 @@
 :movie_camera: Check out our website's different functionalities in our [Screen Cast]()! \
 :sparkles: Or simply have fun on the [deployed website](https://com-480-data-visualization.github.io/band_data/)!
 
+If you're using firefox please make sure you are on version 138 or later when visiting our website.
+
 ## :dart: Goal
 ### :tennis: What Is It?
 Tennis For Dummies is an interactive website that aims to provide an introduction to the world of tennis while also engaging hardcode tennis fans by offering deep insights into players' performance and key statistics. 
@@ -74,6 +76,8 @@ Then, you can easily render the website with an HTTP server!
 cd docs
 python -m http.server <optional port>
 ```
+
+If you're using firefox please make sure you are on version 138 or later.
 
 ## :checkered_flag: Previous Milestones
 
