@@ -6,7 +6,7 @@
       <title>Player Profile - Tennis for Dummies</title>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Source+Sans+Pro:ital,wght@1,700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="css/style.css">
       <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
       <script src="https://cdn.tailwindcss.com"></script>
@@ -113,7 +113,12 @@
             <div id='perf-overview' class="flex justify-between items-start mb-6">
               <div>
                 <h2 class="text-2xl font-bold text-tennis-dark mb-2">Career Overview</h2>
-                <p class="text-gray-600">Performance timeline and key statistics</p>
+                <p class="text-gray-600 text-sm font-normal ">
+                  Below, discover the player's performance across tournaments over time. Each bubble represents the furthest round reached in a given tournament. Bubbles are color-coded by tournament type: Grand Slam (G), Masters (M) or Premier Mandatory (PM), ATP 500 (A) or Premier (M), and other Finals (F).
+                </p>
+                <p class="text-gray-600 text-sm font-normal ">
+                  Also check out the evolution of the player's rank!
+                </p>
               </div>
             </div>
 
@@ -133,6 +138,7 @@
           <div class="bg-white rounded-2xl shadow-lg p-6 relative overflow-hidden transform hover:scale-[1.02] transition-transform">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-tennis-blue to-tennis-green"></div>
             <h3 class="text-xl font-bold text-tennis-dark mb-4 text-center">Biggest Rivals Per Surface</h3>
+            <p class="text-gray-600 text-center">Click on a rival's name to open their profile!</p>
             <div id='rivalryContainer' class="w-full bg-gradient-to-br from-tennis-blue/5 to-transparent rounded-xl p-4">
               <div id="rivalryChart" class="w-full h-full"></div>
             </div>
@@ -142,6 +148,7 @@
           <div class="bg-white rounded-2xl shadow-lg p-6 relative overflow-hidden transform hover:scale-[1.02] transition-transform">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-tennis-green to-tennis-blue"></div>
             <h3 class="text-xl font-bold text-tennis-dark mb-4 text-center">Match Wins By Surface & Tournament</h3>
+            <p class="text-gray-600 text-center">Click on a subsection for more details!</p>
             <div id='sunburstContainer' class="w-full bg-gradient-to-br from-tennis-green/5 to-transparent rounded-xl p-4">
               <div id="sunburstChart" class="w-full h-full"></div>
             </div>
