@@ -21,7 +21,7 @@
 
 :green_book: Check out how our design decisions and how we reached our final website in our [Process Book](./process_book.pdf)! \
 :movie_camera: Check out our website's different functionalities in our [Screen Cast]()! \
-:sparkles: Or simply have fun on the deployed website [here](https://com-480-data-visualization.github.io/band_data/)
+:sparkles: Or simply have fun on the [deployed website](https://com-480-data-visualization.github.io/band_data/)!
 
 ## :dart: Goal
 ### :tennis: What Is It?
