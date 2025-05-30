@@ -215,21 +215,6 @@ function renderPlayerChart(playerId, data) {
   });
 
   const highlightMatches = playerData.filter(d => d.tourney_level === 'G' && d.round === 'F' && d.match_count > 0);
-  /*const trophyImage = await loadImage('assets/icons/trophy-svgrepo-com.png');
-
-  function resizeImage(img, width, height) {
-    const canvas = document.createElement('canvas');
-    canvas.width = width;
-    canvas.height = height;
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(img, 0, 0, width, height);
-    const resizedImg = new Image();
-    resizedImg.src = canvas.toDataURL();
-    return new Promise(resolve => {
-      resizedImg.onload = () => resolve(resizedImg);
-    });
-  }
-  resizedImage = await resizeImage(trophyImage, 30, 30)*/
 
   const highlightDataset = {
     type: 'scatter',
@@ -804,9 +789,6 @@ function drawOpponentPacking(playerId, data, association) {
     .style("pointer-events", "none")
     .style("fill", "#000");
 
-  // Add legend
-  /*const legend = svg.append("g")
-    .attr("transform", `translate(10, ${height - 20 * Object.keys(surfaceColorMap).length - 10})`);*/
   const legend = svg.append("g")
     .attr("transform", `translate(${(width - 100 * Object.keys(surfaceColorMap).length)/2}, 20)`);
 
