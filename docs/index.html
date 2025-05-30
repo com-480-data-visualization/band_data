@@ -11,6 +11,7 @@
     <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-simple-slider@2.0.0/dist/d3-simple-slider.min.js"></script>
     <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
@@ -44,11 +45,11 @@
       ::-webkit-scrollbar {
         width: 12px;
       }
-      
+
       ::-webkit-scrollbar-track {
         background: #f1f1f1;
       }
-      
+
       ::-webkit-scrollbar-thumb {
         background: linear-gradient(180deg, #87CEEB, #7ED4AD);
         border-radius: 6px;
@@ -116,7 +117,7 @@
 
               <!-- Dropdowns Container -->
               <div id="dropdownsContainer" class="w-full flex flex-col space-y-3"></div>
-              
+
               <!-- Find Button with gradient -->
               <div class="flex justify-center items-center mt-4">
                 <button id="find-player-button" onclick="handleFindPlayer()" class="group relative px-8 py-4 w-full text-2xl font-bold text-white bg-gradient-to-r from-blue-300 to-green-300 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden hover:text-tennis-yellow">
@@ -175,7 +176,7 @@
             }
         });
     </script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
     <script src="js/findplayer.js"></script>
 </body>
 </html>

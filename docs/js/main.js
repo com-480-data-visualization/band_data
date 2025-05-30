@@ -58,23 +58,7 @@ function loadComponent(url, targetId) {
                 }
 
                 if (url.includes('players-overview.html')) {
-                    new gridjs.Grid({
-                        columns: ["Rank", "Name"],
-                        data: [
-                          ["1", "Roger Federer"],
-                          ["2", "Novak Djokovic"],
-                          ["3", "Raphael Nadal"],
-                          ["4", "Roger Federer"],
-                          ["5", "Novak Djokovic"]
-                        ],
-                        fixedHeader: true,
-                        search: true,
-                        style: {
-                            table: {
-                              'white-space': 'nowrap'
-                            }
-                        },
-                    }).render(document.getElementById("topplayers_table"));
+                    import("./global_stats.js")
                 }
             });
         })
