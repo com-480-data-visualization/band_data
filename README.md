@@ -5,45 +5,44 @@
 | Charlotte Meyer   | 315568 |
 | Charlotte Sacré   | 357798 |
 | Jérémie De Faveri | 287454 |
+ ---
 
-
+<p align="center">
+<img src="Tennis.png" width="400"/>
+<p>
+<!--
 <div style="background: linear-gradient(to right, #7ED4AD, #87CEEB); padding: 20px; border-radius: 10px; text-align: center;">
   <span style="font-family: 'Source Sans Pro', italic; color: white; font-size: 2em;">Tennis</span><br>
   <span style="font-family: 'Bangers', cursive; color: #FFE066; font-size: 2em;"> for</span><br>
   <span style="font-family: 'Bangers', cursive; color: #FFE066; font-size: 2em;"> Dummies</span>
 </div>
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Source+Sans+Pro:ital,wght@1,700&display=swap" rel="stylesheet">
+-->
 
 :green_book: Check out how our design decisions and how we reached our final website in our [Process Book](./process_book.pdf)! \
 :movie_camera: Check out our website's different functionalities in our [Screen Cast]()! \
 :sparkles: Or simply have fun on the deployed website [here](https://com-480-data-visualization.github.io/band_data/)
 
+--- 
+## :dart: Goal
+### :tennis: What is It 
+Tennis For Dummies is an interactive website that aims to provide an introduction to the world of tennis while also engaging hardcode tennis fans by offering deep insights into players' performance and key statistics. 
 
-<div style="background:#36A2EB60; padding: 10px; border-radius: 10px; text-align: center;">
-<span style="font-family: 'Source Sans Pro', italic; color: black; font-size: 1.5em;">Goal</span><br>
-</div>
-
-### :tennis: <span style="font-family: 'Source Sans Pro', italic; color: black; font-size: 1em;">What is it?</span>
-
-<span style="font-family: 'Source Sans Pro', italic; color: black; font-size: 1em;">Tennis For Dummies</span> is an interactive website that aims to provide an introduction to the world of tennis while also engaging hardcode tennis fans by offering deep insights into players' performance and key statistics. 
-
-### :tennis: <span style="font-family: 'Source Sans Pro', italic; color: black; font-size: 1em;">Why?</span>
+### :tennis:Why?
 Tennis is one of the world's most popular sports and boasts an incredible roster of legends, from Billie Jean King to Rafael Nadal. However, for people new to the sport, understanding the rules and intricacies of the sport may be overwhelming,
 and most resources available today directly dive into complex data targeted to a knowledgeable audience. We aim to bridge this gap by first providing foundational knowledge about the world of tennis such that our users feel confident in understanding 
 historical trends, match-level insights, and technical aspects of player performances. To provide deep insights for seasoned fans, we also create detailed player profiles that capture the essence of distinct playing styles across time, tournaments, and court surfaces. 
 
 Ultimately, whether you want to learn more the point system or delve into Roger Federer's performance, we've got you covered with our data-rich and user-friendly visualizations!
 
-
-<div style="background:#4BC0C060; padding: 10px; border-radius: 10px; text-align: center;">
-<span style="font-family: 'Source Sans Pro', italic; color: black; font-size: 1.5em;">Data</span><br>
-</div>
+---
+## :floppy_disk: Data
 
 For our datasets, we use Jeff Sackmann’s extensive data files on players, historical rankings, and tennis matches from the [Association of Tennis Professionals (ATP)](https://github.com/JeffSackmann/tennis_atp) and [Women's Tennis Association (WTA)](https://github.com/JeffSackmann/tennis_wta), from 1991 onwards.
 
-<div style="background:#FF9F4060; padding: 10px; border-radius: 10px; text-align: center;">
-<span style="font-family: 'Source Sans Pro', italic; color: black; font-size: 1.5em;">Installation & Usage</span><br>
-</div>
+---
+## :globe_with_meridians: Installation & Usage
+
 
 To run our website locally or make contributions, first clone the repository: 
 ```bash
@@ -77,16 +76,8 @@ Then, you can easily render the website with an HTTP server!
 cd docs
 python -m http.server <optional port>
 ```
-
-<!--
-<div style="background:#FF9F4060; padding: 10px; border-radius: 10px; text-align: center;">
-<span style="font-family: 'Source Sans Pro', italic; color: black; font-size: 1.5em;">Installation & Usage</span><br>
-</div>
--->
-
-<div style="background:#8A2D3B60; padding: 10px; border-radius: 10px; text-align: center;">
-<span style="font-family: 'Source Sans Pro', italic; color: black; font-size: 1.5em;">Previous Milestones</span><br>
-</div>
+---
+## :checkered_flag: Previous Milestones
 
 The previous milestones can be found here: [Milestone 1](./milestones/milestone1.md) and [Milestone 2](./milestones/milestone2.pdf). 
 
