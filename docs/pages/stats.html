@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tennis Statistics Guide - Tennis for Dummies</title>
+    <title>Tennis Vocabulary Guide - Tennis for Dummies</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -86,7 +86,7 @@
         <div class="absolute inset-0 bg-black/10"></div>
         <div class="container mx-auto px-4 relative z-10">
             <h1 class="text-5xl md:text-6xl font-bold text-white text-center mb-6 drop-shadow-lg">
-                Statistics
+                Vocabulary
             </h1>
     </header>
 
@@ -94,7 +94,7 @@
         <!-- Section 1: Understanding Tennis Stats -->
         <section class="mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
-                Key Tennis Statistics Explained
+                Key Tennis Vocabulary Explained
             </h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -314,26 +314,26 @@
                 
                 <div class="mt-6 p-4 bg-tennis-accent-blue/20 rounded-lg">
                     <p class="text-sm text-gray-700">
-                        <strong>Key Insight:</strong> Player A won by serving better (more aces, higher %), playing cleaner tennis (fewer errors), and converting more break point opportunities.
+                        <strong>Key Insight:</strong> Player A won by serving better (more aces, higher %), playing cleaner tennis (fewer errors), and converting more break point opportunities. The player also shot more winners. 
                     </p>
                 </div>
             </div>
         </section>
 
         <!-- Section 3: Surface-Specific Stats -->
-        <section class="mb-16">
+        <!-- <section class="mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-tennis-dark mb-8 text-center">
                 Stats by Surface Type
-            </h2>
+            </h2> -->
             
-            <div class="bg-white rounded-2xl shadow-lg p-8">
+            <!-- <div class="bg-white rounded-2xl shadow-lg p-8"> -->
                 <!-- Chart Container -->
-                <div class="mb-8">
+                <!-- <div class="mb-8">
                     <canvas id="surfaceChart" width="400" height="200"></canvas>
-                </div>
+                </div> -->
                 
                 <!-- Surface Insights -->
-                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                <!-- <div class="grid md:grid-cols-3 gap-6 mt-8">
                     <div class="text-center">
                         <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-blue-500 flex items-center justify-center">
                         </div>
@@ -350,9 +350,9 @@
                         </div>
                         <h4 class="font-bold text-lg mb-2">Clay Courts</h4>
                         <ul class="text-sm text-gray-600 space-y-1">
-                            <li>Fewer aces</li>
+                            <li>Slower ball (less dominant serve)</li>
+                            <li>Fewer aces </li>
                             <li>Longer rallies (7-9 shots)</li>
-                            <li>Physical endurance key</li>
                         </ul>
                     </div>
                     
@@ -361,14 +361,14 @@
                         </div>
                         <h4 class="font-bold text-lg mb-2">Grass Courts</h4>
                         <ul class="text-sm text-gray-600 space-y-1">
-                            <li>Most aces</li>
+                            <li>Faster ball</li>
+                            <li>Most aces (serve is dominant)</li>
                             <li>Short rallies (2-4 shots)</li>
-                            <li>Serve dominates</li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Section 4: Historical Records -->
         <section class="mb-16">
@@ -419,7 +419,7 @@
             </div>
         </section>
 
-
+    </main>
 
     <!-- Cursor Menu -->
     <div class="cursor-menu">
@@ -435,54 +435,32 @@
     </div>
 
     <script src="../js/cursor.js"></script>
-    <script>
-        // Counter Animation
-        function animateCounter(id, target, duration = 2000) {
-            const element = document.getElementById(id);
-            const increment = target / (duration / 16);
-            let current = 0;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                element.textContent = Math.floor(current);
-            }, 16);
-        }
-        
-        // Start counters when page loads
-        window.addEventListener('load', () => {
-            animateCounter('ace-counter', 147);
-            animateCounter('winner-counter', 523);
-            animateCounter('rally-counter', 1847);
-        });
+    <!-- <script>
         
         // Surface Stats Chart
         const ctx = document.getElementById('surfaceChart').getContext('2d');
         const surfaceChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Aces per Match', 'Rally Length', 'Break Points %', 'Avg Match Duration'],
+                labels: ['Aces per Match', 'Rally Length (avg shots)', 'Break Points Converted %', 'Avg Match Duration (min)'],
                 datasets: [
                     {
                         label: 'Hard Court',
-                        data: [12, 5, 35, 120],
+                        data: [8.5, 4.2, 41, 125],
                         backgroundColor: 'rgba(135, 206, 235, 0.8)',
                         borderColor: 'rgba(135, 206, 235, 1)',
                         borderWidth: 2
                     },
                     {
                         label: 'Clay Court',
-                        data: [6, 8, 40, 180],
+                        data: [5.8, 4.5, 43, 155],
                         backgroundColor: 'rgba(255, 165, 0, 0.8)',
                         borderColor: 'rgba(255, 165, 0, 1)',
                         borderWidth: 2
                     },
                     {
                         label: 'Grass Court',
-                        data: [18, 3, 30, 90],
+                        data: [11.2, 3.8, 38, 110],
                         backgroundColor: 'rgba(126, 212, 173, 0.8)',
                         borderColor: 'rgba(126, 212, 173, 1)',
                         borderWidth: 2
@@ -507,6 +485,6 @@
                 }
             }
         });
-    </script>
+    </script> -->
 </body>
 </html> 
