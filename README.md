@@ -5,7 +5,7 @@
 | Charlotte Meyer   | 315568 |
 | Charlotte Sacré   | 357798 |
 | Jérémie De Faveri | 287454 |
- ---
+
 
 <p align="center">
 <img src="data/Tennis.png" width="400"/>
@@ -23,19 +23,18 @@
 :movie_camera: Check out our website's different functionalities in our [Screen Cast]()! \
 :sparkles: Or simply have fun on the deployed website [here](https://com-480-data-visualization.github.io/band_data/)
 
---- 
 ## :dart: Goal
-### :tennis: What is It 
+### :tennis: What Is It?
 Tennis For Dummies is an interactive website that aims to provide an introduction to the world of tennis while also engaging hardcode tennis fans by offering deep insights into players' performance and key statistics. 
 
-### :tennis:Why?
+### :tennis: Why?
 Tennis is one of the world's most popular sports and boasts an incredible roster of legends, from Billie Jean King to Rafael Nadal. However, for people new to the sport, understanding the rules and intricacies of the sport may be overwhelming,
 and most resources available today directly dive into complex data targeted to a knowledgeable audience. We aim to bridge this gap by first providing foundational knowledge about the world of tennis such that our users feel confident in understanding 
 historical trends, match-level insights, and technical aspects of player performances. To provide deep insights for seasoned fans, we also create detailed player profiles that capture the essence of distinct playing styles across time, tournaments, and court surfaces. 
 
 Ultimately, whether you want to learn more the point system or delve into Roger Federer's performance, we've got you covered with our data-rich and user-friendly visualizations!
 
----
+
 ## :floppy_disk: Data
 
 For our datasets, we use Jeff Sackmann’s extensive data files on players, historical rankings, and tennis matches from the [Association of Tennis Professionals (ATP)](https://github.com/JeffSackmann/tennis_atp) and [Women's Tennis Association (WTA)](https://github.com/JeffSackmann/tennis_wta), from 1991 onwards.
@@ -76,7 +75,7 @@ Then, you can easily render the website with an HTTP server!
 cd docs
 python -m http.server <optional port>
 ```
----
+
 ## :checkered_flag: Previous Milestones
 
 The previous milestones can be found here: [Milestone 1](./milestones/milestone1.md) and [Milestone 2](./milestones/milestone2.pdf). 
