@@ -440,3 +440,41 @@ p {
 .section-alt {
   background-color: var(--color-gray-light);
 }
+
+  /* ==== Players Overview ===== */
+
+  .countrymap-popup-arrow {
+    position: absolute;
+    bottom: -10px; /* places it under the popup */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid white; /* match popup background */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .countrymap-gridjs-container {
+    max-height: 300px;
+    overflow-y: auto !important;
+  }
+
+  .gridjs-table td:first-child,
+  .gridjs-table th:first-child {
+    width: 35px;           /* shrink as much as possible */
+    white-space: nowrap;  /* prevent wrapping */
+    max-width: 35px;       /* limit max width */
+    overflow: hidden;     /* hide overflow */
+    text-overflow: ellipsis; /* add ellipsis if content is too long */
+  }
+
+  .gridjs-tbody .gridjs-td {
+    cursor: pointer;
+  }
+
+  .gridjs-tbody .gridjs-td:hover {
+    background-color: #f0f8ff;
+    transition: background-color 0.2s ease-in-out;
+  }
