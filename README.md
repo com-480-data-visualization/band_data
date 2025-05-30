@@ -19,7 +19,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Source+Sans+Pro:ital,wght@1,700&display=swap" rel="stylesheet">
 -->
 
-:green_book: Check out how our design decisions and how we reached our final website in our [Process Book](./process_book.pdf)! \
+:green_book: Check out how our design decisions and how we reached our final website in our [Process Book](./processbook.pdf)! \
 :movie_camera: Check out our website's different functionalities in our [Screen Cast]()! \
 :sparkles: Or simply have fun on the [deployed website](https://com-480-data-visualization.github.io/band_data/)!
 
