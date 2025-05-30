@@ -8,7 +8,7 @@
  ---
 
 <p align="center">
-<img src="Tennis.png" width="400"/>
+<img src="data/Tennis.png" width="400"/>
 <p>
 <!--
 <div style="background: linear-gradient(to right, #7ED4AD, #87CEEB); padding: 20px; border-radius: 10px; text-align: center;">
